@@ -1,25 +1,37 @@
+from Asset import *
+
 class Proposal:
-    def __init__(self, strategy = "No Action", new_asset = None, cost = 0):
+    def __init__(self, site = None, prop_id = None, existing_asset = None, strategy = "No Action", new_asset = None):
+        self.site = site
+        self.prop_id = prop_id        
         self.strategy = strategy
+        self.existing_asset = existing_asset
+        if (self.existing_asset != None):
+            self.existing_asset.proposal = self
         self.new_asset = new_asset
-        self.cost = cost
         
-    def replace_asset(self, asset, cost):
-        self.strategy = "Replace"
-        self.new_asset = asset
-        self.cost = cost
-        
-    def retrofit_asset(self, cost):
-        self.strategy = "Retrofit"
-        self.new_asset = None
-        self.cost = cost
-        
-    def clear_strategy(self):
-        self.strategy = "No Action"
-        self.new_asset = None
-        self.cost = 0
-        
-    def printAll(self):
-        print("Strategy: " + self.strategy)
-        print("New Asset: " + new_asset)
-        print("Cost: " + cost)
+    def add_existing_asset(self, asset):
+        if (not isinstance(asset, Asset)):
+            raise TypeError("Cannot add a non Asset type to proposal existing asset")
+        self.existing_asset = asset
+        self.existing_asset.proposal = self
+
+
+    def dump(self):
+        if ((self.site == None) or (self.site == 0)):
+            print("SiteID: " + str(self.site))
+        else:
+            print("SiteID: " + str(self.site.id))
+        print("Proposal ID: " + str(self.prop_id))
+        print("Existing Asset: ")
+        if(self.existing_asset != None):
+            self.existing_asset.dump()
+        else:
+            print("No Existing Asset")
+        print("New Asset: ")
+        if(self.new_asset != None):
+            self.new_asset.dump()
+        else:
+            print("No New Asset")
+        print("Strategy: " + str(self.strategy))
+        print("New Asset: " + str(self.new_asset))

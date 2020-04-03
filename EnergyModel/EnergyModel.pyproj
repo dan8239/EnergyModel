@@ -24,13 +24,32 @@
     <Compile Include="Asset.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AssetFactory.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Assumptions.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EnergyModel.py" />
+    <Compile Include="Pkg.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Proposal.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Rtu.py" />
     <Compile Include="Site.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Split.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="UtilityFunctions.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="EER-BY-YEAR.csv" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
