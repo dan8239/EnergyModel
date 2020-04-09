@@ -1,5 +1,3 @@
-from Asset import *
-
 class Ecm():
     """Energy Conservation Measure. Apply appropriate changes to new asset based on ECM type"""
 

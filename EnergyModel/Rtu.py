@@ -1,9 +1,10 @@
 import pandas as pd
 from TableAgeEfficiency import *
-from Asset import *
+from assets import Asset
 from UtilityFunctions import *
+import datetime
 
-class Rtu(Asset):
+class Rtu(Asset.Asset):
     def __init__(self, proposal = None, auid = 0, tons = 0, fact_eer = 0, econ = False, vfd = False, refrig_type = None, stg_cmp = False):
         super().__init__()
         self.tons = tons

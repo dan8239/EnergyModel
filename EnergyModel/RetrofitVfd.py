@@ -1,5 +1,5 @@
 from Ecm import *
-from Rtu import *
+import Rtu
 from UtilityFunctions import *
 
 class RetrofitVfd(Ecm):
@@ -9,7 +9,7 @@ class RetrofitVfd(Ecm):
         asset.eer = min()
 
     def apply_ecm(self, asset):
-        if (isinstance(asset, Rtu)):
+        if (isinstance(asset, Rtu.Rtu)):
             asset.vfd = True
         else:
             raise NotImplementedError("ECM Type not supported for Asset Type")

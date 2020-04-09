@@ -1,4 +1,5 @@
-from Site import *
+import Site
+from pyllist import dllist, dllistnode
 
 class Portfolio():
     def __init__(self, id):
@@ -6,7 +7,7 @@ class Portfolio():
         self.site_list = dllist()
 
     def add_site(self, site):
-        if (not isinstance(site, Site)):
+        if (not isinstance(site, Site.Site)):
             raise TypeError("Cannot add a non Site type to portfolio Site_list")
         self.site_list.appendright(site)
         site.portfolio = self

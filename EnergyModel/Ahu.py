@@ -1,4 +1,4 @@
-from Split import *
+import Split
 
-class Ahu(Split):
+class Ahu(Split.Split):
     pass

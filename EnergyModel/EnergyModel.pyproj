@@ -24,10 +24,13 @@
     <Compile Include="Ahu.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Asset.py">
+    <Compile Include="assets\Asset.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="AssetFactory.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="assets\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Assumptions.py">
@@ -68,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="EER-BY-YEAR.csv" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="assets\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

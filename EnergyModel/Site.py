@@ -1,4 +1,4 @@
-from Asset import *
+from assets import Asset
 from Proposal import *
 from Assumptions import *
 from pyllist import dllist, dllistnode

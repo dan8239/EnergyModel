@@ -1,4 +1,4 @@
-from Rtu import *
+import Rtu
 
-class Pkg(Rtu):
+class Pkg(Rtu.Rtu):
     pass

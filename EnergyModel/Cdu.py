@@ -1,4 +1,4 @@
-from Split import *
+import Split
 
-class Cdu(Split):
+class Cdu(Split.Split):
     pass

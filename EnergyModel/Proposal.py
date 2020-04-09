@@ -1,4 +1,4 @@
-from Asset import *
+from assets import Asset
 from pyllist import dllist, dllistnode
 
 class Proposal:
@@ -21,14 +21,14 @@ class Proposal:
                 x.value.apply_ecm(self.new_asset)
         
     def add_existing_asset(self, asset):
-        if (not isinstance(asset, Asset)):
+        if (not isinstance(asset, Asset.Asset)):
             raise TypeError("Cannot add a non Asset type to proposal existing asset: " + str(type(asset)))
         self.existing_asset = asset
         self.existing_asset.status = "existing"
         self.existing_asset.proposal = self
 
     def add_new_asset(self, asset):
-        if (not isinstance(asset, Asset)):
+        if (not isinstance(asset, Asset.Asset)):
             raise TypeError("Cannot add a non Asset type to proposal new asset: " + str(type(asset)))
         self.new_asset = asset
         self.new_asset.status = "new"

@@ -1,7 +1,8 @@
-from Site import *
-from Asset import *
+import Site
+from assets import Asset
 from Proposal import *
-from Rtu import *
+import Rtu
+import datetime
 from AssetFactory import *
 from Portfolio import *
 from RetrofitVfd import *
@@ -21,7 +22,7 @@ def main():
     portfolio = Portfolio("test")
 
     for row in site_list.itertuples():
-        site = Site(row.site_id)
+        site = Site.Site(row.site_id)
         portfolio.add_site(site)
 
     #read asset list
@@ -53,7 +54,7 @@ def main():
         n_asset = proposal.new_asset
 
         #for RTU's set all values appropriately
-        if (isinstance(x_asset, Rtu)):
+        if (isinstance(x_asset, Rtu.Rtu)):
             x_asset.tons = row.x_tonnage
             x_asset.manufactured_year = row.year
             x_asset.calc_age()
