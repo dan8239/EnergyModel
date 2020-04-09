@@ -5,6 +5,7 @@ class Assumptions():
         self.r22_implied_age = 12     #R22 Refrig RTU implied age
         self.r410_implied_age = 3     #R410 Refrig RTU implied age
         self.eer_degradation_factor = 0.015   #per year eer penalty
+        self.existing_RTU_min_eer = 6.0 #minimum assumed eer for existing units
         self.no_info_eer = 10    #eer for units with no EER or age listed
         self.eer_degredation_method = "Compound"   #method EER is degraded by. Compound, yearly, or no degradation
         self.existing_RTU_no_data_econ = False #value of economizer without data

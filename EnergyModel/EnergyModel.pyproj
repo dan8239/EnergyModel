@@ -36,6 +36,9 @@
     <Compile Include="Cdu.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Ecm.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EnergyModel.py" />
     <Compile Include="Pkg.py">
       <SubType>Code</SubType>
@@ -44,6 +47,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Proposal.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RetrofitVfd.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Rtu.py" />

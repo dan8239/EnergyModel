@@ -1,4 +1,4 @@
-site_id,local_id,asset_id,asset_type,tonnage,x_eer,x_refrig_type,year,age,x_economizer,x_vfd,x_cmp_stg,x_condition,strategy,cost,Tonnage,EER,Economizer,VFD,Staged Compressors
+site_id,local_id,asset_id,asset_type,x_tonnage,x_eer,x_refrig_type,year,age,x_economizer,x_vfd,x_cmp_stg,x_condition,strategy,cost,n_tonnage,n_eer,n_economizer,n_vfd,n_cmp_stg
 IM00068,1,IM00068-1,CDU,2,0,R-22,2000,20,0,0,,,Replace,2585.9,2,17,0,0,
 IM00068,2,IM00068-2,AHU,0,0,0,2000,20,0,0,,,Replace,1000,0,0,0,0,
 IM00068,3,IM00068-3,PKG,50,0,R-410A,2014,6,0,0,,,Retrofit,3071.9,0,0,0,0,

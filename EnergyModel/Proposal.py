@@ -1,4 +1,5 @@
 from Asset import *
+from pyllist import dllist, dllistnode
 
 class Proposal:
     def __init__(self, site = None, prop_id = None, existing_asset = None, strategy = "No Action", new_asset = None):
@@ -9,12 +10,29 @@ class Proposal:
         if (self.existing_asset != None):
             self.existing_asset.proposal = self
         self.new_asset = new_asset
+        self.ecm_list = dllist()
+
+    def add_ecm(self, ecm):
+        self.ecm_list.appendright(ecm)
+
+    def apply_ecms(self):
+        for x in self.ecm_list.iternodes():
+            if (x != None):
+                x.value.apply_ecm(self.new_asset)
         
     def add_existing_asset(self, asset):
         if (not isinstance(asset, Asset)):
-            raise TypeError("Cannot add a non Asset type to proposal existing asset")
+            raise TypeError("Cannot add a non Asset type to proposal existing asset: " + str(type(asset)))
         self.existing_asset = asset
+        self.existing_asset.status = "existing"
         self.existing_asset.proposal = self
+
+    def add_new_asset(self, asset):
+        if (not isinstance(asset, Asset)):
+            raise TypeError("Cannot add a non Asset type to proposal new asset: " + str(type(asset)))
+        self.new_asset = asset
+        self.new_asset.status = "new"
+        self.new_asset.proposal = self
 
 
     def dump(self):

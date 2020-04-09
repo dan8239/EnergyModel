@@ -8,6 +8,7 @@ class Asset:
         self.model = model
         self.serial = serial        
         self.manufactured_year = manufactured_year
+        self.status = None
         self.calc_age()
 
     def set_proposal(self, proposal):
@@ -16,6 +17,17 @@ class Asset:
     def set_make(self, make):
         self.make
 
+    def copy_asset(self, asset_to_copy):
+        self.make = asset_to_copy.make
+        self.model = asset_to_copy.model
+        self.serial = asset_to_copy.serial
+        self.manufactured_year = asset_to_copy.manufactured_year
+        self.age = asset_to_copy.age
+        self._derived_copy_asset(asset_to_copy)
+
+    def _derived_copy_asset(self, asset_to_copy):
+        pass
+
     def calc_age(self):
         if (self.manufactured_year != None):
             self.age = int(datetime.datetime.now().year) - self.manufactured_year
@@ -23,9 +35,9 @@ class Asset:
             self.age = None
 
     def filter_asset(self):
-        self.derived_filter_asset()
+        self._derived_filter_asset()
 
-    def derived_filter_asset(self):
+    def _derived_filter_asset(self):
         pass
 
     def dump(self):
@@ -35,8 +47,8 @@ class Asset:
         print("Serial: " + str(self.serial))
         print("Year: " + str(self.manufactured_year))
         print("Age: " + str(self.age))
-        self.derived_dump()
+        self._derived_dump()
         print()
 
-    def derived_dump(self):
+    def _derived_dump(self):
         pass
