@@ -63,6 +63,7 @@ class Rtu(Asset):
         self.refrig_type = "R-410A"
         if (self.fact_eer == None or self.fact_eer == 0):
             self.fact_eer = assumptions.new_RTU_min_eer
+        self.degr_eer = self.fact_eer
 
 
     # Filter through asset data and fill gaps based on model assumptions

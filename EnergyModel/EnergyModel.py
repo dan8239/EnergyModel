@@ -15,6 +15,8 @@ def __string_to_bool(string):
 
 def main():
     #read site list and create portfolio with list of sites attached
+    
+    print("Reading Site List")
     site_list = pd.read_csv("site_list_input.csv")
     portfolio = Portfolio("test")
 
@@ -23,28 +25,22 @@ def main():
         portfolio.add_site(site)
 
     #read asset list
+    print("Reading Asset List")
     asset_list = pd.read_csv("asset_list_input.csv")
 
     #cleanse blanks and zeros to boolean values
-
+    print("Cleansing Asset List")
     asset_list['x_economizer'] = asset_list.apply(lambda x: __string_to_bool(x['x_economizer']),axis = 1)
     asset_list['x_vfd'] = asset_list.apply(lambda x: __string_to_bool(x['x_vfd']),axis = 1)
     asset_list['x_cmp_stg'] = asset_list.apply(lambda x: __string_to_bool(x['x_cmp_stg']),axis = 1)
     asset_list['n_economizer'] = asset_list.apply(lambda x: __string_to_bool(x['n_economizer']),axis = 1)
     asset_list['n_vfd'] = asset_list.apply(lambda x: __string_to_bool(x['n_vfd']),axis = 1)
     asset_list['n_cmp_stg'] = asset_list.apply(lambda x: __string_to_bool(x['n_cmp_stg']),axis = 1)
-    '''
-    asset_list['x_economizer'].replace([0, np.nan], False, inplace = True)
-    asset_list['x_vfd'].replace([0, np.nan], False, inplace = True)
-    asset_list['x_cmp_stg'].replace([0, np.nan], False, inplace = True)
-    asset_list['n_economizer'].replace([0, np.nan], False, inplace = True)
-    asset_list['n_vfd'].replace([0, np.nan], False, inplace = True)
-    asset_list['n_cmp_stg'].replace([0, np.nan], False, inplace = True)
-    '''
 
     #for each asset listed
     #create proposal with existing and new asset
     #attach to appropriate site
+    print("Importing Assets")
     for row in asset_list.itertuples():
         #find correct site
         site = portfolio.find_site(row.site_id)
@@ -87,7 +83,7 @@ def main():
                 n_asset.vfd = row.n_vfd
                 n_asset.stg_cmp = row.n_cmp_stg
                 n_asset.filter_asset()
-
+    print("Printing Assets")
     portfolio.dump()
 
 
