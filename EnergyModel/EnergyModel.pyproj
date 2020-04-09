@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Ahu.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Asset.py">
       <SubType>Code</SubType>
     </Compile>
@@ -30,8 +33,14 @@
     <Compile Include="Assumptions.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Cdu.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="EnergyModel.py" />
     <Compile Include="Pkg.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Portfolio.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Proposal.py">
@@ -42,6 +51,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Split.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TableAgeEfficiency.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UtilityFunctions.py">

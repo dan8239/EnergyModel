@@ -35,3 +35,4 @@ class Proposal:
             print("No New Asset")
         print("Strategy: " + str(self.strategy))
         print("New Asset: " + str(self.new_asset))
+        print("-----------------------------------")
