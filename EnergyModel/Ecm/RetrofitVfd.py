@@ -1,8 +1,8 @@
-from Ecm import *
-from Rtu import *
-from UtilityFunctions import *
+from ecm import ecm
+from assets import Asset
+import utilityfunctions
 
-class RetrofitVfd(Ecm):
+class RetrofitVfd(ecm.Ecm):
     """description of class"""
     def __upgrade_eer(self, asset):
         eer_gain = asset.proposal.site.assumptions.self.retrofit_efficiency_gain

@@ -5,4 +5,3 @@ class UtilityFunctions():
 
     def degrade_eer_yearly(eer, age, maint_factor, min_eer):
         return max(min_eer,(eer - age*maint_factor))
-
