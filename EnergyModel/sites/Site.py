@@ -1,6 +1,5 @@
-from assets import Asset
-from Proposal import *
-from Assumptions import *
+from assets import Asset, Proposal
+from utility import Assumptions
 from pyllist import dllist, dllistnode
 
 class Site:
@@ -10,7 +9,7 @@ class Site:
         self.id = id
         self.portfolio = None
         self.proposal_list = dllist()
-        self.assumptions = Assumptions()
+        self.assumptions = Assumptions.Assumptions()
         
     def dump(self):
         print("ID: " + str(self.id))
@@ -22,7 +21,7 @@ class Site:
         print()
         
     def add_proposal(self, proposal):
-        if (not isinstance(proposal, Proposal)):
+        if (not isinstance(proposal, Proposal.Proposal)):
             raise TypeError("Cannot add a non Proposal type to site proposal_list")
         self.proposal_list.appendright(proposal)
         proposal.site = self

@@ -1,12 +1,9 @@
-import Pkg
-import Cdu
-import Ahu
-from Proposal import *
+from assets import Asset, Pkg, Cdu, Ahu, Proposal
 
 class AssetFactory():
     
     def create_proposal(site, type_of_asset):
-        proposal = Proposal()
+        proposal = Proposal.Proposal()
         site.add_proposal(proposal)
         if (type_of_asset == "Pkg" or type_of_asset == "Rtu" or type_of_asset == "PKG" or type_of_asset == "RTU"):
             x_asset = Pkg.Pkg()

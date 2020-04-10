@@ -15,4 +15,4 @@ class TableAgeEfficiency:
       if TableAgeEfficiency.__table != None:
          raise Exception("This class is a singleton!")
       else:
-         TableAgeEfficiency.__table = pd.read_csv("EER-BY-YEAR.csv")
+         TableAgeEfficiency.__table = pd.read_csv("reference/EER-BY-YEAR.csv")

@@ -21,59 +21,76 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Ahu.py">
+    <Compile Include="assets\Ahu.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="assets\Asset.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="AssetFactory.py">
+    <Compile Include="assets\AssetFactory.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="assets\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Assumptions.py">
+    <Compile Include="portfolios\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Cdu.py">
+    <Compile Include="sites\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Ecm.py">
+    <Compile Include="utility\Assumptions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="assets\Cdu.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ecm\Ecm.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ecm\__init__.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="EnergyModel.py" />
-    <Compile Include="Pkg.py">
+    <Compile Include="assets\Pkg.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Portfolio.py">
+    <Compile Include="portfolios\Portfolio.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Proposal.py">
+    <Compile Include="assets\Proposal.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="RetrofitVfd.py">
+    <Compile Include="ecm\RetrofitVfd.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Rtu.py" />
-    <Compile Include="Site.py">
+    <Compile Include="assets\Rtu.py" />
+    <Compile Include="sites\Site.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Split.py">
+    <Compile Include="assets\Split.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="TableAgeEfficiency.py">
+    <Compile Include="utility\TableAgeEfficiency.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="UtilityFunctions.py">
+    <Compile Include="utility\UtilityFunctions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utility\__init__.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="EER-BY-YEAR.csv" />
+    <Content Include="reference\EER-BY-YEAR.csv" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="assets\" />
+    <Folder Include="ecm\" />
+    <Folder Include="portfolios\" />
+    <Folder Include="sites\" />
+    <Folder Include="utility\" />
+    <Folder Include="reference\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

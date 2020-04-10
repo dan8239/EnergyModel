@@ -1,11 +1,8 @@
-import Site
-from assets import Asset
-from Proposal import *
-import Rtu
+from sites import Site
+from assets import Asset, Rtu, AssetFactory, Proposal
 import datetime
-from AssetFactory import *
-from Portfolio import *
-from RetrofitVfd import *
+from portfolios import Portfolio
+from ecm import RetrofitVfd
 import pandas as pd
 import numpy as np
 
@@ -19,7 +16,7 @@ def main():
     
     print("Reading Site List")
     site_list = pd.read_csv("site_list_input.csv")
-    portfolio = Portfolio("test")
+    portfolio = Portfolio.Portfolio("test")
 
     for row in site_list.itertuples():
         site = Site.Site(row.site_id)
@@ -47,7 +44,7 @@ def main():
         site = portfolio.find_site(row.site_id)
 
         #create proposal and assets. Set Prop values
-        proposal = AssetFactory.create_proposal(site,row.asset_type)
+        proposal = AssetFactory.AssetFactory.create_proposal(site,row.asset_type)
         proposal.prop_id = row.asset_id
         proposal.strategy = row.strategy
         x_asset = proposal.existing_asset
@@ -72,7 +69,7 @@ def main():
                 n_asset.copy_asset(x_asset)
             # if retrofit, apply retrofit vfd actions to new asset
             if (proposal.strategy == "Retrofit"):
-                proposal.add_ecm = RetrofitVfd()
+                proposal.add_ecm = RetrofitVfd.RetrofitVfd()
                 proposal.apply_ecms()
             # if replace, set values from file and filter
             elif (proposal.strategy == "Replace"):

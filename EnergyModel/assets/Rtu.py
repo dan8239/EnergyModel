@@ -1,7 +1,6 @@
 import pandas as pd
-from TableAgeEfficiency import *
 from assets import Asset
-from UtilityFunctions import *
+from utility import UtilityFunctions, TableAgeEfficiency
 import datetime
 
 class Rtu(Asset.Asset):
@@ -40,13 +39,13 @@ class Rtu(Asset.Asset):
         #if no eer listed, determine approx eer from age
         if (self.fact_eer == None or self.fact_eer == 0):
             if (self.age != None):
-                eer_tbl = TableAgeEfficiency.get_table()
+                eer_tbl = TableAgeEfficiency.TableAgeEfficiency.get_table()
                 row = eer_tbl[eer_tbl['AGE'] == self.age]
                 self.fact_eer = row.EER.iloc[0]
                 if (assumptions.eer_degredation_method == "Compound"):
-                    self.degr_eer = UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
+                    self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
                 elif(assumptions.eer_degredation_method == "Yearly"):
-                    self.degr_eer = UtilityFunctions.degrade_eer_yearly(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
+                    self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_yearly(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
                 else:
                     self.degr_eer = self.fact_eer
             else:

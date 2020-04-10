@@ -1,4 +1,4 @@
-import Site
+from sites import Site
 from pyllist import dllist, dllistnode
 
 class Portfolio():
