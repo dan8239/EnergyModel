@@ -20,7 +20,12 @@ def main():
 
     for row in site_list.itertuples():
         site = Site.Site(row.site_id)
+        site.address = row.address
         portfolio.add_site(site)
+        print("Geocoding Site " + str(site.id))
+        site.geocode()
+        print("Filling Climate Data for Site " + str(site.id))
+        site.fill_climate_data()
 
     #read asset list
     print("Reading Asset List")

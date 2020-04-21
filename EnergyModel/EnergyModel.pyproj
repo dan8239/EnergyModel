@@ -33,6 +33,13 @@
     <Compile Include="assets\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="climdata\ClimateData.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="climdata\__init__.py" />
+    <Compile Include="config.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="portfolios\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -80,6 +87,10 @@
     <Compile Include="utility\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="weatherutility\geocode.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="weatherutility\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="reference\EER-BY-YEAR.csv" />
@@ -87,6 +98,8 @@
   <ItemGroup>
     <Folder Include="assets\" />
     <Folder Include="ecm\" />
+    <Folder Include="climdata\" />
+    <Folder Include="weatherutility\" />
     <Folder Include="portfolios\" />
     <Folder Include="sites\" />
     <Folder Include="utility\" />

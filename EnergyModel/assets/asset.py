@@ -41,6 +41,14 @@ class Asset:
         pass
 
     def dump(self):
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print()
         print("Asset Type: " + type(self).__name__)
         print("Make: " + str(self.make))
         print("Model: " + str(self.model))
@@ -49,6 +57,13 @@ class Asset:
         print("Age: " + str(self.age))
         self._derived_dump()
         print()
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
     def _derived_dump(self):
         pass
