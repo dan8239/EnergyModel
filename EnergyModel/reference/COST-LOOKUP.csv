@@ -1,0 +1,706 @@
+LUID,LOCATION CODE,CITY,ST,REGION,COUNTRY,ZIP / MC,LAT,LNG,ELEC RATE,CLIMATE ZONE,CCI
+1,"USA, AK, Anchorage",Anchorage,AK,Non-Contiguous,USA,99501,61.218056,-149.900278, $0.2027 ,"USA, AK, Anchorage",1.223
+2,"USA, AK, Fairbanks",Fairbanks,AK,Non-Contiguous,USA,99701,64.837778,-147.716389, $0.2259 ,"USA, AK, Anchorage",1.223
+3,"USA, AK, Juneau",Juneau,AK,Non-Contiguous,USA,99801,58.301944,-134.419722, $0.2027 ,"USA, AK, Anchorage",1.223
+4,"USA, AK, Ketchikan",Ketchikan,AK,Non-Contiguous,USA,99901,55.342849,-131.646252, $0.2104 ,"CAN, BC, Vancouver",1.075
+5,"USA, AK, King Salmon",King Salmon,AK,Non-Contiguous,USA,99613,58.691633,-156.671841, $0.2104 ,"USA, AK, Anchorage",1.223
+6,"USA, AL, Anniston",Anniston,AL,Southeast,USA,36201,33.660298,-85.831532, $0.1057 ,"USA, AL, Birmingham",0.941
+7,"USA, AL, Auburn",Auburn,AL,Southeast,USA,36830,32.604786,-85.479913, $0.1057 ,"USA, AL, Montgomery",0.920
+8,"USA, AL, Bellamy",Bellamy,AL,Southeast,USA,36901,32.449447,-88.133018, $0.1057 ,"USA, AL, Birmingham",0.941
+9,"USA, AL, Birmingham",Birmingham,AL,Southeast,USA,35203,33.520661,-86.80249, $0.1067 ,"USA, AL, Birmingham",0.941
+10,"USA, AL, Dothan",Dothan,AL,Southeast,USA,36303,31.226332,-85.39513, $0.1057 ,"USA, FL, Tallahassee",0.892
+11,"USA, AL, Evergreen",Evergreen,AL,Southeast,USA,36401,31.433357,-86.953686, $0.1057 ,"USA, AL, Montgomery",0.920
+12,"USA, AL, Gadsden",Gadsden,AL,Southeast,USA,35901,34.01475,-86.006539, $0.1057 ,"USA, AL, Birmingham",0.941
+13,"USA, AL, Huntsville",Huntsville,AL,Southeast,USA,35801,34.730369,-86.586104, $0.1004 ,"USA, TN, Chattanooga",0.937
+14,"USA, AL, Jasper",Jasper,AL,Southeast,USA,35501,33.832023,-87.278084, $0.1057 ,"USA, AL, Birmingham",0.941
+15,"USA, AL, Mobile",Mobile,AL,Southeast,USA,36602,30.695366,-88.039891, $0.1071 ,"USA, LA, New Orleans",0.942
+16,"USA, AL, Montgomery",Montgomery,AL,Southeast,USA,36104,32.366805,-86.299969, $0.1071 ,"USA, AL, Montgomery",0.920
+17,"USA, AL, Scottsboro",Scottsboro,AL,Southeast,USA,35768,34.672437,-86.035188, $0.1057 ,"USA, TN, Chattanooga",0.937
+18,"USA, AL, Selma",Selma,AL,Southeast,USA,36701,32.408492,-87.022186, $0.1057 ,"USA, AL, Montgomery",0.920
+19,"USA, AL, Sheffield",Sheffield,AL,Southeast,USA,35660,34.763435,-87.697957, $0.1057 ,"USA, AL, Birmingham",0.941
+20,"USA, AL, Tuscaloosa",Tuscaloosa,AL,Southeast,USA,35401,33.209841,-87.569173, $0.1071 ,"USA, AL, Birmingham",0.941
+21,"USA, AR, Batesville",Batesville,AR,Southeast,USA,72501,35.7702,-91.640797, $0.0800 ,"USA, AR, Little Rock",0.899
+22,"USA, AR, Camden",Camden,AR,Southeast,USA,71701,33.583193,-92.834531, $0.0800 ,"USA, AR, Little Rock",0.899
+23,"USA, AR, Fayetteville",Fayetteville,AR,Southeast,USA,35151,33.145556,-86.405833, $0.0813 ,"USA, AL, Birmingham",0.941
+24,"USA, AR, Fort Smith",Fort Smith,AR,Southeast,USA,72901,35.385924,-94.398548, $0.0813 ,"USA, AR, Little Rock",0.899
+25,"USA, AR, Harrison",Harrison,AR,Southeast,USA,72601,36.2306,-93.10692, $0.0800 ,"USA, AR, Little Rock",0.899
+26,"USA, AR, Hope",Hope,AR,Southeast,USA,71801,33.667479,-93.591365, $0.0800 ,"USA, AR, Little Rock",0.899
+27,"USA, AR, Hot Springs",Hot Springs,AR,Southeast,USA,71901,34.503224,-93.054981, $0.0800 ,"USA, AR, Little Rock",0.899
+28,"USA, AR, Jonesboro",Jonesboro,AR,Southeast,USA,72401,35.839786,-90.704274, $0.0800 ,"USA, TN, Memphis",0.939
+29,"USA, AR, Little Rock",Little Rock,AR,Southeast,USA,72201,34.746481,-92.289595, $0.0773 ,"USA, AR, Little Rock",0.899
+30,"USA, AR, Pine Bluff",Pine Bluff,AR,Southeast,USA,71601,34.227074,-92.004444, $0.0800 ,"USA, AR, Little Rock",0.899
+31,"USA, AR, Russellville",Russellville,AR,Southeast,USA,72801,35.277548,-93.134184, $0.0800 ,"USA, AR, Little Rock",0.899
+32,"USA, AR, West Memphis",West Memphis,AR,Southeast,USA,72301,35.145986,-90.185188, $0.0800 ,"USA, TN, Memphis",0.939
+33,"USA, AZ, Chambers",Chambers,AZ,Southwest,USA,86512,35.190135,-109.43284, $0.1010 ,"USA, AZ, Flagstaff",0.911
+34,"USA, AZ, Douglas",Douglas,AZ,Southwest,USA,85607,31.346043,-109.545384, $0.1010 ,"USA, AZ, Phoenix",0.952
+35,"USA, AZ, Flagstaff",Flagstaff,AZ,Southwest,USA,86001,35.191818,-111.649779, $0.1010 ,"USA, AZ, Flagstaff",0.911
+36,"USA, AZ, Kingman",Kingman,AZ,Southwest,USA,86401,35.190942,-114.05344, $0.1010 ,"USA, NV, Las Vegas",1.035
+37,"USA, AZ, Mesa",Mesa,AZ,Southwest,USA,85203,33.417831,-111.810822, $0.1010 ,"USA, AZ, Phoenix",0.952
+38,"USA, AZ, Phoenix",Phoenix,AZ,Southwest,USA,85003,33.448377,-112.074037, $0.1022 ,"USA, AZ, Phoenix",0.952
+39,"USA, AZ, Prescott",Prescott,AZ,Southwest,USA,86301,34.542956,-112.466874, $0.1010 ,"USA, AZ, Flagstaff",0.911
+40,"USA, AZ, Show Low",Show Low,AZ,Southwest,USA,85901,34.252467,-110.032534, $0.1010 ,"USA, AZ, Flagstaff",0.911
+41,"USA, AZ, Tucson",Tucson,AZ,Southwest,USA,85716,32.221743,-110.926479, $0.0997 ,"USA, AZ, Phoenix",0.952
+42,"USA, AZ, Yuma",Yuma,AZ,Southwest,USA,85364,32.694101,-114.630325, $0.1010 ,"USA, CA, San Diego",1.121
+43,"USA, CA, Alhambra",Alhambra,CA,Pacific,USA,91801,34.093063,-118.127926, $0.1434 ,"USA, CA, Los Angeles",1.142
+44,"USA, CA, Bakersfield",Bakersfield,CA,Pacific,USA,93301,35.373292,-119.018712, $0.1408 ,"USA, CA, Los Angeles",1.142
+45,"USA, CA, El Centro",El Centro,CA,Pacific,USA,92243,32.790488,-115.562292, $0.1434 ,"USA, CA, San Diego",1.121
+46,"USA, CA, Eureka",Eureka,CA,Pacific,USA,95501,40.797323,-124.163899, $0.1434 ,"USA, CA, San Francisco",1.343
+47,"USA, CA, Fresno",Fresno,CA,Pacific,USA,93702,36.746842,-119.772587, $0.1408 ,"USA, CA, San Francisco",1.343
+48,"USA, CA, Herlong",Herlong,CA,Pacific,USA,96113,40.143606,-120.134985, $0.1434 ,"USA, NV, Reno",0.964
+49,"USA, CA, Inglewood",Inglewood,CA,Pacific,USA,90301,33.960739,-118.353063, $0.1434 ,"USA, CA, Los Angeles",1.142
+50,"USA, CA, Irvine",Irvine,CA,Pacific,USA,92614,33.680273,-117.822546, $0.1434 ,"USA, CA, Riverside",1.076
+51,"USA, CA, Lompoc",Lompoc,CA,Pacific,USA,93436,34.639432,-120.457332, $0.1434 ,"USA, CA, Los Angeles",1.142
+52,"USA, CA, Long Beach",Long Beach,CA,Pacific,USA,90802,33.77255,-118.194261, $0.1434 ,"USA, CA, Los Angeles",1.142
+53,"USA, CA, Los Angeles",Los Angeles,CA,Pacific,USA,90012,34.052234,-118.243685, $0.1274 ,"USA, CA, Los Angeles",1.142
+54,"USA, CA, Marysville",Marysville,CA,Pacific,USA,95901,39.146288,-121.59117, $0.1434 ,"USA, NV, Reno",0.964
+55,"USA, CA, Modesto",Modesto,CA,Pacific,USA,95354,37.640661,-120.995608, $0.1434 ,"USA, CA, San Francisco",1.343
+56,"USA, CA, Mojave",Mojave,CA,Pacific,USA,93501,35.051916,-118.172264, $0.1434 ,"USA, CA, Los Angeles",1.142
+57,"USA, CA, Novato",Novato,CA,Pacific,USA,94945,38.106129,-122.571521, $0.1434 ,"USA, CA, San Francisco",1.343
+58,"USA, CA, Oakland",Oakland,CA,Pacific,USA,94612,37.804364,-122.271114, $0.1408 ,"USA, CA, San Francisco",1.343
+59,"USA, CA, Orange",Orange,CA,Pacific,USA,92866,33.793938,-117.854525, $0.1434 ,"USA, CA, Riverside",1.076
+60,"USA, CA, Oxnard",Oxnard,CA,Pacific,USA,93030,34.197505,-119.177052, $0.1479 ,"USA, CA, Los Angeles",1.142
+61,"USA, CA, Pasadena",Pasadena,CA,Pacific,USA,91101,34.149256,-118.144495, $0.1434 ,"USA, CA, Los Angeles",1.142
+62,"USA, CA, Rancho Cordova",Rancho Cordova,CA,Pacific,USA,95670,38.588079,-121.301956, $0.1434 ,"USA, CA, San Francisco",1.343
+63,"USA, CA, Redding",Redding,CA,Pacific,USA,96001,40.584953,-122.39195, $0.1434 ,"USA, NV, Reno",0.964
+64,"USA, CA, Richmond",Richmond,CA,Pacific,USA,98404,37.934766,-122.347957, $0.1434 ,"USA, CA, San Francisco",1.343
+65,"USA, CA, Riverside",Riverside,CA,Pacific,USA,92506,33.953349,-117.396156, $0.1605 ,"USA, CA, Riverside",1.076
+66,"USA, CA, Sacramento",Sacramento,CA,Pacific,USA,95814,38.581572,-121.4944, $0.1383 ,"USA, CA, San Francisco",1.343
+67,"USA, CA, Salinas",Salinas,CA,Pacific,USA,93901,36.677297,-121.653366, $0.1434 ,"USA, CA, San Francisco",1.343
+68,"USA, CA, San Bernardino",San Bernardino,CA,Pacific,USA,92401,34.109478,-117.288404, $0.1434 ,"USA, CA, Riverside",1.076
+69,"USA, CA, San Diego",San Diego,CA,Pacific,USA,92101,32.715738,-117.161084, $0.1351 ,"USA, CA, San Diego",1.121
+70,"USA, CA, San Francisco",San Francisco,CA,Pacific,USA,94102,37.774929,-122.419416, $0.1479 ,"USA, CA, San Francisco",1.343
+71,"USA, CA, San Jose",San Jose,CA,Pacific,USA,95113,37.338208,-121.886329, $0.1408 ,"USA, CA, San Francisco",1.343
+72,"USA, CA, San Mateo",San Mateo,CA,Pacific,USA,94401,37.562736,-122.323334, $0.1434 ,"USA, CA, San Francisco",1.343
+73,"USA, CA, Santa Barbara",Santa Barbara,CA,Pacific,USA,93101,34.420831,-119.69819, $0.1479 ,"USA, CA, Los Angeles",1.142
+74,"USA, CA, Santa Rosa",Santa Rosa,CA,Pacific,USA,95401,38.442968,-122.716871, $0.1434 ,"USA, CA, San Francisco",1.343
+75,"USA, CA, Stockton",Stockton,CA,Pacific,USA,95202,37.957702,-121.29078, $0.1408 ,"USA, CA, San Francisco",1.343
+76,"USA, CA, Sunnyvale ",Sunnyvale ,CA,Pacific,USA,94086,37.371713,-122.036133, $0.1434 ,"USA, CA, San Francisco",1.343
+77,"USA, CA, Van Nuys",Van Nuys,CA,Pacific,USA,91405,34.191843,-118.45265, $0.1434 ,"USA, CA, Los Angeles",1.142
+78,"USA, CA, Whittier",Whittier,CA,Pacific,USA,90601,33.98016,-118.033552, $0.1434 ,"USA, CA, Los Angeles",1.142
+79,"USA, CO, Aurora",Aurora,CO,Rocky Mountains,USA,80011,39.72628,-104.829901, $0.0950 ,"USA, CO, Denver",0.989
+80,"USA, CO, Boulder",Boulder,CO,Rocky Mountains,USA,80302,40.014986,-105.270546, $0.0916 ,"USA, CO, Denver",0.989
+81,"USA, CO, Colorado Springs",Colorado Springs,CO,Rocky Mountains,USA,80903,38.833882,-104.821363, $0.0972 ,"USA, CO, Denver",0.989
+82,"USA, CO, Denver",Denver,CO,Rocky Mountains,USA,80202,39.739236,-104.990251, $0.0916 ,"USA, CO, Denver",0.989
+83,"USA, CO, Durango",Durango,CO,Rocky Mountains,USA,81301,37.274715,-107.87918, $0.0950 ,"USA, NM, Albuquerque",0.924
+84,"USA, CO, Fort Morgan",Fort Morgan,CO,Rocky Mountains,USA,80701,40.252486,-103.79921, $0.0950 ,"USA, CO, Denver",0.989
+85,"USA, CO, Glenwood Springs",Glenwood Springs,CO,Rocky Mountains,USA,81601,39.551074,-107.325004, $0.0950 ,"USA, CO, Denver",0.989
+86,"USA, CO, Grand Junction",Grand Junction,CO,Rocky Mountains,USA,81501,39.066976,-108.551335, $0.0950 ,"USA, CO, Denver",0.989
+87,"USA, CO, Greeley",Greeley,CO,Rocky Mountains,USA,80631,40.424723,-104.708331, $0.0950 ,"USA, CO, Denver",0.989
+88,"USA, CO, Longmont",Longmont,CO,Rocky Mountains,USA,80501,40.167867,-105.100136, $0.0950 ,"USA, CO, Denver",0.989
+89,"USA, CO, Pagosa Springs",Pagosa Springs,CO,Rocky Mountains,USA,81147,37.268754,-107.011246, $0.0950 ,"USA, NM, Albuquerque",0.924
+90,"USA, CO, Pueblo",Pueblo,CO,Rocky Mountains,USA,81004,38.254447,-104.609141, $0.0972 ,"USA, CO, Denver",0.989
+91,"USA, CO, Salida",Salida,CO,Rocky Mountains,USA,81201,38.533949,-105.998216, $0.0950 ,"USA, CO, Denver",0.989
+92,"USA, CT, Bridgeport",Bridgeport,CT,Northeast,USA,6604,41.185916,-73.194483, $0.1631 ,"USA, CT, Bridgeport",1.065
+93,"USA, CT, Bristol",Bristol,CT,Northeast,USA,6010,41.670883,-72.947964, $0.1631 ,"USA, CT, Hartford",1.089
+94,"USA, CT, Fairfield",Fairfield,CT,Northeast,USA,6824,41.144866,-73.261481, $0.1631 ,"USA, CT, Bridgeport",1.065
+95,"USA, CT, Hartford",Hartford,CT,Northeast,USA,6106,41.763711,-72.685093, $0.1633 ,"USA, CT, Hartford",1.089
+96,"USA, CT, New Haven",New Haven,CT,Northeast,USA,6510,41.308274,-72.927884, $0.1633 ,"USA, CT, Bridgeport",1.065
+97,"USA, CT, Norwich",Norwich,CT,Northeast,USA,6360,41.524265,-72.07591, $0.1618 ,"USA, CT, Hartford",1.089
+98,"USA, CT, Stamford",Stamford,CT,Northeast,USA,6901,41.05343,-73.538734, $0.1633 ,"USA, CT, Bridgeport",1.065
+99,"USA, CT, Waterbury",Waterbury,CT,Northeast,USA,6702,41.558152,-73.051496, $0.1633 ,"USA, CT, Hartford",1.089
+100,"USA, CT, West Hartford",West Hartford,CT,Northeast,USA,6107,41.761086,-72.741339, $0.1631 ,"USA, CT, Hartford",1.089
+101,"USA, DC, Washington",Washington,DC,Southeast,USA,20036,38.907192,-77.036871, $0.1056 ,"USA, DC, Washington",1.030
+102,"USA, DE, Dover",Dover,DE,Southeast,USA,19901,39.158168,-75.524368, $0.1116 ,"USA, DE, Wilmington",1.038
+103,"USA, DE, Newark",Newark,DE,Southeast,USA,19711,39.68169,-75.748202, $0.1116 ,"USA, DE, Wilmington",1.038
+104,"USA, DE, Wilmington",Wilmington,DE,Southeast,USA,19801,39.739072,-75.539788, $0.1116 ,"USA, DE, Wilmington",1.038
+105,"USA, FL, Altamonte Springs",Altamonte Springs,FL,Southeast,USA,32701,28.659174,-81.365094, $0.0944 ,"USA, FL, Jacksonville",0.907
+106,"USA, FL, Bradenton",Bradenton,FL,Southeast,USA,34205,27.495138,-82.572929, $0.0944 ,"USA, FL, Miami",0.924
+107,"USA, FL, Brookesville",Brookesville,FL,Southeast,USA,34601,28.554411,-82.388682, $0.0944 ,"USA, FL, Jacksonville",0.907
+108,"USA, FL, Daytona Beach",Daytona Beach,FL,Southeast,USA,32114,29.210815,-81.022833, $0.0872 ,"USA, FL, Jacksonville",0.907
+109,"USA, FL, Fort Lauderdale",Fort Lauderdale,FL,Southeast,USA,33301,26.122439,-80.137317, $0.0872 ,"USA, FL, Miami",0.924
+110,"USA, FL, Fort Myers",Fort Myers,FL,Southeast,USA,33901,26.638584,-81.871446, $0.0944 ,"USA, FL, Miami",0.924
+111,"USA, FL, Fort Pierce",Fort Pierce,FL,Southeast,USA,34950,27.446391,-80.327869, $0.0944 ,"USA, FL, Miami",0.924
+112,"USA, FL, Gainesville",Gainesville,FL,Southeast,USA,32601,29.653665,-82.324507, $0.0944 ,"USA, FL, Jacksonville",0.907
+113,"USA, FL, Jacksonville",Jacksonville,FL,Southeast,USA,32202,30.332184,-81.655651, $0.0981 ,"USA, FL, Jacksonville",0.907
+114,"USA, FL, Lakeland",Lakeland,FL,Southeast,USA,33801,28.038217,-81.948661, $0.0944 ,"USA, FL, Jacksonville",0.907
+115,"USA, FL, Melbourne",Melbourne,FL,Southeast,USA,32901,28.083076,-80.608816, $0.0944 ,"USA, FL, Miami",0.924
+116,"USA, FL, Miami",Miami,FL,Southeast,USA,33131,25.76168,-80.19179, $0.0872 ,"USA, FL, Miami",0.924
+117,"USA, FL, Naples",Naples,FL,Southeast,USA,34102,26.140899,-81.795405, $0.0944 ,"USA, FL, Miami",0.924
+118,"USA, FL, Ocala",Ocala,FL,Southeast,USA,34471,29.185642,-82.139015, $0.0944 ,"USA, FL, Jacksonville",0.907
+119,"USA, FL, Orlando",Orlando,FL,Southeast,USA,32801,28.538335,-81.379236, $0.0938 ,"USA, FL, Jacksonville",0.907
+120,"USA, FL, Panama City",Panama City,FL,Southeast,USA,32401,30.16558,-85.659114, $0.0944 ,"USA, FL, Tallahassee",0.892
+121,"USA, FL, Pensacola",Pensacola,FL,Southeast,USA,32501,30.422232,-87.215717, $0.0944 ,"USA, AL, Montgomery",0.920
+122,"USA, FL, Saint Augustine",Saint Augustine,FL,Southeast,USA,32084,29.901064,-81.313431, $0.0944 ,"USA, FL, Jacksonville",0.907
+123,"USA, FL, Saint Cloud",Saint Cloud,FL,Southeast,USA,34769,28.251091,-81.281723, $0.0944 ,"USA, FL, Jacksonville",0.907
+124,"USA, FL, Saint Petersburg",Saint Petersburg,FL,Southeast,USA,33701,27.757918,-82.641257, $0.0944 ,"USA, FL, Jacksonville",0.907
+125,"USA, FL, Tallahassee",Tallahassee,FL,Southeast,USA,32301,30.438256,-84.280733, $0.1012 ,"USA, FL, Tallahassee",0.892
+126,"USA, FL, Tampa",Tampa,FL,Southeast,USA,33602,27.950575,-82.457178, $0.1021 ,"USA, FL, Jacksonville",0.907
+127,"USA, FL, West Palm Beach",West Palm Beach,FL,Southeast,USA,33401,26.715572,-80.058175, $0.0944 ,"USA, FL, Miami",0.924
+128,"USA, GA, Albany",Albany,GA,Southeast,USA,31701,31.577763,-84.157556, $0.0929 ,"USA, FL, Tallahassee",0.892
+129,"USA, GA, Athens",Athens,GA,Southeast,USA,30601,33.949497,-83.357034, $0.0929 ,"USA, GA, Atlanta",1.003
+130,"USA, GA, Atlanta",Atlanta,GA,Southeast,USA,30303,33.748995,-84.387982, $0.0929 ,"USA, GA, Atlanta",1.003
+131,"USA, GA, Augusta",Augusta,GA,Southeast,USA,30904,33.471896,-82.011724, $0.0929 ,"USA, SC, Columbia",0.913
+132,"USA, GA, Buford",Buford,GA,Southeast,USA,30518,34.120192,-84.004009, $0.0929 ,"USA, GA, Atlanta",1.003
+133,"USA, GA, Calhoun",Calhoun,GA,Southeast,USA,30701,34.502605,-84.952147, $0.0929 ,"USA, TN, Chattanooga",0.937
+134,"USA, GA, Columbus",Columbus,GA,Southeast,USA,31901,32.460976,-84.987709, $0.0929 ,"USA, AL, Montgomery",0.920
+135,"USA, GA, Dublin",Dublin,GA,Southeast,USA,31021,32.539387,-82.90275, $0.0929 ,"USA, GA, Savannah",0.918
+136,"USA, GA, Hinesville",Hinesville,GA,Southeast,USA,31313,31.84609,-81.596714, $0.0929 ,"USA, GA, Savannah",0.918
+137,"USA, GA, Kings Bay",Kings Bay,GA,Southeast,USA,31558,30.79999,-81.563384, $0.0929 ,"USA, FL, Jacksonville",0.907
+138,"USA, GA, Macon",Macon,GA,Southeast,USA,31201,32.840695,-83.632402, $0.0929 ,"USA, GA, Atlanta",1.003
+139,"USA, GA, Marietta",Marietta,GA,Southeast,USA,30060,33.952291,-84.549006, $0.0929 ,"USA, GA, Atlanta",1.003
+140,"USA, GA, Savannah",Savannah,GA,Southeast,USA,31401,32.083541,-81.099834, $0.0929 ,"USA, GA, Savannah",0.918
+141,"USA, GA, Statesboro",Statesboro,GA,Southeast,USA,30458,32.447253,-81.782604, $0.0929 ,"USA, GA, Savannah",0.918
+142,"USA, GA, Valdosta",Valdosta,GA,Southeast,USA,31601,30.833686,-83.279184, $0.0929 ,"USA, FL, Tallahassee",0.892
+143,"USA, HI, Aliamanu",Aliamanu,HI,Non-Contiguous,USA,96818,21.351866,-157.916479, $0.2691 ,"USA, HI, Honolulu",1.203
+144,"USA, HI, Ewa",Ewa,HI,Non-Contiguous,USA,96706,21.319386,-158.010875, $0.2691 ,"USA, HI, Honolulu",1.203
+145,"USA, HI, Halawa Heights",Halawa Heights,HI,Non-Contiguous,USA,96701,21.374503,-157.920601, $0.2691 ,"USA, HI, Honolulu",1.203
+146,"USA, HI, Hilo",Hilo,HI,Non-Contiguous,USA,96720,19.707094,-155.088487, $0.2691 ,"USA, HI, Honolulu",1.203
+147,"USA, HI, Honolulu",Honolulu,HI,Non-Contiguous,USA,96813,21.306944,-157.858333, $0.2691 ,"USA, HI, Honolulu",1.203
+148,"USA, HI, Kailua",Kailua,HI,Non-Contiguous,USA,96734,21.401793,-157.741719, $0.2691 ,"USA, HI, Honolulu",1.203
+149,"USA, HI, Lualualei",Lualualei,HI,Non-Contiguous,USA,96792,21.439099,-158.168429, $0.2691 ,"USA, HI, Honolulu",1.203
+150,"USA, HI, Maui",Maui,HI,Non-Contiguous,USA,96790,20.798235,-156.325799, $0.2691 ,"USA, HI, Honolulu",1.203
+151,"USA, HI, Mililani Town",Mililani Town,HI,Non-Contiguous,USA,96789,21.449439,-158.015352, $0.2691 ,"USA, HI, Honolulu",1.203
+152,"USA, HI, Pearl City",Pearl City,HI,Non-Contiguous,USA,96782,21.398884,-157.970163, $0.2691 ,"USA, HI, Honolulu",1.203
+153,"USA, HI, Wahiawa",Wahiawa,HI,Non-Contiguous,USA,96786,21.498689,-158.019906, $0.2691 ,"USA, HI, Honolulu",1.203
+154,"USA, HI, Waianae",Waianae,HI,Non-Contiguous,USA,96792,21.43838,-158.182164, $0.2691 ,"USA, HI, Honolulu",1.203
+155,"USA, IA, Burlington",Burlington,IA,Midwest,USA,46915,40.480218,-86.394702, $0.0871 ,"USA, IN, Indianapolis",0.978
+156,"USA, IA, Carroll",Carroll,IA,Midwest,USA,51401,42.066621,-94.866231, $0.0871 ,"USA, IA, Des Moines",0.992
+157,"USA, IA, Cedar Falls",Cedar Falls,IA,Midwest,USA,56013,42.533189,-92.447452, $0.0871 ,"USA, IA, Des Moines",0.992
+158,"USA, IA, Cedar Rapids",Cedar Rapids,IA,Midwest,USA,52401,41.97788,-91.665623, $0.0901 ,"USA, IA, Des Moines",0.992
+159,"USA, IA, Cherokee",Cherokee,IA,Midwest,USA,51012,42.750465,-95.550165, $0.0871 ,"USA, SD, Sioux Falls",0.918
+160,"USA, IA, Council Bluffs",Council Bluffs,IA,Midwest,USA,51501,41.262766,-95.865337, $0.0871 ,"USA, NE, Omaha",0.950
+161,"USA, IA, Creston",Creston,IA,Midwest,USA,50801,41.05968,-94.364496, $0.0871 ,"USA, IA, Des Moines",0.992
+162,"USA, IA, Davenport",Davenport,IA,Midwest,USA,52801,41.523644,-90.577637, $0.0864 ,"USA, IL, Chicago",1.225
+163,"USA, IA, Decorah",Decorah,IA,Midwest,USA,52101,43.302365,-91.784871, $0.0871 ,"USA, MN, Minneapolis",1.094
+164,"USA, IA, Des Moines",Des Moines,IA,Midwest,USA,50316,41.600545,-93.609106, $0.0864 ,"USA, IA, Des Moines",0.992
+165,"USA, IA, Dubuque",Dubuque,IA,Midwest,USA,52001,42.501968,-90.663551, $0.0871 ,"USA, WI, Milwaukee",1.044
+166,"USA, IA, Fort Dodge",Fort Dodge,IA,Midwest,USA,50501,42.501072,-94.17158, $0.0871 ,"USA, IA, Des Moines",0.992
+167,"USA, IA, Mason City",Mason City,IA,Midwest,USA,50401,43.15362,-93.204258, $0.0871 ,"USA, IA, Des Moines",0.992
+168,"USA, IA, Ottumwa",Ottumwa,IA,Midwest,USA,52501,41.017349,-92.407621, $0.0871 ,"USA, IA, Des Moines",0.992
+169,"USA, IA, Sheldon",Sheldon,IA,Midwest,USA,51201,43.181727,-95.853639, $0.0871 ,"USA, SD, Sioux Falls",0.918
+170,"USA, IA, Shenandoah",Shenandoah,IA,Midwest,USA,51601,40.766415,-95.375293, $0.0871 ,"USA, NE, Omaha",0.950
+171,"USA, IA, Sioux City",Sioux City,IA,Midwest,USA,51105,42.499994,-96.400307, $0.0864 ,"USA, SD, Sioux Falls",0.918
+172,"USA, IA, Spencer",Spencer,IA,Midwest,USA,51301,43.145648,-95.143985, $0.0871 ,"USA, SD, Sioux Falls",0.918
+173,"USA, IA, Waterloo",Waterloo,IA,Midwest,USA,50701,42.492845,-92.340503, $0.0871 ,"USA, IA, Des Moines",0.992
+174,"USA, ID, Boise",Boise,ID,Rocky Mountains,USA,83702,43.61871,-116.214607, $0.0788 ,"USA, ID, Boise",0.933
+175,"USA, ID, Coeur d’Alene",Coeur d’Alene,ID,Rocky Mountains,USA,83814,47.679225,-116.779691, $0.0788 ,"USA, MT, Great Falls",0.923
+176,"USA, ID, Idaho Falls",Idaho Falls,ID,Rocky Mountains,USA,83401,43.490685,-112.033553, $0.0788 ,"USA, UT, Salt Lake City",0.948
+177,"USA, ID, Lewiston",Lewiston,ID,Rocky Mountains,USA,83501,46.399101,-117.001674, $0.0788 ,"USA, ID, Boise",0.933
+178,"USA, ID, Meridian",Meridian,ID,Rocky Mountains,USA,83642,43.613702,-116.393554, $0.0788 ,"USA, ID, Boise",0.933
+179,"USA, ID, Pocatello",Pocatello,ID,Rocky Mountains,USA,83201,42.871303,-112.445534, $0.0788 ,"USA, UT, Salt Lake City",0.948
+180,"USA, ID, Sun Valley",Sun Valley,ID,Rocky Mountains,USA,83353,43.696575,-114.350783, $0.0788 ,"USA, ID, Boise",0.933
+181,"USA, IL, Arlington Heights",Arlington Heights,IL,Midwest,USA,60004,42.087356,-87.97996, $0.0986 ,"USA, IL, Chicago",1.225
+182,"USA, IL, Aurora",Aurora,IL,Midwest,USA,60506,41.759433,-88.321654, $0.0986 ,"USA, IL, Chicago",1.225
+183,"USA, IL, Belleville",Belleville,IL,Midwest,USA,62220,38.517645,-89.983214, $0.0986 ,"USA, MO, St Louis",1.049
+184,"USA, IL, Bloomington",Bloomington,IL,Midwest,USA,61701,40.482894,-88.991802, $0.0986 ,"USA, IL, Chicago",1.225
+185,"USA, IL, Carbondale",Carbondale,IL,Midwest,USA,62901,37.726377,-89.215256, $0.0986 ,"USA, MO, St Louis",1.049
+186,"USA, IL, Carol Stream",Carol Stream,IL,Midwest,USA,60188,41.913644,-88.134665, $0.0986 ,"USA, IL, Chicago",1.225
+187,"USA, IL, Centralia",Centralia,IL,Midwest,USA,62801,38.526463,-89.131595, $0.0986 ,"USA, MO, St Louis",1.049
+188,"USA, IL, Champaign",Champaign,IL,Midwest,USA,61820,40.115343,-88.244765, $0.0986 ,"USA, IN, Indianapolis",0.978
+189,"USA, IL, Chicago",Chicago,IL,Midwest,USA,60606,41.878114,-87.629798, $0.0986 ,"USA, IL, Chicago",1.225
+190,"USA, IL, Decatur",Decatur,IL,Midwest,USA,62523,39.841391,-88.953118, $0.0986 ,"USA, MO, St Louis",1.049
+191,"USA, IL, Galesburg",Galesburg,IL,Midwest,USA,61401,40.949163,-90.369258, $0.0986 ,"USA, IL, Chicago",1.225
+192,"USA, IL, Granite City",Granite City,IL,Midwest,USA,62040,38.702707,-90.145646, $0.0986 ,"USA, MO, St Louis",1.049
+193,"USA, IL, Green River",Green River,IL,Midwest,USA,61241,41.475662,-90.319711, $0.0986 ,"USA, IL, Chicago",1.225
+194,"USA, IL, Joliet",Joliet,IL,Midwest,USA,60432,41.524571,-88.080815, $0.0986 ,"USA, IL, Chicago",1.225
+195,"USA, IL, Kankakee",Kankakee,IL,Midwest,USA,60901,41.118828,-87.862206, $0.0986 ,"USA, IL, Chicago",1.225
+196,"USA, IL, Lawrenceville",Lawrenceville,IL,Midwest,USA,62439,38.727795,-87.68128, $0.0986 ,"USA, IN, Indianapolis",0.978
+197,"USA, IL, Oak Park",Oak Park,IL,Midwest,USA,60302,41.883451,-87.785056, $0.0986 ,"USA, IL, Chicago",1.225
+198,"USA, IL, Peoria",Peoria,IL,Midwest,USA,61602,40.693649,-89.588986, $0.0986 ,"USA, IL, Chicago",1.225
+199,"USA, IL, Peru",Peru,IL,Midwest,USA,61354,41.328507,-89.129749, $0.0986 ,"USA, IL, Chicago",1.225
+200,"USA, IL, Quincy",Quincy,IL,Midwest,USA,62301,39.936959,-91.408501, $0.0986 ,"USA, MO, St Louis",1.049
+201,"USA, IL, Rockford",Rockford,IL,Midwest,USA,61101,42.271131,-89.093995, $0.0986 ,"USA, IL, Chicago",1.225
+202,"USA, IL, Springfield",Springfield,IL,Midwest,USA,62703,39.781721,-89.650148, $0.0986 ,"USA, MO, St Louis",1.049
+203,"USA, IL, Urbana",Urbana,IL,Midwest,USA,61801,40.10875,-88.207104, $0.0986 ,"USA, IN, Indianapolis",0.978
+204,"USA, IN, Aurora",Aurora,IN,Midwest,USA,60506,39.0651201,-84.904859, $0.1061 ,"USA, OH, Cincinnati",0.961
+205,"USA, IN, Bloomington",Bloomington,IN,Midwest,USA,47408,39.165509,-86.528333, $0.1061 ,"USA, IN, Indianapolis",0.978
+206,"USA, IN, Columbus",Columbus,IN,Midwest,USA,47201,39.201841,-85.919695, $0.1061 ,"USA, IN, Indianapolis",0.978
+207,"USA, IN, Elkhart",Elkhart,IN,Midwest,USA,46516,41.681216,-85.976956, $0.1061 ,"USA, IL, Chicago",1.225
+208,"USA, IN, Evansville",Evansville,IN,Midwest,USA,47708,37.971559,-87.57109, $0.1161 ,"USA, KY, Louisville",0.953
+209,"USA, IN, Fort Wayne",Fort Wayne,IN,Midwest,USA,46802,41.078354,-85.139402, $0.1061 ,"USA, IN, Indianapolis",0.978
+210,"USA, IN, Gary",Gary,IN,Midwest,USA,46402,41.59337,-87.346427, $0.1075 ,"USA, IL, Chicago",1.225
+211,"USA, IN, Indianapolis",Indianapolis,IN,Midwest,USA,46204,39.768403,-86.158068, $0.1008 ,"USA, IN, Indianapolis",0.978
+212,"USA, IN, Jasper",Jasper,IN,Midwest,USA,47546,38.390699,-86.929493, $0.1061 ,"USA, KY, Louisville",0.953
+213,"USA, IN, Jeffersonville",Jeffersonville,IN,Midwest,USA,47130,38.278553,-85.737186, $0.1061 ,"USA, KY, Louisville",0.953
+214,"USA, IN, Kokomo",Kokomo,IN,Midwest,USA,46901,40.486427,-86.133603, $0.1045 ,"USA, IN, Indianapolis",0.978
+215,"USA, IN, Lafayette",Lafayette,IN,Midwest,USA,47904,40.415666,-86.875949, $0.1061 ,"USA, IN, Indianapolis",0.978
+216,"USA, IN, Muncie",Muncie,IN,Midwest,USA,47305,40.193377,-85.38636, $0.1045 ,"USA, IN, Indianapolis",0.978
+217,"USA, IN, South Bend",South Bend,IN,Midwest,USA,46601,41.676355,-86.25199, $0.1045 ,"USA, IL, Chicago",1.225
+218,"USA, IN, Terre Haute",Terre Haute,IN,Midwest,USA,47807,39.466703,-87.413909, $0.1045 ,"USA, IN, Indianapolis",0.978
+219,"USA, KS, Colby",Colby,KS,Midwest,USA,67701,39.395108,-101.050152, $0.1048 ,"USA, CO, Denver",0.989
+220,"USA, KS, Concordia",Concordia,KS,Midwest,USA,66901,39.57049,-97.663401, $0.1048 ,"USA, KS, Wichita",0.929
+221,"USA, KS, Dodge City",Dodge City,KS,Midwest,USA,67801,37.753749,-100.015962, $0.1048 ,"USA, KS, Wichita",0.929
+222,"USA, KS, Emporia",Emporia,KS,Midwest,USA,66801,38.404476,-96.181455, $0.1048 ,"USA, KS, Wichita",0.929
+223,"USA, KS, Fort Scott",Fort Scott,KS,Midwest,USA,66701,37.838864,-94.708729, $0.1048 ,"USA, KS, Wichita",0.929
+224,"USA, KS, Hays",Hays,KS,Midwest,USA,67601,38.879469,-99.325974, $0.1048 ,"USA, KS, Wichita",0.929
+225,"USA, KS, Hutchinson",Hutchinson,KS,Midwest,USA,67501,38.06177,-97.929619, $0.1048 ,"USA, KS, Wichita",0.929
+226,"USA, KS, Independence",Independence,KS,Midwest,USA,67301,37.224516,-95.708033, $0.1048 ,"USA, KS, Wichita",0.929
+227,"USA, KS, Kansas City",Kansas City,KS,Midwest,USA,66101,39.113633,-94.62759, $0.1048 ,"USA, NE, Omaha",0.950
+228,"USA, KS, Liberal",Liberal,KS,Midwest,USA,67901,37.041905,-100.920176, $0.1048 ,"USA, KS, Wichita",0.929
+229,"USA, KS, Salina",Salina,KS,Midwest,USA,67401,38.839163,-97.611478, $0.1048 ,"USA, KS, Wichita",0.929
+230,"USA, KS, Topeka",Topeka,KS,Midwest,USA,66606,39.055824,-95.689018, $0.1048 ,"USA, KS, Wichita",0.929
+231,"USA, KS, Wichita",Wichita,KS,Midwest,USA,67202,37.687176,-97.330053, $0.1048 ,"USA, KS, Wichita",0.929
+232,"USA, KY, Ashland",Ashland,KY,Southeast,USA,41101,38.477254,-82.639178, $0.0897 ,"USA, WV, Charleston",1.001
+233,"USA, KY, Bowling Green",Bowling Green,KY,Southeast,USA,42101,36.968522,-86.480804, $0.0912 ,"USA, TN, Nashville",0.947
+234,"USA, KY, Campton",Campton,KY,Southeast,USA,41301,37.734893,-83.54752, $0.0897 ,"USA, OH, Cincinnati",0.961
+235,"USA, KY, Covington",Covington,KY,Southeast,USA,41011,39.082548,-84.507704, $0.0897 ,"USA, OH, Cincinnati",0.961
+236,"USA, KY, Elizabethtown",Elizabethtown,KY,Southeast,USA,42701,37.701903,-85.863797, $0.0897 ,"USA, KY, Louisville",0.953
+237,"USA, KY, Frankfort",Frankfort,KY,Southeast,USA,40601,38.200905,-84.873284, $0.0835 ,"USA, KY, Louisville",0.953
+238,"USA, KY, Hazard",Hazard,KY,Southeast,USA,41701,37.249784,-83.193606, $0.0897 ,"USA, WV, Charleston",1.001
+239,"USA, KY, Hopkinsville",Hopkinsville,KY,Southeast,USA,42240,36.864733,-87.488721, $0.0897 ,"USA, TN, Nashville",0.947
+240,"USA, KY, Lexington",Lexington,KY,Southeast,USA,40508,38.040584,-84.503716, $0.0974 ,"USA, KY, Louisville",0.953
+241,"USA, KY, London",London,KY,Southeast,USA,40741,37.127934,-84.083862, $0.0897 ,"USA, KY, Louisville",0.953
+242,"USA, KY, Louisville",Louisville,KY,Southeast,USA,40202,38.252665,-85.758456, $0.0834 ,"USA, KY, Louisville",0.953
+243,"USA, KY, Owensboro",Owensboro,KY,Southeast,USA,42303,37.771907,-87.111168, $0.0929 ,"USA, KY, Louisville",0.953
+244,"USA, KY, Paducah",Paducah,KY,Southeast,USA,42001,37.084915,-88.60566, $0.0897 ,"USA, TN, Nashville",0.947
+245,"USA, KY, Pikeville",Pikeville,KY,Southeast,USA,41501,37.480052,-82.518353, $0.0897 ,"USA, WV, Charleston",1.001
+246,"USA, KY, Somerset",Somerset,KY,Southeast,USA,42501,37.091291,-84.604587, $0.0897 ,"USA, KY, Louisville",0.953
+247,"USA, KY, White Plains",White Plains,KY,Southeast,USA,42464,37.18376,-87.383805, $0.0897 ,"USA, TN, Nashville",0.947
+248,"USA, LA, Alexandria",Alexandria,LA,Southeast,USA,71301,31.309976,-92.446763, $0.0855 ,"USA, MS, Jackson",0.912
+249,"USA, LA, Baton Rouge",Baton Rouge,LA,Southeast,USA,70802,30.457108,-91.157334, $0.0825 ,"USA, LA, New Orleans",0.942
+250,"USA, LA, Houma",Houma,LA,Southeast,USA,70360,29.595116,-90.719476, $0.0855 ,"USA, LA, New Orleans",0.942
+251,"USA, LA, Lafayette",Lafayette,LA,Southeast,USA,70501,30.22409,-92.019843, $0.0848 ,"USA, LA, New Orleans",0.942
+252,"USA, LA, Lake Charles",Lake Charles,LA,Southeast,USA,70601,30.225754,-93.217798, $0.0855 ,"USA, TX, Houston",0.926
+253,"USA, LA, Mandeville",Mandeville,LA,Southeast,USA,70448,30.359916,-90.065031, $0.0855 ,"USA, LA, New Orleans",0.942
+254,"USA, LA, Minden",Minden,LA,Southeast,USA,71055,32.615437,-93.285356, $0.0855 ,"USA, AR, Little Rock",0.899
+255,"USA, LA, Monroe",Monroe,LA,Southeast,USA,71201,32.510925,-92.119255, $0.0855 ,"USA, MS, Jackson",0.912
+256,"USA, LA, New Orleans",New Orleans,LA,Southeast,USA,70112,29.951066,-90.071532, $0.0820 ,"USA, LA, New Orleans",0.942
+257,"USA, LA, Shreveport",Shreveport,LA,Southeast,USA,71107,32.525152,-93.750179, $0.0927 ,"USA, AR, Little Rock",0.899
+258,"USA, MA, Ayer",Ayer,MA,Northeast,USA,1432,42.561394,-71.588791, $0.1517 ,"USA, MA, Boston",1.259
+259,"USA, MA, Bedford",Bedford,MA,Northeast,USA,1730,42.491369,-71.277812, $0.1517 ,"USA, MA, Boston",1.259
+260,"USA, MA, Boston",Boston,MA,Northeast,USA,2109,42.360082,-71.05888, $0.1384 ,"USA, MA, Boston",1.259
+261,"USA, MA, Brockton",Brockton,MA,Northeast,USA,2301,42.083433,-71.018379, $0.1544 ,"USA, MA, Boston",1.259
+262,"USA, MA, Cape Cod",Cape Cod,MA,Northeast,USA,2601,41.670971,-70.300479, $0.1517 ,"USA, RI, Providence",1.051
+263,"USA, MA, Chicopee",Chicopee,MA,Northeast,USA,1013,42.146651,-72.606242, $0.1517 ,"USA, CT, Hartford",1.089
+264,"USA, MA, Dedham",Dedham,MA,Northeast,USA,2026,42.243163,-71.167416, $0.1517 ,"USA, MA, Boston",1.259
+265,"USA, MA, Fitchburg",Fitchburg,MA,Northeast,USA,1420,42.583998,-71.800387, $0.1517 ,"USA, MA, Boston",1.259
+266,"USA, MA, Hingham",Hingham,MA,Northeast,USA,2043,42.241252,-70.891224, $0.1517 ,"USA, MA, Boston",1.259
+267,"USA, MA, Lawrence",Lawrence,MA,Northeast,USA,1840,42.706293,-71.163074, $0.1517 ,"USA, MA, Boston",1.259
+268,"USA, MA, Nantucket",Nantucket,MA,Northeast,USA,2554,41.283127,-70.100343, $0.1517 ,"USA, RI, Providence",1.051
+269,"USA, MA, New Bedford",New Bedford,MA,Northeast,USA,2740,41.638057,-70.933097, $0.1517 ,"USA, RI, Providence",1.051
+270,"USA, MA, Northfield",Northfield,MA,Northeast,USA,1360,42.694024,-72.454106, $0.1517 ,"USA, NH, Concord",0.961
+271,"USA, MA, Pittsfield",Pittsfield,MA,Northeast,USA,1201,42.450897,-73.245476, $0.1517 ,"USA, CT, Hartford",1.089
+272,"USA, MA, Springfield",Springfield,MA,Northeast,USA,1103,42.101483,-72.589811, $0.1544 ,"USA, CT, Hartford",1.089
+273,"USA, MD, Annapolis",Annapolis,MD,Southeast,USA,21401,38.978445,-76.492183, $0.1118 ,"USA, MD, Baltimore",1.005
+274,"USA, MD, Baltimore",Baltimore,MD,Southeast,USA,21202,39.290385,-76.612189, $0.1118 ,"USA, MD, Baltimore",1.005
+275,"USA, MD, Bethesda",Bethesda,MD,Southeast,USA,20814,38.984767,-77.098537, $0.1118 ,"USA, DC, Washington",1.030
+276,"USA, MD, Church Hill",Church Hill,MD,Southeast,USA,21623,39.141854,-75.984926, $0.1118 ,"USA, MD, Baltimore",1.005
+277,"USA, MD, Cumberland",Cumberland,MD,Southeast,USA,21502,39.652865,-78.762518, $0.1118 ,"USA, DC, Washington",1.030
+278,"USA, MD, Elkton",Elkton,MD,Southeast,USA,21502,39.65443,-78.761126, $0.1118 ,"USA, DC, Washington",1.030
+279,"USA, MD, Frederick",Frederick,MD,Southeast,USA,21701,39.415338,-77.41093, $0.1118 ,"USA, DC, Washington",1.030
+280,"USA, MD, Laurel",Laurel,MD,Southeast,USA,20707,39.100995,-76.848762, $0.1118 ,"USA, DC, Washington",1.030
+281,"USA, MD, Salisbury",Salisbury,MD,Southeast,USA,21801,38.358452,-75.600356, $0.1118 ,"USA, MD, Baltimore",1.005
+282,"USA, ME, Auburn",Auburn,ME,Northeast,USA,4210,44.09911,-70.231429, $0.1257 ,"USA, ME, Portland",0.970
+283,"USA, ME, Augusta",Augusta,ME,Northeast,USA,4330,44.310624,-69.77949, $0.1273 ,"USA, ME, Portland",0.970
+284,"USA, ME, Bangor",Bangor,ME,Northeast,USA,4401,44.799341,-68.778326, $0.1257 ,"USA, ME, Portland",0.970
+285,"USA, ME, Bath",Bath,ME,Northeast,USA,4530,43.910517,-69.818095, $0.1257 ,"USA, ME, Portland",0.970
+286,"USA, ME, Brunswick",Brunswick,ME,Northeast,USA,4011,43.914683,-69.967159, $0.1257 ,"USA, ME, Portland",0.970
+287,"USA, ME, Camden",Camden,ME,Northeast,USA,4843,44.20928,-69.064847, $0.1257 ,"USA, ME, Portland",0.970
+288,"USA, ME, Cutler",Cutler,ME,Northeast,USA,4626,44.657983,-67.203386, $0.1257 ,"USA, ME, Portland",0.970
+289,"USA, ME, Dexter",Dexter,ME,Northeast,USA,4390,45.023185,-69.289887, $0.1257 ,"USA, ME, Portland",0.970
+290,"USA, ME, Portland",Portland,ME,Northeast,USA,4101,43.661471,-70.255326, $0.1273 ,"USA, ME, Portland",0.970
+291,"USA, MI, Battle Creek",Battle Creek,MI,Midwest,USA,49017,42.321152,-85.179714, $0.1071 ,"USA, MI, Detroit",1.040
+292,"USA, MI, Detroit",Detroit,MI,Midwest,USA,48226,42.331427,-83.045754, $0.1129 ,"USA, MI, Detroit",1.040
+293,"USA, MI, Flint",Flint,MI,Midwest,USA,48502,43.012527,-83.687456, $0.1071 ,"USA, MI, Detroit",1.040
+294,"USA, MI, Grand Rapids",Grand Rapids,MI,Midwest,USA,49503,42.96336,-85.668086, $0.1071 ,"USA, WI, Milwaukee",1.044
+295,"USA, MI, Grayling",Grayling,MI,Midwest,USA,49738,44.662079,-84.715459, $0.1102 ,"USA, MI, Detroit",1.040
+296,"USA, MI, Jackson",Jackson,MI,Midwest,USA,49201,42.245693,-84.403419, $0.1102 ,"USA, MI, Detroit",1.040
+297,"USA, MI, Lansing",Lansing,MI,Midwest,USA,48933,42.732535,-84.555535, $0.1130 ,"USA, MI, Detroit",1.040
+298,"USA, MI, Marquette",Marquette,MI,Midwest,USA,49855,46.547582,-87.395595, $0.1187 ,"USA, WI, Milwaukee",1.044
+299,"USA, MI, Pontiac",Pontiac,MI,Midwest,USA,48342,42.637884,-83.290792, $0.1102 ,"USA, MI, Detroit",1.040
+300,"USA, MI, Royal Oak",Royal Oak,MI,Midwest,USA,48067,42.489845,-83.143046, $0.1102 ,"USA, MI, Detroit",1.040
+301,"USA, MI, Saginaw",Saginaw,MI,Midwest,USA,48602,43.41947,-83.950807, $0.1071 ,"USA, MI, Detroit",1.040
+302,"USA, MI, Traverse City",Traverse City,MI,Midwest,USA,49684,44.762386,-85.62007, $0.1102 ,"USA, WI, Milwaukee",1.044
+303,"USA, MN, Bemidji",Bemidji,MN,Midwest,USA,56601,47.48712,-94.886609, $0.0910 ,"USA, ND, Fargo",0.952
+304,"USA, MN, Brainerd",Brainerd,MN,Midwest,USA,56401,46.352967,-94.200745, $0.0910 ,"USA, MN, Minneapolis",1.094
+305,"USA, MN, Duluth",Duluth,MN,Midwest,USA,55802,46.786672,-92.100485, $0.0997 ,"USA, MN, Minneapolis",1.094
+306,"USA, MN, Fergus Falls",Fergus Falls,MN,Midwest,USA,56357,46.283473,-96.075996, $0.0910 ,"USA, ND, Fargo",0.952
+307,"USA, MN, Magnolia",Magnolia,MN,Midwest,USA,56158,43.644324,-96.078289, $0.0910 ,"USA, SD, Sioux Falls",0.918
+308,"USA, MN, Mankato",Mankato,MN,Midwest,USA,56001,44.164453,-93.999654, $0.0910 ,"USA, MN, Minneapolis",1.094
+309,"USA, MN, Minneapolis",Minneapolis,MN,Midwest,USA,55402,44.977753,-93.265011, $0.0873 ,"USA, MN, Minneapolis",1.094
+310,"USA, MN, Rochester",Rochester,MN,Midwest,USA,55902,44.012122,-92.480199, $0.0997 ,"USA, MN, Minneapolis",1.094
+311,"USA, MN, St. Cloud",St. Cloud,MN,Midwest,USA,56301,45.557945,-94.16324, $0.0873 ,"USA, MN, Minneapolis",1.094
+312,"USA, MN, St. Paul",St. Paul,MN,Midwest,USA,55101,44.953703,-93.089958, $0.0873 ,"USA, MN, Minneapolis",1.094
+313,"USA, MN, Thief River Falls",Thief River Falls,MN,Midwest,USA,56701,48.119121,-96.180255, $0.0910 ,"USA, ND, Fargo",0.952
+314,"USA, MN, Willmar",Willmar,MN,Midwest,USA,56201,45.121579,-95.047057, $0.0910 ,"USA, MN, Minneapolis",1.094
+315,"USA, MO, Cape Girardeau",Cape Girardeau,MO,Midwest,USA,63701,37.305081,-89.521071, $0.0803 ,"USA, MO, St Louis",1.049
+316,"USA, MO, Caruthersville",Caruthersville,MO,Midwest,USA,63830,36.192685,-89.656627, $0.0803 ,"USA, TN, Memphis",0.939
+317,"USA, MO, Chillicothe",Chillicothe,MO,Midwest,USA,64601,39.794689,-93.552515, $0.0803 ,"USA, IA, Des Moines",0.992
+318,"USA, MO, Columbia",Columbia,MO,Midwest,USA,65203,38.951705,-92.334072, $0.0910 ,"USA, MO, St Louis",1.049
+319,"USA, MO, East Lynne",East Lynne,MO,Midwest,USA,64743,38.668476,-94.229219, $0.0803 ,"USA, KS, Wichita",0.929
+320,"USA, MO, Farmington",Farmington,MO,Midwest,USA,63640,37.780153,-90.421893, $0.0803 ,"USA, MO, St Louis",1.049
+321,"USA, MO, Hannibal",Hannibal,MO,Midwest,USA,63401,39.70817,-91.360572, $0.0803 ,"USA, MO, St Louis",1.049
+322,"USA, MO, Independence",Independence,MO,Midwest,USA,64050,39.089973,-94.415701, $0.0803 ,"USA, NE, Omaha",0.950
+323,"USA, MO, Jefferson City",Jefferson City,MO,Midwest,USA,65101,38.576702,-92.173516, $0.0751 ,"USA, MO, St Louis",1.049
+324,"USA, MO, Joplin",Joplin,MO,Midwest,USA,64801,37.082864,-94.514722, $0.0803 ,"USA, KS, Wichita",0.929
+325,"USA, MO, Kansas City",Kansas City,MO,Midwest,USA,64106,39.099727,-94.578567, $0.0855 ,"USA, NE, Omaha",0.950
+326,"USA, MO, Kirksville",Kirksville,MO,Midwest,USA,63501,40.19525,-92.583237, $0.0803 ,"USA, IA, Des Moines",0.992
+327,"USA, MO, Knob Noster",Knob Noster,MO,Midwest,USA,65336,38.766052,-93.558256, $0.0803 ,"USA, MO, St Louis",1.049
+328,"USA, MO, Lebanon",Lebanon,MO,Midwest,USA,65536,37.681236,-92.662935, $0.0803 ,"USA, MO, St Louis",1.049
+329,"USA, MO, Poplar Bluff",Poplar Bluff,MO,Midwest,USA,63901,36.757109,-90.393439, $0.0803 ,"USA, TN, Memphis",0.939
+330,"USA, MO, Saint Charles",Saint Charles,MO,Midwest,USA,63301,38.788487,-90.497581, $0.0803 ,"USA, MO, St Louis",1.049
+331,"USA, MO, Saint Joseph",Saint Joseph,MO,Midwest,USA,64501,39.766605,-94.846857, $0.0803 ,"USA, NE, Omaha",0.950
+332,"USA, MO, Springfield",Springfield,MO,Midwest,USA,65806,37.208957,-93.292299, $0.0748 ,"USA, AR, Little Rock",0.899
+333,"USA, MO, St Louis",St Louis,MO,Midwest,USA,63101,38.62778,-90.199736, $0.0803 ,"USA, MO, St Louis",1.049
+334,"USA, MS, Clarksdale",Clarksdale,MS,Southeast,USA,58614,34.199217,-90.571005, $0.1068 ,"USA, TN, Memphis",0.939
+335,"USA, MS, Columbus",Columbus,MS,Southeast,USA,39701,33.494964,-88.426855, $0.1068 ,"USA, AL, Birmingham",0.941
+336,"USA, MS, Greenville",Greenville,MS,Southeast,USA,38701,33.398059,-91.039203, $0.1068 ,"USA, MS, Jackson",0.912
+337,"USA, MS, Greenwood",Greenwood,MS,Southeast,USA,38930,33.515944,-90.178365, $0.1068 ,"USA, MS, Jackson",0.912
+338,"USA, MS, Gulfport",Gulfport,MS,Southeast,USA,39501,30.368169,-89.092012, $0.1068 ,"USA, LA, New Orleans",0.942
+339,"USA, MS, Jackson",Jackson,MS,Southeast,USA,39201,32.298757,-90.18481, $0.1068 ,"USA, MS, Jackson",0.912
+340,"USA, MS, Laurel",Laurel,MS,Southeast,USA,39440,31.694367,-89.131132, $0.1068 ,"USA, MS, Jackson",0.912
+341,"USA, MS, McComb",McComb,MS,Southeast,USA,39648,31.24325,-90.453842, $0.1068 ,"USA, MS, Jackson",0.912
+342,"USA, MS, Meridian",Meridian,MS,Southeast,USA,39301,32.365937,-88.703705, $0.1068 ,"USA, MS, Jackson",0.912
+343,"USA, MS, Tupelo",Tupelo,MS,Southeast,USA,38804,34.256576,-88.703892, $0.1068 ,"USA, TN, Memphis",0.939
+344,"USA, MT, Billings",Billings,MT,Rocky Mountains,USA,59101,45.783286,-108.50069, $0.1074 ,"USA, MT, Great Falls",0.923
+345,"USA, MT, Butte",Butte,MT,Rocky Mountains,USA,59701,46.002309,-112.534807, $0.1006 ,"USA, MT, Great Falls",0.923
+346,"USA, MT, Fairview",Fairview,MT,Rocky Mountains,USA,59221,47.855377,-104.045278, $0.1006 ,"USA, MT, Great Falls",0.923
+347,"USA, MT, Great Falls",Great Falls,MT,Rocky Mountains,USA,59405,47.494184,-111.283345, $0.0921 ,"USA, MT, Great Falls",0.923
+348,"USA, MT, Havre",Havre,MT,Rocky Mountains,USA,59501,48.549276,-109.681143, $0.1006 ,"USA, MT, Great Falls",0.923
+349,"USA, MT, Helena",Helena,MT,Rocky Mountains,USA,59601,46.588371,-112.024505, $0.1023 ,"USA, MT, Great Falls",0.923
+350,"USA, MT, Kalispell",Kalispell,MT,Rocky Mountains,USA,59901,48.192387,-114.316167, $0.1006 ,"USA, MT, Great Falls",0.923
+351,"USA, MT, Miles City",Miles City,MT,Rocky Mountains,USA,59301,46.407366,-105.840914, $0.1006 ,"USA, MT, Great Falls",0.923
+352,"USA, MT, Missoula",Missoula,MT,Rocky Mountains,USA,59802,46.879655,-113.996886, $0.1006 ,"USA, MT, Great Falls",0.923
+353,"USA, NC, Asheville",Asheville,NC,Southeast,USA,28801,35.595058,-82.551487, $0.0858 ,"USA, NC, Charlotte",0.964
+354,"USA, NC, Charlotte",Charlotte,NC,Southeast,USA,28202,35.227087,-80.843127, $0.0796 ,"USA, NC, Charlotte",0.964
+355,"USA, NC, Durham",Durham,NC,Southeast,USA,27701,35.994641,-78.89851, $0.0819 ,"USA, NC, Charlotte",0.964
+356,"USA, NC, Elizabeth City",Elizabeth City,NC,Southeast,USA,27909,36.296011,-76.245153, $0.0819 ,"USA, VA, Norfolk",0.918
+357,"USA, NC, Fayetteville",Fayetteville,NC,Southeast,USA,28301,35.053418,-78.880518, $0.0819 ,"USA, NC, Charlotte",0.964
+358,"USA, NC, Goldsboro",Goldsboro,NC,Southeast,USA,27530,35.384801,-77.990299, $0.0819 ,"USA, VA, Norfolk",0.918
+359,"USA, NC, Greensboro",Greensboro,NC,Southeast,USA,27401,36.072635,-79.791975, $0.0796 ,"USA, NC, Charlotte",0.964
+360,"USA, NC, Hickory",Hickory,NC,Southeast,USA,28601,35.735595,-81.34348, $0.0819 ,"USA, NC, Charlotte",0.964
+361,"USA, NC, Kinston",Kinston,NC,Southeast,USA,28501,35.263742,-77.579303, $0.0819 ,"USA, VA, Norfolk",0.918
+362,"USA, NC, Raleigh",Raleigh,NC,Southeast,USA,27601,35.782472,-78.636958, $0.0819 ,"USA, NC, Charlotte",0.964
+363,"USA, NC, Rocky Mount",Rocky Mount,NC,Southeast,USA,27801,35.938938,-77.790211, $0.0819 ,"USA, VA, Norfolk",0.918
+364,"USA, NC, Wilmington",Wilmington,NC,Southeast,USA,28401,34.226812,-77.944004, $0.0819 ,"USA, SC, Charleston",0.921
+365,"USA, NC, Winston-Salem",Winston-Salem,NC,Southeast,USA,27101,36.09986,-80.244216, $0.0796 ,"USA, NC, Charlotte",0.964
+366,"USA, ND, Bismarck",Bismarck,ND,Midwest,USA,58501,46.808327,-100.783739, $0.0773 ,"USA, ND, Fargo",0.952
+367,"USA, ND, Dickinson",Dickinson,ND,Midwest,USA,58601,46.880025,-102.790537, $0.0785 ,"USA, ND, Fargo",0.952
+368,"USA, ND, Fargo",Fargo,ND,Midwest,USA,58102,46.877186,-96.789803, $0.0797 ,"USA, ND, Fargo",0.952
+369,"USA, ND, Grand Forks",Grand Forks,ND,Midwest,USA,58201,47.922829,-97.031016, $0.0785 ,"USA, ND, Fargo",0.952
+370,"USA, ND, Jamestown",Jamestown,ND,Midwest,USA,58401,46.910944,-98.707853, $0.0785 ,"USA, ND, Fargo",0.952
+371,"USA, ND, Minot",Minot,ND,Midwest,USA,58701,48.233438,-101.291816, $0.0785 ,"CAN, MB, Winnipeg",0.994
+372,"USA, ND, Nekoma",Nekoma,ND,Midwest,USA,58355,48.577104,-98.369974, $0.0785 ,"CAN, MB, Winnipeg",0.994
+373,"USA, ND, Williston",Williston,ND,Midwest,USA,58801,48.147865,-103.617879, $0.0785 ,"CAN, MB, Winnipeg",0.994
+374,"USA, NE, Alliance",Alliance,NE,Midwest,USA,69301,42.09615,-102.869338, $0.0873 ,"USA, WY, Cheyenne",0.933
+375,"USA, NE, Columbus",Columbus,NE,Midwest,USA,68601,41.431237,-97.358226, $0.0873 ,"USA, NE, Omaha",0.950
+376,"USA, NE, Grand Island",Grand Island,NE,Midwest,USA,68801,40.92842,-98.340374, $0.0873 ,"USA, NE, Omaha",0.950
+377,"USA, NE, Hastings",Hastings,NE,Midwest,USA,68901,40.587042,-98.38959, $0.0873 ,"USA, NE, Omaha",0.950
+378,"USA, NE, Lincoln",Lincoln,NE,Midwest,USA,68503,40.825763,-96.685198, $0.0905 ,"USA, NE, Omaha",0.950
+379,"USA, NE, McCook",McCook,NE,Midwest,USA,69001,40.199312,-100.624447, $0.0873 ,"USA, WY, Cheyenne",0.933
+380,"USA, NE, Norfolk",Norfolk,NE,Midwest,USA,68701,42.031936,-97.413799, $0.0873 ,"USA, NE, Omaha",0.950
+381,"USA, NE, North Platte",North Platte,NE,Midwest,USA,69101,41.139169,-100.760559, $0.0873 ,"USA, WY, Cheyenne",0.933
+382,"USA, NE, Omaha",Omaha,NE,Midwest,USA,68106,41.252363,-95.997988, $0.0840 ,"USA, NE, Omaha",0.950
+383,"USA, NE, Valentine",Valentine,NE,Midwest,USA,69201,42.873057,-100.551333, $0.0873 ,"USA, SD, Sioux Falls",0.918
+384,"USA, NH, Charlestown",Charlestown,NH,Northeast,USA,3603,43.238425,-72.424238, $0.1498 ,"USA, NH, Concord",0.961
+385,"USA, NH, Concord",Concord,NH,Northeast,USA,3301,43.208137,-71.537572, $0.1498 ,"USA, NH, Concord",0.961
+386,"USA, NH, Dover",Dover,NH,Northeast,USA,3820,43.198459,-70.874592, $0.1498 ,"USA, NH, Concord",0.961
+387,"USA, NH, Lebanon",Lebanon,NH,Northeast,USA,3766,43.641863,-72.250585, $0.1498 ,"USA, NH, Concord",0.961
+388,"USA, NH, Littleton",Littleton,NH,Northeast,USA,3561,44.306846,-71.770592, $0.1498 ,"USA, VT, Burlington",0.975
+389,"USA, NH, Manchester",Manchester,NH,Northeast,USA,3104,42.99564,-71.454789, $0.1498 ,"USA, NH, Concord",0.961
+390,"USA, NH, New Boston",New Boston,NH,Northeast,USA,3070,42.97669,-71.693645, $0.1498 ,"USA, NH, Concord",0.961
+391,"USA, NJ, Atlantic City",Atlantic City,NJ,Northeast,USA,8401,39.364283,-74.422927, $0.1233 ,"USA, PA, Philadelphia",1.130
+392,"USA, NJ, Brick",Brick,NJ,Northeast,USA,8723,40.058714,-74.138506, $0.1233 ,"USA, NY, New York",1.378
+393,"USA, NJ, Dover",Dover,NJ,Northeast,USA,7801,40.883798,-74.561736, $0.1233 ,"USA, NJ, Newark",1.137
+394,"USA, NJ, Edison",Edison,NJ,Northeast,USA,8817,40.517565,-74.411244, $0.1233 ,"USA, NJ, Newark",1.137
+395,"USA, NJ, Hackensack",Hackensack,NJ,Northeast,USA,7601,40.886661,-74.043317, $0.1233 ,"USA, NY, New York",1.378
+396,"USA, NJ, Monmouth",Monmouth,NJ,Northeast,USA,7764,40.281752,-74.007263, $0.1233 ,"USA, NY, New York",1.378
+397,"USA, NJ, Newark",Newark,NJ,Northeast,USA,7102,40.735657,-74.172367, $0.1233 ,"USA, NJ, Newark",1.137
+398,"USA, NJ, Passaic",Passaic,NJ,Northeast,USA,7055,40.857995,-74.128461, $0.1233 ,"USA, NJ, Newark",1.137
+399,"USA, NJ, Paterson",Paterson,NJ,Northeast,USA,7505,40.917263,-74.170737, $0.1233 ,"USA, NJ, Newark",1.137
+400,"USA, NJ, Princeton",Princeton,NJ,Northeast,USA,8542,40.356539,-74.665964, $0.1233 ,"USA, NJ, Newark",1.137
+401,"USA, NJ, Summit",Summit,NJ,Northeast,USA,7901,40.71428,-74.364282, $0.1233 ,"USA, NJ, Newark",1.137
+402,"USA, NJ, Trenton",Trenton,NJ,Northeast,USA,8611,40.217053,-74.742938, $0.1233 ,"USA, PA, Philadelphia",1.130
+403,"USA, NM, Alamogordo",Alamogordo,NM,Southwest,USA,88310,32.899532,-105.960265, $0.1020 ,"USA, NM, Albuquerque",0.924
+404,"USA, NM, Albuquerque",Albuquerque,NM,Southwest,USA,87106,35.085334,-106.605553, $0.1020 ,"USA, NM, Albuquerque",0.924
+405,"USA, NM, Clovis",Clovis,NM,Southwest,USA,88101,34.40567,-103.205416, $0.1016 ,"USA, NM, Albuquerque",0.924
+406,"USA, NM, Farmington",Farmington,NM,Southwest,USA,87401,36.729082,-108.217031, $0.1016 ,"USA, NM, Albuquerque",0.924
+407,"USA, NM, Fort Sumner",Fort Sumner,NM,Southwest,USA,88119,34.472756,-104.245654, $0.1016 ,"USA, NM, Albuquerque",0.924
+408,"USA, NM, Gallup",Gallup,NM,Southwest,USA,87301,35.527496,-108.741837, $0.1016 ,"USA, NM, Albuquerque",0.924
+409,"USA, NM, Holman",Holman,NM,Southwest,USA,87723,36.03829,-105.384043, $0.1016 ,"USA, NM, Albuquerque",0.924
+410,"USA, NM, Las Cruces",Las Cruces,NM,Southwest,USA,88001,32.31994,-106.763654, $0.1004 ,"USA, NM, Albuquerque",0.924
+411,"USA, NM, Santa Fe",Santa Fe,NM,Southwest,USA,87501,35.686975,-105.937799, $0.1020 ,"USA, NM, Albuquerque",0.924
+412,"USA, NM, Socorro",Socorro,NM,Southwest,USA,87801,34.058497,-106.892435, $0.1016 ,"USA, NM, Albuquerque",0.924
+413,"USA, NM, Truth or Consequences",Truth or Consequences,NM,Southwest,USA,87901,33.130062,-107.251602, $0.1016 ,"USA, NM, Albuquerque",0.924
+414,"USA, NM, Tucumcari",Tucumcari,NM,Southwest,USA,88401,35.1708,-103.723817, $0.1016 ,"USA, NM, Albuquerque",0.924
+415,"USA, NV, Carson City",Carson City,NV,Rocky Mountains,USA,89701,39.163798,-119.767403, $0.0798 ,"USA, NV, Reno",0.964
+416,"USA, NV, Elko",Elko,NV,Rocky Mountains,USA,89801,40.833043,-115.763798, $0.0813 ,"USA, ID, Boise",0.933
+417,"USA, NV, Ely",Ely,NV,Rocky Mountains,USA,89301,39.24816,-114.88888, $0.0813 ,"USA, UT, Salt Lake City",0.948
+418,"USA, NV, Fallon",Fallon,NV,Rocky Mountains,USA,89406,39.473951,-118.778224, $0.0813 ,"USA, NV, Reno",0.964
+419,"USA, NV, Las Vegas",Las Vegas,NV,Rocky Mountains,USA,89101,36.169941,-115.13983, $0.0843 ,"USA, NV, Las Vegas",1.035
+420,"USA, NV, Reno",Reno,NV,Rocky Mountains,USA,89501,39.529633,-119.813803, $0.0798 ,"USA, NV, Reno",0.964
+421,"USA, NY, Amityville",Amityville,NY,Northeast,USA,11701,40.678014,-73.416478, $0.1448 ,"USA, NY, New York",1.378
+422,"USA, NY, Batavia",Batavia,NY,Northeast,USA,14020,42.998686,-78.188406, $0.1448 ,"CAN, ON, Toronto",1.103
+423,"USA, NY, Binghamton",Binghamton,NY,Northeast,USA,13901,42.098461,-75.914694, $0.1448 ,"USA, NJ, Newark",1.137
+424,"USA, NY, Bronx",Bronx,NY,Northeast,USA,10457,40.85701,-73.893464, $0.1448 ,"USA, NY, New York",1.378
+425,"USA, NY, Brooklyn",Brooklyn,NY,Northeast,USA,11226,40.640799,-73.950067, $0.1448 ,"USA, NY, New York",1.378
+426,"USA, NY, Buffalo",Buffalo,NY,Northeast,USA,14202,42.886447,-78.878369, $0.1448 ,"CAN, ON, Toronto",1.103
+427,"USA, NY, Elmira",Elmira,NY,Northeast,USA,14901,42.090339,-76.806861, $0.1448 ,"USA, NJ, Newark",1.137
+428,"USA, NY, Flushing",Flushing,NY,Northeast,USA,11354,40.766645,-73.833028, $0.1448 ,"USA, NY, New York",1.378
+429,"USA, NY, Garden City",Garden City,NY,Northeast,USA,11530,40.726307,-73.635823, $0.1448 ,"USA, NY, New York",1.378
+430,"USA, NY, Hicksville",Hicksville,NY,Northeast,USA,11801,40.767303,-73.525455, $0.1448 ,"USA, NY, New York",1.378
+431,"USA, NY, Ithaca",Ithaca,NY,Northeast,USA,14850,42.443961,-76.501881, $0.1448 ,"CAN, ON, Toronto",1.103
+432,"USA, NY, Jamaica",Jamaica,NY,Northeast,USA,11433,40.702005,-73.788927, $0.1448 ,"USA, NY, New York",1.378
+433,"USA, NY, Jamestown",Jamestown,NY,Northeast,USA,14701,42.097128,-79.236297, $0.1448 ,"CAN, ON, Toronto",1.103
+434,"USA, NY, Kingston",Kingston,NY,Northeast,USA,12401,41.927384,-73.997414, $0.1448 ,"USA, CT, Bridgeport",1.065
+435,"USA, NY, Long Island",Long Island,NY,Northeast,USA,11779,40.7913,-73.135121, $0.1448 ,"USA, CT, Bridgeport",1.065
+436,"USA, NY, Montauk",Montauk,NY,Northeast,USA,11954,41.035862,-71.954427, $0.1448 ,"USA, RI, Providence",1.051
+437,"USA, NY, New York",New York,NY,Northeast,USA,10036,40.712784,-74.005941, $0.1448 ,"USA, NY, New York",1.378
+438,"USA, NY, Newcomb",Newcomb,NY,Northeast,USA,12852,43.969473,-74.164184, $0.1448 ,"USA, VT, Burlington",0.975
+439,"USA, NY, Niagara Falls",Niagara Falls,NY,Northeast,USA,14301,43.09699,-79.037079, $0.1448 ,"CAN, ON, Toronto",1.103
+440,"USA, NY, Plattsburgh",Plattsburgh,NY,Northeast,USA,12901,44.699502,-73.453915, $0.1448 ,"USA, VT, Burlington",0.975
+441,"USA, NY, Poughkeepsie",Poughkeepsie,NY,Northeast,USA,12601,41.700721,-73.922455, $0.1448 ,"USA, CT, Bridgeport",1.065
+442,"USA, NY, Queens",Queens,NY,Northeast,USA,11366,40.726947,-73.794664, $0.1448 ,"USA, NY, New York",1.378
+443,"USA, NY, Rochester",Rochester,NY,Northeast,USA,14604,43.16103,-77.610922, $0.1448 ,"CAN, ON, Toronto",1.103
+444,"USA, NY, Rockaway",Rockaway,NY,Northeast,USA,11694,40.580245,-73.8356, $0.1448 ,"USA, NY, New York",1.378
+445,"USA, NY, Rome",Rome,NY,Northeast,USA,13440,43.21362,-75.454731, $0.1448 ,"USA, VT, Burlington",0.975
+446,"USA, NY, Staten Island",Staten Island,NY,Northeast,USA,10314,40.581285,-74.153757, $0.1448 ,"USA, NJ, Newark",1.137
+447,"USA, NY, Stewart",Stewart,NY,Northeast,USA,12550,41.514597,-74.102702, $0.1448 ,"USA, CT, Bridgeport",1.065
+448,"USA, NY, Syracuse",Syracuse,NY,Northeast,USA,13202,43.048122,-76.147424, $0.1448 ,"CAN, ON, Toronto",1.103
+449,"USA, NY, Tonawanda",Tonawanda,NY,Northeast,USA,14150,43.019247,-78.880579, $0.1448 ,"CAN, ON, Toronto",1.103
+450,"USA, NY, Utica",Utica,NY,Northeast,USA,13501,43.100903,-75.232664, $0.1448 ,"USA, VT, Burlington",0.975
+451,"USA, NY, Watertown",Watertown,NY,Northeast,USA,13601,43.974784,-75.910756, $0.1448 ,"USA, VT, Burlington",0.975
+452,"USA, NY, West Point",West Point,NY,Northeast,USA,10996,41.391233,-73.954931, $0.1448 ,"USA, CT, Bridgeport",1.065
+453,"USA, NY, White Plains",White Plains,NY,Northeast,USA,10601,41.033577,-73.76411, $0.1448 ,"USA, NY, New York",1.378
+454,"USA, OH, Akron",Akron,OH,Midwest,USA,44308,41.081445,-81.519005, $0.1026 ,"USA, MI, Detroit",1.040
+455,"USA, OH, Canton",Canton,OH,Midwest,USA,44702,40.798192,-81.377224, $0.1039 ,"USA, MI, Detroit",1.040
+456,"USA, OH, Chillicothe",Chillicothe,OH,Midwest,USA,45601,39.333542,-82.982316, $0.1039 ,"USA, OH, Cincinnati",0.961
+457,"USA, OH, Cincinnati",Cincinnati,OH,Midwest,USA,45202,39.103118,-84.51202, $0.1026 ,"USA, OH, Cincinnati",0.961
+458,"USA, OH, Cleveland",Cleveland,OH,Midwest,USA,44114,41.49932,-81.694361, $0.1026 ,"USA, MI, Detroit",1.040
+459,"USA, OH, Columbus",Columbus,OH,Midwest,USA,43215,39.961176,-82.998794, $0.1133 ,"USA, OH, Cincinnati",0.961
+460,"USA, OH, Dayton",Dayton,OH,Midwest,USA,45402,39.758948,-84.191607, $0.1026 ,"USA, OH, Cincinnati",0.961
+461,"USA, OH, Lima",Lima,OH,Midwest,USA,45801,40.744051,-84.105378, $0.1039 ,"USA, OH, Cincinnati",0.961
+462,"USA, OH, Marietta",Marietta,OH,Midwest,USA,45750,39.41565,-81.455008, $0.1039 ,"USA, WV, Charleston",1.001
+463,"USA, OH, Marion",Marion,OH,Midwest,USA,43302,40.589155,-83.128181, $0.1039 ,"USA, MI, Detroit",1.040
+464,"USA, OH, Newark",Newark,OH,Midwest,USA,43055,40.059323,-82.402054, $0.1039 ,"USA, WV, Charleston",1.001
+465,"USA, OH, Sandusky",Sandusky,OH,Midwest,USA,44870,41.448562,-82.704521, $0.1039 ,"USA, MI, Detroit",1.040
+466,"USA, OH, Steubenville",Steubenville,OH,Midwest,USA,43952,40.370294,-80.633043, $0.1039 ,"USA, WV, Charleston",1.001
+467,"USA, OH, Toledo",Toledo,OH,Midwest,USA,43620,41.663938,-83.555212, $0.1026 ,"USA, MI, Detroit",1.040
+468,"USA, OH, Warren",Warren,OH,Midwest,USA,44481,41.237527,-80.817283, $0.1039 ,"USA, MI, Detroit",1.040
+469,"USA, OH, Youngstown",Youngstown,OH,Midwest,USA,44503,41.09978,-80.649519, $0.1026 ,"USA, MI, Detroit",1.040
+470,"USA, OH, Zanesville",Zanesville,OH,Midwest,USA,43701,39.940557,-82.010371, $0.1039 ,"USA, WV, Charleston",1.001
+471,"USA, OK, Adams",Adams,OK,Southwest,USA,73901,36.756664,-101.076924, $0.0751 ,"USA, KS, Wichita",0.929
+472,"USA, OK, Ardmore",Ardmore,OK,Southwest,USA,73401,34.17309,-97.141643, $0.0751 ,"USA, OK, Oklahoma City",0.911
+473,"USA, OK, Clinton",Clinton,OK,Southwest,USA,73601,35.514868,-98.967905, $0.0751 ,"USA, OK, Oklahoma City",0.911
+474,"USA, OK, Durant",Durant,OK,Southwest,USA,74701,33.992665,-96.39437, $0.0751 ,"USA, OK, Oklahoma City",0.911
+475,"USA, OK, Enid",Enid,OK,Southwest,USA,73701,36.396695,-97.877509, $0.0751 ,"USA, OK, Oklahoma City",0.911
+476,"USA, OK, Lawton",Lawton,OK,Southwest,USA,73501,34.603567,-98.395929, $0.0764 ,"USA, OK, Oklahoma City",0.911
+477,"USA, OK, McAlester",McAlester,OK,Southwest,USA,74501,34.934336,-95.768604, $0.0751 ,"USA, OK, Oklahoma City",0.911
+478,"USA, OK, Muskogee",Muskogee,OK,Southwest,USA,74401,35.748392,-95.370791, $0.0751 ,"USA, OK, Oklahoma City",0.911
+479,"USA, OK, Norman",Norman,OK,Southwest,USA,73071,35.223137,-97.43963, $0.0751 ,"USA, OK, Oklahoma City",0.911
+480,"USA, OK, Oklahoma City",Oklahoma City,OK,Southwest,USA,73102,35.46756,-97.516428, $0.0713 ,"USA, OK, Oklahoma City",0.911
+481,"USA, OK, Ponca City",Ponca City,OK,Southwest,USA,74601,36.707921,-97.085879, $0.0751 ,"USA, KS, Wichita",0.929
+482,"USA, OK, Poteau",Poteau,OK,Southwest,USA,74953,35.053224,-94.623071, $0.0751 ,"USA, AR, Little Rock",0.899
+483,"USA, OK, Pryor",Pryor,OK,Southwest,USA,74361,36.308695,-95.315887, $0.0751 ,"USA, OK, Oklahoma City",0.911
+484,"USA, OK, Shawnee",Shawnee,OK,Southwest,USA,74801,35.328671,-96.925364, $0.0751 ,"USA, OK, Oklahoma City",0.911
+485,"USA, OK, Tulsa",Tulsa,OK,Southwest,USA,74103,36.153982,-95.992775, $0.0764 ,"USA, OK, Oklahoma City",0.911
+486,"USA, OK, Woodward",Woodward,OK,Southwest,USA,73801,36.434085,-99.391936, $0.0751 ,"USA, OK, Oklahoma City",0.911
+487,"USA, OR, Adrian",Adrian,OR,Pacific,USA,97901,43.742015,-117.070942, $0.0806 ,"USA, ID, Boise",0.933
+488,"USA, OR, Bend",Bend,OR,Pacific,USA,97701,44.057743,-121.31457, $0.0806 ,"USA, OR, Portland",1.048
+489,"USA, OR, Eugene",Eugene,OR,Pacific,USA,97401,44.052069,-123.086754, $0.0768 ,"USA, OR, Portland",1.048
+490,"USA, OR, Grants Pass",Grants Pass,OR,Pacific,USA,97526,42.438521,-123.328487, $0.0806 ,"USA, OR, Portland",1.048
+491,"USA, OR, Klamath Falls",Klamath Falls,OR,Pacific,USA,97601,42.224694,-121.781182, $0.0806 ,"USA, NV, Reno",0.964
+492,"USA, OR, Pendleton",Pendleton,OR,Pacific,USA,97801,45.671965,-118.788128, $0.0806 ,"USA, OR, Portland",1.048
+493,"USA, OR, Portland",Portland,OR,Pacific,USA,97209,45.523062,-122.676482, $0.0845 ,"USA, OR, Portland",1.048
+494,"USA, OR, Salem",Salem,OR,Pacific,USA,97301,44.942898,-123.035096, $0.0767 ,"USA, OR, Portland",1.048
+495,"USA, PA, Allentown",Allentown,PA,Northeast,USA,18102,40.608001,-75.490282, $0.0918 ,"USA, PA, Philadelphia",1.130
+496,"USA, PA, Altoona",Altoona,PA,Northeast,USA,16602,40.517338,-78.394768, $0.0918 ,"USA, MD, Baltimore",1.005
+497,"USA, PA, Beaver Springs",Beaver Springs,PA,Northeast,USA,17842,40.746915,-77.209109, $0.0918 ,"USA, MD, Baltimore",1.005
+498,"USA, PA, Bethlehem",Bethlehem,PA,Northeast,USA,18018,40.62681,-75.369777, $0.0918 ,"USA, PA, Philadelphia",1.130
+499,"USA, PA, Bradford",Bradford,PA,Northeast,USA,16701,41.957108,-78.64821, $0.0918 ,"CAN, ON, Toronto",1.103
+500,"USA, PA, Butler",Butler,PA,Northeast,USA,16001,40.861644,-79.894509, $0.0918 ,"USA, MI, Detroit",1.040
+501,"USA, PA, Chambersburg",Chambersburg,PA,Northeast,USA,17201,39.93817,-77.66037, $0.0918 ,"USA, MD, Baltimore",1.005
+502,"USA, PA, Clearfield",Clearfield,PA,Northeast,USA,16830,41.027274,-78.439886, $0.0918 ,"USA, MD, Baltimore",1.005
+503,"USA, PA, DuBois",DuBois,PA,Northeast,USA,15801,41.121221,-78.757613, $0.0918 ,"USA, MD, Baltimore",1.005
+504,"USA, PA, East Stroudsburg",East Stroudsburg,PA,Northeast,USA,18301,40.999767,-75.18065, $0.0918 ,"USA, NJ, Newark",1.137
+505,"USA, PA, Erie",Erie,PA,Northeast,USA,16501,42.129224,-80.085059, $0.0918 ,"CAN, ON, Toronto",1.103
+506,"USA, PA, Genesee",Genesee,PA,Northeast,USA,16923,41.98936,-77.865618, $0.0918 ,"CAN, ON, Toronto",1.103
+507,"USA, PA, Greensburg",Greensburg,PA,Northeast,USA,15601,40.301158,-79.538142, $0.0918 ,"USA, DC, Washington",1.030
+508,"USA, PA, Harrisburg",Harrisburg,PA,Northeast,USA,17102,40.273191,-76.886701, $0.0918 ,"USA, MD, Baltimore",1.005
+509,"USA, PA, Hazleton",Hazleton,PA,Northeast,USA,18201,40.958097,-75.974618, $0.0918 ,"USA, PA, Philadelphia",1.130
+510,"USA, PA, Johnstown",Johnstown,PA,Northeast,USA,15901,40.32631,-78.921963, $0.0918 ,"USA, DC, Washington",1.030
+511,"USA, PA, Kittanning",Kittanning,PA,Northeast,USA,16201,40.816052,-79.521601, $0.0918 ,"USA, DC, Washington",1.030
+512,"USA, PA, Lancaster",Lancaster,PA,Northeast,USA,17603,40.037875,-76.305514, $0.0918 ,"USA, DE, Wilmington",1.038
+513,"USA, PA, Meadville",Meadville,PA,Northeast,USA,16335,41.64057,-80.151762, $0.0918 ,"CAN, ON, Toronto",1.103
+514,"USA, PA, Montrose",Montrose,PA,Northeast,USA,18801,41.833649,-75.876593, $0.0918 ,"USA, NJ, Newark",1.137
+515,"USA, PA, New Castle",New Castle,PA,Northeast,USA,17901,40.730382,-76.211621, $0.0918 ,"USA, PA, Philadelphia",1.130
+516,"USA, PA, Philadelphia",Philadelphia,PA,Northeast,USA,19107,39.952584,-75.165222, $0.0918 ,"USA, PA, Philadelphia",1.130
+517,"USA, PA, Pittsburgh",Pittsburgh,PA,Northeast,USA,15219,40.440625,-79.995886, $0.0918 ,"USA, WV, Charleston",1.001
+518,"USA, PA, Pottsville",Pottsville,PA,Northeast,USA,17901,40.685251,-76.194724, $0.0918 ,"USA, DE, Wilmington",1.038
+519,"USA, PA, Punxsutawney",Punxsutawney,PA,Northeast,USA,15767,40.943138,-78.970919, $0.0918 ,"USA, MD, Baltimore",1.005
+520,"USA, PA, Reading",Reading,PA,Northeast,USA,19601,40.335648,-75.926875, $0.0918 ,"USA, DE, Wilmington",1.038
+521,"USA, PA, Scranton",Scranton,PA,Northeast,USA,18503,41.408969,-75.662412, $0.0918 ,"USA, NJ, Newark",1.137
+522,"USA, PA, Somerset",Somerset,PA,Northeast,USA,15501,40.008415,-79.077139, $0.0918 ,"USA, DC, Washington",1.030
+523,"USA, PA, Uniontown",Uniontown,PA,Northeast,USA,15401,39.899698,-79.7174, $0.0918 ,"USA, WV, Charleston",1.001
+524,"USA, PA, Valley Forge",Valley Forge,PA,Northeast,USA,19460,40.098748,-75.469201, $0.0918 ,"USA, PA, Philadelphia",1.130
+525,"USA, PA, Warminster",Warminster,PA,Northeast,USA,18974,40.205741,-75.097948, $0.0918 ,"USA, PA, Philadelphia",1.130
+526,"USA, PA, Warrendale",Warrendale,PA,Northeast,USA,15086,40.653396,-80.078657, $0.0918 ,"USA, WV, Charleston",1.001
+527,"USA, PA, Washington",Washington,PA,Northeast,USA,15301,40.17455,-80.246324, $0.0918 ,"USA, WV, Charleston",1.001
+528,"USA, PA, Wilkes Barre",Wilkes Barre,PA,Northeast,USA,18701,41.245404,-75.879556, $0.0918 ,"USA, NJ, Newark",1.137
+529,"USA, PA, Williamsport",Williamsport,PA,Northeast,USA,17701,41.241541,-77.00021, $0.0918 ,"USA, DE, Wilmington",1.038
+530,"USA, PA, York",York,PA,Northeast,USA,17401,39.961691,-76.727632, $0.0918 ,"USA, MD, Baltimore",1.005
+531,"USA, RI, Bristol",Bristol,RI,Northeast,USA,2809,41.676006,-71.266195, $0.1544 ,"USA, RI, Providence",1.051
+532,"USA, RI, Coventry",Coventry,RI,Northeast,USA,2816,41.688151,-71.56638, $0.1544 ,"USA, RI, Providence",1.051
+533,"USA, RI, Cranston",Cranston,RI,Northeast,USA,2910,41.778984,-71.437889, $0.1544 ,"USA, RI, Providence",1.051
+534,"USA, RI, Davisville",Davisville,RI,Northeast,USA,2852,41.616176,-71.469879, $0.1544 ,"USA, RI, Providence",1.051
+535,"USA, RI, Narragansett",Narragansett,RI,Northeast,USA,2882,41.449312,-71.447916, $0.1544 ,"USA, RI, Providence",1.051
+536,"USA, RI, Newport",Newport,RI,Northeast,USA,2840,41.489624,-71.312677, $0.1544 ,"USA, RI, Providence",1.051
+537,"USA, RI, Providence",Providence,RI,Northeast,USA,2903,41.823989,-71.412834, $0.1544 ,"USA, RI, Providence",1.051
+538,"USA, RI, Warwick",Warwick,RI,Northeast,USA,2889,41.701466,-71.41543, $0.1544 ,"USA, RI, Providence",1.051
+539,"USA, SC, Aiken",Aiken,SC,Southeast,USA,29801,33.559009,-81.718672, $0.1056 ,"USA, SC, Columbia",0.913
+540,"USA, SC, Beaufort",Beaufort,SC,Southeast,USA,29902,32.431581,-80.669829, $0.1056 ,"USA, GA, Savannah",0.918
+541,"USA, SC, Charleston",Charleston,SC,Southeast,USA,29401,32.776475,-79.931051, $0.1056 ,"USA, SC, Charleston",0.921
+542,"USA, SC, Columbia",Columbia,SC,Southeast,USA,29201,34.00071,-81.034814, $0.1056 ,"USA, SC, Columbia",0.913
+543,"USA, SC, Greenville",Greenville,SC,Southeast,USA,29601,34.851497,-82.392636, $0.1056 ,"USA, NC, Charlotte",0.964
+544,"USA, SC, Myrtle Beach",Myrtle Beach,SC,Southeast,USA,29577,33.687972,-78.886474, $0.1056 ,"USA, SC, Charleston",0.921
+545,"USA, SC, Rock Hill",Rock Hill,SC,Southeast,USA,29730,34.925414,-81.024591, $0.1056 ,"USA, NC, Charlotte",0.964
+546,"USA, SC, Spartanburg",Spartanburg,SC,Southeast,USA,29306,34.94887,-81.931651, $0.1056 ,"USA, NC, Charlotte",0.964
+547,"USA, SD, Aberdeen",Aberdeen,SD,Midwest,USA,57401,45.464127,-98.486072, $0.0883 ,"USA, ND, Fargo",0.952
+548,"USA, SD, Mitchell",Mitchell,SD,Midwest,USA,57301,43.708889,-98.028438, $0.0883 ,"USA, SD, Sioux Falls",0.918
+549,"USA, SD, Mobridge",Mobridge,SD,Midwest,USA,57601,45.536405,-100.42844, $0.0883 ,"USA, ND, Fargo",0.952
+550,"USA, SD, Pierre",Pierre,SD,Midwest,USA,57501,44.368316,-100.350967, $0.0858 ,"USA, SD, Sioux Falls",0.918
+551,"USA, SD, Rapid City",Rapid City,SD,Midwest,USA,57701,44.080543,-103.231015, $0.0973 ,"USA, WY, Cheyenne",0.933
+552,"USA, SD, Sioux Falls",Sioux Falls,SD,Midwest,USA,57104,43.544596,-96.731103, $0.0819 ,"USA, SD, Sioux Falls",0.918
+553,"USA, SD, Watertown",Watertown,SD,Midwest,USA,57201,44.898805,-97.115267, $0.0883 ,"USA, SD, Sioux Falls",0.918
+554,"USA, TN, Chattanooga",Chattanooga,TN,Southeast,USA,37402,35.04563,-85.30968, $0.1027 ,"USA, TN, Chattanooga",0.937
+555,"USA, TN, Clarksville",Clarksville,TN,Southeast,USA,37040,36.528554,-87.357437, $0.1045 ,"USA, TN, Nashville",0.947
+556,"USA, TN, Cleveland",Cleveland,TN,Southeast,USA,37311,35.160336,-84.876343, $0.1045 ,"USA, TN, Chattanooga",0.937
+557,"USA, TN, Columbia",Columbia,TN,Southeast,USA,38401,35.613717,-87.036754, $0.1045 ,"USA, TN, Nashville",0.947
+558,"USA, TN, Cookeville",Cookeville,TN,Southeast,USA,38501,36.163156,-85.501666, $0.1045 ,"USA, TN, Nashville",0.947
+559,"USA, TN, Jackson",Jackson,TN,Southeast,USA,38301,35.615746,-88.813263, $0.1045 ,"USA, TN, Memphis",0.939
+560,"USA, TN, Kingsport",Kingsport,TN,Southeast,USA,37660,36.54808,-82.561086, $0.1045 ,"USA, NC, Charlotte",0.964
+561,"USA, TN, Knoxville",Knoxville,TN,Southeast,USA,37902,35.960638,-83.920739, $0.1020 ,"USA, TN, Chattanooga",0.937
+562,"USA, TN, McKenzie",McKenzie,TN,Southeast,USA,38201,36.132766,-88.518571, $0.1045 ,"USA, TN, Nashville",0.947
+563,"USA, TN, Memphis",Memphis,TN,Southeast,USA,38105,35.149534,-90.04898, $0.1068 ,"USA, TN, Memphis",0.939
+564,"USA, TN, Nashville",Nashville,TN,Southeast,USA,37219,36.162664,-86.781602, $0.1032 ,"USA, TN, Nashville",0.947
+565,"USA, TX, Abilene",Abilene,TX,Southwest,USA,79603,32.448736,-99.733144, $0.0816 ,"USA, TX, Austin",0.938
+566,"USA, TX, Amarillo",Amarillo,TX,Southwest,USA,79107,35.221997,-101.831297, $0.0856 ,"USA, OK, Oklahoma City",0.911
+567,"USA, TX, Arlington",Arlington,TX,Southwest,USA,76010,32.732952,-97.105902, $0.0843 ,"USA, TX, Austin",0.938
+568,"USA, TX, Austin",Austin,TX,Southwest,USA,78701,30.267153,-97.743061, $0.0875 ,"USA, TX, Austin",0.938
+569,"USA, TX, Bay City",Bay City,TX,Southwest,USA,77414,28.981869,-95.970875, $0.0843 ,"USA, TX, Houston",0.926
+570,"USA, TX, Beaumont",Beaumont,TX,Southwest,USA,77702,30.080174,-94.126556, $0.0856 ,"USA, TX, Houston",0.926
+571,"USA, TX, Brownwood",Brownwood,TX,Southwest,USA,76801,31.708351,-98.988628, $0.0843 ,"USA, TX, Austin",0.938
+572,"USA, TX, Bryan",Bryan,TX,Southwest,USA,77803,30.675345,-96.370405, $0.0843 ,"USA, TX, Austin",0.938
+573,"USA, TX, Childress",Childress,TX,Southwest,USA,79201,34.42563,-100.203682, $0.0843 ,"USA, OK, Oklahoma City",0.911
+574,"USA, TX, Corpus Christi",Corpus Christi,TX,Southwest,USA,78401,27.800583,-97.396381, $0.0816 ,"USA, TX, Austin",0.938
+575,"USA, TX, Dallas",Dallas,TX,Southwest,USA,75201,32.776664,-96.796988, $0.0816 ,"USA, TX, Austin",0.938
+576,"USA, TX, Del Rio",Del Rio,TX,Southwest,USA,78840,29.373585,-100.896389, $0.0843 ,"USA, TX, Austin",0.938
+577,"USA, TX, El Paso",El Paso,TX,Southwest,USA,79901,31.761878,-106.485022, $0.0938 ,"USA, NM, Albuquerque",0.924
+578,"USA, TX, Fort Worth",Fort Worth,TX,Southwest,USA,76102,32.755488,-97.330766, $0.0816 ,"USA, TX, Austin",0.938
+579,"USA, TX, Galveston",Galveston,TX,Southwest,USA,77550,29.300236,-94.797185, $0.0843 ,"USA, TX, Houston",0.926
+580,"USA, TX, Giddings",Giddings,TX,Southwest,USA,78942,30.182118,-96.936396, $0.0843 ,"USA, TX, Austin",0.938
+581,"USA, TX, Greenville",Greenville,TX,Southwest,USA,75401,33.138386,-96.11011, $0.0843 ,"USA, OK, Oklahoma City",0.911
+582,"USA, TX, Houston",Houston,TX,Southwest,USA,77002,29.760427,-95.369803, $0.0816 ,"USA, TX, Houston",0.926
+583,"USA, TX, Huntsville",Huntsville,TX,Southwest,USA,77340,30.721651,-95.549882, $0.0843 ,"USA, TX, Houston",0.926
+584,"USA, TX, Longview",Longview,TX,Southwest,USA,75601,32.50157,-94.739605, $0.0843 ,"USA, TX, Houston",0.926
+585,"USA, TX, Lubbock",Lubbock,TX,Southwest,USA,79401,33.577863,-101.855166, $0.0856 ,"USA, OK, Oklahoma City",0.911
+586,"USA, TX, Lufkin",Lufkin,TX,Southwest,USA,75901,31.337651,-94.72943, $0.0843 ,"USA, TX, Houston",0.926
+587,"USA, TX, McAllen",McAllen,TX,Southwest,USA,78501,26.204625,-98.229918, $0.0843 ,"USA, TX, Austin",0.938
+588,"USA, TX, Midland",Midland,TX,Southwest,USA,79701,31.999566,-102.076299, $0.0843 ,"USA, TX, Austin",0.938
+589,"USA, TX, Palestine",Palestine,TX,Southwest,USA,75801,31.762642,-95.631058, $0.0843 ,"USA, TX, Houston",0.926
+590,"USA, TX, Plano",Plano,TX,Southwest,USA,75074,33.021198,-96.696797, $0.0843 ,"USA, OK, Oklahoma City",0.911
+591,"USA, TX, San Angelo",San Angelo,TX,Southwest,USA,76903,31.463836,-100.437242, $0.0843 ,"USA, TX, Austin",0.938
+592,"USA, TX, San Antonio",San Antonio,TX,Southwest,USA,78205,29.424122,-98.493628, $0.0767 ,"USA, TX, Austin",0.938
+593,"USA, TX, Texarkana",Texarkana,TX,Southwest,USA,75501,33.424061,-94.047712, $0.0843 ,"USA, AR, Little Rock",0.899
+594,"USA, TX, Tyler",Tyler,TX,Southwest,USA,75702,32.349752,-95.299965, $0.0843 ,"USA, TX, Houston",0.926
+595,"USA, TX, Victoria",Victoria,TX,Southwest,USA,77901,28.804733,-97.001996, $0.0843 ,"USA, TX, Austin",0.938
+596,"USA, TX, Waco",Waco,TX,Southwest,USA,76707,31.549333,-97.14667, $0.0912 ,"USA, TX, Austin",0.938
+597,"USA, TX, Wichita Falls",Wichita Falls,TX,Southwest,USA,76301,33.913708,-98.493387, $0.0816 ,"USA, OK, Oklahoma City",0.911
+598,"USA, TX, Woodson",Woodson,TX,Southwest,USA,76491,33.014878,-99.053182, $0.0843 ,"USA, OK, Oklahoma City",0.911
+599,"USA, UT, Clearfield",Clearfield,UT,Rocky Mountains,USA,84015,41.11085,-112.02479, $0.0835 ,"USA, UT, Salt Lake City",0.948
+600,"USA, UT, Green River",Green River,UT,Rocky Mountains,USA,84525,38.996171,-110.159935, $0.0835 ,"USA, UT, Salt Lake City",0.948
+601,"USA, UT, Ogden",Ogden,UT,Rocky Mountains,USA,84401,41.223,-111.97383, $0.0803 ,"USA, UT, Salt Lake City",0.948
+602,"USA, UT, Provo",Provo,UT,Rocky Mountains,USA,84601,40.233844,-111.658534, $0.0813 ,"USA, UT, Salt Lake City",0.948
+603,"USA, UT, Salt Lake City",Salt Lake City,UT,Rocky Mountains,USA,84101,40.760779,-111.891047, $0.0803 ,"USA, UT, Salt Lake City",0.948
+604,"USA, VA, Abingdon",Abingdon,VA,Southeast,USA,24210,36.710458,-81.977073, $0.0799 ,"USA, WV, Charleston",1.001
+605,"USA, VA, Alexandria",Alexandria,VA,Southeast,USA,22314,38.803818,-77.046002, $0.0799 ,"USA, DC, Washington",1.030
+606,"USA, VA, Charlottesville",Charlottesville,VA,Southeast,USA,22902,38.029306,-78.476678, $0.0780 ,"USA, DC, Washington",1.030
+607,"USA, VA, Chesapeake",Chesapeake,VA,Southeast,USA,23320,36.766587,-76.286905, $0.0799 ,"USA, VA, Norfolk",0.918
+608,"USA, VA, Culpeper",Culpeper,VA,Southeast,USA,22701,38.471989,-77.996668, $0.0799 ,"USA, DC, Washington",1.030
+609,"USA, VA, Farmville",Farmville,VA,Southeast,USA,23901,37.302301,-78.39159, $0.0799 ,"USA, VA, Norfolk",0.918
+610,"USA, VA, Fredericksburg",Fredericksburg,VA,Southeast,USA,22401,38.302792,-77.460326, $0.0799 ,"USA, DC, Washington",1.030
+611,"USA, VA, Galax",Galax,VA,Southeast,USA,24333,36.661427,-80.923373, $0.0799 ,"USA, NC, Charlotte",0.964
+612,"USA, VA, Harrisonburg",Harrisonburg,VA,Southeast,USA,22801,38.450325,-78.86764, $0.0799 ,"USA, DC, Washington",1.030
+613,"USA, VA, Lynchburg",Lynchburg,VA,Southeast,USA,24504,37.413754,-79.142246, $0.0856 ,"USA, WV, Charleston",1.001
+614,"USA, VA, Norfolk",Norfolk,VA,Southeast,USA,23510,36.850769,-76.285873, $0.0780 ,"USA, VA, Norfolk",0.918
+615,"USA, VA, Petersburg",Petersburg,VA,Southeast,USA,23803,37.227347,-77.402016, $0.0799 ,"USA, VA, Norfolk",0.918
+616,"USA, VA, Radford",Radford,VA,Southeast,USA,24141,37.131357,-80.576052, $0.0799 ,"USA, WV, Charleston",1.001
+617,"USA, VA, Reston",Reston,VA,Southeast,USA,20190,38.958722,-77.356147, $0.0799 ,"USA, DC, Washington",1.030
+618,"USA, VA, Richmond",Richmond,VA,Southeast,USA,23219,37.540725,-77.436048, $0.0780 ,"USA, VA, Norfolk",0.918
+619,"USA, VA, Roanoke",Roanoke,VA,Southeast,USA,24011,37.27097,-79.941427, $0.0856 ,"USA, WV, Charleston",1.001
+620,"USA, VA, Staunton",Staunton,VA,Southeast,USA,24401,38.14959,-79.071507, $0.0799 ,"USA, DC, Washington",1.030
+621,"USA, VA, Tazewell",Tazewell,VA,Southeast,USA,24651,37.116307,-81.52135, $0.0799 ,"USA, WV, Charleston",1.001
+622,"USA, VA, Virginia Beach",Virginia Beach,VA,Southeast,USA,23451,36.852926,-75.977985, $0.0780 ,"USA, VA, Norfolk",0.918
+623,"USA, VA, Williamsburg",Williamsburg,VA,Southeast,USA,23185,37.270825,-76.707434, $0.0799 ,"USA, VA, Norfolk",0.918
+624,"USA, VA, Winchester",Winchester,VA,Southeast,USA,22061,39.185771,-78.162242, $0.0799 ,"USA, DC, Washington",1.030
+625,"USA, VT, Albany",Albany,VT,Northeast,USA,5820,44.73128,-72.379689, $0.1379 ,"USA, VT, Burlington",0.975
+626,"USA, VT, Beecher Falls",Beecher Falls,VT,Northeast,USA,5902,45.008549,-71.506783, $0.1379 ,"USA, VT, Burlington",0.975
+627,"USA, VT, Bennington",Bennington,VT,Northeast,USA,5201,42.879132,-73.195738, $0.1379 ,"USA, CT, Hartford",1.089
+628,"USA, VT, Brattleboro",Brattleboro,VT,Northeast,USA,5301,42.851495,-72.558525, $0.1379 ,"USA, NH, Concord",0.961
+629,"USA, VT, Burlington",Burlington,VT,Northeast,USA,5401,44.475882,-73.212072, $0.1410 ,"USA, VT, Burlington",0.975
+630,"USA, VT, Montpelier",Montpelier,VT,Northeast,USA,5602,44.260109,-72.575406, $0.1363 ,"USA, VT, Burlington",0.975
+631,"USA, VT, Rutland",Rutland,VT,Northeast,USA,5701,43.610624,-72.972606, $0.1363 ,"USA, VT, Burlington",0.975
+632,"USA, VT, Springfield",Springfield,VT,Northeast,USA,5156,43.298464,-72.482986, $0.1379 ,"USA, NH, Concord",0.961
+633,"USA, VT, White River",White River,VT,Northeast,USA,5001,43.649666,-72.321217, $0.1379 ,"USA, NH, Concord",0.961
+634,"USA, WA, Clarkston",Clarkston,WA,Pacific,USA,99403,46.415614,-117.046591, $0.0879 ,"USA, ID, Boise",0.933
+635,"USA, WA, Everett",Everett,WA,Pacific,USA,98201,47.977941,-122.202405, $0.0879 ,"USA, WA, Seattle ",1.180
+636,"USA, WA, Olympia",Olympia,WA,Pacific,USA,98501,47.037874,-122.900695, $0.0946 ,"USA, WA, Seattle ",1.180
+637,"USA, WA, Pasco",Pasco,WA,Pacific,USA,99301,46.238427,-119.099996, $0.0879 ,"USA, OR, Portland",1.048
+638,"USA, WA, Seattle",Seattle,WA,Pacific,USA,98164,47.606209,-122.332071, $0.0871 ,"USA, WA, Seattle ",1.360
+639,"USA, WA, Spokane",Spokane,WA,Pacific,USA,99201,47.65878,-117.426047, $0.0871 ,"USA, WA, Seattle ",1.240
+640,"USA, WA, Tacoma",Tacoma,WA,Pacific,USA,98402,47.252877,-122.444291, $0.0768 ,"USA, WA, Seattle ",1.180
+641,"USA, WA, Vancouver",Vancouver,WA,Pacific,USA,98660,45.631216,-122.671525, $0.0879 ,"USA, OR, Portland",1.048
+642,"USA, WA, Wenatchee",Wenatchee,WA,Pacific,USA,98801,47.423146,-120.311207, $0.0879 ,"USA, WA, Seattle ",1.140
+643,"USA, WA, Yakima",Yakima,WA,Pacific,USA,98901,46.602503,-120.504893, $0.0879 ,"USA, WA, Seattle ",1.140
+644,"USA, WI, Amery",Amery,WI,Midwest,USA,54001,45.306404,-92.362114, $0.1056 ,"USA, MN, Minneapolis",1.094
+645,"USA, WI, Beloit",Beloit,WI,Midwest,USA,53511,42.508048,-89.030104, $0.1056 ,"USA, WI, Milwaukee",1.044
+646,"USA, WI, Clam Lake",Clam Lake,WI,Midwest,USA,54517,46.164435,-90.90447, $0.1056 ,"USA, MN, Minneapolis",1.094
+647,"USA, WI, Eau Claire",Eau Claire,WI,Midwest,USA,54701,44.811349,-91.498494, $0.1115 ,"USA, MN, Minneapolis",1.094
+648,"USA, WI, Green Bay",Green Bay,WI,Midwest,USA,54303,44.519159,-88.019826, $0.0938 ,"USA, WI, Milwaukee",1.044
+649,"USA, WI, La Crosse",La Crosse,WI,Midwest,USA,54601,43.801356,-91.239581, $0.1115 ,"USA, MN, Minneapolis",1.094
+650,"USA, WI, Ladysmith",Ladysmith,WI,Midwest,USA,54848,45.463296,-91.102139, $0.1056 ,"USA, MN, Minneapolis",1.094
+651,"USA, WI, Madison",Madison,WI,Midwest,USA,53715,43.073052,-89.40123, $0.1086 ,"USA, WI, Milwaukee",1.044
+652,"USA, WI, Milwaukee",Milwaukee,WI,Midwest,USA,53202,43.038902,-87.906474, $0.1146 ,"USA, WI, Milwaukee",1.044
+653,"USA, WI, Oshkosh",Oshkosh,WI,Midwest,USA,54901,44.024706,-88.542614, $0.0938 ,"USA, WI, Milwaukee",1.044
+654,"USA, WI, Portage",Portage,WI,Midwest,USA,53901,43.540182,-89.462061, $0.1056 ,"USA, WI, Milwaukee",1.044
+655,"USA, WI, Prairie du Chien",Prairie du Chien,WI,Midwest,USA,53821,43.050782,-91.141601, $0.1056 ,"USA, IA, Des Moines",0.992
+656,"USA, WI, Wausau",Wausau,WI,Midwest,USA,54403,44.958829,-89.6255, $0.1056 ,"USA, WI, Milwaukee",1.044
+657,"USA, WV, Beckley",Beckley,WV,Southeast,USA,25801,37.777796,-81.188149, $0.0948 ,"USA, WV, Charleston",1.001
+658,"USA, WV, Bluefield",Bluefield,WV,Southeast,USA,24701,37.269223,-81.221513, $0.0948 ,"USA, WV, Charleston",1.001
+659,"USA, WV, Charleston",Charleston,WV,Southeast,USA,25301,38.34982,-81.632623, $0.0847 ,"USA, WV, Charleston",1.001
+660,"USA, WV, Clarksburg",Clarksburg,WV,Southeast,USA,26301,39.281143,-80.344339, $0.0948 ,"USA, WV, Charleston",1.001
+661,"USA, WV, Fairmont",Fairmont,WV,Southeast,USA,26554,39.485513,-80.142465, $0.0948 ,"USA, WV, Charleston",1.001
+662,"USA, WV, Huntington",Huntington,WV,Southeast,USA,25701,38.420566,-82.441048, $0.0948 ,"USA, WV, Charleston",1.001
+663,"USA, WV, Lewisburg",Lewisburg,WV,Southeast,USA,24901,37.804593,-80.446874, $0.0948 ,"USA, WV, Charleston",1.001
+664,"USA, WV, Martinsburg",Martinsburg,WV,Southeast,USA,25401,39.45724,-77.963602, $0.0948 ,"USA, DC, Washington",1.030
+665,"USA, WV, Morgantown",Morgantown,WV,Southeast,USA,26505,39.629526,-79.955897, $0.0998 ,"USA, WV, Charleston",1.001
+666,"USA, WV, New Martinsville",New Martinsville,WV,Southeast,USA,26155,39.645187,-80.857464, $0.0948 ,"USA, WV, Charleston",1.001
+667,"USA, WV, Parkersburg",Parkersburg,WV,Southeast,USA,26101,39.266742,-81.561513, $0.0998 ,"USA, WV, Charleston",1.001
+668,"USA, WV, Romney",Romney,WV,Southeast,USA,26757,39.342873,-78.75607, $0.0948 ,"USA, DC, Washington",1.030
+669,"USA, WV, Sugar Grove",Sugar Grove,WV,Southeast,USA,26815,38.467465,-79.442991, $0.0948 ,"USA, WV, Charleston",1.001
+670,"USA, WV, Wheeling",Wheeling,WV,Southeast,USA,26003,40.064222,-80.71951, $0.0948 ,"USA, WV, Charleston",1.001
+671,"USA, WY, Casper",Casper,WY,Rocky Mountains,USA,82601,42.851478,-106.315318, $0.0973 ,"USA, WY, Cheyenne",0.933
+672,"USA, WY, Cheyenne",Cheyenne,WY,Rocky Mountains,USA,82001,41.139981,-104.820246, $0.0973 ,"USA, WY, Cheyenne",0.933
+673,"USA, WY, Gillette",Gillette,WY,Rocky Mountains,USA,82716,44.29025,-105.501406, $0.0973 ,"USA, WY, Cheyenne",0.933
+674,"USA, WY, Laramie",Laramie,WY,Rocky Mountains,USA,82070,41.311788,-105.589876, $0.0973 ,"USA, WY, Cheyenne",0.933
+675,"USA, WY, Powell",Powell,WY,Rocky Mountains,USA,82435,44.754158,-108.75661, $0.0973 ,"USA, MT, Great Falls",0.923
+676,"USA, WY, Rawlins",Rawlins,WY,Rocky Mountains,USA,82301,41.79135,-107.237421, $0.0973 ,"USA, WY, Cheyenne",0.933
+677,"USA, WY, Riverton",Riverton,WY,Rocky Mountains,USA,82501,43.025761,-108.380993, $0.0973 ,"USA, WY, Cheyenne",0.933
+678,"USA, WY, Rock Springs",Rock Springs,WY,Rocky Mountains,USA,82901,41.587925,-109.204372, $0.0973 ,"USA, UT, Salt Lake City",0.948
+679,"USA, WY, Sheridan",Sheridan,WY,Rocky Mountains,USA,82801,44.797238,-106.954826, $0.0973 ,"USA, WY, Cheyenne",0.933
+680,"USA, WY, Wheatland",Wheatland,WY,Rocky Mountains,USA,82201,42.055291,-104.952803, $0.0973 ,"USA, WY, Cheyenne",0.933
+681,"CDN, AB, Calgary",Calgary,AB,Canada,CDN,,51.047748,-114.070562, $0.1200 ,"USA, MT, Great Falls",0.923
+682,"CDN, AB, Edmonton",Edmonton,AB,Canada,CDN,,53.546143,-113.490476, $0.1200 ,"USA, MT, Great Falls",0.923
+683,"CDN, AB, Fort McMurray",Fort McMurray,AB,Canada,CDN,,56.727061,-111.3801, $0.1200 ,"USA, MT, Great Falls",0.923
+684,"CDN, BC, Fraser Valley",Fraser Valley,BC,Canada,CDN,,49.306042,-121.763169, $0.1200 ,"CAN, BC, Vancouver",1.075
+685,"CDN, BC, Okanagan",Okanagan,BC,Canada,CDN,,49.344891,-119.572796, $0.1200 ,"CAN, BC, Vancouver",1.075
+686,"CDN, BC, Vancouver",Vancouver,BC,Canada,CDN,,49.282306,-123.121249, $0.1200 ,"CAN, BC, Vancouver",1.075
+687,"CDN, MB, North Manitoba",North Manitoba,MB,Canada,CDN,,57.350353,-97.312819, $0.1200 ,"CAN, MB, Winnipeg",0.994
+688,"CDN, MB, Selkirk",Selkirk,MB,Canada,CDN,,50.144147,-96.87776, $0.1200 ,"CAN, MB, Winnipeg",0.994
+689,"CDN, MB, South Manitoba",South Manitoba,MB,Canada,CDN,,49.661758,-98.341076, $0.1200 ,"CAN, MB, Winnipeg",0.994
+690,"CDN, MB, Winnipeg",Winnipeg,MB,Canada,CDN,,49.896143,-97.142602, $0.1200 ,"CAN, MB, Winnipeg",0.994
+691,"CDN, NL, St. John's",St. John's,NL,Canada,CDN,,47.557077,-52.717027, $0.1200 ,"USA, ME, Portland",0.970
+692,"CDN, NB, Moncton",Moncton,NB,Canada,CDN,,46.088842,-64.779259, $0.1200 ,"USA, ME, Portland",0.970
+693,"CDN, NS, Amherst",Amherst,NS,Canada,CDN,,45.818506,-64.216832, $0.1200 ,"USA, ME, Portland",0.970
+694,"CDN, NS, Halifax",Halifax,NS,Canada,CDN,,45.818286,-64.217342, $0.1200 ,"USA, ME, Portland",0.970
+695,"CDN, NS, Nova Scotia",Nova Scotia,NS,Canada,CDN,,44.679302,-63.56577, $0.1200 ,"USA, ME, Portland",0.970
+696,"CDN, NS, Sydney",Sydney,NS,Canada,CDN,,46.136996,-60.192917, $0.1200 ,"USA, ME, Portland",0.970
+697,"CDN, ON, London",London,ON,Canada,CDN,,42.985382,-81.243855, $0.1200 ,"USA, MI, Detroit",1.040
+698,"CDN, ON, Ottawa",Ottawa,ON,Canada,CDN,,45.421502,-75.696753, $0.1200 ,"CAN, QC, Montreal",1.020
+699,"CDN, ON, Thunder Bay",Thunder Bay,ON,Canada,CDN,,48.380891,-89.249398, $0.1200 ,"USA, MN, Minneapolis",1.094
+700,"CDN, ON, Toronto",Toronto,ON,Canada,CDN,,43.654504,-79.377946, $0.1200 ,"CAN, ON, Toronto",1.103
+701,"CDN, QC, Montreal",Montreal,QC,Canada,CDN,,45.505107,-73.568094, $0.1200 ,"CAN, QC, Montreal",1.020
+702,"CDN, QC, Quebec City",Quebec City,QC,Canada,CDN,,46.813566,-71.211265, $0.1200 ,"CAN, QC, Montreal",1.020
+703,"CDN, SK, La Ronge",La Ronge,SK,Canada,CDN,,55.108844,-105.285865, $0.1200 ,"CAN, MB, Winnipeg",0.994
+704,"CDN, SK, Prince Albert",Prince Albert,SK,Canada,CDN,,53.203041,-105.751008, $0.1200 ,"CAN, MB, Winnipeg",0.994
+705,"CDN, SK, Saskatoon",Saskatoon,SK,Canada,CDN,,52.13362,-106.671296, $0.1200 ,"USA, MT, Great Falls",0.923

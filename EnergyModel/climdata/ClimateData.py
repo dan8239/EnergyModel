@@ -57,6 +57,15 @@ class ClimateData(object):
         self.__append_eflh_t(dataframe)
         self.__append_clg_hrs(dataframe)
         self.__append_htg_hrs(dataframe)
+        self.cdd = dataframe['CDD'].sum()
+        self.hdd = dataframe['HDD'].sum()
+        self.eflh_c = dataframe['EFLH-C'].sum()
+        self.eflh_h = dataframe['EFLH-H'].sum()
+        self.eflh_t = dataframe['EFLH-T'].sum()
+        self.clg_hrs = dataframe['CLG-HRS'].sum()
+        self.htg_hrs = dataframe['HTG-HRS'].sum()
+        self.avg_clg_load_pct = self.eflh_c/self.clg_hrs
+        self.avg_htg_load_pct = self.eflh_h/self.htg_hrs
 
     def __open_hourly_data(self):
         # check that climate zone is populated
@@ -80,10 +89,10 @@ class ClimateData(object):
             return calc/24
 
     def __calc_hourly_eflh_c(self, cdd, design_temp, swing_temp):
-        return cdd/(design_temp - swing_temp)
+        return cdd*24/(design_temp - swing_temp)
 
     def __calc_hourly_eflh_h(self, hdd, design_temp, swing_temp):
-        return hdd/(swing_temp - design_temp)
+        return hdd*24/(swing_temp - design_temp)
 
     def __calc_clg_hr(self, temp, swing_temp):
         if (temp - swing_temp > 0):
@@ -97,44 +106,44 @@ class ClimateData(object):
 
     #add CDD hourly to dataframe
     def __append_cdd(self, dataframe):
+        print("Appending Cooling Degree Days")
         dataframe['CDD'] = dataframe.apply(lambda x: self.__calc_hourly_cdd(x['DRY BULB'], self.clg_swing_temp), axis = 1)
-        print(dataframe)
         return dataframe
 
     #add HDD hourly to dataframe
     def __append_hdd(self, dataframe):
+        print("Appending Heating Degree Days")
         dataframe['HDD'] = dataframe.apply(lambda x: self.__calc_hourly_hdd(x['DRY BULB'], self.htg_swing_temp), axis = 1)
-        print(dataframe)
         return dataframe
 
     #add EFLH-C to dataframe
     def __append_eflh_c(self, dataframe):
+        print("Appending EFLH Cooling")
         dataframe['EFLH-C'] = dataframe.apply(lambda x: self.__calc_hourly_eflh_c(x['CDD'], self.clg_design_temp, self.clg_swing_temp), axis = 1)
-        print(dataframe)
         return dataframe
 
     #add EFLH-H to dataframe
     def __append_eflh_h(self, dataframe):
+        print("Appending EFLH Heating")
         dataframe['EFLH-H'] = dataframe.apply(lambda x: self.__calc_hourly_eflh_h(x['HDD'], self.htg_design_temp, self.htg_swing_temp), axis = 1)
-        print(dataframe)
         return dataframe
 
     #add EFLH-T to dataframe
     def __append_eflh_t(self, dataframe):
+        print("Appending EFLH Total")
         dataframe['EFLH-T'] = dataframe.apply(lambda x: x['EFLH-C'] + x['EFLH-H'], axis = 1)
-        print(dataframe)
         return dataframe
 
     #add clg hrs to dataframe
     def __append_clg_hrs(self, dataframe):
+        print("Appending Cooling Hours")
         dataframe['CLG-HRS'] = dataframe.apply(lambda x: self.__calc_clg_hr(x['DRY BULB'], self.clg_swing_temp), axis = 1)
-        print(dataframe)
         return dataframe
 
     #add htg hours to dataframe
     def __append_htg_hrs(self, dataframe):
+        print("Appending Heating Hours")
         dataframe['HTG-HRS'] = dataframe.apply(lambda x: self.__calc_htg_hr(x['DRY BULB'], self.htg_swing_temp), axis = 1)
-        print(dataframe)
         return dataframe
 
     def dump(self):

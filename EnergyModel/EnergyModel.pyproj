@@ -40,6 +40,16 @@
     <Compile Include="config.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="energymodel\EnergyModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="energymodel\RtuModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="energymodel\TddRtuModel.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="energymodel\__init__.py" />
     <Compile Include="portfolios\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +109,7 @@
     <Folder Include="assets\" />
     <Folder Include="ecm\" />
     <Folder Include="climdata\" />
+    <Folder Include="energymodel\" />
     <Folder Include="weatherutility\" />
     <Folder Include="portfolios\" />
     <Folder Include="sites\" />
