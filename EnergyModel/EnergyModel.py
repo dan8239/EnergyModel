@@ -5,11 +5,17 @@ from portfolios import Portfolio
 from ecm import RetrofitVfd
 import pandas as pd
 import numpy as np
+from energymodel import TddRtuModel
 
 def __string_to_bool(string):
     if (string == "TRUE" or string == "True"):
         return True
     return False
+
+def __string_to_cmp_stages(string):
+    if (string == "TRUE" or string == "True"):
+        return 2
+    return 1
 
 def main():
     #read site list and create portfolio with list of sites attached
@@ -17,6 +23,7 @@ def main():
     print("Reading Site List")
     site_list = pd.read_csv("site_list_input.csv")
     portfolio = Portfolio.Portfolio("test")
+    portfolio.energy_model = TddRtuModel.TddRtuModel()
 
     for row in site_list.itertuples():
         site = Site.Site(row.site_id)
@@ -35,10 +42,18 @@ def main():
     print("Cleansing Asset List")
     asset_list['x_economizer'] = asset_list.apply(lambda x: __string_to_bool(x['x_economizer']),axis = 1)
     asset_list['x_vfd'] = asset_list.apply(lambda x: __string_to_bool(x['x_vfd']),axis = 1)
-    asset_list['x_cmp_stg'] = asset_list.apply(lambda x: __string_to_bool(x['x_cmp_stg']),axis = 1)
+    asset_list['x_cmp_stg'] = asset_list.apply(lambda x: __string_to_cmp_stages(x['x_cmp_stg']),axis = 1)
     asset_list['n_economizer'] = asset_list.apply(lambda x: __string_to_bool(x['n_economizer']),axis = 1)
     asset_list['n_vfd'] = asset_list.apply(lambda x: __string_to_bool(x['n_vfd']),axis = 1)
-    asset_list['n_cmp_stg'] = asset_list.apply(lambda x: __string_to_bool(x['n_cmp_stg']),axis = 1)
+    asset_list['n_cmp_stg'] = asset_list.apply(lambda x: __string_to_cmp_stages(x['n_cmp_stg']),axis = 1)
+    pd.to_numeric(asset_list['x_tonnage'])
+    pd.to_numeric(asset_list['n_tonnage'])
+    pd.to_numeric(asset_list['x_eer'])
+    pd.to_numeric(asset_list['n_eer'])
+    pd.to_numeric(asset_list['x_cmp_stg'])
+    pd.to_numeric(asset_list['n_cmp_stg'])
+    pd.to_numeric(asset_list['x_evap_hp'])
+    pd.to_numeric(asset_list['n_evap_hp'])
 
     #for each asset listed
     #create proposal with existing and new asset
@@ -65,6 +80,7 @@ def main():
             x_asset.refrig_type = row.x_refrig_type
             x_asset.vfd = row.x_vfd
             x_asset.stg_cmp = row.x_cmp_stg
+            x_asset.evap_hp = row.x_evap_hp
 
             #cleanse data gaps with actionable knowledge
             x_asset.filter_asset()
@@ -74,7 +90,7 @@ def main():
                 n_asset.copy_asset(x_asset)
             # if retrofit, apply retrofit vfd actions to new asset
             if (proposal.strategy == "Retrofit"):
-                proposal.add_ecm = RetrofitVfd.RetrofitVfd()
+                proposal.add_ecm(RetrofitVfd.RetrofitVfd())
                 proposal.apply_ecms()
             # if replace, set values from file and filter
             elif (proposal.strategy == "Replace"):
@@ -85,7 +101,10 @@ def main():
                 n_asset.eer = row.n_eer
                 n_asset.vfd = row.n_vfd
                 n_asset.stg_cmp = row.n_cmp_stg
+                n_asset.evap_hp = row.n_evap_hp
                 n_asset.filter_asset()
+
+    portfolio.run_energy_calculations()
     print("Printing Assets")
     portfolio.dump()
 

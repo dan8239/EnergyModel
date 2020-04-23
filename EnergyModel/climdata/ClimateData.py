@@ -19,6 +19,8 @@ class ClimateData(object):
         self.htg_hrs = 0
         self.avg_clg_load_pct = 0
         self.avg_htg_load_pct = 0
+        self.avg_clg_oa_t = 0
+        self.avg_htg_oa_t = 0
         self.closest_climate_zone = None
 
     def get_closest_climate_zone(self, lat, lon):
@@ -66,6 +68,8 @@ class ClimateData(object):
         self.htg_hrs = dataframe['HTG-HRS'].sum()
         self.avg_clg_load_pct = self.eflh_c/self.clg_hrs
         self.avg_htg_load_pct = self.eflh_h/self.htg_hrs
+        self.avg_clg_oa_t = self.avg_clg_load_pct*(self.clg_design_temp - self.clg_swing_temp) + self.clg_swing_temp
+        self.avg_htg_oa_t = self.htg_swing_temp - self.avg_htg_load_pct*(self.htg_swing_temp - self.htg_design_temp)
 
     def __open_hourly_data(self):
         # check that climate zone is populated
@@ -169,11 +173,9 @@ class ClimateData(object):
         print("Heating Hours: " + str(self.htg_hrs))
         print("Average Cooling Load Percentage: " + str(self.avg_clg_load_pct))
         print("Average Heating Load Percentage: " + str(self.avg_htg_load_pct))
+        print("Average Cooling OA Temp: " + str(self.avg_clg_oa_t))
+        print("Average Heating OA Temp: " + str(self.avg_htg_oa_t))
         print()
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXXXXXX END OF CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")

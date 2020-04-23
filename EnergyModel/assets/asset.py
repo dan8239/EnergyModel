@@ -8,7 +8,10 @@ class Asset:
         self.model = model
         self.serial = serial        
         self.manufactured_year = manufactured_year
+        self.run_hours_yearly = 8760
         self.status = None
+        self.kwh_yearly = 0
+        self.therms_yearly = 0
         self.calc_age()
 
     def set_proposal(self, proposal):
@@ -23,6 +26,9 @@ class Asset:
         self.serial = asset_to_copy.serial
         self.manufactured_year = asset_to_copy.manufactured_year
         self.age = asset_to_copy.age
+        self.run_hours_yearly = asset_to_copy.run_hours_yearly
+        self.kwh_yearly = 0
+        self.therms_yearly = 0
         self._derived_copy_asset(asset_to_copy)
 
     def _derived_copy_asset(self, asset_to_copy):
@@ -40,30 +46,17 @@ class Asset:
     def _derived_filter_asset(self):
         pass
 
+    def run_energy_calculations(self, energy_model):
+        energy_model.calculate(self)
+
     def dump(self):
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print()
         print("Asset Type: " + type(self).__name__)
-        print("Make: " + str(self.make))
-        print("Model: " + str(self.model))
-        print("Serial: " + str(self.serial))
-        print("Year: " + str(self.manufactured_year))
+        #print("Make: " + str(self.make))
+        #print("Model: " + str(self.model))
+        #print("Serial: " + str(self.serial))
+        #print("Year: " + str(self.manufactured_year))
         print("Age: " + str(self.age))
         self._derived_dump()
-        print()
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX ASSET OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
 
     def _derived_dump(self):
         pass
