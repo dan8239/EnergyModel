@@ -40,6 +40,10 @@
     <Compile Include="config.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ecm\RetroCommission.py" />
+    <Compile Include="ecm\EnerfitVfd.py" />
+    <Compile Include="ecm\VfdAutoClg.py" />
+    <Compile Include="ecm\VfdAutoVent.py" />
     <Compile Include="energymodel\TddRtuModel.py">
       <SubType>Code</SubType>
     </Compile>
@@ -72,7 +76,7 @@
     <Compile Include="assets\Proposal.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ecm\RetrofitVfd.py">
+    <Compile Include="ecm\VfdAutoHtg.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="assets\Rtu.py" />

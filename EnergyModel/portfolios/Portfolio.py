@@ -1,11 +1,26 @@
 from sites import Site
 from pyllist import dllist, dllistnode
+import pandas as pd
 
 class Portfolio():
     def __init__(self, id):
         self.id = id
         self.site_list = dllist()
         self.energy_model = None
+        self.site_count = 0
+        self.asset_count = 0
+        self.x_tons = 0
+        self.x_evap_hp = 0
+        self.x_avg_age = 0
+        self.x_avg_weighted_age = 0
+        self.x_avg_eer = 0
+        self.x_avg_weighted_eer = 0
+        self.n_tons = 0
+        self.n_evap_hp = 0
+        self.n_avg_age = 0
+        self.n_avg_weighted_age = 0
+        self.n_avg_eer = 0
+        self.n_avg_weighted_eer = 0
         self.pre_kwh_hvac_yearly = 0
         self.post_kwh_hvac_yearly = 0
         self.sav_kwh_hvac_yearly = 0
@@ -38,14 +53,131 @@ class Portfolio():
         self.pre_therms_hvac_yearly = 0
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
+
+        self.site_count = self.site_list.size
+        self.asset_count = 0
+        self.x_tons = 0
+        self.x_evap_hp = 0
+        x_age_tot = 0
+        x_age_tons_tot = 0
+        x_eer_tot = 0
+        x_eer_tons_tot = 0
+        self.n_tons = 0
+        self.n_evap_hp = 0
+        n_age_tot = 0
+        n_age_tons_tot = 0
+        n_eer_tot = 0
+        n_eer_tons_tot = 0
+
         for x in self.site_list.iternodes():
             if (x !=None):
+                #asset count
+                self.asset_count = self.asset_count + x.value.asset_count
+
+                #existing asset sums
+                self.x_tons = self.x_tons + x.value.x_tons
+                self.x_evap_hp = self.x_evap_hp + x.value.x_evap_hp
+                x_age_tot = x_age_tot + x.value.x_avg_age * x.value.asset_count
+                x_age_tons_tot = x_age_tons_tot + x.value.x_avg_weighted_age * x.value.x_tons
+                x_eer_tot = x_eer_tot + x.value.x_avg_eer * x.value.asset_count
+                x_eer_tons_tot = x_eer_tons_tot + x.value.x_avg_weighted_eer * x.value.x_tons
+
+                #new asset sums
+                self.n_tons = self.n_tons + x.value.n_tons
+                self.n_evap_hp = self.n_evap_hp + x.value.n_evap_hp
+                n_age_tot = n_age_tot + x.value.n_avg_age * x.value.asset_count
+                n_age_tons_tot = n_age_tons_tot + x.value.n_avg_weighted_age * x.value.n_tons
+                n_eer_tot = n_eer_tot + x.value.n_avg_eer * x.value.asset_count
+                n_eer_tons_tot = n_eer_tons_tot + x.value.n_avg_weighted_eer * x.value.n_tons
+
+                # energy calc sums
                 self.pre_kwh_hvac_yearly = self.pre_kwh_hvac_yearly + x.value.pre_kwh_hvac_yearly
                 self.post_kwh_hvac_yearly = self.post_kwh_hvac_yearly + x.value.post_kwh_hvac_yearly
                 self.sav_kwh_hvac_yearly = self.sav_kwh_hvac_yearly + x.value.sav_kwh_hvac_yearly
                 self.pre_therms_hvac_yearly = self.pre_therms_hvac_yearly + x.value.pre_therms_hvac_yearly
                 self.post_therms_hvac_yearly = self.post_therms_hvac_yearly + x.value.post_therms_hvac_yearly
                 self.sav_therms_hvac_yearly = self.sav_therms_hvac_yearly + x.value.sav_therms_hvac_yearly
+
+        #existing asset avg metrics
+        self.x_avg_age = x_age_tot / self.asset_count
+        self.x_avg_weighted_age = x_age_tons_tot / self.x_tons
+        self.x_avg_eer = x_eer_tot / self.asset_count
+        self.x_avg_weighted_eer = x_eer_tons_tot / self.x_tons
+
+        #new asset avg metrics
+        self.n_avg_age = n_age_tot / self.asset_count
+        self.n_avg_weighted_age = n_age_tons_tot / self.n_tons
+        self.n_avg_eer = n_eer_tot / self.asset_count
+        self.n_avg_weighted_eer = n_eer_tons_tot / self.n_tons
+
+    def __to_dataframe(self):
+        column_names = ['portfolio-id',
+                        'site-count',
+                        'asset-count',
+                        'x-tons',
+                        'x-hp',
+                        'x-avg-age',
+                        'x-avg-weighted-age',
+                        'x-avg-eer',
+                        'x-avg-weighted-eer',
+                        'n-tons',
+                        'n-hp',
+                        'n-avg-age',
+                        'n-avg-weighted-age',
+                        'n-avg-eer',
+                        'n-avg-weighted-eer',
+                        'pre-kwh-hvac-yearly',
+                        'post-kwh-hvac-yearly',
+                        'sav-kwh-hvac-yearly']
+        values = [[self.id, 
+                   self.site_count,
+                   self.asset_count,
+                   self.x_tons,
+                   self.x_evap_hp,
+                   self.x_avg_age,
+                   self.x_avg_weighted_age,
+                   self.x_avg_eer,
+                   self.x_avg_weighted_eer,
+                   self.n_tons,
+                   self.n_evap_hp,
+                   self.n_avg_age,
+                   self.n_avg_weighted_age,
+                   self.n_avg_eer,
+                   self.n_avg_weighted_eer,
+                   self.pre_kwh_hvac_yearly, 
+                   self.post_kwh_hvac_yearly, 
+                   self.sav_kwh_hvac_yearly]]
+        return pd.DataFrame(values, columns=column_names)
+
+    def portfolio_summary_table_to_csv(self, filename):
+        print("Generating Portfolio Summary File")
+        dataframe = self.__to_dataframe()
+        dataframe.to_csv(str(filename) + "_portfolio_summary.csv", index = False)
+
+    def site_summary_table_to_csv(self, filename):
+        print("Generating Site Summary File")
+        summary_df = pd.DataFrame()
+        for x in self.site_list.iternodes():
+            if (x !=None):
+                site_df = x.value.to_dataframe()
+                if (summary_df.empty == True):
+                    summary_df = site_df
+                else:
+                    summary_df = summary_df.append(site_df, ignore_index = True)
+        summary_df.to_csv(str(filename) + "_site_summary.csv", index = False)
+
+    def proposal_summary_table_to_csv(self, filename):
+        print("Generating Asset Summary File")
+        summary_df = pd.DataFrame()
+        for x in self.site_list.iternodes():
+            if (x !=None):
+                site_df = x.value.proposal_summary_table_dataframe()
+                if (summary_df.empty == True):
+                    summary_df = site_df
+                else:
+                    summary_df = summary_df.append(site_df, ignore_index = True)
+        summary_df.to_csv(str(filename) + "_asset_summary.csv", index = False)
+        
 
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")

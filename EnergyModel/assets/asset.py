@@ -10,8 +10,8 @@ class Asset:
         self.manufactured_year = manufactured_year
         self.run_hours_yearly = 8760
         self.status = None
-        self.kwh_yearly = 0
-        self.therms_yearly = 0
+        self.kwh_hvac_yearly = 0
+        self.therms_hvac_yearly = 0
         self.calc_age()
 
     def set_proposal(self, proposal):
@@ -27,8 +27,8 @@ class Asset:
         self.manufactured_year = asset_to_copy.manufactured_year
         self.age = asset_to_copy.age
         self.run_hours_yearly = asset_to_copy.run_hours_yearly
-        self.kwh_yearly = 0
-        self.therms_yearly = 0
+        self.kwh_hvac_yearly = 0
+        self.therms_hvac_yearly = 0
         self._derived_copy_asset(asset_to_copy)
 
     def _derived_copy_asset(self, asset_to_copy):

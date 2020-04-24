@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from assets import Asset
 from utility import UtilityFunctions, TableAgeEfficiency
 import datetime
@@ -21,13 +22,13 @@ class Rtu(Asset.Asset):
         self.unocc_clg_sp = 85
         self.min_oa_pct = .12
         self.vent_fan_min_speed = 0.25
-        self.vent_fan_max_speed = 1
+        self.vent_fan_max_speed = 1.0
         self.vent_fan_cntrl_seq = "CFD"
         self.clg_fan_min_speed = 0.25
-        self.clg_fan_max_speed = 1
+        self.clg_fan_max_speed = 1.0
         self.clg_fan_cntrl_seq = "CFD"
-        self.htg_fan_min_speed = .6
-        self.htg_fan_max_speed = 1
+        self.htg_fan_min_speed = 1.0
+        self.htg_fan_max_speed = 1.0
         self.htg_fan_cntrl_seq = "CFD"
         self.cmp_lockout_temp = 50
 
@@ -56,11 +57,12 @@ class Rtu(Asset.Asset):
         self.htg_fan_cntrl_seq = asset_to_copy.htg_fan_cntrl_seq
         self.cmp_lockout_temp = asset_to_copy.cmp_lockout_temp
     
+    #fill data that is able to be inferred from known information
     def _filter_existing_asset(self):
         #get assumptions reference
         assumptions = self.proposal.site.assumptions
         #if r22 is refrigerant type, assume age
-        if (self.age == None):
+        if (self.age == None or self.age > 50):
             if (self.refrig_type == "R-22" or self.refrig_type == "R-12"):
                 self.age = assumptions.r22_implied_age
             else:
@@ -70,19 +72,20 @@ class Rtu(Asset.Asset):
             if (self.manufactured_year != None and self.manufactured_year < assumptions.r22_certainty_age):
                 self.refrig_type == "R-22"
         #if no eer listed, determine approx eer from age
-        if (self.fact_eer == None or self.fact_eer == 0):
+        if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):
             if (self.age != None):
                 eer_tbl = TableAgeEfficiency.TableAgeEfficiency.get_table()
                 row = eer_tbl[eer_tbl['AGE'] == self.age]
                 self.fact_eer = row.EER.iloc[0]
-                if (assumptions.eer_degredation_method == "Compound"):
-                    self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
-                elif(assumptions.eer_degredation_method == "Yearly"):
-                    self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_yearly(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
-                else:
-                    self.degr_eer = self.fact_eer
             else:
-                self.eer = self.proposal.site.assumptions.no_info_eer
+                self.fact_eer = self.proposal.site.assumptions.no_info_eer
+        #calculate degraded eer
+        if (assumptions.eer_degredation_method == "Compound"):
+            self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
+        elif(assumptions.eer_degredation_method == "Yearly"):
+            self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_yearly(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
+        else:
+            self.degr_eer = self.fact_eer
 
     def _filter_new_asset(self):
         #if r22 is refrigerant type, assume age

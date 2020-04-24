@@ -2,7 +2,7 @@ from sites import Site
 from assets import Asset, Rtu, AssetFactory, Proposal
 import datetime
 from portfolios import Portfolio
-from ecm import RetrofitVfd
+from ecm import EnerfitVfd, RetroCommission
 import pandas as pd
 import numpy as np
 from energymodel import TddRtuModel
@@ -22,7 +22,7 @@ def main():
     
     print("Reading Site List")
     site_list = pd.read_csv("site_list_input.csv")
-    portfolio = Portfolio.Portfolio("test")
+    portfolio = Portfolio.Portfolio("BGHE")
     portfolio.energy_model = TddRtuModel.TddRtuModel()
 
     for row in site_list.itertuples():
@@ -76,7 +76,7 @@ def main():
             x_asset.manufactured_year = row.year
             x_asset.calc_age()
             x_asset.econ = row.x_economizer
-            x_asset.eer = row.x_eer
+            x_asset.fact_eer = row.x_eer
             x_asset.refrig_type = row.x_refrig_type
             x_asset.vfd = row.x_vfd
             x_asset.stg_cmp = row.x_cmp_stg
@@ -90,7 +90,8 @@ def main():
                 n_asset.copy_asset(x_asset)
             # if retrofit, apply retrofit vfd actions to new asset
             if (proposal.strategy == "Retrofit"):
-                proposal.add_ecm(RetrofitVfd.RetrofitVfd())
+                proposal.add_ecm(EnerfitVfd.EnerfitVfd())
+                proposal.add_ecm(RetroCommission.RetroCommission())
                 proposal.apply_ecms()
             # if replace, set values from file and filter
             elif (proposal.strategy == "Replace"):
@@ -98,15 +99,21 @@ def main():
                 n_asset.manufactured_year = datetime.datetime.now().year
                 n_asset.calc_age()
                 n_asset.econ = row.n_economizer
-                n_asset.eer = row.n_eer
+                n_asset.fact_eer = row.n_eer
                 n_asset.vfd = row.n_vfd
                 n_asset.stg_cmp = row.n_cmp_stg
                 n_asset.evap_hp = row.n_evap_hp
                 n_asset.filter_asset()
 
     portfolio.run_energy_calculations()
-    print("Printing Assets")
-    portfolio.dump()
+    portfolio.portfolio_summary_table_to_csv("BGHE")
+    portfolio.site_summary_table_to_csv("BGHE")
+    portfolio.proposal_summary_table_to_csv("BGHE")
+    #print("Printing Assets")
+    #portfolio.dump()
+    print(portfolio.pre_kwh_hvac_yearly)
+    print(portfolio.post_kwh_hvac_yearly)
+    print(portfolio.sav_kwh_hvac_yearly)
 
 
 if __name__ == "__main__":

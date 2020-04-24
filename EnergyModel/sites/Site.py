@@ -4,6 +4,7 @@ from pyllist import dllist, dllistnode
 from weatherutility import geocode
 from climdata import ClimateData
 from energymodel import TddRtuModel
+import pandas as pd
 
 class Site:
     
@@ -15,6 +16,19 @@ class Site:
         self.latitude = None
         self.longitude = None
         self.altitude = None
+        self.asset_count = 0
+        self.x_tons = 0
+        self.x_evap_hp = 0
+        self.x_avg_age = 0
+        self.x_avg_weighted_age = 0
+        self.x_avg_eer = 0
+        self.x_avg_weighted_eer = 0
+        self.n_tons = 0
+        self.n_evap_hp = 0
+        self.n_avg_age = 0
+        self.n_avg_weighted_age = 0
+        self.n_avg_eer = 0
+        self.n_avg_weighted_eer = 0
         self.pre_kwh_hvac_yearly = 0
         self.post_kwh_hvac_yearly = 0
         self.sav_kwh_hvac_yearly = 0
@@ -44,23 +58,134 @@ class Site:
             if (x != None):
                 x.value.run_energy_calculations(energy_model)
         self.update_energy_totals()
-
+    '''
+    self.assets = 0
+        self.tons = 0
+        self.evap_hp = 0
+        self.avg_eer = 0
+        self.avg_weighted_eer = 0
+        self.avg_age = 0
+        self.avg_weighted_age = 0
+    '''
+    
     def update_energy_totals(self):
+        print("updating totals for site " + str(self.id))
         self.pre_kwh_hvac_yearly = 0
         self.post_kwh_hvac_yearly = 0
         self.sav_kwh_hvac_yearly = 0
         self.pre_therms_hvac_yearly = 0
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
+
+        self.asset_count = self.proposal_list.size
+        self.x_tons = 0
+        self.x_evap_hp = 0
+        x_age_tot = 0
+        x_age_tons_tot = 0
+        x_eer_tot = 0
+        x_eer_tons_tot = 0
+        self.n_tons = 0
+        self.n_evap_hp = 0
+        n_age_tot = 0
+        n_age_tons_tot = 0
+        n_eer_tot = 0
+        n_eer_tons_tot = 0
+
         for x in self.proposal_list.iternodes():
             if (x !=None):
-                self.pre_kwh_hvac_yearly = self.pre_kwh_hvac_yearly + x.value.pre_kwh_yearly
-                self.post_kwh_hvac_yearly = self.post_kwh_hvac_yearly + x.value.post_kwh_yearly
-                self.sav_kwh_hvac_yearly = self.sav_kwh_hvac_yearly + x.value.sav_kwh_yearly
-                self.pre_therms_hvac_yearly = self.pre_therms_hvac_yearly + x.value.pre_therms_yearly
-                self.post_therms_hvac_yearly = self.post_therms_hvac_yearly + x.value.post_therms_yearly
-                self.sav_therms_hvac_yearly = self.sav_therms_hvac_yearly + x.value.sav_therms_yearly
-            
+                #existing asset sums
+                self.x_tons = self.x_tons + x.value.existing_asset.tons
+                self.x_evap_hp = self.x_evap_hp + x.value.existing_asset.evap_hp
+                x_age_tot = x_age_tot + x.value.existing_asset.age
+                x_age_tons_tot = x_age_tons_tot + x.value.existing_asset.age * x.value.existing_asset.tons
+                x_eer_tot = x_eer_tot + x.value.existing_asset.degr_eer
+                x_eer_tons_tot = x_eer_tons_tot + x.value.existing_asset.degr_eer * x.value.existing_asset.tons
+
+                #new asset sums
+                self.n_tons = self.n_tons + x.value.new_asset.tons
+                self.n_evap_hp = self.n_evap_hp + x.value.new_asset.evap_hp
+                n_age_tot = n_age_tot + x.value.new_asset.age
+                n_age_tons_tot = n_age_tons_tot + x.value.new_asset.age * x.value.new_asset.tons
+                n_eer_tot = n_eer_tot + x.value.new_asset.degr_eer
+                n_eer_tons_tot = n_eer_tons_tot + x.value.new_asset.degr_eer * x.value.new_asset.tons
+
+                # energy calc sums
+                self.pre_kwh_hvac_yearly = self.pre_kwh_hvac_yearly + x.value.pre_kwh_hvac_yearly
+                self.post_kwh_hvac_yearly = self.post_kwh_hvac_yearly + x.value.post_kwh_hvac_yearly
+                self.sav_kwh_hvac_yearly = self.sav_kwh_hvac_yearly + x.value.sav_kwh_hvac_yearly
+                self.pre_therms_hvac_yearly = self.pre_therms_hvac_yearly + x.value.pre_therms_hvac_yearly
+                self.post_therms_hvac_yearly = self.post_therms_hvac_yearly + x.value.post_therms_hvac_yearly
+                self.sav_therms_hvac_yearly = self.sav_therms_hvac_yearly + x.value.sav_therms_hvac_yearly
+        
+        #existing asset avg metrics
+        self.x_avg_age = x_age_tot / self.asset_count
+        self.x_avg_weighted_age = x_age_tons_tot / self.x_tons
+        self.x_avg_eer = x_eer_tot / self.asset_count
+        self.x_avg_weighted_eer = x_eer_tons_tot / self.x_tons
+
+        #new asset avg metrics
+        self.n_avg_age = n_age_tot / self.asset_count
+        self.n_avg_weighted_age = n_age_tons_tot / self.n_tons
+        self.n_avg_eer = n_eer_tot / self.asset_count
+        self.n_avg_weighted_eer = n_eer_tons_tot / self.n_tons
+ 
+
+    def to_dataframe(self):
+        column_names = ['site-id',
+                        'address',
+                        'latitude',
+                        'longitude',
+                        'asset-count',
+                        'eflh-c',
+                        'x-tons',
+                        'x-hp',
+                        'x-avg-age',
+                        'x-avg-weighted-age',
+                        'x-avg-eer',
+                        'x-avg-weighted-eer',
+                        'n-tons',
+                        'n-hp',
+                        'n-avg-age',
+                        'n-avg-weighted-age',
+                        'n-avg-eer',
+                        'n-avg-weighted-eer',
+                        'pre-kwh-hvac-yearly',
+                        'post-kwh-hvac-yearly',
+                        'sav-kwh-hvac-yearly']
+        values = [[self.id,
+                   self.address,
+                   self.latitude,
+                   self.longitude,
+                   self.asset_count,
+                   self.climate_data.eflh_c,
+                   self.x_tons,
+                   self.x_evap_hp,
+                   self.x_avg_age,
+                   self.x_avg_weighted_age,
+                   self.x_avg_eer,
+                   self.x_avg_weighted_eer,
+                   self.n_tons,
+                   self.n_evap_hp,
+                   self.n_avg_age,
+                   self.n_avg_weighted_age,
+                   self.n_avg_eer,
+                   self.n_avg_weighted_eer,
+                   self.pre_kwh_hvac_yearly, 
+                   self.post_kwh_hvac_yearly, 
+                   self.sav_kwh_hvac_yearly]]
+        return pd.DataFrame(values, columns=column_names)
+
+    def proposal_summary_table_dataframe(self):
+        summary_df = pd.DataFrame()
+        for x in self.proposal_list.iternodes():
+            if (x !=None):
+                site_df = x.value.to_dataframe()
+                if (summary_df.empty == True):
+                    summary_df = site_df
+                else:
+                    summary_df = summary_df.append(site_df, ignore_index = True)
+        return summary_df
+                
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
         print("XXXXXXX SITE OBJECT XXXXXXXXXXXX")

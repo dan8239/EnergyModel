@@ -1,7 +1,10 @@
 from ecm import Ecm
 from assets import Rtu
 
-class RetrofitVfd(Ecm.Ecm):
+class RetroCommission(Ecm.Ecm):
+    def __init__(self):
+        pass
+        
     """description of class"""
     def __upgrade_eer(self, asset):
         eer_gain = asset.proposal.site.assumptions.retrofit_efficiency_gain
@@ -9,9 +12,6 @@ class RetrofitVfd(Ecm.Ecm):
 
     def apply_ecm(self, asset):
         if (isinstance(asset, Rtu.Rtu)):
-            asset.vfd = True
-            asset.vent_fan_cntrl_seq = "VFD"
-            asset.clg_fan_cntrl_seq = "VFD"
             self.__upgrade_eer(asset)
         else:
             raise NotImplementedError("ECM Type not supported for Asset Type")
