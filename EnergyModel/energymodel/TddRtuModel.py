@@ -116,6 +116,11 @@ class TddRtuModel():
             #totalize kwh from refrig, fan, and heating
             total_kwh = fan_kwh + refrig_kwh
 
+            rtu.fan_vent_kwh_yearly = fan_vent_kwh
+            rtu.fan_clg_kwh_yearly = fan_clg_kwh
+            rtu.fan_htg_kwh_yearly = fan_htg_kwh
+            rtu.fan_kwh_yearly = fan_kwh
+            rtu.refrg_kwh_yearly = refrig_kwh
             rtu.kwh_hvac_yearly = total_kwh
 
             return total_kwh

@@ -90,9 +90,7 @@ def main():
                 n_asset.copy_asset(x_asset)
             # if retrofit, apply retrofit vfd actions to new asset
             if (proposal.strategy == "Retrofit"):
-                proposal.add_ecm(EnerfitVfd.EnerfitVfd())
                 proposal.add_ecm(RetroCommission.RetroCommission())
-                proposal.apply_ecms()
             # if replace, set values from file and filter
             elif (proposal.strategy == "Replace"):
                 n_asset.tons = row.n_tonnage
@@ -104,6 +102,8 @@ def main():
                 n_asset.stg_cmp = row.n_cmp_stg
                 n_asset.evap_hp = row.n_evap_hp
                 n_asset.filter_asset()
+            proposal.add_ecm(EnerfitVfd.EnerfitVfd())
+            proposal.apply_ecms()
 
     portfolio.run_energy_calculations()
     portfolio.portfolio_summary_table_to_csv("BGHE")

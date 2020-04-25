@@ -31,6 +31,11 @@ class Rtu(Asset.Asset):
         self.htg_fan_max_speed = 1.0
         self.htg_fan_cntrl_seq = "CFD"
         self.cmp_lockout_temp = 50
+        self.fan_vent_kwh_yearly = 0
+        self.fan_clg_kwh_yearly = 0
+        self.fan_htg_kwh_yearly = 0
+        self.fan_kwh_yearly = 0
+        self.refrg_kwh_yearly = 0
 
     def _derived_copy_asset(self, asset_to_copy):
         self.tons = asset_to_copy.tons

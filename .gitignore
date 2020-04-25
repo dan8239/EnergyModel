@@ -1,1 +1,5 @@
 EnergyModel/config.py
+*asset_summary.csv
+*site_summary.csv
+*portfolio_summary.xlsx
+*portfolio_summary.csv
