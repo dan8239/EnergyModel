@@ -1,5 +1,6 @@
 from haversine import haversine, Unit
 import pandas as pd
+import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
@@ -25,7 +26,7 @@ class ClimateData(object):
 
     def get_closest_climate_zone(self, lat, lon):
         #check that lat/lon are good
-        if (lat == 0 or lon == 0):
+        if (lat == 0 or lon == 0 or lat == np.nan or lon == np.nan):
             raise TypeError("Lat or Lon of 0 input to find closest weather data")
 
         #temp variables to check closest city
@@ -52,13 +53,6 @@ class ClimateData(object):
 
     def calculate_climate_data(self):
         dataframe = self.__open_hourly_data()
-        #self.__append_cdd(dataframe)
-        #self.__append_hdd(dataframe)
-        #self.__append_eflh_c(dataframe)
-        #self.__append_eflh_h(dataframe)
-        #self.__append_eflh_t(dataframe)
-        #self.__append_clg_hrs(dataframe)
-        #self.__append_htg_hrs(dataframe)
         print("Appending Cooling Degree Days")
         dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_swing_temp)
         print("Appending Heating Degree Days")
@@ -129,49 +123,7 @@ class ClimateData(object):
         #convert to int
         return calc*1
 
-    '''
-    #add CDD hourly to dataframe
-    def __append_cdd(self, dataframe):
-        print("Appending Cooling Degree Days")
-        dataframe['CDD'] = dataframe.apply(lambda x: self.__calc_hourly_cdd(x['DRY BULB'], self.clg_swing_temp), axis = 1)
-        return dataframe
-
-    #add HDD hourly to dataframe
-    def __append_hdd(self, dataframe):
-        print("Appending Heating Degree Days")
-        dataframe['HDD'] = dataframe.apply(lambda x: self.__calc_hourly_hdd(x['DRY BULB'], self.htg_swing_temp), axis = 1)
-        return dataframe
-
-    #add EFLH-C to dataframe
-    def __append_eflh_c(self, dataframe):
-        print("Appending EFLH Cooling")
-        dataframe['EFLH-C'] = dataframe.apply(lambda x: self.__calc_hourly_eflh_c(x['CDD'], self.clg_design_temp, self.clg_swing_temp), axis = 1)
-        return dataframe
-
-    #add EFLH-H to dataframe
-    def __append_eflh_h(self, dataframe):
-        print("Appending EFLH Heating")
-        dataframe['EFLH-H'] = dataframe.apply(lambda x: self.__calc_hourly_eflh_h(x['HDD'], self.htg_design_temp, self.htg_swing_temp), axis = 1)
-        return dataframe
-
-    #add EFLH-T to dataframe
-    def __append_eflh_t(self, dataframe):
-        print("Appending EFLH Total")
-        dataframe['EFLH-T'] = dataframe.apply(lambda x: x['EFLH-C'] + x['EFLH-H'], axis = 1)
-        return dataframe
-
-    #add clg hrs to dataframe
-    def __append_clg_hrs(self, dataframe):
-        print("Appending Cooling Hours")
-        dataframe['CLG-HRS'] = dataframe.apply(lambda x: self.__calc_clg_hr(x['DRY BULB'], self.clg_swing_temp), axis = 1)
-        return dataframe
-
-    #add htg hours to dataframe
-    def __append_htg_hrs(self, dataframe):
-        print("Appending Heating Hours")
-        dataframe['HTG-HRS'] = dataframe.apply(lambda x: self.__calc_htg_hr(x['DRY BULB'], self.htg_swing_temp), axis = 1)
-        return dataframe
-    '''
+    
 
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")

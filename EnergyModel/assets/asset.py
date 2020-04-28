@@ -34,6 +34,31 @@ class Asset:
     def _derived_copy_asset(self, asset_to_copy):
         pass
 
+    def copy_asset_from_row(self, row):
+        if (self.status == "existing"):
+            self.__copy_existing_asset_from_row(row)
+        elif (self.status == "new"):
+            self.__copy_new_asset_from_row(row)
+        else:
+            raise TypeError("Asset Status Not Set")
+
+    def _derived_copy_existing_asset_from_row(self, row):
+        raise NotImplementedError("Derived copy new asset from row not implemented for type " + str(type(self)))
+
+    def _derived_copy_new_asset_from_row(self, row):
+        raise NotImplementedError("Derived copy new asset from row not implemented for type " + str(type(self)))
+
+    def __copy_existing_asset_from_row(self, row):
+        self.manufactured_year = row.year
+        self.calc_age()
+        self._derived_copy_existing_asset_from_row(row)
+        
+    def __copy_new_asset_from_row(self, row):
+        self.manufactured_year = datetime.datetime.now().year
+        self.calc_age()
+        self._derived_copy_new_asset_from_row(row)
+
+
     def calc_age(self):
         if (self.manufactured_year != None):
             self.age = int(datetime.datetime.now().year) - self.manufactured_year

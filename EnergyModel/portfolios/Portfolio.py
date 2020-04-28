@@ -1,12 +1,16 @@
 from sites import Site
 from pyllist import dllist, dllistnode
 import pandas as pd
+from energymodel import TddRtuModel
 
 class Portfolio():
-    def __init__(self, id):
+    def __init__(self, id, model_type = "TDD"):
         self.id = id
         self.site_list = dllist()
-        self.energy_model = None
+        if (model_type == "TDD"):
+            self.energy_model = TddRtuModel.TddRtuModel()
+        else:
+            self.energy_model = None
         self.site_count = 0
         self.asset_count = 0
         self.x_tons = 0
@@ -27,6 +31,7 @@ class Portfolio():
         self.pre_therms_hvac_yearly = 0
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
+        self.kwh_hvac_reduction_pct = 0
 
     def add_site(self, site):
         if (not isinstance(site, Site.Site)):
@@ -39,6 +44,16 @@ class Portfolio():
             if (x.value.id == site_name):
                 return x.value
         return None
+
+    def filter_assets(self):
+        for x in self.site_list.iternodes():
+            if (x != None):
+                x.value.filter_assets()
+
+    def apply_ecms(self):
+        for x in self.site_list.iternodes():
+            if (x != None):
+                x.value.apply_ecms()
 
     def run_energy_calculations(self):
         for x in self.site_list.iternodes():
@@ -97,7 +112,11 @@ class Portfolio():
                 self.pre_therms_hvac_yearly = self.pre_therms_hvac_yearly + x.value.pre_therms_hvac_yearly
                 self.post_therms_hvac_yearly = self.post_therms_hvac_yearly + x.value.post_therms_hvac_yearly
                 self.sav_therms_hvac_yearly = self.sav_therms_hvac_yearly + x.value.sav_therms_hvac_yearly
-
+        
+        if (self.pre_kwh_hvac_yearly):
+            self.kwh_hvac_reduction_pct = self.sav_kwh_hvac_yearly / self.pre_kwh_hvac_yearly
+        else:
+            self.kwh_hvac_reduction_pct = 0
 
         if (self.asset_count):
             self.x_avg_age = x_age_tot / self.asset_count
@@ -121,24 +140,25 @@ class Portfolio():
             self.n_avg_weighted_eer = 0
 
     def __to_dataframe(self):
-        column_names = ['portfolio-id',
-                        'site-count',
-                        'asset-count',
-                        'x-tons',
-                        'x-hp',
-                        'x-avg-age',
-                        'x-avg-weighted-age',
-                        'x-avg-eer',
-                        'x-avg-weighted-eer',
-                        'n-tons',
-                        'n-hp',
-                        'n-avg-age',
-                        'n-avg-weighted-age',
-                        'n-avg-eer',
-                        'n-avg-weighted-eer',
-                        'pre-kwh-hvac-yearly',
-                        'post-kwh-hvac-yearly',
-                        'sav-kwh-hvac-yearly']
+        column_names = ['portfolio_id',
+                        'site_count',
+                        'asset_count',
+                        'x_tons',
+                        'x_hp',
+                        'x_avg_age',
+                        'x_avg_weighted_age',
+                        'x_avg_eer',
+                        'x_avg_weighted_eer',
+                        'n_tons',
+                        'n_hp',
+                        'n_avg_age',
+                        'n_avg_weighted_age',
+                        'n_avg_eer',
+                        'n_avg_weighted_eer',
+                        'pre_kwh_hvac_yearly',
+                        'post_kwh_hvac_yearly',
+                        'sav_kwh_hvac_yearly',
+                        'kwh_hvac_yearly_reduction_pct']
         values = [[self.id, 
                    self.site_count,
                    self.asset_count,
@@ -156,7 +176,8 @@ class Portfolio():
                    self.n_avg_weighted_eer,
                    self.pre_kwh_hvac_yearly, 
                    self.post_kwh_hvac_yearly, 
-                   self.sav_kwh_hvac_yearly]]
+                   self.sav_kwh_hvac_yearly,
+                   self.kwh_hvac_reduction_pct]]
         return pd.DataFrame(values, columns=column_names)
 
     def portfolio_summary_table_to_csv(self, filename):

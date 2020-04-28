@@ -48,6 +48,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="energymodel\__init__.py" />
+    <Compile Include="fileio\FileIO.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="fileio\__init__.py" />
     <Compile Include="portfolios\__init__.py">
       <SubType>Code</SubType>
     </Compile>
@@ -108,6 +112,7 @@
     <Folder Include="ecm\" />
     <Folder Include="climdata\" />
     <Folder Include="energymodel\" />
+    <Folder Include="fileio\" />
     <Folder Include="weatherutility\" />
     <Folder Include="portfolios\" />
     <Folder Include="sites\" />

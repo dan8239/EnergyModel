@@ -35,6 +35,7 @@ class Site:
         self.pre_therms_hvac_yearly = 0
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
+        self.kwh_hvac_reduction_pct = 0
         self.proposal_list = dllist()
         self.climate_data = ClimateData.ClimateData()
         self.assumptions = Assumptions.Assumptions()
@@ -67,7 +68,16 @@ class Site:
         self.avg_age = 0
         self.avg_weighted_age = 0
     '''
-    
+    def filter_assets(self):
+        for x in self.proposal_list.iternodes():
+            if (x != None):
+                x.value.filter_assets()
+
+    def apply_ecms(self):
+        for x in self.proposal_list.iternodes():
+            if (x != None):
+                x.value.apply_ecms()
+
     def update_energy_totals(self):
         print("updating totals for site " + str(self.id))
         self.pre_kwh_hvac_yearly = 0
@@ -117,6 +127,11 @@ class Site:
                 self.post_therms_hvac_yearly = self.post_therms_hvac_yearly + x.value.post_therms_hvac_yearly
                 self.sav_therms_hvac_yearly = self.sav_therms_hvac_yearly + x.value.sav_therms_hvac_yearly
         
+        if (self.pre_kwh_hvac_yearly):
+            self.kwh_hvac_reduction_pct = self.sav_kwh_hvac_yearly / self.pre_kwh_hvac_yearly
+        else:
+            self.kwh_hvac_reduction_pct = 0
+
         #asset avg metrics
         if (self.asset_count):
             self.x_avg_age = x_age_tot / self.asset_count
@@ -141,27 +156,28 @@ class Site:
 
 
     def to_dataframe(self):
-        column_names = ['site-id',
+        column_names = ['site_id',
                         'address',
                         'latitude',
                         'longitude',
-                        'asset-count',
-                        'eflh-c',
-                        'x-tons',
-                        'x-hp',
-                        'x-avg-age',
-                        'x-avg-weighted-age',
-                        'x-avg-eer',
-                        'x-avg-weighted-eer',
-                        'n-tons',
-                        'n-hp',
-                        'n-avg-age',
-                        'n-avg-weighted-age',
-                        'n-avg-eer',
-                        'n-avg-weighted-eer',
-                        'pre-kwh-hvac-yearly',
-                        'post-kwh-hvac-yearly',
-                        'sav-kwh-hvac-yearly']
+                        'asset_count',
+                        'eflh_c',
+                        'x_tons',
+                        'x_hp',
+                        'x_avg_age',
+                        'x_avg_weighted_age',
+                        'x_avg_eer',
+                        'x_avg_weighted_eer',
+                        'n_tons',
+                        'n_hp',
+                        'n_avg_age',
+                        'n_avg_weighted_age',
+                        'n_avg_eer',
+                        'n_avg_weighted_eer',
+                        'pre_kwh_hvac_yearly',
+                        'post_kwh_hvac_yearly',
+                        'sav_kwh_hvac_yearly',
+                        'kwh_hvac_yearly_reduction_pct']
         values = [[self.id,
                    self.address,
                    self.latitude,
@@ -182,7 +198,8 @@ class Site:
                    self.n_avg_weighted_eer,
                    self.pre_kwh_hvac_yearly, 
                    self.post_kwh_hvac_yearly, 
-                   self.sav_kwh_hvac_yearly]]
+                   self.sav_kwh_hvac_yearly,
+                   self.kwh_hvac_reduction_pct]]
         return pd.DataFrame(values, columns=column_names)
 
     def proposal_summary_table_dataframe(self):

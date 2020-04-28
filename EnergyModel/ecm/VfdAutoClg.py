@@ -3,7 +3,7 @@ from assets import Rtu
 
 class VfdAutoClg(Ecm.Ecm):
     def __init__(self, clg_fan_max_speed = 1.0, 
-                 clg_fan_min_speed = 0.4, 
+                 clg_fan_min_speed = 0.7, 
                  clg_fan_cntrl_seq = "VFD"):
         self.clg_fan_min_speed = clg_fan_min_speed
         self.clg_fan_max_speed = clg_fan_max_speed

@@ -92,6 +92,7 @@ class Rtu(Asset.Asset):
         else:
             self.degr_eer = self.fact_eer
 
+    
     def _filter_new_asset(self):
         #if r22 is refrigerant type, assume age
         self.manufactured_year = datetime.datetime.now().year
@@ -106,7 +107,7 @@ class Rtu(Asset.Asset):
             self.fact_eer = assumptions.new_RTU_min_eer
         self.degr_eer = self.fact_eer
         self.fan_efficiency = 0.95
-
+    
 
     # Filter through asset data and fill gaps based on model assumptions
     def _derived_filter_asset(self):
@@ -116,7 +117,23 @@ class Rtu(Asset.Asset):
             self._filter_new_asset()
         else:
             raise TypeError("Missing status for asset: " + str(type(self)))
-        
+    
+    def _derived_copy_existing_asset_from_row(self, row):
+        self.tons = row.x_tonnage
+        self.econ = row.x_economizer
+        self.fact_eer = row.x_eer
+        self.refrig_type = row.x_refrig_type
+        self.vfd = row.x_vfd
+        self.stg_cmp = row.x_cmp_stg
+        self.evap_hp = row.x_evap_hp
+
+    def _derived_copy_new_asset_from_row(self, row):
+        self.tons = row.n_tonnage
+        self.econ = row.n_economizer
+        self.fact_eer = row.n_eer
+        self.vfd = row.n_vfd
+        self.stg_cmp = row.n_cmp_stg
+        self.evap_hp = row.n_evap_hp
 
     def _derived_dump(self):
         print("Tons: " + str(self.tons))
