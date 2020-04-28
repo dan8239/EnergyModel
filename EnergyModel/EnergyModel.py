@@ -86,15 +86,15 @@ def main():
             x_asset.filter_asset()
 
             # if not replacing, new asset takes old asset info
-            if (proposal.strategy != "Replace"):
+            if (proposal.strategy != "Replace" and proposal.strategy != "REPLACE"):
                 n_asset.copy_asset(x_asset)
             # if retrofit, apply retrofit vfd actions to new asset
-            if (proposal.strategy == "Retrofit"):
+            if (proposal.strategy == "Retrofit" or proposal.strategy == "RETROFIT"):
                 proposal.add_ecm(RetroCommission.RetroCommission())
                 proposal.add_ecm(EnerfitVfd.EnerfitVfd())
                 proposal.apply_ecms()
             # if replace, set values from file and filter
-            elif (proposal.strategy == "Replace"):
+            elif (proposal.strategy == "Replace" or proposal.strategy == "REPLACE"):
                 n_asset.tons = row.n_tonnage
                 n_asset.manufactured_year = datetime.datetime.now().year
                 n_asset.calc_age()

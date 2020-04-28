@@ -117,18 +117,28 @@ class Site:
                 self.post_therms_hvac_yearly = self.post_therms_hvac_yearly + x.value.post_therms_hvac_yearly
                 self.sav_therms_hvac_yearly = self.sav_therms_hvac_yearly + x.value.sav_therms_hvac_yearly
         
-        #existing asset avg metrics
-        self.x_avg_age = x_age_tot / self.asset_count
-        self.x_avg_weighted_age = x_age_tons_tot / self.x_tons
-        self.x_avg_eer = x_eer_tot / self.asset_count
-        self.x_avg_weighted_eer = x_eer_tons_tot / self.x_tons
+        #asset avg metrics
+        if (self.asset_count):
+            self.x_avg_age = x_age_tot / self.asset_count
+            self.x_avg_eer = x_eer_tot / self.asset_count
+            self.n_avg_age = n_age_tot / self.asset_count
+            self.n_avg_eer = n_eer_tot / self.asset_count
+        else:
+            self.x_avg_age = 0
+            self.x_avg_eer = 0
+            self.n_avg_age = 0
+            self.n_avg_eer = 0
+        if (self.x_tons):
+            self.x_avg_weighted_age = x_age_tons_tot / self.x_tons
+            self.x_avg_weighted_eer = x_eer_tons_tot / self.x_tons
+            self.n_avg_weighted_age = n_age_tons_tot / self.n_tons
+            self.n_avg_weighted_eer = n_eer_tons_tot / self.n_tons
+        else:
+            self.x_avg_weighted_age = 0
+            self.x_avg_weighted_eer = 0
+            self.n_avg_weighted_age = 0
+            self.n_avg_weighted_eer = 0
 
-        #new asset avg metrics
-        self.n_avg_age = n_age_tot / self.asset_count
-        self.n_avg_weighted_age = n_age_tons_tot / self.n_tons
-        self.n_avg_eer = n_eer_tot / self.asset_count
-        self.n_avg_weighted_eer = n_eer_tons_tot / self.n_tons
- 
 
     def to_dataframe(self):
         column_names = ['site-id',

@@ -52,13 +52,27 @@ class ClimateData(object):
 
     def calculate_climate_data(self):
         dataframe = self.__open_hourly_data()
-        self.__append_cdd(dataframe)
-        self.__append_hdd(dataframe)
-        self.__append_eflh_c(dataframe)
-        self.__append_eflh_h(dataframe)
-        self.__append_eflh_t(dataframe)
-        self.__append_clg_hrs(dataframe)
-        self.__append_htg_hrs(dataframe)
+        #self.__append_cdd(dataframe)
+        #self.__append_hdd(dataframe)
+        #self.__append_eflh_c(dataframe)
+        #self.__append_eflh_h(dataframe)
+        #self.__append_eflh_t(dataframe)
+        #self.__append_clg_hrs(dataframe)
+        #self.__append_htg_hrs(dataframe)
+        print("Appending Cooling Degree Days")
+        dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_swing_temp)
+        print("Appending Heating Degree Days")
+        dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_swing_temp)
+        print("Appending EFLH Cooling")
+        dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_swing_temp)
+        print("Appending EFLH Heating")
+        dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_swing_temp)
+        print("Appending EFLH Total")
+        dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
+        print("Appending Cooling Hours")
+        dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_swing_temp)
+        print("Appending Heating Hours")
+        dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_swing_temp)
         self.cdd = dataframe['CDD'].sum()
         self.hdd = dataframe['HDD'].sum()
         self.eflh_c = dataframe['EFLH-C'].sum()
@@ -86,17 +100,15 @@ class ClimateData(object):
 
     def __calc_hourly_cdd(self, temp, swing_temp):
         calc = temp - swing_temp
-        if (calc < 0):
-            return 0
-        else:
-            return calc/24
+        sign = (calc > 0)*1
+        val = calc * sign / 24
+        return val
 
     def __calc_hourly_hdd(self, temp, swing_temp):
         calc = swing_temp - temp
-        if (calc < 0):
-            return 0
-        else:
-            return calc/24
+        sign = (calc > 0)*1
+        val = calc * sign / 24
+        return val
 
     def __calc_hourly_eflh_c(self, cdd, design_temp, swing_temp):
         return cdd*24/(design_temp - swing_temp)
@@ -104,16 +116,20 @@ class ClimateData(object):
     def __calc_hourly_eflh_h(self, hdd, design_temp, swing_temp):
         return hdd*24/(swing_temp - design_temp)
 
+    def __calc_hourly_eflh_t(self, eflh_c, eflh_h):
+        return eflh_c + eflh_h
+
     def __calc_clg_hr(self, temp, swing_temp):
-        if (temp - swing_temp > 0):
-            return 1
-        return 0
+        calc = ((temp - swing_temp) > 0)
+        #convert to int
+        return calc*1
 
     def __calc_htg_hr(self, temp, swing_temp):
-        if (temp - swing_temp > 0):
-            return 0
-        return 1
+        calc = ((swing_temp - temp) > 0)
+        #convert to int
+        return calc*1
 
+    '''
     #add CDD hourly to dataframe
     def __append_cdd(self, dataframe):
         print("Appending Cooling Degree Days")
@@ -155,6 +171,7 @@ class ClimateData(object):
         print("Appending Heating Hours")
         dataframe['HTG-HRS'] = dataframe.apply(lambda x: self.__calc_htg_hr(x['DRY BULB'], self.htg_swing_temp), axis = 1)
         return dataframe
+    '''
 
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")

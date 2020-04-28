@@ -87,7 +87,7 @@ class TddRtuModel():
             #refrigeration runtime raw
             eflh_c_occ = cd.eflh_c * rtu.run_hours_yearly / 8760
             #reduce refrigeration hours for thermal efficiency increase
-            eflh_c_occ_eff = eflh_c_occ / refrig_eff_pct_at_ea_t
+            eflh_c_occ_eff = eflh_c_occ / refrig_eff_pct_at_oa_t
             #fan heating run hours
             fan_htg_run_hours = cd.htg_hrs * cd.avg_htg_load_pct
             fan_htg_run_hours_occ = fan_htg_run_hours * rtu.run_hours_yearly / 8760
