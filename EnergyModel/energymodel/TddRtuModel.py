@@ -59,6 +59,7 @@ class TddRtuModel():
             #peak refrig kw/ton, total - fan
             refrig_peak_kw_per_ton = rtu_peak_kw_per_ton - fan_peak_kw_per_ton
 
+            '''
             #avg clg load condition calculations (REFRIGERATION)
             #cooling mixed air temperature. If no econ, use zone temp, if econ, use lower of MA-T and OA-T
             if (rtu.econ == False):
@@ -66,19 +67,21 @@ class TddRtuModel():
             else:
                 min_oa_clg_ma_t = rtu.min_oa_pct * (cd.avg_clg_oa_t) + (1-rtu.min_oa_pct) * (rtu.occ_clg_sp)
                 clg_ma_t = min(min_oa_clg_ma_t, cd.avg_clg_oa_t)
+            '''
+
             #refrig % of peak draw at entering air conditions
-            refrig_kw_draw_pct_at_ea_t = self.__refrig_kw_draw_pct_calc(rtu, clg_ma_t)
+            refrig_kw_draw_pct_at_oa_t = self.__refrig_kw_draw_pct_calc(rtu, cd.avg_clg_oa_t)
             #refrig efficiency gain at entering air conditions
-            refrig_eff_pct_at_ea_t = self.__refrig_therm_eff_pct_calc(rtu, clg_ma_t)
+            refrig_eff_pct_at_oa_t = self.__refrig_therm_eff_pct_calc(rtu, cd.avg_clg_oa_t)
             #peak thermal load percentage taking design factor into account
             refrig_peak_therm_load_pct = 1 / (1 + self.clg_design_factor)
             #thermal load percentage at avg condition, adding in efficiency gain of refrigeration
             ### Use For Fan Calcs###
-            refrig_therm_load_pct_at_oa_t = refrig_peak_therm_load_pct / refrig_eff_pct_at_ea_t * cd.avg_clg_load_pct
+            refrig_therm_load_pct_at_oa_t = refrig_peak_therm_load_pct / refrig_eff_pct_at_oa_t * cd.avg_clg_load_pct
             #cycling on low load kw draw penalty. Divide penalty by number of compressors
             refrig_kw_draw_pct_cycling_penalty = 1 + (1-refrig_therm_load_pct_at_oa_t) * self.max_cycling_degradation / rtu.stg_cmp
             #total refrigeration draw when running at condition
-            refrig_kw_per_ton_at_oa_t = refrig_peak_kw_per_ton * refrig_kw_draw_pct_at_ea_t * refrig_kw_draw_pct_cycling_penalty
+            refrig_kw_per_ton_at_oa_t = refrig_peak_kw_per_ton * refrig_kw_draw_pct_at_oa_t * refrig_kw_draw_pct_cycling_penalty
 
             #occ hours calculations
             #refrigeration runtime raw

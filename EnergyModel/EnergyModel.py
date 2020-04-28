@@ -91,6 +91,8 @@ def main():
             # if retrofit, apply retrofit vfd actions to new asset
             if (proposal.strategy == "Retrofit"):
                 proposal.add_ecm(RetroCommission.RetroCommission())
+                proposal.add_ecm(EnerfitVfd.EnerfitVfd())
+                proposal.apply_ecms()
             # if replace, set values from file and filter
             elif (proposal.strategy == "Replace"):
                 n_asset.tons = row.n_tonnage
@@ -102,13 +104,13 @@ def main():
                 n_asset.stg_cmp = row.n_cmp_stg
                 n_asset.evap_hp = row.n_evap_hp
                 n_asset.filter_asset()
-            proposal.add_ecm(EnerfitVfd.EnerfitVfd())
-            proposal.apply_ecms()
+                proposal.add_ecm(EnerfitVfd.EnerfitVfd())
+                proposal.apply_ecms()
 
     portfolio.run_energy_calculations()
-    portfolio.portfolio_summary_table_to_csv("BGHE")
-    portfolio.site_summary_table_to_csv("BGHE")
-    portfolio.proposal_summary_table_to_csv("BGHE")
+    portfolio.portfolio_summary_table_to_csv("LOWES")
+    portfolio.site_summary_table_to_csv("LOWES")
+    portfolio.proposal_summary_table_to_csv("LOWES")
     #print("Printing Assets")
     #portfolio.dump()
     print(portfolio.pre_kwh_hvac_yearly)

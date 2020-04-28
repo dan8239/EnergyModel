@@ -66,8 +66,14 @@ class ClimateData(object):
         self.eflh_t = dataframe['EFLH-T'].sum()
         self.clg_hrs = dataframe['CLG-HRS'].sum()
         self.htg_hrs = dataframe['HTG-HRS'].sum()
-        self.avg_clg_load_pct = self.eflh_c/self.clg_hrs
-        self.avg_htg_load_pct = self.eflh_h/self.htg_hrs
+        if (self.clg_hrs != 0):
+            self.avg_clg_load_pct = self.eflh_c/self.clg_hrs
+        else:
+            self.avg_clg_load_pct = 0
+        if (self.htg_hrs != 0):
+            self.avg_htg_load_pct = self.eflh_h/self.htg_hrs
+        else:
+            self.avg_htg_load_pct = 0
         self.avg_clg_oa_t = self.avg_clg_load_pct*(self.clg_design_temp - self.clg_swing_temp) + self.clg_swing_temp
         self.avg_htg_oa_t = self.htg_swing_temp - self.avg_htg_load_pct*(self.htg_swing_temp - self.htg_design_temp)
 
