@@ -1,5 +1,4 @@
 from assets import Asset, Proposal
-from utility import Assumptions
 from pyllist import dllist, dllistnode
 from weatherutility import geocode
 from climdata import ClimateData
@@ -38,7 +37,6 @@ class Site:
         self.kwh_hvac_reduction_pct = 0
         self.proposal_list = dllist()
         self.climate_data = ClimateData.ClimateData()
-        self.assumptions = Assumptions.Assumptions()
         self.energy_model = TddRtuModel.TddRtuModel()
 
     def geocode(self):

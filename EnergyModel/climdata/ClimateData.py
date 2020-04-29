@@ -70,27 +70,22 @@ class ClimateData():
         self.closest_climate_zone = climate_data_to_copy.closest_climate_zone
 
     def update_climate_data(self, htg_swing_temp, clg_swing_temp):
-        if (self.closest_climate_zone == None or self.clg_design_temp == 0 or self.htg_design_temp == 0):
+        print("Updating Climate Data for " + str(self.closest_climate_zone))
+        if (self.closest_climate_zone == None):
             raise TypeError("Climate Zone Updated before being instantiated")
         self.htg_swing_temp = htg_swing_temp
         self.clg_swing_temp = clg_swing_temp
         self.calculate_climate_data()
 
     def calculate_climate_data(self):
+        print("Calculating Climate Data for " + str(self.closest_climate_zone))
         dataframe = self.__open_hourly_data()
-        print("Appending Cooling Degree Days")
         dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_swing_temp)
-        print("Appending Heating Degree Days")
         dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_swing_temp)
-        print("Appending EFLH Cooling")
         dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_swing_temp)
-        print("Appending EFLH Heating")
         dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_swing_temp)
-        print("Appending EFLH Total")
         dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
-        print("Appending Cooling Hours")
         dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_swing_temp)
-        print("Appending Heating Hours")
         dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_swing_temp)
         self.cdd = dataframe['CDD'].sum()
         self.hdd = dataframe['HDD'].sum()

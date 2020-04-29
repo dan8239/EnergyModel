@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from assets import Asset
-from utility import UtilityFunctions, TableAgeEfficiency
+from utility import UtilityFunctions, TableAgeEfficiency, Assumptions
 import datetime
 
 class Rtu(Asset.Asset):
@@ -15,19 +15,25 @@ class Rtu(Asset.Asset):
         self.vfd = vfd
         self.refrig_type = refrig_type
         self.stg_cmp = stg_cmp
-        self.fan_efficiency = 0.85
-        self.occ_htg_sp = 68
-        self.unocc_htg_sp = 55
-        self.occ_clg_sp = 72
-        self.unocc_clg_sp = 85
-        self.min_oa_pct = .12
-        self.vent_fan_min_speed = 0.7
-        self.vent_fan_max_speed = 1.0
-        self.clg_fan_min_speed = 0.7
-        self.clg_fan_max_speed = 1.0
-        self.htg_fan_min_speed = 1.0
-        self.htg_fan_max_speed = 1.0
-        self.cmp_lockout_temp = 50
+        #move this section to assumptions! Separate assumptions file into Asset types!
+        self.fan_efficiency = Assumptions.RtuDefaults.fan_efficiency
+        self.occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp
+        self.unocc_htg_sp = Assumptions.RtuDefaults.unocc_htg_sp
+        self.occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp
+        self.unocc_clg_sp = Assumptions.RtuDefaults.unocc_clg_sp
+        self.min_oa_pct = Assumptions.RtuDefaults.min_oa_pct
+        self.vent_fan_min_speed = Assumptions.RtuDefaults.vent_fan_min_speed
+        self.vent_fan_max_speed = Assumptions.RtuDefaults.vent_fan_max_speed
+        self.clg_fan_min_speed = Assumptions.RtuDefaults.clg_fan_min_speed
+        self.clg_fan_max_speed = Assumptions.RtuDefaults.clg_fan_max_speed
+        self.htg_fan_min_speed = Assumptions.RtuDefaults.htg_fan_min_speed
+        self.htg_fan_max_speed = Assumptions.RtuDefaults.htg_fan_max_speed
+        self.clg_design_factor = Assumptions.RtuDefaults.clg_design_factor
+        self.htg_design_factor = Assumptions.RtuDefaults.htg_design_factor
+        self.cmp_lockout_temp = Assumptions.RtuDefaults.cmp_lockout_temp
+        self.clg_design_factor = Assumptions.RtuDefaults.clg_design_factor
+        self.htg_design_factor = Assumptions.RtuDefaults.htg_design_factor
+        #move this section to assumptions! Separate assumptions file into types!
         self.__update_vfd_selection()
         self.fan_vent_kwh_yearly = 0
         self.fan_clg_kwh_yearly = 0
@@ -64,15 +70,14 @@ class Rtu(Asset.Asset):
         #if r22 is refrigerant type, assume age
         if (self.age == None or self.age > 50):
             if (self.refrig_type == "R-22" or self.refrig_type == "R-12"):
-                self.age = self.proposal.site.assumptions.r22_implied_age
+                self.age = Assumptions.FilterAssets.r22_implied_age
             else:
-                self.age = self.proposal.site.assumptions.r410_implied_age
+                self.age = Assumptions.FilterAssets.r410_implied_age
 
     def __fill_refrig_type_by_year(self):
         #if manufactured before certain date (2010 default), assume R22
         if (self.refrig_type == None):
-            assumptions = self.proposal.site.assumptions
-            if (self.manufactured_year != None and self.manufactured_year < assumptions.r22_certainty_age):
+            if (self.manufactured_year != None and self.manufactured_year < Assumptions.FilterAssets.r22_certainty_year):
                 self.refrig_type == "R-22"
 
     def __fill_eer_by_age(self):
@@ -83,15 +88,14 @@ class Rtu(Asset.Asset):
                 row = eer_tbl[eer_tbl['AGE'] == self.age]
                 self.fact_eer = row.EER.iloc[0]
             else:
-                self.fact_eer = self.proposal.site.assumptions.no_info_eer
+                self.fact_eer = Assumptions.FilterAssets.no_info_eer
 
     def __degrade_eer(self):
         #calculate degraded eer
-        assumptions = self.proposal.site.assumptions
-        if (assumptions.eer_degredation_method == "Compound"):
-            self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
-        elif(assumptions.eer_degredation_method == "Yearly"):
-            self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_yearly(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
+        if (Assumptions.FilterAssets.eer_degredation_method == "Compound"):
+            self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, Assumptions.FilterAssets.eer_degradation_factor, Assumptions.FilterAssets.existing_RTU_min_eer)
+        elif(Assumptions.FilterAssets.eer_degredation_method == "Yearly"):
+            self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_yearly(self.fact_eer, self.age, Assumptions.FilterAssets.eer_degradation_factor, Assumptions.FilterAssets.existing_RTU_min_eer)
         else:
             self.degr_eer = self.fact_eer
 
@@ -108,19 +112,16 @@ class Rtu(Asset.Asset):
         self.manufactured_year = datetime.datetime.now().year
         self.age = 0
 
-        #get assumptions reference
-        assumptions = self.proposal.site.assumptions
-
         #set refrig type
         self.refrig_type = "R-410A"
 
         #if not listed, set eer to minimum new unit eer
         if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):
-            self.fact_eer = assumptions.new_RTU_min_eer
+            self.fact_eer = Assumptions.FilterAssets.new_RTU_min_eer
         self.degr_eer = self.fact_eer
 
         #set fan efficiency for new unit
-        self.fan_efficiency = assumptions.new_RTU_fan_efficiency
+        self.fan_efficiency = Assumptions.FilterAssets.new_RTU_fan_efficiency
     
 
     # Filter through asset data and fill gaps based on model assumptions

@@ -1,5 +1,6 @@
 from ecm import Ecm
 from assets import Rtu
+from utility import Assumptions
 
 class RetroCommission(Ecm.Ecm):
     def __init__(self):
@@ -7,7 +8,7 @@ class RetroCommission(Ecm.Ecm):
         
     """description of class"""
     def __upgrade_eer(self, asset):
-        eer_gain = asset.proposal.site.assumptions.retrofit_efficiency_gain
+        eer_gain = Assumptions.FilterAssets.retrofit_efficiency_gain
         asset.degr_eer = min(asset.fact_eer, asset.degr_eer * (1 + eer_gain))
 
     def apply_ecm(self, asset):

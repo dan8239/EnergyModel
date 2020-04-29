@@ -1,13 +1,8 @@
-from sites import Site
-from assets import Asset, Rtu, AssetFactory, Proposal
-import datetime
 from portfolios import Portfolio
-from ecm import EnerfitVfd, RetroCommission, VfdAutoClg, VfdAutoVent, VfdAutoHtg
-import pandas as pd
-import numpy as np
+from ecm import EnerfitVfd, RetroCommission, VfdAutoClg, VfdAutoVent, VfdAutoHtg, SetpointAdj
 from energymodel import TddRtuModel
 from fileio import FileIO
-
+from utility import Assumptions
 
 
 def main():
@@ -37,6 +32,8 @@ def main():
     portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission())
     portfolio.add_ecm("RETROFIT",VfdAutoClg.VfdAutoClg(clg_fan_min_speed = 0.7))
     portfolio.add_ecm("RETROFIT",VfdAutoVent.VfdAutoVent(vent_fan_min_speed = 0.7))
+    portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+    portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
 
     #apply ecms to each asset
     portfolio.apply_ecms()

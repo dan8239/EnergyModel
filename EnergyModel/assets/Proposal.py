@@ -50,7 +50,7 @@ class Proposal:
         self.ecm_list = self.site.portfolio.get_ecm_list(self.strategy)
     
     def apply_ecms(self):
-        self.ecm_list.apply_ecms(self)
+        self.ecm_list.apply_ecms(self.new_asset)
 
     def run_energy_calculations(self, energy_model):
         self.existing_asset.run_energy_calculations(energy_model)

@@ -6,8 +6,6 @@ class TddRtuModel():
         super().__init__()
         self.load_factor = 0.8
         self.kw_per_bhp = 0.7457
-        self.clg_design_factor = 0.2
-        self.htg_design_factor = 0.4
         self.max_cycling_degradation = 0.07
         self.fan_cube_law_factor = 3
 
@@ -45,7 +43,7 @@ class TddRtuModel():
         print("Running energy calculations for proposal " + rtu.proposal.prop_id + " " + rtu.status + " RTU")
         if ((isinstance(rtu, Cdu.Cdu) or isinstance(rtu, Pkg.Pkg)) and rtu.tons > 0):
             #easy reference to climate object
-            cd = rtu.proposal.site.climate_data
+            cd = rtu.climate_data
 
             #peak load calculations
             #break horsepower from list hp
@@ -74,7 +72,7 @@ class TddRtuModel():
             #refrig efficiency gain at entering air conditions
             refrig_eff_pct_at_oa_t = self.__refrig_therm_eff_pct_calc(rtu, cd.avg_clg_oa_t)
             #peak thermal load percentage taking design factor into account
-            refrig_peak_therm_load_pct = 1 / (1 + self.clg_design_factor)
+            refrig_peak_therm_load_pct = 1 / (1 + rtu.clg_design_factor)
             #thermal load percentage at avg condition, adding in efficiency gain of refrigeration
             ### Use For Fan Calcs###
             refrig_therm_load_pct_at_oa_t = refrig_peak_therm_load_pct / refrig_eff_pct_at_oa_t * cd.avg_clg_load_pct
