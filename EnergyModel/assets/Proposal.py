@@ -12,7 +12,7 @@ class Proposal:
         if (self.existing_asset != None):
             self.existing_asset.proposal = self
         self.new_asset = new_asset
-        self.ecm_list = dllist()
+        self.ecm_list = None
         self.pre_kwh_hvac_yearly = 0
         self.post_kwh_hvac_yearly = 0
         self.sav_kwh_hvac_yearly = 0
@@ -20,21 +20,14 @@ class Proposal:
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
         self.kwh_hvac_reduction_pct = 0
-
-    def _add_ecm(self, ecm):
-        self.ecm_list.appendright(ecm)
-
-    def _apply_ecms(self):
-        for x in self.ecm_list.iternodes():
-            if (x != None):
-                x.value.apply_ecm(self.new_asset)
-        
+       
     def add_existing_asset(self, asset):
         if (not isinstance(asset, Asset.Asset)):
             raise TypeError("Cannot add a non Asset type to proposal existing asset: " + str(type(asset)))
         self.existing_asset = asset
         self.existing_asset.status = "existing"
         self.existing_asset.proposal = self
+        asset.climate_data = self.site.climate_data
 
     def add_new_asset(self, asset):
         if (not isinstance(asset, Asset.Asset)):
@@ -42,6 +35,7 @@ class Proposal:
         self.new_asset = asset
         self.new_asset.status = "new"
         self.new_asset.proposal = self
+        asset.climate_data = self.site.climate_data
 
     #filter old asset, if replacing filter new asset. If retro/no action copy old asset
     def filter_assets(self):
@@ -52,20 +46,11 @@ class Proposal:
         else:
             self.new_asset.copy_asset(self.existing_asset)
 
+    def attach_ecms(self):
+        self.ecm_list = self.site.portfolio.get_ecm_list(self.strategy)
+    
     def apply_ecms(self):
-        # if retrofit, apply retrofit vfd actions to new asset
-        print("Applying ECMs for Proposal " + str(self.prop_id))
-        if (self.strategy == "Retrofit" or self.strategy == "RETROFIT"):
-            self._add_ecm(RetroCommission.RetroCommission())
-            self._add_ecm(VfdAutoClg.VfdAutoClg())
-            self._add_ecm(VfdAutoVent.VfdAutoVent())
-            self._apply_ecms()
-        # if replace, set values from file and filter
-        elif (self.strategy == "Replace" or self.strategy == "REPLACE"):
-            if (self.new_asset.vfd == True):
-                self._add_ecm(VfdAutoClg.VfdAutoClg())
-                self._add_ecm(VfdAutoVent.VfdAutoVent())
-            self._apply_ecms()
+        self.ecm_list.apply_ecms(self)
 
     def run_energy_calculations(self, energy_model):
         self.existing_asset.run_energy_calculations(energy_model)

@@ -2,7 +2,7 @@ from sites import Site
 from assets import Asset, Rtu, AssetFactory, Proposal
 import datetime
 from portfolios import Portfolio
-from ecm import EnerfitVfd, RetroCommission
+from ecm import EnerfitVfd, RetroCommission, VfdAutoClg, VfdAutoVent, VfdAutoHtg
 import pandas as pd
 import numpy as np
 from energymodel import TddRtuModel
@@ -12,14 +12,14 @@ from fileio import FileIO
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("LOWES_FULLSCHEDULE_70PCTMINFANSPD")
+    portfolio = Portfolio.Portfolio("LOWES_TEST")
     
 
     #import sites from file, add to portfolio
-    FileIO.import_sites("site_list_input.csv", portfolio)
+    FileIO.import_sites("site_list_input_LOWES_SHORT.csv", portfolio)
 
     #read asset list
-    FileIO.import_assets("asset_list_input.csv", portfolio)
+    FileIO.import_assets("asset_list_input_LOWES_SHORT.csv", portfolio)
     
 
     #for each asset listed
@@ -28,6 +28,15 @@ def main():
 
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
+
+
+    #attach ecms
+    portfolio.add_ecm_list("REPLACE")
+    portfolio.add_ecm_list("RETROFIT")
+    portfolio.add_ecm_list("NO ACTION")
+    portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission())
+    portfolio.add_ecm("RETROFIT",VfdAutoClg.VfdAutoClg(clg_fan_min_speed = 0.7))
+    portfolio.add_ecm("RETROFIT",VfdAutoVent.VfdAutoVent(vent_fan_min_speed = 0.7))
 
     #apply ecms to each asset
     portfolio.apply_ecms()

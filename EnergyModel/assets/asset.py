@@ -1,5 +1,6 @@
 import copy
 import datetime
+from climdata import ClimateData
 
 class Asset:
     def __init__(self, proposal = None, make = None, model = None, serial = None, manufactured_year = None):
@@ -12,6 +13,7 @@ class Asset:
         self.status = None
         self.kwh_hvac_yearly = 0
         self.therms_hvac_yearly = 0
+        self.climate_data = None
         self.calc_age()
 
     def set_proposal(self, proposal):
@@ -73,6 +75,11 @@ class Asset:
 
     def run_energy_calculations(self, energy_model):
         energy_model.calculate(self)
+
+    def update_climate_data(self, htg_swing_temp, clg_swing_temp):
+        new_clim_data = ClimateData.ClimateData()
+        new_clim_data.copy_climate_data(self.climate_data)
+        new_clim_data.update_climate_data(htg_swing_temp, clg_swing_temp)
 
     def dump(self):
         print("Asset Type: " + type(self).__name__)

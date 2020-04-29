@@ -2,6 +2,7 @@ from sites import Site
 from pyllist import dllist, dllistnode
 import pandas as pd
 from energymodel import TddRtuModel
+from ecm import EcmManager
 
 class Portfolio():
     def __init__(self, id, model_type = "TDD"):
@@ -32,6 +33,7 @@ class Portfolio():
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
         self.kwh_hvac_reduction_pct = 0
+        self.ecm_manager = EcmManager.EcmManager()
 
     def add_site(self, site):
         if (not isinstance(site, Site.Site)):
@@ -44,6 +46,15 @@ class Portfolio():
             if (x.value.id == site_name):
                 return x.value
         return None
+
+    def add_ecm_list(self, ecm_description):
+        self.ecm_manager.add_ecm_list(ecm_description)
+
+    def get_ecm_list(self, ecm_description):
+        return self.ecm_manager.get_ecm_list(ecm_description)
+
+    def add_ecm(self, ecm_description, ecm):
+        self.ecm_manager.add_ecm(ecm_description, ecm)
 
     def filter_assets(self):
         for x in self.site_list.iternodes():

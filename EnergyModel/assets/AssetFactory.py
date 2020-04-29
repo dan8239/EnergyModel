@@ -3,8 +3,8 @@ from assets import Asset, Pkg, Cdu, Ahu, Proposal
 class AssetFactory():
     
     def create_proposal(site, type_of_asset):
-        proposal = Proposal.Proposal()
-        site.add_proposal(proposal)
+        new_proposal = Proposal.Proposal()
+        site.add_proposal(new_proposal)
         if (type_of_asset == "Pkg" or type_of_asset == "Rtu" or type_of_asset == "PKG" or type_of_asset == "RTU"):
             x_asset = Pkg.Pkg()
             n_asset = Pkg.Pkg()
@@ -19,8 +19,8 @@ class AssetFactory():
             n_asset = Asset.Asset()
         else:
             raise TypeError("Invalid Asset Type Creation: " + str(type_of_asset))
-        proposal.add_existing_asset(x_asset)
-        proposal.add_new_asset(n_asset)
-        return proposal
+        new_proposal.add_existing_asset(x_asset)
+        new_proposal.add_new_asset(n_asset)
+        return new_proposal
 
 

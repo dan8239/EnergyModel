@@ -76,6 +76,7 @@ class Site:
     def apply_ecms(self):
         for x in self.proposal_list.iternodes():
             if (x != None):
+                x.value.attach_ecms()
                 x.value.apply_ecms()
 
     def update_energy_totals(self):

@@ -21,16 +21,14 @@ class Rtu(Asset.Asset):
         self.occ_clg_sp = 72
         self.unocc_clg_sp = 85
         self.min_oa_pct = .12
-        self.vent_fan_min_speed = 0.25
+        self.vent_fan_min_speed = 0.7
         self.vent_fan_max_speed = 1.0
-        self.vent_fan_cntrl_seq = "CFD"
-        self.clg_fan_min_speed = 0.25
+        self.clg_fan_min_speed = 0.7
         self.clg_fan_max_speed = 1.0
-        self.clg_fan_cntrl_seq = "CFD"
         self.htg_fan_min_speed = 1.0
         self.htg_fan_max_speed = 1.0
-        self.htg_fan_cntrl_seq = "CFD"
         self.cmp_lockout_temp = 50
+        self.__update_vfd_selection()
         self.fan_vent_kwh_yearly = 0
         self.fan_clg_kwh_yearly = 0
         self.fan_htg_kwh_yearly = 0
@@ -61,21 +59,23 @@ class Rtu(Asset.Asset):
         self.htg_fan_max_speed = asset_to_copy.htg_fan_max_speed
         self.htg_fan_cntrl_seq = asset_to_copy.htg_fan_cntrl_seq
         self.cmp_lockout_temp = asset_to_copy.cmp_lockout_temp
-    
-    #fill data that is able to be inferred from known information
-    def _filter_existing_asset(self):
-        #get assumptions reference
-        assumptions = self.proposal.site.assumptions
+
+    def __fill_age_by_refrig_type(self):
         #if r22 is refrigerant type, assume age
         if (self.age == None or self.age > 50):
             if (self.refrig_type == "R-22" or self.refrig_type == "R-12"):
-                self.age = assumptions.r22_implied_age
+                self.age = self.proposal.site.assumptions.r22_implied_age
             else:
-                self.age = assumptions.r410_implied_age
+                self.age = self.proposal.site.assumptions.r410_implied_age
+
+    def __fill_refrig_type_by_year(self):
         #if manufactured before certain date (2010 default), assume R22
         if (self.refrig_type == None):
+            assumptions = self.proposal.site.assumptions
             if (self.manufactured_year != None and self.manufactured_year < assumptions.r22_certainty_age):
                 self.refrig_type == "R-22"
+
+    def __fill_eer_by_age(self):
         #if no eer listed, determine approx eer from age
         if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):
             if (self.age != None):
@@ -84,7 +84,10 @@ class Rtu(Asset.Asset):
                 self.fact_eer = row.EER.iloc[0]
             else:
                 self.fact_eer = self.proposal.site.assumptions.no_info_eer
+
+    def __degrade_eer(self):
         #calculate degraded eer
+        assumptions = self.proposal.site.assumptions
         if (assumptions.eer_degredation_method == "Compound"):
             self.degr_eer = UtilityFunctions.UtilityFunctions.degrade_eer_compound(self.fact_eer, self.age, assumptions.eer_degradation_factor, assumptions.existing_RTU_min_eer)
         elif(assumptions.eer_degredation_method == "Yearly"):
@@ -92,7 +95,14 @@ class Rtu(Asset.Asset):
         else:
             self.degr_eer = self.fact_eer
 
-    
+    #fill data that is able to be inferred from known information
+    def _filter_existing_asset(self):
+        self.__fill_age_by_refrig_type()
+        self.__fill_refrig_type_by_year()
+        self.__fill_eer_by_age()
+        self.__degrade_eer()
+        
+   
     def _filter_new_asset(self):
         #if r22 is refrigerant type, assume age
         self.manufactured_year = datetime.datetime.now().year
@@ -103,10 +113,14 @@ class Rtu(Asset.Asset):
 
         #set refrig type
         self.refrig_type = "R-410A"
-        if (self.fact_eer == None or self.fact_eer == 0):
+
+        #if not listed, set eer to minimum new unit eer
+        if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):
             self.fact_eer = assumptions.new_RTU_min_eer
         self.degr_eer = self.fact_eer
-        self.fan_efficiency = 0.95
+
+        #set fan efficiency for new unit
+        self.fan_efficiency = assumptions.new_RTU_fan_efficiency
     
 
     # Filter through asset data and fill gaps based on model assumptions
@@ -126,6 +140,7 @@ class Rtu(Asset.Asset):
         self.vfd = row.x_vfd
         self.stg_cmp = row.x_cmp_stg
         self.evap_hp = row.x_evap_hp
+        self.__update_vfd_selection()
 
     def _derived_copy_new_asset_from_row(self, row):
         self.tons = row.n_tonnage
@@ -134,6 +149,17 @@ class Rtu(Asset.Asset):
         self.vfd = row.n_vfd
         self.stg_cmp = row.n_cmp_stg
         self.evap_hp = row.n_evap_hp
+        self.__update_vfd_selection()
+    
+    def __update_vfd_selection(self):
+        if (self.vfd == True):
+            self.vent_fan_cntrl_seq = "VFD"
+            self.clg_fan_cntrl_seq = "VFD"
+            self.htg_fan_cntrl_seq = "VFD"
+        else:
+            self.vent_fan_cntrl_seq = "CFD"
+            self.clg_fan_cntrl_seq = "CFD"
+            self.htg_fan_cntrl_seq = "CFD"
 
     def _derived_dump(self):
         print("Tons: " + str(self.tons))

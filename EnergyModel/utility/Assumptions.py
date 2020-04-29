@@ -16,6 +16,8 @@ class Assumptions():
         self.new_RTU_no_data_staged_cmp = False #value of staged compressors without data
         self.retrofit_efficiency_gain = 0.3 #eer efficiency gained by retrofit (%)
         self.new_RTU_min_eer = 11.76 #minimum eer for new units (if none proposed)
+        self.new_RTU_fan_efficiency = 0.90     #replacement fan efficiency increase over existing
         self.existing_RTU_no_data_maintenance = "OK" #condition of existing unit if none listed
         self.existing_RTU_poor_maintenance_values = ["Poor", "Marginal"]
+        
 

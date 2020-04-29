@@ -4,13 +4,13 @@ import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
 
-class ClimateData(object):
+class ClimateData():
     """Hold all necessary climate information for energy calculations"""
     def __init__(self):
         self.clg_swing_temp = 60
         self.htg_swing_temp = 56
-        self.clg_design_temp = 95
-        self.htg_design_temp = 12
+        self.clg_design_temp = 0
+        self.htg_design_temp = 0
         self.cdd = 0
         self.hdd = 0
         self.eflh_c = 0
@@ -50,6 +50,31 @@ class ClimateData(object):
         self.clg_design_temp = clg_design_tmp
         self.htg_design_temp = htg_design_tmp
         return closest_city, clg_design_tmp, htg_design_tmp
+
+    def copy_climate_data(self, climate_data_to_copy):
+        self.clg_swing_temp = climate_data_to_copy.clg_swing_temp
+        self.htg_swing_temp = climate_data_to_copy.htg_swing_temp
+        self.clg_design_temp = climate_data_to_copy.clg_design_temp
+        self.htg_design_temp = climate_data_to_copy.htg_design_temp
+        self.cdd = climate_data_to_copy.cdd
+        self.hdd = climate_data_to_copy.hdd
+        self.eflh_c = climate_data_to_copy.eflh_c
+        self.eflh_h = climate_data_to_copy.eflh_h
+        self.eflh_t = climate_data_to_copy.eflh_t
+        self.clg_hrs = climate_data_to_copy.clg_hrs
+        self.htg_hrs = climate_data_to_copy.htg_hrs
+        self.avg_clg_load_pct = climate_data_to_copy.avg_clg_load_pct
+        self.avg_htg_load_pct = climate_data_to_copy.avg_htg_load_pct
+        self.avg_clg_oa_t = climate_data_to_copy.avg_clg_oa_t
+        self.avg_htg_oa_t = climate_data_to_copy.avg_htg_oa_t
+        self.closest_climate_zone = climate_data_to_copy.closest_climate_zone
+
+    def update_climate_data(self, htg_swing_temp, clg_swing_temp):
+        if (self.closest_climate_zone == None or self.clg_design_temp == 0 or self.htg_design_temp == 0):
+            raise TypeError("Climate Zone Updated before being instantiated")
+        self.htg_swing_temp = htg_swing_temp
+        self.clg_swing_temp = clg_swing_temp
+        self.calculate_climate_data()
 
     def calculate_climate_data(self):
         dataframe = self.__open_hourly_data()
