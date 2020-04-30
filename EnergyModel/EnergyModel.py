@@ -42,15 +42,16 @@ def main():
     portfolio.run_energy_calculations()
 
     #send to output files
-    portfolio.portfolio_summary_table_to_csv(portfolio.id)
-    portfolio.site_summary_table_to_csv(portfolio.id)
-    portfolio.proposal_summary_table_to_csv(portfolio.id)
+    #portfolio.portfolio_summary_table_to_csv(portfolio.id)
+    #portfolio.site_summary_table_to_csv(portfolio.id)
+    #portfolio.proposal_summary_table_to_csv(portfolio.id)
     #print("Printing Assets")
     #portfolio.dump()
     print("Pre-KWH: " + str(portfolio.pre_kwh_hvac_yearly))
     print("Post-KWH: " + str(portfolio.post_kwh_hvac_yearly))
     print("Sav-KWH: " + str(portfolio.sav_kwh_hvac_yearly))
     print("KWH Reduction %: " + str(portfolio.kwh_hvac_reduction_pct))
+    portfolio.avg_power_speed_ratio()
 
 
 if __name__ == "__main__":

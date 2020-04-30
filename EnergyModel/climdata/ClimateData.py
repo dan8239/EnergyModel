@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
+#from utility import Assumptions
 
 class ClimateData():
     """Hold all necessary climate information for energy calculations"""
@@ -23,6 +24,9 @@ class ClimateData():
         self.avg_clg_oa_t = 0
         self.avg_htg_oa_t = 0
         self.closest_climate_zone = None
+        #
+        self.power_speed_ratio = 0
+        self.power_delta = 0
 
     def get_closest_climate_zone(self, lat, lon):
         #check that lat/lon are good
@@ -87,6 +91,7 @@ class ClimateData():
         dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
         dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_swing_temp)
         dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_swing_temp)
+        
         self.cdd = dataframe['CDD'].sum()
         self.hdd = dataframe['HDD'].sum()
         self.eflh_c = dataframe['EFLH-C'].sum()
@@ -104,6 +109,68 @@ class ClimateData():
             self.avg_htg_load_pct = 0
         self.avg_clg_oa_t = self.avg_clg_load_pct*(self.clg_design_temp - self.clg_swing_temp) + self.clg_swing_temp
         self.avg_htg_oa_t = self.htg_swing_temp - self.avg_htg_load_pct*(self.htg_swing_temp - self.htg_design_temp)
+        
+        
+        #### TESTING MATH
+        min_speed = 1.0
+        max_speed = 1.0
+
+        ## Span Avg Clg Load, Convert To Power (Current Method)
+        span_clg_load = self.__span(self.avg_clg_load_pct, min_speed, max_speed, 1)
+        avg_power_0 = span_clg_load**3
+        print("0: Span avg clg load, convert to power (current method): ")
+        print(str(avg_power_0))
+
+        ## Span Speed, avg, convert to power %
+        dataframe['FANSPEED-SPAN'] = self.__span(dataframe['EFLH-C'].values, min_speed, max_speed, dataframe['CLG-HRS'].values)
+        span_avg_fan_speed = dataframe['FANSPEED-SPAN'].sum() / self.clg_hrs
+        avg_power_1 = span_avg_fan_speed**3
+        #print("1: Span Speed, avg, convert to power: ")
+        #print(str(avg_power_1))
+
+        ## Convert to power %, avg, then span
+        dataframe['FAN-POWER-%-0-100'] = self.__cubed(dataframe['EFLH-C'].values)
+        fan_power_pct_0_100_avg = dataframe['FAN-POWER-%-0-100'].sum()/self.clg_hrs
+        avg_power_2 = self.__span(fan_power_pct_0_100_avg, min_speed, max_speed, 1)
+        #print("2: Convert to power %, avg, then span: ")
+        #print(str(avg_power_2))
+
+        # Convert to power %, avg, convert to fan speed, span, convert to power
+        fan_speed_power_calc = fan_power_pct_0_100_avg**(1.0/3.0)
+        fan_speed_power_calc_span = self.__span(fan_speed_power_calc, min_speed, max_speed, 1)
+        avg_power_3 = fan_speed_power_calc_span**3
+        print("3: Convert to power %, avg, convert to fan speed, span, convert back to power: ")
+        print(str(avg_power_3))
+
+        # Span Speed, convert to power %, then avg (CORRECT METHOD)
+        dataframe['FANPOWER-SPAN'] = self.__cubed(dataframe['FANSPEED-SPAN'])
+        avg_power_4 = dataframe['FANPOWER-SPAN'].sum() / self.clg_hrs
+        print("4: Span Speed, convert to power %, then avg (CORRECT METHOD):")
+        print(str(avg_power_4))
+        #print("Ratio For Correction (% avg power span / avg speed span:")
+        self.power_speed_ratio = (avg_power_4 - avg_power_0) / (avg_power_3 - avg_power_0)
+        #print(str(self.power_speed_ratio))
+        #print()
+
+        # Crazy Formula to approximate the true math
+        span = max_speed - min_speed
+        pr = 0.7568*(span**2) + 0.1986*(span) + 0.0192
+        avg_power_5 = pr*avg_power_3 + (1-pr)*avg_power_0
+        self.power_delta = avg_power_5/avg_power_4
+        print("4: Crazy Formula to approximate the true math: ")
+        print(str(avg_power_5) + ": ratio = " + str(self.power_delta))
+        print()
+
+        ######
+        '''
+        avg_fan_load = avg_of_cubes**(1./3.)
+        print("Average Load: " + str(self.avg_clg_load_pct))
+        print("(Average Load)^3: " + str(self.avg_clg_load_pct**3))
+        print("Average Fan Load: " + str(avg_fan_load))
+        print("Avg(EFLH-C^3): " + str(avg_of_cubes))
+        '''
+
+        
 
     def __open_hourly_data(self):
         # check that climate zone is populated
@@ -142,6 +209,12 @@ class ClimateData():
         calc = ((swing_temp - temp) > 0)
         #convert to int
         return calc*1
+
+    def __cubed(self, prcnt):
+        return prcnt**3
+
+    def __span(self, input, min, max, filter):
+        return (input*(max - min) + min) * filter
 
     
 

@@ -10,12 +10,12 @@ class TddRtuModel():
         self.fan_cube_law_factor = 3
 
     #based on efficiency curve. Efficiency 100% at 95 deg F, 65.060241% at 65 deg F 
-    def __refrig_kw_draw_pct_calc(self, rtu, ea_t):
-        return 0.011646586*max(rtu.cmp_lockout_temp, ea_t) - 0.106435703
+    def __refrig_kw_draw_pct_calc(self, rtu, oa_t):
+        return 0.011646586*max(rtu.cmp_lockout_temp, oa_t) - 0.106435703
 
     #based on thermal output curve. Thermal output 100% at 95 deg F, 114% at 65 deg F
-    def __refrig_therm_eff_pct_calc(self, rtu, ea_t):
-        return -0.0046666667*max(rtu.cmp_lockout_temp, ea_t) + 1.44333333
+    def __refrig_therm_eff_pct_calc(self, rtu, oa_t):
+        return -0.0046666667*max(rtu.cmp_lockout_temp, oa_t) + 1.44333333
 
     def __vent_fan_speed(self, rtu):
         if rtu.vent_fan_cntrl_seq == "CFD":

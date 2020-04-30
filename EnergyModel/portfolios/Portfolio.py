@@ -219,7 +219,15 @@ class Portfolio():
                 else:
                     summary_df = summary_df.append(site_df, ignore_index = True)
         summary_df.to_csv(str(filename) + "_asset_summary.csv", index = False)
-        
+    
+    def avg_power_speed_ratio(self):
+        tot_power_speed_ratio = 0
+        tot_power_delta = 0
+        for x in self.site_list.iternodes():
+            tot_power_speed_ratio = tot_power_speed_ratio + x.value.climate_data.power_speed_ratio
+            tot_power_delta = tot_power_delta + x.value.climate_data.power_delta
+        print("Power/Speed Ratio: " + str(tot_power_speed_ratio/self.site_count))
+        print("Power Calc Delta: " + str(tot_power_delta/self.site_count))
 
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
