@@ -34,7 +34,5 @@ class RtuDefaults():
     clg_design_factor = 0.2
     htg_design_factor = 0.4
     cmp_lockout_temp = 50
-    clg_design_factor = 0.2
-    htg_design_factor = 0.4
         
 

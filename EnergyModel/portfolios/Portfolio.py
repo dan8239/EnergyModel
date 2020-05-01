@@ -3,6 +3,9 @@ from pyllist import dllist, dllistnode
 import pandas as pd
 from energymodel import TddRtuModel
 from ecm import EcmManager
+from datetime import datetime
+import os
+from pathlib import Path
 
 class Portfolio():
     def __init__(self, id, model_type = "TDD"):
@@ -191,10 +194,38 @@ class Portfolio():
                    self.kwh_hvac_reduction_pct]]
         return pd.DataFrame(values, columns=column_names)
 
+    def __output_file_path(self, projectname):
+        date = datetime.now()
+        path = os.path.join("projects/" + 
+                            projectname + 
+                            "/output"
+                            )
+        return path
+
+    def __output_file_name(self, projectname, filetype):
+        date = datetime.now()
+        path = os.path.join(projectname + 
+                            "_" + 
+                            filetype +
+                            "_" +
+                            str(date.year) + 
+                            "_" +  
+                            str(date.month) +
+                            str(date.day) +
+                            ".csv", 
+                            )
+        return path
+
+    def __to_csv_wrapper(self, dataframe, filetype):
+        output_file_path = Path(self.__output_file_path(self.id))
+        output_file_name = self.__output_file_name(self.id, filetype)
+        output_file_path.mkdir(parents=True, exist_ok = True)
+        dataframe.to_csv(output_file_path / output_file_name, index = False)
+
     def portfolio_summary_table_to_csv(self, filename):
         print("Generating Portfolio Summary File")
-        dataframe = self.__to_dataframe()
-        dataframe.to_csv(str(filename) + "_portfolio_summary.csv", index = False)
+        summary_df = self.__to_dataframe()
+        self.__to_csv_wrapper(summary_df, "portfolio_summary")
 
     def site_summary_table_to_csv(self, filename):
         print("Generating Site Summary File")
@@ -206,7 +237,7 @@ class Portfolio():
                     summary_df = site_df
                 else:
                     summary_df = summary_df.append(site_df, ignore_index = True)
-        summary_df.to_csv(str(filename) + "_site_summary.csv", index = False)
+        self.__to_csv_wrapper(summary_df, "site_summary")
 
     def proposal_summary_table_to_csv(self, filename):
         print("Generating Asset Summary File")
@@ -218,7 +249,7 @@ class Portfolio():
                     summary_df = site_df
                 else:
                     summary_df = summary_df.append(site_df, ignore_index = True)
-        summary_df.to_csv(str(filename) + "_asset_summary.csv", index = False)
+        self.__to_csv_wrapper(summary_df, "asset_summary")
 
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")

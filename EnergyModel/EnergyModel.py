@@ -7,14 +7,14 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("LOWES_FULL")
+    portfolio = Portfolio.Portfolio("BGHE")
     
 
     #import sites from file, add to portfolio
-    FileIO.import_sites("site_list_input_LOWES_FULL.csv", portfolio)
+    FileIO.import_sites("projects/BGHE/site_list_input_BGHE.csv", portfolio)
 
     #read asset list
-    FileIO.import_assets("asset_list_input_LOWES_FULL.csv", portfolio)
+    FileIO.import_assets("projects/BGHE/asset_list_input_BGHE.csv", portfolio)
     
 
     #for each asset listed
@@ -24,7 +24,19 @@ def main():
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
 
+    #BGHE Setup
+    #attach ecms
+    portfolio.add_ecm_list("Replace")
+    portfolio.add_ecm_list("Retrofit")
+    portfolio.add_ecm_list("No Action")
+    portfolio.add_ecm("Retrofit",RetroCommission.RetroCommission())
+    portfolio.add_ecm("Retrofit",EnerfitVfd.EnerfitVfd())
+    portfolio.add_ecm("Replace",EnerfitVfd.EnerfitVfd())
+    #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+    #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
 
+    '''
+    #LOWES SETUP
     #attach ecms
     portfolio.add_ecm_list("REPLACE")
     portfolio.add_ecm_list("RETROFIT")
@@ -34,6 +46,7 @@ def main():
     portfolio.add_ecm("RETROFIT",VfdAutoVent.VfdAutoVent(vent_fan_min_speed = 0.7))
     #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+    '''
 
     #apply ecms to each asset
     portfolio.apply_ecms()

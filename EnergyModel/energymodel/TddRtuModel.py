@@ -9,7 +9,7 @@ class TddRtuModel():
         self.max_cycling_degradation = 0.07
         self.fan_cube_law_factor = 3
 
-    #based on efficiency curve. Efficiency 100% at 95 deg F, 65.060241% at 65 deg F 
+    #based on efficiency curve. kw draw is 100% of peak at 95 deg F, 65.060241% at 65 deg F 
     def __refrig_kw_draw_pct_calc(self, rtu, oa_t):
         return 0.011646586*max(rtu.cmp_lockout_temp, oa_t) - 0.106435703
 
@@ -22,8 +22,8 @@ class TddRtuModel():
 
     def __power_speed_ratio(self, rtu):   
         '''
-        the average power calculated by averaging the 0-100% load hour by hour is "speed"
-        the average power calculated by averaging the 0-100% power draw by hour is "power"
+        the average fan power calculated by averaging the 0-100% cooling load by hour is "speed"
+        the average fan power calculated by averaging the 0-100% power draw by hour is "power"
         when the fan actually runs from a min to max value (i.e. not 0-100%), the result is skewed. 
         The closer to 100% range or span, power is more accurate. The closer to 0% range or span, the speed estimate is more accurate
         That ratio of power/speed estimate that accurately predicts actual fan draw from % loaded is the power_speed_ratio, and is variable by total span
@@ -33,7 +33,9 @@ class TddRtuModel():
         return power_speed_ratio
 
     def __avg_power_pct_blended(self, rtu, avg_power_pct_from_power, avg_power_pct_from_speed):
+        #calc ratio from RTU min/max speeds
         pr = self.__power_speed_ratio(rtu)
+        #blend fan power calcs appropriately
         avg_power_pct_blended = pr*avg_power_pct_from_power + (1-pr)*avg_power_pct_from_speed
         return avg_power_pct_blended
 
@@ -69,7 +71,7 @@ class TddRtuModel():
             #easy reference to climate object
             cd = rtu.climate_data
 
-            #peak load calculations
+            #peak load calculations from EER, HP
             #break horsepower from list hp
             bhp = rtu.evap_hp * self.load_factor
             #peak fan kwh from bhp to kwh conversion
@@ -81,6 +83,7 @@ class TddRtuModel():
             #peak refrig kw/ton, total - fan
             refrig_peak_kw_per_ton = rtu_peak_kw_per_ton - fan_peak_kw_per_ton
 
+            #Refrigeration efficiency adjustments at condition
             #refrig % of peak draw at entering air conditions
             refrig_kw_draw_pct_at_oa_t = self.__refrig_kw_draw_pct_calc(rtu, cd.avg_clg_oa_t)
             #refrig efficiency gain at entering air conditions
@@ -132,7 +135,6 @@ class TddRtuModel():
             
             #calc avg power pct blended
             fan_clg_avg_power_pct_blended = self.__avg_power_pct_blended(rtu, fan_clg_avg_power_pct_from_power, fan_clg_avg_power_pct_from_speed)
-            print(str(fan_clg_avg_power_pct_blended))
             fan_avg_clg_kw_per_ton = fan_peak_kw_per_ton * fan_clg_avg_power_pct_blended
 
             #fan speed calculations
