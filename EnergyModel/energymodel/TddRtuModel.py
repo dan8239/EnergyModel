@@ -79,6 +79,7 @@ class TddRtuModel():
             #Peak fan kw/ton
             fan_peak_kw_per_ton = fan_peak_kwh / rtu.tons
             #peak RTU kw/ton from eer (total fan + refrigeration @ design)
+            #note that the eer degradation is modeled to increase draw, but in reality just decreases thermal load
             rtu_peak_kw_per_ton = 12 / rtu.degr_eer
             #peak refrig kw/ton, total - fan
             refrig_peak_kw_per_ton = rtu_peak_kw_per_ton - fan_peak_kw_per_ton
