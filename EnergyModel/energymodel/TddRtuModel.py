@@ -1,4 +1,5 @@
 from assets import Rtu, Cdu, Pkg
+from enumsets import FanSeq
 
 class TddRtuModel():
     """description of class"""
@@ -40,28 +41,43 @@ class TddRtuModel():
         return avg_power_pct_blended
 
     def __vent_fan_speed(self, rtu):
-        if rtu.vent_fan_cntrl_seq == "CFD":
+        if (rtu.vent_fan_cntrl_seq == FanSeq.FanSeq.CONSTANT_SPEED):
             avg_vent_fan_speed = rtu.vent_fan_max_speed
-        else:
+        elif (rtu.vent_fan_cntrl_seq == FanSeq.FanSeq.STAGED):
+            #staging of fans doesn't run them to full min like VAF. 2 stage fan essentially has half speed as minimum
+            span = rtu.vent_fan_max_speed - rtu.vent_fan_min_speed
+            avg_vent_fan_speed = span/rtu.fan_stg + rtu.vent_fan_min_speed
+        elif (rtu.vent_fan_cntrl_seq == FanSeq.FanSeq.VARIABLE_AIRFLOW):
             avg_vent_fan_speed = rtu.vent_fan_min_speed
+        else:
+            raise TypeError("Invalid vent fan control sequence " + rtu.vent_fan_cntrl_seq + " for asset " + rtu.proposal.prop_id)
         return avg_vent_fan_speed
 
     def __clg_fan_speed_stg_adj(self, rtu, fan_speed_pct):
-        if (rtu.clg_fan_cntrl_seq == "CFD"):
+        if (rtu.clg_fan_cntrl_seq == FanSeq.FanSeq.CONSTANT_SPEED):
             avg_clg_fan_speed = rtu.clg_fan_max_speed
-        elif (rtu.clg_fan_cntrl_seq == "STAGED"):
+        elif (rtu.clg_fan_cntrl_seq == FanSeq.FanSeq.STAGED):
             span = rtu.clg_fan_max_speed - rtu.clg_fan_min_speed
             #eq comes from stages having to operate in step fashion rather than vfd. Calculating rise/run
-            avg_clg_fan_speed = span*(1 - 1/rtu.stg_cmp)*fan_speed_pct + span/rtu.stg_cmp + rtu.clg_fan_min_speed
-        else:
+            avg_clg_fan_speed = span*(1 - 1/rtu.fan_stg)*fan_speed_pct + span/rtu.fan_stg + rtu.clg_fan_min_speed
+        elif (rtu.clg_fan_cntrl_seq == FanSeq.FanSeq.VARIABLE_AIRFLOW):
             avg_clg_fan_speed = fan_speed_pct
+        else:
+            raise TypeError("Invalid clg fan control sequence " + rtu.clg_fan_cntrl_seq + " for asset " + rtu.proposal.prop_id)
         return avg_clg_fan_speed
 
+    ### Look at this when you add heating savings/DCV. Heating Fan Speed applicable?
     def __htg_fan_speed(self, rtu, avg_htg_therm_load_pct):
-        if (rtu.htg_fan_cntrl_seq == "CFD"):
+        if (rtu.htg_fan_cntrl_seq == FanSeq.FanSeq.CONSTANT_SPEED):
             avg_htg_fan_speed = rtu.htg_fan_max_speed
-        else:
+        elif (rtu.htg_fan_cntrl_seq == FanSeq.FanSeq.STAGED):
+            span = rtu.htg_fan_max_speed - rtu.htg_fan_min_speed
+            #eq comes from stages having to operate in step fashion rather than vfd. Calculating rise/run
+            avg_htg_fan_speed = span*(1 - 1/rtu.fan_stg)*avg_htg_therm_load_pct + span/rtu.fan_stg + rtu.htg_fan_min_speed
+        elif (rtu.htg_fan_cntrl_seq == FanSeq.FanSeq.CONSTANT_SPEED):
             avg_htg_fan_speed = avg_htg_therm_load_pct * (rtu.htg_fan_max_speed - rtu.htg_fan_min_speed) + rtu.htg_fan_min_speed
+        else:
+            raise TypeError("Invalid htg fan control sequence " + rtu.htg_fan_cntrl_seq + " for asset " + rtu.proposal.prop_id)
         return avg_htg_fan_speed
 
 
@@ -95,7 +111,7 @@ class TddRtuModel():
             ### Use For Fan Calcs###
             refrig_therm_load_pct_at_oa_t = refrig_peak_therm_load_pct / refrig_eff_pct_at_oa_t * cd.avg_clg_load_pct
             #cycling on low load kw draw penalty. Divide penalty by number of compressors
-            refrig_kw_draw_pct_cycling_penalty = 1 + (1-refrig_therm_load_pct_at_oa_t) * self.max_cycling_degradation / rtu.stg_cmp
+            refrig_kw_draw_pct_cycling_penalty = 1 + (1-refrig_therm_load_pct_at_oa_t) * self.max_cycling_degradation / rtu.cmp_stg
             #total refrigeration draw when running at condition
             refrig_kw_per_ton_at_oa_t = refrig_peak_kw_per_ton * refrig_kw_draw_pct_at_oa_t * refrig_kw_draw_pct_cycling_penalty
 

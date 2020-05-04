@@ -3,13 +3,14 @@ from assets import Rtu
 from utility import Assumptions
 
 class RetroCommission(Ecm.Ecm):
-    def __init__(self):
-        pass
+    def __init__(self, eer_gain = Assumptions.FilterAssets.retrofit_efficiency_gain):
+        if (eer_gain > 1):
+            raise TypeError("retrofit efficiency gain cannot be greater than 1.00 (100%)")
+        self.eer_gain = eer_gain
         
     """description of class"""
     def __upgrade_eer(self, asset):
-        eer_gain = Assumptions.FilterAssets.retrofit_efficiency_gain
-        asset.degr_eer = min(asset.fact_eer, asset.degr_eer * (1 + eer_gain))
+        asset.degr_eer = min(asset.fact_eer, asset.degr_eer * (1 + self.eer_gain))
 
     def apply_ecm(self, asset):
         if (isinstance(asset, Rtu.Rtu)):

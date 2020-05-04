@@ -45,10 +45,12 @@ class Asset:
             raise TypeError("Asset Status Not Set")
 
     def _derived_copy_existing_asset_from_row(self, row):
-        raise NotImplementedError("Derived copy new asset from row not implemented for type " + str(type(self)))
+        #raise NotImplementedError("Derived copy new asset from row not implemented for type " + str(type(self)))
+        pass
 
     def _derived_copy_new_asset_from_row(self, row):
-        raise NotImplementedError("Derived copy new asset from row not implemented for type " + str(type(self)))
+        #raise NotImplementedError("Derived copy new asset from row not implemented for type " + str(type(self)))
+        pass
 
     def __copy_existing_asset_from_row(self, row):
         self.manufactured_year = row.year
@@ -76,10 +78,10 @@ class Asset:
     def run_energy_calculations(self, energy_model):
         energy_model.calculate(self)
 
-    def update_climate_data(self, htg_swing_temp, clg_swing_temp):
+    def update_climate_data(self, htg_balance_point_temp, clg_balance_point_temp):
         new_clim_data = ClimateData.ClimateData()
         new_clim_data.copy_climate_data(self.climate_data)
-        new_clim_data.update_climate_data(htg_swing_temp, clg_swing_temp)
+        new_clim_data.update_climate_data(htg_balance_point_temp, clg_balance_point_temp)
         self.climate_data = new_clim_data
 
     def dump(self):

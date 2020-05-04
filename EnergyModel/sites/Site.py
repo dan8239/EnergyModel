@@ -1,4 +1,4 @@
-from assets import Asset, Proposal
+from assets import Asset, Proposal, Cdu, Pkg
 from pyllist import dllist, dllistnode
 from weatherutility import geocode
 from climdata import ClimateData
@@ -16,6 +16,7 @@ class Site:
         self.longitude = None
         self.altitude = None
         self.asset_count = 0
+        self.run_hours_yearly = 8760
         self.x_tons = 0
         self.x_evap_hp = 0
         self.x_avg_age = 0
@@ -77,6 +78,12 @@ class Site:
                 x.value.attach_ecms()
                 x.value.apply_ecms()
 
+    def update_run_hours_yearly(self):
+        for x in self.proposal_list.iternodes():
+            if (x != None):
+                x.value.existing_asset.run_hours_yearly = self.run_hours_yearly
+                x.value.new_asset.run_hours_yearly = self.run_hours_yearly
+
     def update_energy_totals(self):
         print("updating totals for site " + str(self.id))
         self.pre_kwh_hvac_yearly = 0
@@ -86,7 +93,7 @@ class Site:
         self.post_therms_hvac_yearly = 0
         self.sav_therms_hvac_yearly = 0
 
-        self.asset_count = self.proposal_list.size
+        self.asset_count = 0
         self.x_tons = 0
         self.x_evap_hp = 0
         x_age_tot = 0
@@ -101,8 +108,9 @@ class Site:
         n_eer_tons_tot = 0
 
         for x in self.proposal_list.iternodes():
-            if (x !=None):
+            if (x !=None and (isinstance(x.value.existing_asset, Pkg.Pkg) or isinstance(x.value.existing_asset, Cdu.Cdu))):
                 #existing asset sums
+                self.asset_count = self.asset_count +1
                 self.x_tons = self.x_tons + x.value.existing_asset.tons
                 self.x_evap_hp = self.x_evap_hp + x.value.existing_asset.evap_hp
                 x_age_tot = x_age_tot + x.value.existing_asset.age
@@ -204,7 +212,7 @@ class Site:
     def proposal_summary_table_dataframe(self):
         summary_df = pd.DataFrame()
         for x in self.proposal_list.iternodes():
-            if (x !=None):
+            if (x !=None and (isinstance(x.value.existing_asset, Pkg.Pkg) or isinstance(x.value.existing_asset, Cdu.Cdu))):
                 site_df = x.value.to_dataframe()
                 if (summary_df.empty == True):
                     summary_df = site_df

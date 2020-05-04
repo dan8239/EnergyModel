@@ -1,5 +1,5 @@
 from portfolios import Portfolio
-from ecm import EnerfitVfd, RetroCommission, VfdAutoClg, VfdAutoVent, VfdAutoHtg, SetpointAdj
+from ecm import VafEnerfit, RetroCommission, VafAutoClg, VafAutoVent, VafAutoHtg, SetpointAdj, FanStageClg, FanStageVent
 from energymodel import TddRtuModel
 from fileio import FileIO
 from utility import Assumptions
@@ -7,14 +7,14 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("BGHE")
+    portfolio = Portfolio.Portfolio("IRM")
     
 
     #import sites from file, add to portfolio
-    FileIO.import_sites("projects/BGHE/site_list_input_BGHE.csv", portfolio)
+    FileIO.import_sites("projects/IRM/site_list_input_waves_2C_3B.csv", portfolio)
 
     #read asset list
-    FileIO.import_assets("projects/BGHE/asset_list_input_BGHE.csv", portfolio)
+    FileIO.import_assets("projects/IRM/asset_list_input_waves_2C_3B.csv", portfolio)
     
 
     #for each asset listed
@@ -24,17 +24,32 @@ def main():
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
 
+    #IRM Setup
+    portfolio.add_ecm_list("Replace")
+    portfolio.add_ecm_list("Retrofit-VFD")
+    portfolio.add_ecm_list("Retrofit-Schedule")
+    portfolio.add_ecm_list("No Action")
+    portfolio.add_ecm("Retrofit-VFD",RetroCommission.RetroCommission(.30))
+    portfolio.add_ecm("Retrofit-VFD",FanStageClg.FanStageClg())
+    portfolio.add_ecm("Retrofit-VFD",FanStageVent.FanStageVent())
+    '''
+    portfolio.add_ecm("Retrofit-VFD",VafAutoClg.VafAutoClg(clg_fan_min_speed = .3333))
+    portfolio.add_ecm("Retrofit-VFD",VafAutoVent.VafAutoVent(vent_fan_min_speed = .3333))
+    '''
+    portfolio.add_ecm("Retrofit-Schedule",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+
+    '''
     #BGHE Setup
     #attach ecms
     portfolio.add_ecm_list("Replace")
     portfolio.add_ecm_list("Retrofit")
     portfolio.add_ecm_list("No Action")
     portfolio.add_ecm("Retrofit",RetroCommission.RetroCommission())
-    portfolio.add_ecm("Retrofit",EnerfitVfd.EnerfitVfd())
-    portfolio.add_ecm("Replace",EnerfitVfd.EnerfitVfd())
+    portfolio.add_ecm("Retrofit",VafEnerfit.VafEnerfit())
+    portfolio.add_ecm("Replace",VafEnerfit.VafEnerfit())
     #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
-
+    '''
     '''
     #LOWES SETUP
     #attach ecms
@@ -42,8 +57,8 @@ def main():
     portfolio.add_ecm_list("RETROFIT")
     portfolio.add_ecm_list("NO ACTION")
     portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission())
-    portfolio.add_ecm("RETROFIT",VfdAutoClg.VfdAutoClg(clg_fan_min_speed = 0.7))
-    portfolio.add_ecm("RETROFIT",VfdAutoVent.VfdAutoVent(vent_fan_min_speed = 0.7))
+    portfolio.add_ecm("RETROFIT",VafAutoClg.VafAutoClg(clg_fan_min_speed = 0.7))
+    portfolio.add_ecm("RETROFIT",VafAutoVent.VafAutoVent(vent_fan_min_speed = 0.7))
     #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     '''

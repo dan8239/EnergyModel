@@ -21,6 +21,8 @@ class AssetFactory():
             raise TypeError("Invalid Asset Type Creation: " + str(type_of_asset))
         new_proposal.add_existing_asset(x_asset)
         new_proposal.add_new_asset(n_asset)
+        x_asset.run_hours_yearly = site.run_hours_yearly
+        n_asset.run_hours_yearly = site.run_hours_yearly
         return new_proposal
 
 

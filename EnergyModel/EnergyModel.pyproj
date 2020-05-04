@@ -43,15 +43,21 @@
     <Compile Include="ecm\EcmManager.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ecm\FanStageClg.py" />
     <Compile Include="ecm\RetroCommission.py" />
-    <Compile Include="ecm\EnerfitVfd.py" />
+    <Compile Include="ecm\VafEnerfit.py" />
     <Compile Include="ecm\SetpointAdj.py" />
-    <Compile Include="ecm\VfdAutoClg.py" />
-    <Compile Include="ecm\VfdAutoVent.py" />
+    <Compile Include="ecm\VafAutoClg.py" />
+    <Compile Include="ecm\FanStageVent.py" />
+    <Compile Include="ecm\VafAutoVent.py" />
     <Compile Include="energymodel\TddRtuModel.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="energymodel\__init__.py" />
+    <Compile Include="enumsets\FanSeq.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="enumsets\__init__.py" />
     <Compile Include="fileio\FileIO.py">
       <SubType>Code</SubType>
     </Compile>
@@ -84,7 +90,7 @@
     <Compile Include="assets\Proposal.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ecm\VfdAutoHtg.py">
+    <Compile Include="ecm\VafAutoHtg.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="assets\Rtu.py" />
@@ -117,6 +123,7 @@
     <Folder Include="climdata\" />
     <Folder Include="energymodel\" />
     <Folder Include="fileio\" />
+    <Folder Include="enumsets\" />
     <Folder Include="weatherutility\" />
     <Folder Include="portfolios\" />
     <Folder Include="sites\" />

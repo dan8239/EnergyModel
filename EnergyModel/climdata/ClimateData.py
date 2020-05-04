@@ -3,13 +3,13 @@ import pandas as pd
 import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
-#from utility import Assumptions
+from utility import Assumptions
 
 class ClimateData():
     """Hold all necessary climate information for energy calculations"""
     def __init__(self):
-        self.clg_swing_temp = 60
-        self.htg_swing_temp = 56
+        self.clg_balance_point_temp = Assumptions.ClimateDefaults.clg_balance_point_temp
+        self.htg_balance_point_temp = Assumptions.ClimateDefaults.htg_balance_point_temp
         self.clg_design_temp = 0
         self.htg_design_temp = 0
         self.cdd = 0
@@ -57,8 +57,8 @@ class ClimateData():
         return closest_city, clg_design_tmp, htg_design_tmp
 
     def copy_climate_data(self, climate_data_to_copy):
-        self.clg_swing_temp = climate_data_to_copy.clg_swing_temp
-        self.htg_swing_temp = climate_data_to_copy.htg_swing_temp
+        self.clg_balance_point_temp = climate_data_to_copy.clg_balance_point_temp
+        self.htg_balance_point_temp = climate_data_to_copy.htg_balance_point_temp
         self.clg_design_temp = climate_data_to_copy.clg_design_temp
         self.htg_design_temp = climate_data_to_copy.htg_design_temp
         self.cdd = climate_data_to_copy.cdd
@@ -78,24 +78,24 @@ class ClimateData():
         self.avg_htg_fan_speed_pct_from_power = climate_data_to_copy.avg_htg_fan_speed_pct_from_power
         self.closest_climate_zone = climate_data_to_copy.closest_climate_zone
 
-    def update_climate_data(self, htg_swing_temp, clg_swing_temp):
+    def update_climate_data(self, htg_balance_point_temp, clg_balance_point_temp):
         print("Updating Climate Data for " + str(self.closest_climate_zone))
         if (self.closest_climate_zone == None):
             raise TypeError("Climate Zone Updated before being instantiated")
-        self.htg_swing_temp = htg_swing_temp
-        self.clg_swing_temp = clg_swing_temp
+        self.htg_balance_point_temp = htg_balance_point_temp
+        self.clg_balance_point_temp = clg_balance_point_temp
         self.calculate_climate_data()
 
     def calculate_climate_data(self):
         print("Calculating Climate Data for " + str(self.closest_climate_zone))
         dataframe = self.__open_hourly_data()
-        dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_swing_temp)
-        dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_swing_temp)
-        dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_swing_temp)
-        dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_swing_temp)
+        dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
+        dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
+        dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_balance_point_temp)
+        dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_balance_point_temp)
         dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
-        dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_swing_temp)
-        dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_swing_temp)
+        dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
+        dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
         dataframe['CLG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-C'].values)
         dataframe['HTG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-H'].values)
         
@@ -120,8 +120,8 @@ class ClimateData():
             self.avg_htg_fan_speed_pct_from_power = (dataframe['HTG-FAN-PWR-%'].sum()/self.htg_hrs)**(1.0/3.0)
         else:
             self.avg_htg_load_pct = 0
-        self.avg_clg_oa_t = self.avg_clg_load_pct*(self.clg_design_temp - self.clg_swing_temp) + self.clg_swing_temp
-        self.avg_htg_oa_t = self.htg_swing_temp - self.avg_htg_load_pct*(self.htg_swing_temp - self.htg_design_temp)
+        self.avg_clg_oa_t = self.avg_clg_load_pct*(self.clg_design_temp - self.clg_balance_point_temp) + self.clg_balance_point_temp
+        self.avg_htg_oa_t = self.htg_balance_point_temp - self.avg_htg_load_pct*(self.htg_balance_point_temp - self.htg_design_temp)
         
         '''
         #### TESTING MATH
@@ -160,34 +160,34 @@ class ClimateData():
         data = pd.read_csv('reference/' + str(self.closest_climate_zone) + '.csv')
         return data
 
-    def __calc_hourly_cdd(self, temp, swing_temp):
-        calc = temp - swing_temp
+    def __calc_hourly_cdd(self, temp, balance_point_temp):
+        calc = temp - balance_point_temp
         sign = (calc > 0)*1
         val = calc * sign / 24
         return val
 
-    def __calc_hourly_hdd(self, temp, swing_temp):
-        calc = swing_temp - temp
+    def __calc_hourly_hdd(self, temp, balance_point_temp):
+        calc = balance_point_temp - temp
         sign = (calc > 0)*1
         val = calc * sign / 24
         return val
 
-    def __calc_hourly_eflh_c(self, cdd, design_temp, swing_temp):
-        return cdd*24/(design_temp - swing_temp)
+    def __calc_hourly_eflh_c(self, cdd, design_temp, balance_point_temp):
+        return cdd*24/(design_temp - balance_point_temp)
 
-    def __calc_hourly_eflh_h(self, hdd, design_temp, swing_temp):
-        return hdd*24/(swing_temp - design_temp)
+    def __calc_hourly_eflh_h(self, hdd, design_temp, balance_point_temp):
+        return hdd*24/(balance_point_temp - design_temp)
 
     def __calc_hourly_eflh_t(self, eflh_c, eflh_h):
         return eflh_c + eflh_h
 
-    def __calc_clg_hr(self, temp, swing_temp):
-        calc = ((temp - swing_temp) > 0)
+    def __calc_clg_hr(self, temp, balance_point_temp):
+        calc = ((temp - balance_point_temp) > 0)
         #convert to int
         return calc*1
 
-    def __calc_htg_hr(self, temp, swing_temp):
-        calc = ((swing_temp - temp) > 0)
+    def __calc_htg_hr(self, temp, balance_point_temp):
+        calc = ((balance_point_temp - temp) > 0)
         #convert to int
         return calc*1
 
@@ -211,8 +211,8 @@ class ClimateData():
         print("Climate Zone: " + str(self.closest_climate_zone))
         print("Cooling Design Temp: " + str(self.clg_design_temp))
         print("Heating Design Temp: " + str(self.htg_design_temp))
-        print("Cooling Swing Temp: " + str(self.clg_swing_temp))
-        print("Heating Swing Temp: " + str(self.htg_swing_temp))
+        print("Cooling Swing Temp: " + str(self.clg_balance_point_temp))
+        print("Heating Swing Temp: " + str(self.htg_balance_point_temp))
         print("Cooling Degree Days: " + str(self.cdd))
         print("Heating Degree Days: " + str(self.hdd))
         print("EFLH Cooling: " + str(self.eflh_c))

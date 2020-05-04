@@ -1,7 +1,6 @@
 from assets import Asset
 from pyllist import dllist, dllistnode
 import pandas as pd
-from ecm import EnerfitVfd, RetroCommission, VfdAutoClg, VfdAutoHtg, VfdAutoVent
 
 class Proposal:
     def __init__(self, site = None, prop_id = None, existing_asset = None, strategy = "No Action", new_asset = None):
@@ -73,34 +72,40 @@ class Proposal:
     def to_dataframe(self):
         column_names = ['site',
                         'asset_id',
+                        'asset_type',
                         'x_tons',
                         'x_hp',
                         'x_age',
                         'x_eer',
-                        'x_vfd',
+                        'x_fan_seq',
+                        'x_run_hours_yearly',
                         'strategy',
                         'n_tons',
                         'n_hp',
                         'n_age',
                         'n_eer',
-                        'n_vfd',
+                        'n_fan_seq',
+                        'n_run_hours_yearly',
                         'pre_kwh_hvac_yearly',
                         'post_kwh_hvac_yearly',
                         'sav_kwh_hvac_yearly',
                         'kwh_hvac_yearly_reduction_pct']
         values = [[self.site.id, 
                    self.prop_id, 
+                   self.existing_asset.__class__.__name__,
                    self.existing_asset.tons, 
                    self.existing_asset.evap_hp,
                    self.existing_asset.age,
                    self.existing_asset.degr_eer, 
-                   self.existing_asset.vfd,
+                   self.existing_asset.clg_fan_cntrl_seq.name,
+                   self.existing_asset.run_hours_yearly,
                    self.strategy,
                    self.new_asset.tons, 
                    self.new_asset.evap_hp,
                    self.new_asset.age,
                    self.new_asset.degr_eer, 
-                   self.new_asset.vfd,
+                   self.new_asset.clg_fan_cntrl_seq.name,
+                   self.new_asset.run_hours_yearly,
                    self.pre_kwh_hvac_yearly, 
                    self.post_kwh_hvac_yearly, 
                    self.sav_kwh_hvac_yearly,
