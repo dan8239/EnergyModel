@@ -153,103 +153,23 @@ class Portfolio():
             self.n_avg_weighted_age = 0
             self.n_avg_weighted_eer = 0
 
-    def __to_dataframe(self):
-        column_names = ['portfolio_id',
-                        'site_count',
-                        'asset_count',
-                        'x_tons',
-                        'x_hp',
-                        'x_avg_age',
-                        'x_avg_weighted_age',
-                        'x_avg_eer',
-                        'x_avg_weighted_eer',
-                        'n_tons',
-                        'n_hp',
-                        'n_avg_age',
-                        'n_avg_weighted_age',
-                        'n_avg_eer',
-                        'n_avg_weighted_eer',
-                        'pre_kwh_hvac_yearly',
-                        'post_kwh_hvac_yearly',
-                        'sav_kwh_hvac_yearly',
-                        'kwh_hvac_yearly_reduction_pct']
-        values = [[self.id, 
-                   self.site_count,
-                   self.asset_count,
-                   self.x_tons,
-                   self.x_evap_hp,
-                   self.x_avg_age,
-                   self.x_avg_weighted_age,
-                   self.x_avg_eer,
-                   self.x_avg_weighted_eer,
-                   self.n_tons,
-                   self.n_evap_hp,
-                   self.n_avg_age,
-                   self.n_avg_weighted_age,
-                   self.n_avg_eer,
-                   self.n_avg_weighted_eer,
-                   self.pre_kwh_hvac_yearly, 
-                   self.post_kwh_hvac_yearly, 
-                   self.sav_kwh_hvac_yearly,
-                   self.kwh_hvac_reduction_pct]]
-        return pd.DataFrame(values, columns=column_names)
 
-    def __output_file_path(self, projectname):
-        date = datetime.now()
-        path = os.path.join("projects/" + 
-                            projectname + 
-                            "/output"
-                            )
-        return path
-
-    def __output_file_name(self, projectname, filetype):
-        date = datetime.now()
-        path = os.path.join(projectname + 
-                            "_" + 
-                            filetype +
-                            "_" +
-                            str(date.year) + 
-                            "_" +  
-                            str(date.month) +
-                            str(date.day) +
-                            ".csv", 
-                            )
-        return path
-
-    def __to_csv_wrapper(self, dataframe, filetype):
-        output_file_path = Path(self.__output_file_path(self.id))
-        output_file_name = self.__output_file_name(self.id, filetype)
-        output_file_path.mkdir(parents=True, exist_ok = True)
-        dataframe.to_csv(output_file_path / output_file_name, index = False)
-
-    def portfolio_summary_table_to_csv(self, filename):
-        print("Generating Portfolio Summary File")
-        summary_df = self.__to_dataframe()
-        self.__to_csv_wrapper(summary_df, "portfolio_summary")
-
-    def site_summary_table_to_csv(self, filename):
-        print("Generating Site Summary File")
-        summary_df = pd.DataFrame()
-        for x in self.site_list.iternodes():
-            if (x !=None):
-                site_df = x.value.to_dataframe()
-                if (summary_df.empty == True):
-                    summary_df = site_df
-                else:
-                    summary_df = summary_df.append(site_df, ignore_index = True)
-        self.__to_csv_wrapper(summary_df, "site_summary")
-
-    def proposal_summary_table_to_csv(self, filename):
-        print("Generating Asset Summary File")
-        summary_df = pd.DataFrame()
-        for x in self.site_list.iternodes():
-            if (x !=None):
-                site_df = x.value.proposal_summary_table_dataframe()
-                if (summary_df.empty == True):
-                    summary_df = site_df
-                else:
-                    summary_df = summary_df.append(site_df, ignore_index = True)
-        self.__to_csv_wrapper(summary_df, "asset_summary")
+    def to_excel_file(self):
+        # create folders if not existing, get folder path
+        path = self.__output_file_path()
+        # append file name to path
+        filename = self.__output_file_name(path)
+        # get dataframe summaries
+        portfolio_table_df = self.__to_dataframe()
+        site_table_df = self.__site_list_to_dataframe()
+        asset_table_df = self.__asset_list_to_dataframe()
+        # write to excel file with individual sheets
+        writer = pd.ExcelWriter(filename, engine = 'xlsxwriter')
+        portfolio_table_df.to_excel(writer, sheet_name = 'portfolio', index = False)
+        site_table_df.to_excel(writer, sheet_name = 'site', index = False)
+        asset_table_df.to_excel(writer, sheet_name = 'asset', index = False)
+        writer.save()
+        writer.close()
 
     def dump(self):
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
@@ -268,3 +188,67 @@ class Portfolio():
             if (x != None):
                 x.value.dump()
         print()
+
+    #------------------------PRIVATE METHODS------------------------------------------#
+
+    def __to_dataframe(self):
+        colnames = vars(self).keys()    #vars gets dict from object. Keys gets keys from dict key-value pairs
+        df = pd.DataFrame([[getattr(self, j) for j in colnames]], columns = colnames) #get attributes in a row
+        df = df.drop(['site_list',
+                      'energy_model',
+                      'ecm_manager',
+                      'pre_therms_hvac_yearly',
+                      'post_therms_hvac_yearly',
+                      'sav_therms_hvac_yearly'], axis = 1)   #drop object references and unneeded columns
+        return df
+
+    def __output_file_path(self):
+        date = datetime.now()
+        #string path
+        path = os.path.join("projects/" + 
+                            self.id + 
+                            "/output"
+                            )
+        #path path
+        output_file_path = Path(path)
+        #create folders if not existing
+        output_file_path.mkdir(parents=True, exist_ok = True)
+        #return only string
+        return path
+
+    def __output_file_name(self, path):
+        date = datetime.now()
+        filename = os.path.join(path + 
+                            "/" +
+                            self.id + 
+                            "_energy_summary_" + 
+                            str(date.year) + 
+                            "_" +  
+                            str(date.month) +
+                            str(date.day) +
+                            ".xlsx", 
+                            )
+        return filename
+
+    def __site_list_to_dataframe(self):
+        print("Generating Site Summary Table")
+        summary_df = pd.DataFrame()
+        for x in self.site_list.iternodes():
+            site_df = x.value.to_dataframe()
+            if (summary_df.empty == True):
+                summary_df = site_df
+            else:
+                summary_df = summary_df.append(site_df, ignore_index = True)
+        return summary_df
+
+    def __asset_list_to_dataframe(self):
+        print("Generating Asset Summary Table")
+        summary_df = pd.DataFrame()
+        for x in self.site_list.iternodes():
+            if (x !=None):
+                site_df = x.value.proposal_summary_table_dataframe()
+                if (summary_df.empty == True):
+                    summary_df = site_df
+                else:
+                    summary_df = summary_df.append(site_df, ignore_index = True)
+        return summary_df

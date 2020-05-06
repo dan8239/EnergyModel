@@ -12,6 +12,7 @@ class Site:
         self.id = id
         self.portfolio = None
         self.address = None
+        self.climate_data = ClimateData.ClimateData()
         self.latitude = None
         self.longitude = None
         self.altitude = None
@@ -37,7 +38,6 @@ class Site:
         self.sav_therms_hvac_yearly = 0
         self.kwh_hvac_reduction_pct = 0
         self.proposal_list = dllist()
-        self.climate_data = ClimateData.ClimateData()
         self.energy_model = TddRtuModel.TddRtuModel()
 
     def geocode(self):
@@ -58,15 +58,8 @@ class Site:
             if (x != None):
                 x.value.run_energy_calculations(energy_model)
         self.update_energy_totals()
-    '''
-    self.assets = 0
-        self.tons = 0
-        self.evap_hp = 0
-        self.avg_eer = 0
-        self.avg_weighted_eer = 0
-        self.avg_age = 0
-        self.avg_weighted_age = 0
-    '''
+   
+
     def filter_assets(self):
         for x in self.proposal_list.iternodes():
             if (x != None):
@@ -161,63 +154,27 @@ class Site:
             self.n_avg_weighted_age = 0
             self.n_avg_weighted_eer = 0
 
-
     def to_dataframe(self):
-        column_names = ['site_id',
-                        'address',
-                        'latitude',
-                        'longitude',
-                        'asset_count',
-                        'eflh_c',
-                        'x_tons',
-                        'x_hp',
-                        'x_avg_age',
-                        'x_avg_weighted_age',
-                        'x_avg_eer',
-                        'x_avg_weighted_eer',
-                        'n_tons',
-                        'n_hp',
-                        'n_avg_age',
-                        'n_avg_weighted_age',
-                        'n_avg_eer',
-                        'n_avg_weighted_eer',
-                        'pre_kwh_hvac_yearly',
-                        'post_kwh_hvac_yearly',
-                        'sav_kwh_hvac_yearly',
-                        'kwh_hvac_yearly_reduction_pct']
-        values = [[self.id,
-                   self.address,
-                   self.latitude,
-                   self.longitude,
-                   self.asset_count,
-                   self.climate_data.eflh_c,
-                   self.x_tons,
-                   self.x_evap_hp,
-                   self.x_avg_age,
-                   self.x_avg_weighted_age,
-                   self.x_avg_eer,
-                   self.x_avg_weighted_eer,
-                   self.n_tons,
-                   self.n_evap_hp,
-                   self.n_avg_age,
-                   self.n_avg_weighted_age,
-                   self.n_avg_eer,
-                   self.n_avg_weighted_eer,
-                   self.pre_kwh_hvac_yearly, 
-                   self.post_kwh_hvac_yearly, 
-                   self.sav_kwh_hvac_yearly,
-                   self.kwh_hvac_reduction_pct]]
-        return pd.DataFrame(values, columns=column_names)
+        colnames = vars(self).keys()    #vars gets dict from object. Keys gets keys from dict key-value pairs
+        df = pd.DataFrame([[getattr(self, j) for j in colnames]], columns = colnames) #get attributes in a row
+        df['portfolio'] = self.portfolio.id    #take ID not whole object
+        df['climate_data'] = self.climate_data.closest_climate_zone   #take city not whole object
+        df = df.drop(['proposal_list',
+                      'energy_model',
+                      'altitude',
+                      'pre_therms_hvac_yearly',
+                      'post_therms_hvac_yearly',
+                      'sav_therms_hvac_yearly'], axis = 1)   #drop object references
+        return df
 
     def proposal_summary_table_dataframe(self):
         summary_df = pd.DataFrame()
         for x in self.proposal_list.iternodes():
-            if (x !=None and (isinstance(x.value.existing_asset, Pkg.Pkg) or isinstance(x.value.existing_asset, Cdu.Cdu))):
-                site_df = x.value.to_dataframe()
-                if (summary_df.empty == True):
-                    summary_df = site_df
-                else:
-                    summary_df = summary_df.append(site_df, ignore_index = True)
+            site_df = x.value.to_dataframe()
+            if (summary_df.empty == True):
+                summary_df = site_df
+            else:
+                summary_df = summary_df.append(site_df, ignore_index = True)
         return summary_df
                 
     def dump(self):

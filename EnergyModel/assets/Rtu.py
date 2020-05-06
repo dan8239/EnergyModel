@@ -68,7 +68,7 @@ class Rtu(Asset.Asset):
 
     def __fill_age_by_refrig_type(self):
         #if r22 is refrigerant type, assume age
-        if (self.age == None or self.age > 50):
+        if (self.age == None or self.age > 50 or np.isnan(self.age)):
             if (self.refrig_type == "R-22" or self.refrig_type == "R-12"):
                 self.age = Assumptions.FilterAssets.r22_implied_age
             else:
@@ -83,7 +83,7 @@ class Rtu(Asset.Asset):
     def __fill_eer_by_age(self):
         #if no eer listed, determine approx eer from age
         if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):
-            if (self.age != None):
+            if (self.age != None and (not np.isnan(self.age))):
                 eer_tbl = TableAgeEfficiency.TableAgeEfficiency.get_table()
                 row = eer_tbl[eer_tbl['AGE'] == self.age]
                 self.fact_eer = row.EER.iloc[0]

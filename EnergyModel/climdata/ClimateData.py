@@ -123,35 +123,38 @@ class ClimateData():
         self.avg_clg_oa_t = self.avg_clg_load_pct*(self.clg_design_temp - self.clg_balance_point_temp) + self.clg_balance_point_temp
         self.avg_htg_oa_t = self.htg_balance_point_temp - self.avg_htg_load_pct*(self.htg_balance_point_temp - self.htg_design_temp)
         
-        '''
-        #### TESTING MATH
-        min_speed = 1.0
-        max_speed = 1.0
-        
-        ## Span Avg Clg Load, Convert To Power (Current Method)
-        span_clg_load = self.__span(self.avg_clg_load_pct, min_speed, max_speed, 1)
-        avg_power_0 = span_clg_load**3
-        print("0: Span avg clg load, convert to power (current method): ")
-        print(str(avg_power_0))
 
-        # Convert to power %, avg, convert to fan speed, span, convert to power
-        fan_speed_power_calc = fan_power_pct_0_100_avg**(1.0/3.0)
-        fan_speed_power_calc_span = self.__span(fan_speed_power_calc, min_speed, max_speed, 1)
-        avg_power_3 = fan_speed_power_calc_span**3
-        print("3: Convert to power %, avg, convert to fan speed, span, convert back to power: ")
-        print(str(avg_power_3))
-
-        
-        # Crazy Formula to approximate the true math
-        span = max_speed - min_speed
-        pr = 0.7568*(span**2) + 0.1986*(span) + 0.0192
-        avg_power_5 = pr*avg_power_3 + (1-pr)*avg_power_0
-        self.power_delta = avg_power_5/avg_power_4
-        print("4: Crazy Formula to approximate the true math: ")
-        print(str(avg_power_5) + ": ratio = " + str(self.power_delta))
+    def dump(self):
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
         print()
-        
-        '''
+        print("Climate Zone: " + str(self.closest_climate_zone))
+        print("Cooling Design Temp: " + str(self.clg_design_temp))
+        print("Heating Design Temp: " + str(self.htg_design_temp))
+        print("Cooling Swing Temp: " + str(self.clg_balance_point_temp))
+        print("Heating Swing Temp: " + str(self.htg_balance_point_temp))
+        print("Cooling Degree Days: " + str(self.cdd))
+        print("Heating Degree Days: " + str(self.hdd))
+        print("EFLH Cooling: " + str(self.eflh_c))
+        print("EFLH Heating: " + str(self.eflh_h))
+        print("EFLH Total: " + str(self.eflh_t))
+        print("Cooling Hours: " + str(self.clg_hrs))
+        print("Heating Hours: " + str(self.htg_hrs))
+        print("Average Cooling Load Percentage: " + str(self.avg_clg_load_pct))
+        print("Average Heating Load Percentage: " + str(self.avg_htg_load_pct))
+        print("Average Cooling OA Temp: " + str(self.avg_clg_oa_t))
+        print("Average Heating OA Temp: " + str(self.avg_htg_oa_t))
+        print()
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+        print("XXXXXXX END OF CLIMATE DATA OBJECT XXXXXXXXXXXX")
+        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+
+#-----------------------------PRIVATE METHODS-------------------------------#
 
     def __open_hourly_data(self):
         # check that climate zone is populated
@@ -199,32 +202,3 @@ class ClimateData():
 
     
 
-    def dump(self):
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print()
-        print("Climate Zone: " + str(self.closest_climate_zone))
-        print("Cooling Design Temp: " + str(self.clg_design_temp))
-        print("Heating Design Temp: " + str(self.htg_design_temp))
-        print("Cooling Swing Temp: " + str(self.clg_balance_point_temp))
-        print("Heating Swing Temp: " + str(self.htg_balance_point_temp))
-        print("Cooling Degree Days: " + str(self.cdd))
-        print("Heating Degree Days: " + str(self.hdd))
-        print("EFLH Cooling: " + str(self.eflh_c))
-        print("EFLH Heating: " + str(self.eflh_h))
-        print("EFLH Total: " + str(self.eflh_t))
-        print("Cooling Hours: " + str(self.clg_hrs))
-        print("Heating Hours: " + str(self.htg_hrs))
-        print("Average Cooling Load Percentage: " + str(self.avg_clg_load_pct))
-        print("Average Heating Load Percentage: " + str(self.avg_htg_load_pct))
-        print("Average Cooling OA Temp: " + str(self.avg_clg_oa_t))
-        print("Average Heating OA Temp: " + str(self.avg_htg_oa_t))
-        print()
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX END OF CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
