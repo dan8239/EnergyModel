@@ -68,6 +68,10 @@
     <Compile Include="sites\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="utilitybills\EnergyBill.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="utilitybills\__init__.py" />
     <Compile Include="utility\Assumptions.py">
       <SubType>Code</SubType>
     </Compile>
@@ -124,6 +128,7 @@
     <Folder Include="energymodel\" />
     <Folder Include="fileio\" />
     <Folder Include="enumsets\" />
+    <Folder Include="utilitybills\" />
     <Folder Include="weatherutility\" />
     <Folder Include="portfolios\" />
     <Folder Include="sites\" />

@@ -92,7 +92,7 @@ class Rtu(Asset.Asset):
 
     def __fill_evap_hp_by_tonnage(self):
         #if no eer listed, determine approx eer from age
-        if (self.evap_hp == None or self.evap_hp == 0 or self.evap == np.nan):
+        if (np.isnan(self.evap_hp) or self.evap_hp == None or self.evap_hp == 0):
             if (self.tons != None):
                 self.evap_hp = Assumptions.FilterAssets.evap_hp_per_ton * self.tons
             else:

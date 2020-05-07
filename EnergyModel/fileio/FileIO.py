@@ -15,40 +15,27 @@ def import_sites(filename, portfolio):
     #site_list = pd.read_csv(import_filename)
     site_list = pd.read_excel(filename, sheet_name = "sites")
     __cleanse_site_list(site_list)
-    for row in site_list.itertuples():
-        site = Site.Site(row.site_id)
-        site.address = row.address
-        site.run_hours_yearly = 8760*row.occ_pcnt
-        portfolio.add_site(site)
-        if (row.latitude == np.nan or row.longitude == np.nan or math.isnan(row.latitude) or math.isnan(row.longitude)):
-            print("Geocoding Site " + str(site.id))
-            site.geocode()
-            site_list.at[row.Index, 'latitude'] = site.latitude
-            site_list.at[row.Index, 'longitude'] = site.longitude
-            #row.longitude = site.longitude
-        else:
-            site.latitude = row.latitude
-            site.longitude = row.longitude
-        print("Filling Climate Data for Site " + str(site.id))
-        site.fill_climate_data()
-
-    #update input file to only pull lat/long once
-    print("Updating Input File")
-    #load existing workbook
-    book = load_workbook(filename)
-    #get writer for file, remove sites sheet
-    writer = pd.ExcelWriter(filename, engine = 'openpyxl')
-    writer.book = book
-    std=book.get_sheet_by_name('sites')
-    book.remove_sheet(std)
-    #write updated sites sheet
-    site_list.to_excel(writer, sheet_name = 'sites', index = False)
-    #move back to first position
-    book.move_sheet('sites',-1)
-    writer.save()
-    writer.close()
-    #site_list.to_csv(import_filename, index = False)
-
+    #import all site objects, return dataframe for file saving
+    file_update_flag = False
+    site_list = Site.import_from_file(site_list, portfolio, file_update_flag)
+    print(file_update_flag)
+    #only update file if geocoding needs to be added
+    if (file_update_flag):
+        #update input file to only pull lat/long once
+        print("Updating Input File")
+        #load existing workbook
+        book = load_workbook(filename)
+        #get writer for file, remove sites sheet
+        writer = pd.ExcelWriter(filename, engine = 'openpyxl')
+        writer.book = book
+        std=book.get_sheet_by_name('sites')
+        book.remove_sheet(std)
+        #write updated sites sheet
+        site_list.to_excel(writer, sheet_name = 'sites', index = False)
+        #move back to first position
+        book.move_sheet('sites',-99)
+        writer.save()
+        writer.close()
 
 def import_assets(filename, portfolio):
     print("Reading Asset List")
@@ -103,7 +90,7 @@ def __fan_string_to_enum(input):
           input == "VFD"):
         val = FanSeq.FanSeq.VARIABLE_AIRFLOW
     else:
-        raise ImportError("Fan Sequence Type " + input + " unrecognized")
+        val = FanSeq.FanSeq.CONSTANT_SPEED
     return val
 
 def __cleanse_econ_bool(asset_list_df):

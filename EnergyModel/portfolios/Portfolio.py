@@ -225,7 +225,12 @@ class Portfolio():
                             str(date.year) + 
                             "_" +  
                             str(date.month) +
+                            "_" +
                             str(date.day) +
+                            "_" +
+                            str(date.hour) +
+                            "_" +
+                            str(date.minute) +
                             ".xlsx", 
                             )
         return filename

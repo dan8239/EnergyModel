@@ -7,11 +7,11 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("IRM-Wave 6")
+    portfolio = Portfolio.Portfolio("LOWES-CONS")
     
 
     #import sites from file, add to portfolio
-    input_filename = "projects/IRM-Wave 6/input/input.xlsx"
+    input_filename = "projects/LOWES/input/input-CONS.xlsx"
     FileIO.import_sites(input_filename, portfolio)
     #read asset list
     FileIO.import_assets(input_filename, portfolio)
@@ -23,6 +23,7 @@ def main():
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
 
+    '''
     #IRM Setup
     portfolio.add_ecm_list("Replace")
     portfolio.add_ecm_list("Retrofit-VFD")
@@ -32,6 +33,7 @@ def main():
     portfolio.add_ecm("Retrofit-VFD",FanStageClg.FanStageClg())
     portfolio.add_ecm("Retrofit-VFD",FanStageVent.FanStageVent())
     portfolio.add_ecm("Retrofit-Schedule",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+    '''
 
     '''
     #BGHE Setup
@@ -45,18 +47,16 @@ def main():
     #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     '''
-    '''
+    
     #LOWES SETUP REGULAR
     #attach ecms
     portfolio.add_ecm_list("REPLACE")
     portfolio.add_ecm_list("RETROFIT")
     portfolio.add_ecm_list("NO ACTION")
     portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission())
-    portfolio.add_ecm("RETROFIT",VafAutoClg.VafAutoClg(clg_fan_min_speed = 0.7))
-    portfolio.add_ecm("RETROFIT",VafAutoVent.VafAutoVent(vent_fan_min_speed = 0.7))
-    #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
-    #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
-    '''
+    portfolio.add_ecm("RETROFIT",FanStageClg.FanStageClg())
+    portfolio.add_ecm("RETROFIT",FanStageVent.FanStageVent())
+    
 
     #apply ecms to each asset
     portfolio.apply_ecms()

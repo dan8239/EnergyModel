@@ -3,10 +3,11 @@ from pyllist import dllist, dllistnode
 from weatherutility import geocode
 from climdata import ClimateData
 from energymodel import TddRtuModel
+from utilitybills import EnergyBill
 import pandas as pd
+import numpy as np
 
 class Site:
-    
     #constructor + instance variables
     def __init__(self, id):
         self.id = id
@@ -39,16 +40,13 @@ class Site:
         self.kwh_hvac_reduction_pct = 0
         self.proposal_list = dllist()
         self.energy_model = TddRtuModel.TddRtuModel()
-
-    def geocode(self):
-        if (self.address == None):
-            raise TypeError("Address not instantiated. Cannot Geocode")
-        else:
-            locationobj = geocode.Geocode.geocode(self.address)
-            self.latitude = locationobj.latitude
-            self.longitude = locationobj.longitude
-            self. altitude = locationobj.altitude
-
+        self.electric_bill = EnergyBill.ElectricBill(EnergyBill.BillDuration.YEARLY)
+        self.electric_bill.site = self
+        self.natural_gas_bill = EnergyBill.NaturalGasBill(EnergyBill.BillDuration.YEARLY)
+        self.natural_gas_bill.site = self
+        self.hvac_pcnt_of_electric_bill = 0
+        self.total_kwh_reduction_pcnt = 0
+    
     def fill_climate_data(self):
         self.climate_data.get_closest_climate_zone(self.latitude, self.longitude)
         self.climate_data.calculate_climate_data()
@@ -153,6 +151,10 @@ class Site:
             self.x_avg_weighted_eer = 0
             self.n_avg_weighted_age = 0
             self.n_avg_weighted_eer = 0
+        
+        if (self.electric_bill.reliable):
+            self.hvac_pcnt_of_electric_bill = self.pre_kwh_hvac_yearly / self.electric_bill.annual_units
+            self.total_kwh_reduction_pcnt = self.sav_kwh_hvac_yearly / self.electric_bill.annual_units
 
     def to_dataframe(self):
         colnames = vars(self).keys()    #vars gets dict from object. Keys gets keys from dict key-value pairs
@@ -164,7 +166,11 @@ class Site:
                       'altitude',
                       'pre_therms_hvac_yearly',
                       'post_therms_hvac_yearly',
-                      'sav_therms_hvac_yearly'], axis = 1)   #drop object references
+                      'sav_therms_hvac_yearly',
+                      'electric_bill',
+                      'natural_gas_bill'], axis = 1)   #drop object references
+        elec_bill_df = self.electric_bill.to_dataframe()
+        df = pd.merge(df, elec_bill_df, left_on='id', right_on='site', how='left').drop('site', axis = 1)
         return df
 
     def proposal_summary_table_dataframe(self):
@@ -212,3 +218,48 @@ class Site:
             raise TypeError("Cannot add a non Proposal type to site proposal_list")
         self.proposal_list.appendright(proposal)
         proposal.site = self
+
+              
+
+# -------------------------- PRIVATE METHODS ------------------------#
+
+    def __geocode(self):
+        if (self.address == None):
+            raise TypeError("Address not instantiated. Cannot Geocode")
+        else:
+            locationobj = geocode.Geocode.geocode(self.address)
+            self.latitude = locationobj.latitude
+            self.longitude = locationobj.longitude
+            self.altitude = locationobj.altitude
+
+# ------------------------STATIC METHODS----------------------------#
+
+def import_from_file(dataframe, portfolio, update_flag):
+    update_flag = False
+    for row in dataframe.itertuples():
+        #create site
+        site = Site(row.site_id)
+        #create import bill data
+        site.electric_bill.import_from_row(row)
+        #write all site values
+        site.address = row.address
+        site.run_hours_yearly = 8760*row.occ_pcnt
+        portfolio.add_site(site)
+        #geocode if lat/long is missing and write back into file
+        if (np.isnan(row.latitude) or 
+            np.isnan(row.longitude) or
+            (row.latitude == 0 and row.longitude == 0)):
+            print("Geocoding Site " + str(site.id))
+            site.__geocode()
+            dataframe.at[row.Index, 'latitude'] = site.latitude
+            dataframe.at[row.Index, 'longitude'] = site.longitude
+            update_flag = True
+            #row.longitude = site.longitude
+        else:
+            site.latitude = row.latitude
+            site.longitude = row.longitude
+        #fill climate data for site
+        print("Filling Climate Data for Site " + str(site.id))
+        site.fill_climate_data()
+    #return dataframe for updating imput file    
+    return dataframe
