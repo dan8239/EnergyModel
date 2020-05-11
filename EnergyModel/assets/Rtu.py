@@ -85,7 +85,7 @@ class Rtu(Asset.Asset):
         if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):
             if (self.age != None and (not np.isnan(self.age))):
                 eer_tbl = TableAgeEfficiency.TableAgeEfficiency.get_table()
-                row = eer_tbl[eer_tbl['AGE'] == self.age]
+                row = eer_tbl[eer_tbl['AGE'] == min(self.age,40)]
                 self.fact_eer = row.EER.iloc[0]
             else:
                 self.fact_eer = Assumptions.FilterAssets.no_info_eer

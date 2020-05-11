@@ -37,6 +37,7 @@ class Portfolio():
         self.sav_therms_hvac_yearly = 0
         self.kwh_hvac_reduction_pct = 0
         self.ecm_manager = EcmManager.EcmManager()
+        self.update_input_file_flag = False
 
     def add_site(self, site):
         if (not isinstance(site, Site.Site)):
@@ -197,8 +198,13 @@ class Portfolio():
         df = df.drop(['site_list',
                       'energy_model',
                       'ecm_manager',
+                      'x_avg_weighted_age',
+                      'x_avg_weighted_eer',
+                      'n_avg_weighted_age',
+                      'n_avg_weighted_eer',
                       'pre_therms_hvac_yearly',
                       'post_therms_hvac_yearly',
+                      'update_input_file_flag',
                       'sav_therms_hvac_yearly'], axis = 1)   #drop object references and unneeded columns
         return df
 

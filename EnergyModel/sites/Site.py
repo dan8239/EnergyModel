@@ -164,11 +164,16 @@ class Site:
         df = df.drop(['proposal_list',
                       'energy_model',
                       'altitude',
+                      'x_avg_weighted_age',
+                      'x_avg_weighted_eer',
+                      'n_avg_weighted_age',
+                      'n_avg_weighted_eer',
                       'pre_therms_hvac_yearly',
                       'post_therms_hvac_yearly',
                       'sav_therms_hvac_yearly',
                       'electric_bill',
                       'natural_gas_bill'], axis = 1)   #drop object references
+        #merge utility bill information into dataframe
         elec_bill_df = self.electric_bill.to_dataframe()
         df = pd.merge(df, elec_bill_df, left_on='id', right_on='site', how='left').drop('site', axis = 1)
         return df
@@ -219,23 +224,23 @@ class Site:
         self.proposal_list.appendright(proposal)
         proposal.site = self
 
-              
-
-# -------------------------- PRIVATE METHODS ------------------------#
-
-    def __geocode(self):
+    def geocode(self):
         if (self.address == None):
             raise TypeError("Address not instantiated. Cannot Geocode")
         else:
             locationobj = geocode.Geocode.geocode(self.address)
             self.latitude = locationobj.latitude
             self.longitude = locationobj.longitude
-            self.altitude = locationobj.altitude
+            self.altitude = locationobj.altitude     
+
+# -------------------------- PRIVATE METHODS ------------------------#
+
+    
 
 # ------------------------STATIC METHODS----------------------------#
 
-def import_from_file(dataframe, portfolio, update_flag):
-    update_flag = False
+def import_from_file(dataframe, portfolio):
+    portfolio.update_input_file_flag = False
     for row in dataframe.itertuples():
         #create site
         site = Site(row.site_id)
@@ -245,15 +250,24 @@ def import_from_file(dataframe, portfolio, update_flag):
         site.address = row.address
         site.run_hours_yearly = 8760*row.occ_pcnt
         portfolio.add_site(site)
+        # grab balance temps if available
+        if (np.isnan(row.occ_clg_balance_point_temp) or
+            np.isnan(row.occ_htg_balance_point_temp)):
+            dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.climate_data.clg_balance_point_temp
+            dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.climate_data.htg_balance_point_temp
+            portfolio.update_input_file_flag = True
+        else:
+            site.climate_data.clg_balance_point_temp = row.occ_clg_balance_point_temp
+            site.climate_data.htg_balance_point_temp = row.occ_htg_balance_point_temp
         #geocode if lat/long is missing and write back into file
         if (np.isnan(row.latitude) or 
             np.isnan(row.longitude) or
             (row.latitude == 0 and row.longitude == 0)):
             print("Geocoding Site " + str(site.id))
-            site.__geocode()
+            site.geocode()
             dataframe.at[row.Index, 'latitude'] = site.latitude
             dataframe.at[row.Index, 'longitude'] = site.longitude
-            update_flag = True
+            portfolio.update_input_file_flag = True
             #row.longitude = site.longitude
         else:
             site.latitude = row.latitude

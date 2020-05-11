@@ -17,10 +17,10 @@ def import_sites(filename, portfolio):
     __cleanse_site_list(site_list)
     #import all site objects, return dataframe for file saving
     file_update_flag = False
-    site_list = Site.import_from_file(site_list, portfolio, file_update_flag)
-    print(file_update_flag)
+    site_list = Site.import_from_file(site_list, portfolio)
+    print(portfolio.update_input_file_flag)
     #only update file if geocoding needs to be added
-    if (file_update_flag):
+    if (portfolio.update_input_file_flag):
         #update input file to only pull lat/long once
         print("Updating Input File")
         #load existing workbook

@@ -7,11 +7,11 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("LOWES-CONS")
+    portfolio = Portfolio.Portfolio("IRM")
     
 
     #import sites from file, add to portfolio
-    input_filename = "projects/LOWES/input/input-CONS.xlsx"
+    input_filename = "projects/IRM/input/input_all_sites_reduce_schedule.xlsx"
     FileIO.import_sites(input_filename, portfolio)
     #read asset list
     FileIO.import_assets(input_filename, portfolio)
@@ -23,17 +23,23 @@ def main():
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
 
-    '''
+    
     #IRM Setup
     portfolio.add_ecm_list("Replace")
     portfolio.add_ecm_list("Retrofit-VFD")
     portfolio.add_ecm_list("Retrofit-Schedule")
+    portfolio.add_ecm_list("Monitor")
     portfolio.add_ecm_list("No Action")
+    portfolio.add_ecm("Replace",SetpointAdj.SetpointAdj(new_occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp - 4, 
+                                                        new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     portfolio.add_ecm("Retrofit-VFD",RetroCommission.RetroCommission(.30))
     portfolio.add_ecm("Retrofit-VFD",FanStageClg.FanStageClg())
     portfolio.add_ecm("Retrofit-VFD",FanStageVent.FanStageVent())
-    portfolio.add_ecm("Retrofit-Schedule",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
-    '''
+    portfolio.add_ecm("Retrofit-VFD",SetpointAdj.SetpointAdj(new_occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp - 4, 
+                                                             new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+    portfolio.add_ecm("Retrofit-Schedule",SetpointAdj.SetpointAdj(new_occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp - 4, 
+                                                                  new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
+    
 
     '''
     #BGHE Setup
@@ -47,7 +53,7 @@ def main():
     #portfolio.add_ecm("RETROFIT",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     #portfolio.add_ecm("REPLACE",SetpointAdj.SetpointAdj(new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     '''
-    
+    '''
     #LOWES SETUP REGULAR
     #attach ecms
     portfolio.add_ecm_list("REPLACE")
@@ -56,7 +62,7 @@ def main():
     portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission())
     portfolio.add_ecm("RETROFIT",FanStageClg.FanStageClg())
     portfolio.add_ecm("RETROFIT",FanStageVent.FanStageVent())
-    
+    '''
 
     #apply ecms to each asset
     portfolio.apply_ecms()
