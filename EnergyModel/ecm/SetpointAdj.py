@@ -23,17 +23,17 @@ class SetpointAdj(Ecm.Ecm):
             #get new swing temperatures based on delta T
             clg_delta_t = self.new_occ_clg_sp - asset.occ_clg_sp
             htg_delta_t = self.new_occ_htg_sp - asset.occ_htg_sp
-            new_clg_balance_point_temp = asset.climate_data.clg_balance_point_temp + clg_delta_t
-            new_htg_balance_point_temp = asset.climate_data.htg_balance_point_temp + htg_delta_t
+            new_clg_balance_point_temp = asset.occ_climate_data.clg_balance_point_temp + clg_delta_t
+            new_htg_balance_point_temp = asset.occ_climate_data.htg_balance_point_temp + htg_delta_t
 
             # get new clg design factor based on new swing temperatures
-            clg_design_adj_fact = (asset.climate_data.clg_design_temp - new_clg_balance_point_temp) / (asset.climate_data.clg_design_temp - asset.climate_data.clg_balance_point_temp)
+            clg_design_adj_fact = (asset.occ_climate_data.clg_design_temp - new_clg_balance_point_temp) / (asset.occ_climate_data.clg_design_temp - asset.occ_climate_data.clg_balance_point_temp)
             new_clg_load_at_design = clg_load_at_design * clg_design_adj_fact
             new_clg_design_factor = self.__load_at_design_to_design_factor(new_clg_load_at_design)
             asset.clg_design_factor = new_clg_design_factor
 
             # get new htg design factor based on new swing temperatures
-            htg_design_adj_fact = (asset.climate_data.htg_design_temp - new_htg_balance_point_temp) / (asset.climate_data.htg_design_temp - asset.climate_data.htg_balance_point_temp)
+            htg_design_adj_fact = (asset.occ_climate_data.htg_design_temp - new_htg_balance_point_temp) / (asset.occ_climate_data.htg_design_temp - asset.occ_climate_data.htg_balance_point_temp)
             new_htg_load_at_design = htg_load_at_design * htg_design_adj_fact
             new_htg_design_factor = self.__load_at_design_to_design_factor(new_htg_load_at_design)
             asset.htg_design_factor = new_htg_design_factor

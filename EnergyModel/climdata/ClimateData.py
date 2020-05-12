@@ -4,12 +4,15 @@ import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
 from utility import Assumptions
+from climdata import HourlyDataManager
 
 class ClimateData():
     """Hold all necessary climate information for energy calculations"""
-    def __init__(self):
-        self.clg_balance_point_temp = Assumptions.ClimateDefaults.clg_balance_point_temp
-        self.htg_balance_point_temp = Assumptions.ClimateDefaults.htg_balance_point_temp
+    def __init__(self, 
+                 clg_balance_point_temp = Assumptions.ClimateDefaults.occ_clg_balance_point_temp, 
+                 htg_balance_point_temp = Assumptions.ClimateDefaults.occ_htg_balance_point_temp):
+        self.clg_balance_point_temp = clg_balance_point_temp
+        self.htg_balance_point_temp = htg_balance_point_temp
         self.clg_design_temp = 0
         self.htg_design_temp = 0
         self.cdd = 0
@@ -27,9 +30,10 @@ class ClimateData():
         self.avg_htg_fan_speed_pct_from_speed = 0
         self.avg_clg_fan_speed_pct_from_power = 0
         self.avg_htg_fan_speed_pct_from_power = 0
-        self.closest_climate_zone = None
+        self.closest_climate_city = None
+        self.climate_zone = None
 
-    def get_closest_climate_zone(self, lat, lon):
+    def get_closest_climate_city(self, lat, lon):
         #check that lat/lon are good
         if (lat == 0 or lon == 0 or lat == np.nan or lon == np.nan):
             raise TypeError("Lat or Lon of 0 input to find closest weather data")
@@ -51,7 +55,9 @@ class ClimateData():
                 closest_city = data['CLIMATE ZONE'][i]
                 clg_design_tmp = data['DB DSGN TEMP C'][i]
                 htg_design_tmp = data['DB DSGN TEMP H'][i]
-        self.closest_climate_zone = closest_city
+                climate_zone = data['CLIMATE ZONE CODE'][i]
+        self.climate_zone = climate_zone
+        self.closest_climate_city = closest_city
         self.clg_design_temp = clg_design_tmp
         self.htg_design_temp = htg_design_tmp
         return closest_city, clg_design_tmp, htg_design_tmp
@@ -76,28 +82,22 @@ class ClimateData():
         self.avg_htg_fan_speed_pct_from_speed = climate_data_to_copy.avg_htg_fan_speed_pct_from_speed
         self.avg_clg_fan_speed_pct_from_power = climate_data_to_copy.avg_clg_fan_speed_pct_from_power
         self.avg_htg_fan_speed_pct_from_power = climate_data_to_copy.avg_htg_fan_speed_pct_from_power
-        self.closest_climate_zone = climate_data_to_copy.closest_climate_zone
+        self.closest_climate_city = climate_data_to_copy.closest_climate_city
+        self.climate_zone = climate_data_to_copy.climate_zone
 
     def update_climate_data(self, htg_balance_point_temp, clg_balance_point_temp):
-        print("Updating Climate Data for " + str(self.closest_climate_zone))
-        if (self.closest_climate_zone == None):
+        print("Updating Climate Data for " + str(self.closest_climate_city))
+        if (self.closest_climate_city == None):
             raise TypeError("Climate Zone Updated before being instantiated")
         self.htg_balance_point_temp = htg_balance_point_temp
         self.clg_balance_point_temp = clg_balance_point_temp
         self.calculate_climate_data()
 
+
+
     def calculate_climate_data(self):
-        print("Calculating Climate Data for " + str(self.closest_climate_zone))
-        dataframe = self.__open_hourly_data()
-        dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
-        dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
-        dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_balance_point_temp)
-        dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_balance_point_temp)
-        dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
-        dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
-        dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
-        dataframe['CLG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-C'].values)
-        dataframe['HTG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-H'].values)
+        print("Calculating Climate Data for " + str(self.closest_climate_city))
+        dataframe = self.__get_hourly_data()
         
         self.cdd = dataframe['CDD'].sum()
         self.hdd = dataframe['HDD'].sum()
@@ -133,7 +133,7 @@ class ClimateData():
         print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
         print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
         print()
-        print("Climate Zone: " + str(self.closest_climate_zone))
+        print("Climate Zone: " + str(self.closest_climate_city))
         print("Cooling Design Temp: " + str(self.clg_design_temp))
         print("Heating Design Temp: " + str(self.htg_design_temp))
         print("Cooling Swing Temp: " + str(self.clg_balance_point_temp))
@@ -156,12 +156,38 @@ class ClimateData():
 
 #-----------------------------PRIVATE METHODS-------------------------------#
 
+    def __get_hourly_data(self):
+        hourly_data = HourlyDataManager.HourlyDataManager.search_for_hourly_data(self.closest_climate_city, 
+                                                                                 self.clg_balance_point_temp, 
+                                                                                 self.htg_balance_point_temp)
+        #if no hit, open file and append, add to hourly data manager
+        if (hourly_data is None):
+            hourly_data = self.__open_hourly_data()
+            hourly_data = self.__append_hourly_calcs(hourly_data)
+            HourlyDataManager.HourlyDataManager.add_hourly_data(HourlyDataManager.HourlyData(hourly_data,
+                                                                                             self.closest_climate_city,
+                                                                                             self.clg_balance_point_temp,
+                                                                                             self.htg_balance_point_temp))
+        return hourly_data
+
     def __open_hourly_data(self):
         # check that climate zone is populated
-        if (self.closest_climate_zone == None):
+        if (self.closest_climate_city == None):
             raise TypeError("No climate zone to check weather data")
-        data = pd.read_csv('reference/' + str(self.closest_climate_zone) + '.csv')
-        return data
+        dataframe = pd.read_csv('reference/' + str(self.closest_climate_city) + '.csv')
+        return dataframe
+    
+    def __append_hourly_calcs(self, dataframe):
+        dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
+        dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
+        dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_balance_point_temp)
+        dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_balance_point_temp)
+        dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
+        dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
+        dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
+        dataframe['CLG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-C'].values)
+        dataframe['HTG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-H'].values)
+        return dataframe
 
     def __calc_hourly_cdd(self, temp, balance_point_temp):
         calc = temp - balance_point_temp

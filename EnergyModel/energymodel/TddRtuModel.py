@@ -85,7 +85,7 @@ class TddRtuModel():
         print("Running energy calculations for proposal " + rtu.proposal.prop_id + " " + rtu.status + " RTU")
         if ((isinstance(rtu, Cdu.Cdu) or isinstance(rtu, Pkg.Pkg)) and rtu.tons > 0):
             #easy reference to climate object
-            cd = rtu.climate_data
+            cd = rtu.occ_climate_data
 
             #peak load calculations from EER, HP
             #break horsepower from list hp

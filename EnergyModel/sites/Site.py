@@ -6,6 +6,7 @@ from energymodel import TddRtuModel
 from utilitybills import EnergyBill
 import pandas as pd
 import numpy as np
+from utility import Assumptions
 
 class Site:
     #constructor + instance variables
@@ -13,7 +14,10 @@ class Site:
         self.id = id
         self.portfolio = None
         self.address = None
-        self.climate_data = ClimateData.ClimateData()
+        self.occ_climate_data = ClimateData.ClimateData(Assumptions.ClimateDefaults.occ_clg_balance_point_temp,
+                                                          Assumptions.ClimateDefaults.occ_htg_balance_point_temp)
+        self.unocc_climate_data = ClimateData.ClimateData(Assumptions.ClimateDefaults.unocc_clg_balance_point_temp,
+                                                          Assumptions.ClimateDefaults.unocc_htg_balance_point_temp)
         self.latitude = None
         self.longitude = None
         self.altitude = None
@@ -48,8 +52,8 @@ class Site:
         self.total_kwh_reduction_pcnt = 0
     
     def fill_climate_data(self):
-        self.climate_data.get_closest_climate_zone(self.latitude, self.longitude)
-        self.climate_data.calculate_climate_data()
+        self.occ_climate_data.get_closest_climate_city(self.latitude, self.longitude)
+        self.occ_climate_data.calculate_climate_data()
 
     def run_energy_calculations(self, energy_model):
         for x in self.proposal_list.iternodes():
@@ -160,7 +164,8 @@ class Site:
         colnames = vars(self).keys()    #vars gets dict from object. Keys gets keys from dict key-value pairs
         df = pd.DataFrame([[getattr(self, j) for j in colnames]], columns = colnames) #get attributes in a row
         df['portfolio'] = self.portfolio.id    #take ID not whole object
-        df['climate_data'] = self.climate_data.closest_climate_zone   #take city not whole object
+        df['climate_data'] = self.occ_climate_data.closest_climate_city   #take city not whole object
+        df['climate_zone'] = self.occ_climate_data.climate_zone
         df = df.drop(['proposal_list',
                       'energy_model',
                       'altitude',
@@ -205,8 +210,8 @@ class Site:
         print("Pre KWH: " + str(self.pre_kwh_hvac_yearly))
         print("Post KWH: " + str(self.post_kwh_hvac_yearly))
         print("Saved KWH: " + str(self.sav_kwh_hvac_yearly))
-        if (self.climate_data != None):
-            self.climate_data.dump()
+        if (self.occ_climate_data != None):
+            self.occ_climate_data.dump()
         print("Total Assets:" + str(self.proposal_list.size))
         
         for x in self.proposal_list.iternodes():
@@ -253,12 +258,12 @@ def import_from_file(dataframe, portfolio):
         # grab balance temps if available
         if (np.isnan(row.occ_clg_balance_point_temp) or
             np.isnan(row.occ_htg_balance_point_temp)):
-            dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.climate_data.clg_balance_point_temp
-            dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.climate_data.htg_balance_point_temp
+            dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.occ_climate_data.clg_balance_point_temp
+            dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.occ_climate_data.htg_balance_point_temp
             portfolio.update_input_file_flag = True
         else:
-            site.climate_data.clg_balance_point_temp = row.occ_clg_balance_point_temp
-            site.climate_data.htg_balance_point_temp = row.occ_htg_balance_point_temp
+            site.occ_climate_data.clg_balance_point_temp = row.occ_clg_balance_point_temp
+            site.occ_climate_data.htg_balance_point_temp = row.occ_htg_balance_point_temp
         #geocode if lat/long is missing and write back into file
         if (np.isnan(row.latitude) or 
             np.isnan(row.longitude) or

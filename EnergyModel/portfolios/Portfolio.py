@@ -6,6 +6,7 @@ from ecm import EcmManager
 from datetime import datetime
 import os
 from pathlib import Path
+from climdata import HourlyDataManager
 
 class Portfolio():
     def __init__(self, id, model_type = "TDD"):
@@ -37,6 +38,7 @@ class Portfolio():
         self.sav_therms_hvac_yearly = 0
         self.kwh_hvac_reduction_pct = 0
         self.ecm_manager = EcmManager.EcmManager()
+        self.hourly_data_manager = HourlyDataManager.HourlyDataManager()
         self.update_input_file_flag = False
 
     def add_site(self, site):

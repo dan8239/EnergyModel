@@ -13,7 +13,8 @@ class Asset:
         self.status = None
         self.kwh_hvac_yearly = 0
         self.therms_hvac_yearly = 0
-        self.climate_data = None
+        self.occ_climate_data = None
+        self.unocc_climate_data = None
         self.calc_age()
 
     def set_proposal(self, proposal):
@@ -80,9 +81,9 @@ class Asset:
 
     def update_climate_data(self, htg_balance_point_temp, clg_balance_point_temp):
         new_clim_data = ClimateData.ClimateData()
-        new_clim_data.copy_climate_data(self.climate_data)
+        new_clim_data.copy_climate_data(self.occ_climate_data)
         new_clim_data.update_climate_data(htg_balance_point_temp, clg_balance_point_temp)
-        self.climate_data = new_clim_data
+        self.occ_climate_data = new_clim_data
 
     def dump(self):
         print("Asset Type: " + type(self).__name__)

@@ -26,7 +26,7 @@ class Proposal:
         self.existing_asset = asset
         self.existing_asset.status = "existing"
         self.existing_asset.proposal = self
-        asset.climate_data = self.site.climate_data
+        asset.occ_climate_data = self.site.occ_climate_data
 
     def add_new_asset(self, asset):
         if (not isinstance(asset, Asset.Asset)):
@@ -34,7 +34,7 @@ class Proposal:
         self.new_asset = asset
         self.new_asset.status = "new"
         self.new_asset.proposal = self
-        asset.climate_data = self.site.climate_data
+        asset.occ_climate_data = self.site.occ_climate_data
 
     #filter old asset, if replacing filter new asset. If retro/no action copy old asset
     def filter_assets(self):

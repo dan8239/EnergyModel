@@ -36,6 +36,9 @@
     <Compile Include="climdata\ClimateData.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="climdata\HourlyDataManager.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="climdata\__init__.py" />
     <Compile Include="config.py">
       <SubType>Code</SubType>

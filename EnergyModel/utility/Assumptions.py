@@ -24,9 +24,9 @@ class FilterAssets():
 class RtuDefaults():
     fan_efficiency = 0.85
     occ_htg_sp = 68
-    unocc_htg_sp = 55
+    unocc_htg_sp = 60
     occ_clg_sp = 72
-    unocc_clg_sp = 85
+    unocc_clg_sp = 80
     min_oa_pct = .12
     vent_fan_min_speed = 0.333
     vent_fan_max_speed = 1.0
@@ -43,5 +43,24 @@ class RtuDefaults():
     vent_fan_cntrl_seq = FanSeq.FanSeq.CONSTANT_SPEED
         
 class ClimateDefaults():
-    clg_balance_point_temp = 56.0
-    htg_balance_point_temp = 52.0
+    occ_clg_balance_point_temp = 56.0
+    occ_htg_balance_point_temp = 52.0
+    unocc_load_reduction = 0.9  #percent of load reduced when unoccupied (lighting, people, some plug)
+
+        #heating load approx = htg_sp - htg_balance
+    #heating load reduced when unoccupied by some percent (lighting, people, some plug)
+    #balance point increase partially offset by setpoint adjustment
+    def calc_unocc_htg_balance_point_temp(occ_htg_balance_point_temp, occ_htg_sp, unocc_htg_sp, unocc_load_reduction):
+        return occ_htg_balance_point_temp + unocc_load_reduction*(occ_htg_sp - occ_htg_balance_point_temp) - (occ_htg_sp - unocc_htg_sp)
+
+    #cooling load approx = clg_sp - clg_balance
+    #heating load reduced when unoccupied by some percent (lighting, people, some plug)
+    #balance point increases from temp setpoint delta as well
+    def calc_unocc_clg_balance_point_temp(occ_clg_balance_point_temp, occ_clg_sp, unocc_clg_sp, unocc_load_reduction):
+        return occ_clg_balance_point_temp + unocc_load_reduction*(occ_clg_sp - occ_clg_balance_point_temp) + (unocc_clg_sp - occ_clg_sp)
+
+
+    unocc_clg_balance_point_temp = calc_unocc_clg_balance_point_temp(occ_clg_balance_point_temp, RtuDefaults.occ_clg_sp, RtuDefaults.unocc_clg_sp, unocc_load_reduction)
+    unocc_htg_balance_point_temp = calc_unocc_htg_balance_point_temp(occ_htg_balance_point_temp, RtuDefaults.occ_htg_sp, RtuDefaults.unocc_htg_sp, unocc_load_reduction)
+    
+
