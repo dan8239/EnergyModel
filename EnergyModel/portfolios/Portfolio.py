@@ -207,7 +207,8 @@ class Portfolio():
                       'pre_therms_hvac_yearly',
                       'post_therms_hvac_yearly',
                       'update_input_file_flag',
-                      'sav_therms_hvac_yearly'], axis = 1)   #drop object references and unneeded columns
+                      'sav_therms_hvac_yearly',
+                      'hourly_data_manager'], axis = 1)   #drop object references and unneeded columns
         return df
 
     def __output_file_path(self):

@@ -7,11 +7,11 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("IRM-IM01404")
+    portfolio = Portfolio.Portfolio("IRM-Wave 7")
     
 
     #import sites from file, add to portfolio
-    input_filename = "projects/IRM-IM01404/input.xlsx"
+    input_filename = "projects/IRM-Wave 7/Wave 7 inputs.xlsx"
     FileIO.import_sites(input_filename, portfolio)
     #read asset list
     FileIO.import_assets(input_filename, portfolio)

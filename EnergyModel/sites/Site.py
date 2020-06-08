@@ -177,7 +177,9 @@ class Site:
                       'post_therms_hvac_yearly',
                       'sav_therms_hvac_yearly',
                       'electric_bill',
-                      'natural_gas_bill'], axis = 1)   #drop object references
+                      'natural_gas_bill',
+                      'occ_climate_data',
+                      'unocc_climate_data'], axis = 1)   #drop object references
         #merge utility bill information into dataframe
         elec_bill_df = self.electric_bill.to_dataframe()
         df = pd.merge(df, elec_bill_df, left_on='id', right_on='site', how='left').drop('site', axis = 1)
