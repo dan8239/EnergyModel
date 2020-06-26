@@ -91,9 +91,15 @@ class Rtu(Asset.Asset):
                 self.fact_eer = Assumptions.FilterAssets.no_info_eer
 
     def __fill_evap_hp_by_tonnage(self):
-        #if no eer listed, determine approx eer from age
+        #if horsepower isn't used, estimate based on tonnage
         if (np.isnan(self.evap_hp) or self.evap_hp == None or self.evap_hp == 0):
-            if (self.tons != None):
+            # if it's the new unit, make it equal to the existing unit
+            if (self.status == "new"):
+                if (self.proposal.existing_asset.evap_hp != None and (not np.isnan(self.proposal.existing_asset.evap_hp))):
+                    self.evap_hp = self.proposal.existing_asset.evap_hp
+                else:
+                    raise TypeError("Evap HP not set for existing unit")
+            elif (self.tons != None):
                 self.evap_hp = Assumptions.FilterAssets.evap_hp_per_ton * self.tons
             else:
                 self.evap_hp = 0
@@ -124,8 +130,12 @@ class Rtu(Asset.Asset):
         #set refrig type
         self.refrig_type = "R-410A"
         
-        #set horsepower
-        self.__fill_evap_hp_by_tonnage()
+        #set horsepower to existing unit if it's missing
+        x_hp = self.proposal.existing_asset.evap_hp
+        if (x_hp == 0 or np.isnan(x_hp)):
+            self.__fill_evap_hp_by_tonnage()
+        else:
+            self.evap_hp = x_hp
 
         #if not listed, set eer to minimum new unit eer
         if (self.fact_eer == None or self.fact_eer == 0 or self.fact_eer == np.nan):

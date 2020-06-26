@@ -77,7 +77,7 @@ class TddRtuModel():
         elif (rtu.htg_fan_cntrl_seq == FanSeq.FanSeq.CONSTANT_SPEED):
             avg_htg_fan_speed = avg_htg_therm_load_pct * (rtu.htg_fan_max_speed - rtu.htg_fan_min_speed) + rtu.htg_fan_min_speed
         else:
-            raise TypeError("Invalid htg fan control sequence " + rtu.htg_fan_cntrl_seq + " for asset " + rtu.proposal.prop_id)
+            raise TypeError("Invalid htg fan control sequence " + str(rtu.htg_fan_cntrl_seq) + " for asset " + rtu.proposal.prop_id)
         return avg_htg_fan_speed
 
 

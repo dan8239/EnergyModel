@@ -7,11 +7,11 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("IRM-Wave 7")
+    portfolio = Portfolio.Portfolio("Cintas")
     
 
     #import sites from file, add to portfolio
-    input_filename = "projects/IRM-Wave 7/Wave 7 inputs.xlsx"
+    input_filename = "projects/Cintas/inputs.xlsx"
     FileIO.import_sites(input_filename, portfolio)
     #read asset list
     FileIO.import_assets(input_filename, portfolio)
@@ -23,7 +23,17 @@ def main():
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
 
-    
+    #Cintas Setup
+    portfolio.add_ecm_list("REPLACE")
+    portfolio.add_ecm_list("RETROFIT")
+    portfolio.add_ecm_list("NO ACTION")
+    portfolio.add_ecm("REPLACE",FanStageClg.FanStageClg())
+    portfolio.add_ecm("REPLACE",FanStageVent.FanStageVent())
+    portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission(.30))
+    portfolio.add_ecm("RETROFIT",VafEnerfit.VafEnerfit())
+
+
+    '''
     #IRM Setup
     portfolio.add_ecm_list("Replace")
     portfolio.add_ecm_list("Retrofit-VFD")
@@ -39,7 +49,7 @@ def main():
                                                              new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
     portfolio.add_ecm("Retrofit-Schedule",SetpointAdj.SetpointAdj(new_occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp - 4, 
                                                                   new_occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp + 4))
-    
+    '''
 
     '''
     #BGHE Setup

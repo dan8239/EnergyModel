@@ -22,12 +22,19 @@ class EnergyBill():
     def to_dataframe(self):
         colnames = vars(self).keys()    #vars gets dict from object. Keys gets keys from dict key-value pairs
         df = pd.DataFrame([[getattr(self, j) for j in colnames]], columns = colnames) #get attributes in a row
-        df = df.drop(['reliable','bill_duration','bill_type'], axis = 1)   #drop unecessary columns
-        df['annual_units'].add_prefix(str(self.bill_type) + "_")
-        df['annual_dollars'].add_prefix(str(self.bill_type) + "_")
-        df['dollars_per_unit'].add_prefix(str(self.bill_type) + "_")
-        df['unit'].add_prefix(str(self.bill_type) + "_")
+        
+        #add bill type to dataframe names
+        df.rename(columns={'annual_units': str(self.bill_type) + "_" + 'annual_units',
+                          'annual_dollars': str(self.bill_type) + "_" + 'annual_dollars',
+                          'dollars_per_unit': str(self.bill_type) + "_" + 'dollars_per_unit',
+                          'unit': str(self.bill_type) + "_" + 'unit'}, inplace=True)
         df['site'] = self.site.id
+        df = df.drop(['reliable',
+                      'bill_duration',
+                      'bill_type',
+                      str(self.bill_type) + "_" + 'annual_dollars',
+                      str(self.bill_type) + "_" + 'dollars_per_unit',
+                      str(self.bill_type) + "_" + 'unit'], axis = 1)   #drop unecessary columns
         return df
 
     def import_from_file(self, dataframe):

@@ -21,6 +21,8 @@ class Site:
         self.latitude = None
         self.longitude = None
         self.altitude = None
+        self.building_type = None
+        self.area = 0
         self.asset_count = 0
         self.run_hours_yearly = 8760
         self.x_tons = 0
@@ -249,38 +251,43 @@ class Site:
 def import_from_file(dataframe, portfolio):
     portfolio.update_input_file_flag = False
     for row in dataframe.itertuples():
-        #create site
-        site = Site(row.site_id)
-        #create import bill data
-        site.electric_bill.import_from_row(row)
-        #write all site values
-        site.address = row.address
-        site.run_hours_yearly = 8760*row.occ_pcnt
-        portfolio.add_site(site)
-        # grab balance temps if available
-        if (np.isnan(row.occ_clg_balance_point_temp) or
-            np.isnan(row.occ_htg_balance_point_temp)):
-            dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.occ_climate_data.clg_balance_point_temp
-            dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.occ_climate_data.htg_balance_point_temp
-            portfolio.update_input_file_flag = True
+        if (type(row.address) is str):
+            #create site
+            site = Site(row.site_id)
+            #create import bill data
+            site.electric_bill.import_from_row(row)
+            #write all site values
+            site.address = row.address
+            site.run_hours_yearly = 8760*row.occ_pcnt
+            site.area = row.area
+            site.building_type = row.bldg_type
+            portfolio.add_site(site)
+            # grab balance temps if available
+            if (np.isnan(row.occ_clg_balance_point_temp) or
+                np.isnan(row.occ_htg_balance_point_temp)):
+                dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.occ_climate_data.clg_balance_point_temp
+                dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.occ_climate_data.htg_balance_point_temp
+                portfolio.update_input_file_flag = True
+            else:
+                site.occ_climate_data.clg_balance_point_temp = row.occ_clg_balance_point_temp
+                site.occ_climate_data.htg_balance_point_temp = row.occ_htg_balance_point_temp
+            #geocode if lat/long is missing and write back into file
+            if (np.isnan(row.latitude) or 
+                np.isnan(row.longitude) or
+                (row.latitude == 0 and row.longitude == 0)):
+                print("Geocoding Site " + str(site.id))
+                site.geocode()
+                dataframe.at[row.Index, 'latitude'] = site.latitude
+                dataframe.at[row.Index, 'longitude'] = site.longitude
+                portfolio.update_input_file_flag = True
+                #row.longitude = site.longitude
+            else:
+                site.latitude = row.latitude
+                site.longitude = row.longitude
+            #fill climate data for site
+            print("Filling Climate Data for Site " + str(site.id))
+            site.fill_climate_data()
         else:
-            site.occ_climate_data.clg_balance_point_temp = row.occ_clg_balance_point_temp
-            site.occ_climate_data.htg_balance_point_temp = row.occ_htg_balance_point_temp
-        #geocode if lat/long is missing and write back into file
-        if (np.isnan(row.latitude) or 
-            np.isnan(row.longitude) or
-            (row.latitude == 0 and row.longitude == 0)):
-            print("Geocoding Site " + str(site.id))
-            site.geocode()
-            dataframe.at[row.Index, 'latitude'] = site.latitude
-            dataframe.at[row.Index, 'longitude'] = site.longitude
-            portfolio.update_input_file_flag = True
-            #row.longitude = site.longitude
-        else:
-            site.latitude = row.latitude
-            site.longitude = row.longitude
-        #fill climate data for site
-        print("Filling Climate Data for Site " + str(site.id))
-        site.fill_climate_data()
+            print("Site " + str(row.site_id) + "has no address listed. Will not be added to portfolio")
     #return dataframe for updating imput file    
     return dataframe

@@ -1,0 +1,755 @@
+,,,,,Electrical % Of Total,,,Natural Gas % Of Total,,
+Building Type,Building Start Date,Building End Date,Climate Zone,Reference City,Electrical-Lighting-%,Electrical-HVAC-%,Electrical-Other-%,Natural Gas-Lighting-%,Natural Gas-HVAC-%,Natural Gas-Other-%
+Full Service Restaurant,1900,1980,1A,"Miami, Florida",22.40%,37.24%,40.36%,0.00%,18.13%,81.87%
+Hospital,1900,1980,1A,"Miami, Florida",18.52%,61.81%,19.67%,0.00%,88.85%,11.15%
+Large Hotel,1900,1980,1A,"Miami, Florida",10.58%,77.75%,11.67%,0.00%,75.40%,24.60%
+Large Office Building,1900,1980,1A,"Miami, Florida",26.38%,44.86%,28.77%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,1A,"Miami, Florida",29.90%,44.21%,25.89%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,1A,"Miami, Florida",22.62%,46.70%,30.69%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,1A,"Miami, Florida",16.01%,56.87%,27.12%,0.00%,93.24%,6.76%
+Primary School,1900,1980,1A,"Miami, Florida",37.81%,37.65%,24.54%,0.00%,40.62%,59.38%
+Quick Service Restaurant,1900,1980,1A,"Miami, Florida",23.75%,24.46%,51.79%,0.00%,9.47%,90.53%
+Secondary School,1900,1980,1A,"Miami, Florida",30.85%,52.24%,16.92%,0.00%,55.78%,44.22%
+Small Hotel,1900,1980,1A,"Miami, Florida",39.59%,34.55%,25.86%,0.00%,56.62%,43.38%
+Small Office,1900,1980,1A,"Miami, Florida",33.72%,46.05%,20.24%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,1A,"Miami, Florida",46.95%,44.77%,8.27%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,1A,"Miami, Florida",53.82%,39.83%,6.35%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,1A,"Miami, Florida",21.64%,13.61%,64.76%,0.00%,38.46%,61.54%
+Warehouse,1900,1980,1A,"Miami, Florida",67.63%,18.00%,14.38%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,2A,"Houston, Texas",23.79%,33.49%,42.71%,0.00%,34.34%,65.66%
+Hospital,1900,1980,2A,"Houston, Texas",18.30%,62.27%,19.43%,0.00%,90.39%,9.61%
+Large Hotel,1900,1980,2A,"Houston, Texas",12.08%,74.60%,13.32%,0.00%,80.23%,19.77%
+Large Office Building,1900,1980,2A,"Houston, Texas",28.02%,41.41%,30.57%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,2A,"Houston, Texas",31.97%,40.35%,27.68%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,2A,"Houston, Texas",25.95%,38.84%,35.21%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,2A,"Houston, Texas",16.41%,55.80%,27.79%,0.00%,94.34%,5.66%
+Primary School,1900,1980,2A,"Houston, Texas",41.22%,32.10%,26.68%,0.00%,76.81%,23.19%
+Quick Service Restaurant,1900,1980,2A,"Houston, Texas",24.91%,21.11%,53.98%,0.00%,22.66%,77.34%
+Secondary School,1900,1980,2A,"Houston, Texas",34.71%,46.31%,18.98%,0.00%,88.03%,11.97%
+Small Hotel,1900,1980,2A,"Houston, Texas",42.61%,29.54%,27.85%,0.00%,61.05%,38.95%
+Small Office,1900,1980,2A,"Houston, Texas",35.68%,42.91%,21.42%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,2A,"Houston, Texas",49.88%,41.34%,8.79%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,2A,"Houston, Texas",57.26%,35.99%,6.76%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,2A,"Houston, Texas",21.89%,17.13%,60.98%,0.00%,83.93%,16.07%
+Warehouse,1900,1980,2A,"Houston, Texas",59.43%,27.94%,12.64%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,2B,"Phoenix, Arizona",23.20%,35.15%,41.64%,0.00%,29.42%,70.58%
+Hospital,1900,1980,2B,"Phoenix, Arizona",18.54%,61.77%,19.68%,0.00%,90.45%,9.55%
+Large Hotel,1900,1980,2B,"Phoenix, Arizona",12.50%,73.71%,13.79%,0.00%,77.86%,22.14%
+Large Office Building,1900,1980,2B,"Phoenix, Arizona",29.09%,39.17%,31.73%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,2B,"Phoenix, Arizona",29.02%,45.86%,25.13%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,2B,"Phoenix, Arizona",23.28%,45.14%,31.59%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,2B,"Phoenix, Arizona",15.73%,57.62%,26.65%,0.00%,94.61%,5.39%
+Primary School,1900,1980,2B,"Phoenix, Arizona",39.32%,35.23%,25.45%,0.00%,71.67%,28.33%
+Quick Service Restaurant,1900,1980,2B,"Phoenix, Arizona",24.20%,23.42%,52.38%,0.00%,17.57%,82.43%
+Secondary School,1900,1980,2B,"Phoenix, Arizona",31.93%,50.61%,17.47%,0.00%,83.95%,16.05%
+Small Hotel,1900,1980,2B,"Phoenix, Arizona",42.21%,30.21%,27.58%,0.00%,58.63%,41.38%
+Small Office,1900,1980,2B,"Phoenix, Arizona",32.74%,47.60%,19.65%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,2B,"Phoenix, Arizona",48.26%,43.24%,8.50%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,2B,"Phoenix, Arizona",55.32%,38.15%,6.53%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,2B,"Phoenix, Arizona",23.28%,18.03%,58.69%,0.00%,83.75%,16.25%
+Warehouse,1900,1980,2B,"Phoenix, Arizona",52.41%,36.44%,11.15%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,3A,"Atlanta, Georgia",25.83%,28.01%,46.17%,0.00%,45.19%,54.81%
+Hospital,1900,1980,3A,"Atlanta, Georgia",18.64%,61.58%,19.77%,0.00%,91.36%,8.64%
+Large Hotel,1900,1980,3A,"Atlanta, Georgia",14.58%,69.35%,16.07%,0.00%,83.44%,16.56%
+Large Office Building,1900,1980,3A,"Atlanta, Georgia",29.67%,37.96%,32.37%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,3A,"Atlanta, Georgia",33.53%,37.44%,29.03%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,3A,"Atlanta, Georgia",30.29%,28.61%,41.10%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,3A,"Atlanta, Georgia",16.82%,54.70%,28.48%,0.00%,95.10%,4.90%
+Primary School,1900,1980,3A,"Atlanta, Georgia",46.22%,23.94%,29.84%,0.00%,86.23%,13.77%
+Quick Service Restaurant,1900,1980,3A,"Atlanta, Georgia",26.53%,16.40%,57.07%,0.00%,33.37%,66.63%
+Secondary School,1900,1980,3A,"Atlanta, Georgia",40.13%,37.99%,21.88%,0.00%,93.44%,6.57%
+Small Hotel,1900,1980,3A,"Atlanta, Georgia",45.62%,24.58%,29.80%,0.00%,64.55%,35.45%
+Small Office,1900,1980,3A,"Atlanta, Georgia",38.21%,38.86%,22.94%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,3A,"Atlanta, Georgia",54.34%,36.09%,9.58%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,3A,"Atlanta, Georgia",62.55%,30.07%,7.38%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,3A,"Atlanta, Georgia",23.29%,17.39%,59.32%,0.00%,90.83%,9.17%
+Warehouse,1900,1980,3A,"Atlanta, Georgia",59.18%,28.24%,12.59%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,3C,"Los Angeles, California",28.66%,20.08%,51.26%,0.00%,30.00%,70.00%
+Hospital,1900,1980,3C,"Los Angeles, California",20.43%,57.89%,21.68%,0.00%,90.24%,9.76%
+Large Hotel,1900,1980,3C,"Los Angeles, California",16.14%,66.08%,17.78%,0.00%,82.02%,17.98%
+Large Office Building,1900,1980,3C,"Los Angeles, California",32.75%,31.51%,35.73%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,3C,"Los Angeles, California",39.58%,26.15%,34.28%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,3C,"Los Angeles, California",36.20%,14.67%,49.14%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,3C,"Los Angeles, California",18.85%,49.22%,31.93%,0.00%,95.07%,4.93%
+Primary School,1900,1980,3C,"Los Angeles, California",50.15%,17.47%,32.38%,0.00%,67.75%,32.25%
+Quick Service Restaurant,1900,1980,3C,"Los Angeles, California",28.37%,10.55%,61.08%,0.00%,16.08%,83.92%
+Secondary School,1900,1980,3C,"Los Angeles, California",46.02%,28.87%,25.10%,0.00%,82.43%,17.57%
+Small Hotel,1900,1980,3C,"Los Angeles, California",48.47%,19.86%,31.67%,0.00%,63.92%,36.08%
+Small Office,1900,1980,3C,"Los Angeles, California",42.51%,31.97%,25.53%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,3C,"Los Angeles, California",62.80%,26.13%,11.07%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,3C,"Los Angeles, California",70.70%,20.95%,8.34%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,3C,"Los Angeles, California",25.45%,9.16%,65.40%,0.00%,84.44%,15.56%
+Warehouse,1900,1980,3C,"Los Angeles, California",74.87%,9.21%,15.93%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,3C,"San Francisco, California",29.76%,17.19%,53.05%,0.00%,44.15%,55.85%
+Hospital,1900,1980,3C,"San Francisco, California",21.62%,55.46%,22.92%,0.00%,91.23%,8.77%
+Large Hotel,1900,1980,3C,"San Francisco, California",20.14%,57.68%,22.18%,0.00%,84.44%,15.56%
+Large Office Building,1900,1980,3C,"San Francisco, California",37.90%,20.76%,41.34%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,3C,"San Francisco, California",42.94%,19.88%,37.19%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,3C,"San Francisco, California",38.86%,8.40%,52.74%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,3C,"San Francisco, California",20.33%,45.23%,34.44%,0.00%,95.29%,4.71%
+Primary School,1900,1980,3C,"San Francisco, California",54.16%,10.96%,34.88%,0.00%,83.02%,16.99%
+Quick Service Restaurant,1900,1980,3C,"San Francisco, California",28.95%,9.12%,61.94%,0.00%,27.49%,72.51%
+Secondary School,1900,1980,3C,"San Francisco, California",49.81%,23.09%,27.10%,0.00%,91.75%,8.25%
+Small Hotel,1900,1980,3C,"San Francisco, California",52.03%,13.97%,34.00%,0.00%,66.53%,33.47%
+Small Office,1900,1980,3C,"San Francisco, California",45.51%,27.17%,27.32%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,3C,"San Francisco, California",67.45%,20.67%,11.89%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,3C,"San Francisco, California",74.70%,16.48%,8.82%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,3C,"San Francisco, California",26.70%,9.60%,63.70%,0.00%,92.10%,7.90%
+Warehouse,1900,1980,3C,"San Francisco, California",68.29%,17.19%,14.52%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,4A,"Baltimore, Maryland",26.87%,25.22%,47.91%,0.00%,56.37%,43.63%
+Hospital,1900,1980,4A,"Baltimore, Maryland",18.77%,61.32%,19.90%,0.00%,92.19%,7.81%
+Large Hotel,1900,1980,4A,"Baltimore, Maryland",16.23%,65.89%,17.88%,0.00%,85.66%,14.34%
+Large Office Building,1900,1980,4A,"Baltimore, Maryland",30.77%,35.67%,33.57%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,4A,"Baltimore, Maryland",35.56%,33.64%,30.80%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,4A,"Baltimore, Maryland",32.01%,24.55%,43.44%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,4A,"Baltimore, Maryland",17.06%,54.02%,28.91%,0.00%,95.31%,4.69%
+Primary School,1900,1980,4A,"Baltimore, Maryland",48.87%,19.63%,31.50%,0.00%,91.41%,8.59%
+Quick Service Restaurant,1900,1980,4A,"Baltimore, Maryland",27.17%,14.63%,58.21%,0.00%,45.80%,54.20%
+Secondary School,1900,1980,4A,"Baltimore, Maryland",42.83%,33.85%,23.32%,0.00%,96.00%,4.00%
+Small Hotel,1900,1980,4A,"Baltimore, Maryland",46.31%,23.43%,30.26%,0.00%,66.89%,33.12%
+Small Office,1900,1980,4A,"Baltimore, Maryland",40.10%,35.81%,24.08%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,4A,"Baltimore, Maryland",57.57%,32.28%,10.15%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,4A,"Baltimore, Maryland",65.81%,26.43%,7.77%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,4A,"Baltimore, Maryland",24.00%,18.17%,57.82%,0.00%,94.15%,5.85%
+Warehouse,1900,1980,4A,"Baltimore, Maryland",57.44%,30.35%,12.22%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,4B,"Albuquerque, New Mexico",26.70%,25.70%,47.59%,0.00%,48.86%,51.14%
+Hospital,1900,1980,4B,"Albuquerque, New Mexico",21.27%,56.19%,22.54%,0.00%,89.47%,10.53%
+Large Hotel,1900,1980,4B,"Albuquerque, New Mexico",18.99%,60.09%,20.92%,0.00%,85.08%,14.92%
+Large Office Building,1900,1980,4B,"Albuquerque, New Mexico",36.70%,23.26%,40.04%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,4B,"Albuquerque, New Mexico",35.17%,34.38%,30.46%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,4B,"Albuquerque, New Mexico",32.18%,24.13%,43.68%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,4B,"Albuquerque, New Mexico",16.70%,55.01%,28.29%,0.00%,94.70%,5.30%
+Primary School,1900,1980,4B,"Albuquerque, New Mexico",49.35%,18.84%,31.81%,0.00%,87.83%,12.17%
+Quick Service Restaurant,1900,1980,4B,"Albuquerque, New Mexico",27.26%,14.37%,58.37%,0.00%,37.25%,62.75%
+Secondary School,1900,1980,4B,"Albuquerque, New Mexico",42.87%,33.79%,23.34%,0.00%,93.97%,6.03%
+Small Hotel,1900,1980,4B,"Albuquerque, New Mexico",47.75%,21.05%,31.20%,0.00%,66.47%,33.54%
+Small Office,1900,1980,4B,"Albuquerque, New Mexico",39.45%,36.86%,23.69%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,4B,"Albuquerque, New Mexico",58.18%,31.56%,10.25%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,4B,"Albuquerque, New Mexico",66.87%,25.24%,7.89%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,4B,"Albuquerque, New Mexico",24.82%,19.52%,55.66%,0.00%,92.49%,7.51%
+Warehouse,1900,1980,4B,"Albuquerque, New Mexico",57.42%,30.38%,12.21%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,4C,"Seattle, Washington",29.36%,18.41%,52.24%,0.00%,54.79%,45.21%
+Hospital,1900,1980,4C,"Seattle, Washington",21.18%,56.38%,22.44%,0.00%,92.32%,7.68%
+Large Hotel,1900,1980,4C,"Seattle, Washington",22.12%,53.51%,24.36%,0.00%,86.17%,13.83%
+Large Office Building,1900,1980,4C,"Seattle, Washington",39.19%,18.05%,42.76%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,4C,"Seattle, Washington",41.04%,23.41%,35.56%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,4C,"Seattle, Washington",37.48%,11.63%,50.90%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,4C,"Seattle, Washington",19.43%,47.64%,32.93%,0.00%,95.54%,4.46%
+Primary School,1900,1980,4C,"Seattle, Washington",55.50%,8.78%,35.72%,0.00%,90.35%,9.65%
+Quick Service Restaurant,1900,1980,4C,"Seattle, Washington",28.77%,9.82%,61.41%,0.00%,41.40%,58.60%
+Secondary School,1900,1980,4C,"Seattle, Washington",50.28%,22.40%,27.32%,0.00%,95.91%,4.09%
+Small Hotel,1900,1980,4C,"Seattle, Washington",51.47%,14.89%,33.64%,0.00%,67.98%,32.02%
+Small Office,1900,1980,4C,"Seattle, Washington",44.38%,28.95%,26.66%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,4C,"Seattle, Washington",65.46%,23.00%,11.54%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,4C,"Seattle, Washington",73.56%,17.76%,8.68%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,4C,"Seattle, Washington",26.06%,14.31%,59.63%,0.00%,94.27%,5.73%
+Warehouse,1900,1980,4C,"Seattle, Washington",63.73%,22.71%,13.57%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,5A,"Chicago, Illinois",27.98%,22.21%,49.81%,0.00%,62.58%,37.42%
+Hospital,1900,1980,5A,"Chicago, Illinois",20.76%,57.23%,22.01%,0.00%,91.69%,8.31%
+Large Hotel,1900,1980,5A,"Chicago, Illinois",17.83%,62.55%,19.63%,0.00%,87.18%,12.82%
+Large Office Building,1900,1980,5A,"Chicago, Illinois",37.18%,22.27%,40.56%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,5A,"Chicago, Illinois",38.55%,28.07%,33.39%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,5A,"Chicago, Illinois",33.90%,20.09%,46.01%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,5A,"Chicago, Illinois",18.24%,50.85%,30.91%,0.00%,95.25%,4.75%
+Primary School,1900,1980,5A,"Chicago, Illinois",52.58%,13.58%,33.84%,0.00%,92.24%,7.76%
+Quick Service Restaurant,1900,1980,5A,"Chicago, Illinois",27.81%,12.75%,59.44%,0.00%,53.20%,46.80%
+Secondary School,1900,1980,5A,"Chicago, Illinois",46.58%,28.10%,25.32%,0.00%,96.74%,3.26%
+Small Hotel,1900,1980,5A,"Chicago, Illinois",46.68%,22.80%,30.51%,0.00%,68.69%,31.31%
+Small Office,1900,1980,5A,"Chicago, Illinois",41.14%,34.16%,24.70%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,5A,"Chicago, Illinois",57.53%,32.33%,10.14%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,5A,"Chicago, Illinois",67.87%,24.12%,8.01%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,5A,"Chicago, Illinois",24.01%,20.16%,55.83%,0.00%,95.30%,4.70%
+Warehouse,1900,1980,5A,"Chicago, Illinois",54.05%,34.45%,11.50%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,5B,"Boulder, Colorado",27.96%,22.31%,49.73%,0.00%,56.59%,43.41%
+Hospital,1900,1980,5B,"Boulder, Colorado",22.35%,53.96%,23.69%,0.00%,89.19%,10.81%
+Large Hotel,1900,1980,5B,"Boulder, Colorado",21.09%,55.70%,23.21%,0.00%,86.83%,13.17%
+Large Office Building,1900,1980,5B,"Boulder, Colorado",39.53%,17.34%,43.13%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,5B,"Boulder, Colorado",38.09%,28.92%,32.99%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,5B,"Boulder, Colorado",35.06%,17.33%,47.60%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,5B,"Boulder, Colorado",17.84%,51.92%,30.24%,0.00%,94.64%,5.36%
+Primary School,1900,1980,5B,"Boulder, Colorado",53.65%,11.82%,34.53%,0.00%,89.79%,10.21%
+Quick Service Restaurant,1900,1980,5B,"Boulder, Colorado",27.92%,12.48%,59.59%,0.00%,45.77%,54.23%
+Secondary School,1900,1980,5B,"Boulder, Colorado",48.03%,25.86%,26.11%,0.00%,95.57%,4.43%
+Small Hotel,1900,1980,5B,"Boulder, Colorado",48.77%,19.35%,31.88%,0.00%,68.60%,31.40%
+Small Office,1900,1980,5B,"Boulder, Colorado",41.28%,33.93%,24.79%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,5B,"Boulder, Colorado",58.51%,31.18%,10.31%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,5B,"Boulder, Colorado",69.07%,22.78%,8.15%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,5B,"Boulder, Colorado",24.77%,21.48%,53.75%,0.00%,94.17%,5.83%
+Warehouse,1900,1980,5B,"Boulder, Colorado",54.12%,34.37%,11.51%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,6A,"Minneapolis, Minnesota",30.19%,16.12%,53.69%,0.00%,68.30%,31.70%
+Hospital,1900,1980,6A,"Minneapolis, Minnesota",21.65%,55.41%,22.94%,0.00%,92.27%,7.73%
+Large Hotel,1900,1980,6A,"Minneapolis, Minnesota",18.39%,61.36%,20.25%,0.00%,88.31%,11.69%
+Large Office Building,1900,1980,6A,"Minneapolis, Minnesota",37.79%,20.98%,41.23%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,6A,"Minneapolis, Minnesota",39.28%,26.69%,34.03%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,6A,"Minneapolis, Minnesota",33.55%,20.90%,45.55%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,6A,"Minneapolis, Minnesota",18.12%,51.19%,30.70%,0.00%,95.49%,4.51%
+Primary School,1900,1980,6A,"Minneapolis, Minnesota",53.83%,11.54%,34.63%,0.00%,93.83%,6.17%
+Quick Service Restaurant,1900,1980,6A,"Minneapolis, Minnesota",27.87%,12.64%,59.48%,0.00%,59.50%,40.50%
+Secondary School,1900,1980,6A,"Minneapolis, Minnesota",47.76%,26.29%,25.95%,0.00%,97.55%,2.45%
+Small Hotel,1900,1980,6A,"Minneapolis, Minnesota",44.25%,26.84%,28.91%,0.00%,70.10%,29.90%
+Small Office,1900,1980,6A,"Minneapolis, Minnesota",40.59%,35.02%,24.38%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,6A,"Minneapolis, Minnesota",56.42%,33.64%,9.94%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,6A,"Minneapolis, Minnesota",67.13%,24.95%,7.92%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,6A,"Minneapolis, Minnesota",23.86%,21.64%,54.50%,0.00%,96.14%,3.86%
+Warehouse,1900,1980,6A,"Minneapolis, Minnesota",53.30%,35.36%,11.34%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,6B,"Helena, Montana",28.85%,19.92%,51.23%,0.00%,63.89%,36.11%
+Hospital,1900,1980,6B,"Helena, Montana",23.15%,52.32%,24.53%,0.00%,90.80%,9.20%
+Large Hotel,1900,1980,6B,"Helena, Montana",22.72%,52.27%,25.01%,0.00%,88.27%,11.73%
+Large Office Building,1900,1980,6B,"Helena, Montana",40.98%,14.32%,44.71%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,6B,"Helena, Montana",38.99%,27.23%,33.78%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,6B,"Helena, Montana",35.57%,16.14%,48.29%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,6B,"Helena, Montana",18.33%,50.59%,31.07%,0.00%,95.13%,4.87%
+Primary School,1900,1980,6B,"Helena, Montana",55.77%,8.38%,35.85%,0.00%,92.30%,7.70%
+Quick Service Restaurant,1900,1980,6B,"Helena, Montana",28.27%,11.54%,60.18%,0.00%,54.28%,45.72%
+Secondary School,1900,1980,6B,"Helena, Montana",49.83%,23.11%,27.05%,0.00%,96.94%,3.06%
+Small Hotel,1900,1980,6B,"Helena, Montana",47.86%,20.86%,31.28%,0.00%,70.34%,29.66%
+Small Office,1900,1980,6B,"Helena, Montana",41.07%,34.26%,24.67%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,6B,"Helena, Montana",57.09%,32.85%,10.06%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,6B,"Helena, Montana",68.47%,23.44%,8.08%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,6B,"Helena, Montana",24.61%,23.37%,52.02%,0.00%,95.56%,4.44%
+Warehouse,1900,1980,6B,"Helena, Montana",52.68%,36.11%,11.21%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,7,"Duluth, Minnesota",31.34%,13.07%,55.59%,0.00%,72.66%,27.34%
+Hospital,1900,1980,7,"Duluth, Minnesota",23.11%,52.42%,24.47%,0.00%,92.68%,7.32%
+Large Hotel,1900,1980,7,"Duluth, Minnesota",22.20%,53.37%,24.43%,0.00%,89.65%,10.35%
+Large Office Building,1900,1980,7,"Duluth, Minnesota",41.30%,13.63%,45.07%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,7,"Duluth, Minnesota",41.39%,22.76%,35.86%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,7,"Duluth, Minnesota",35.02%,17.42%,47.56%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,7,"Duluth, Minnesota",18.73%,49.52%,31.75%,0.00%,95.53%,4.47%
+Primary School,1900,1980,7,"Duluth, Minnesota",56.50%,7.22%,36.28%,0.00%,94.78%,5.22%
+Quick Service Restaurant,1900,1980,7,"Duluth, Minnesota",28.51%,10.90%,60.59%,0.00%,64.52%,35.48%
+Secondary School,1900,1980,7,"Duluth, Minnesota",50.60%,21.95%,27.44%,0.00%,97.98%,2.02%
+Small Hotel,1900,1980,7,"Duluth, Minnesota",44.14%,27.00%,28.86%,0.00%,72.17%,27.83%
+Small Office,1900,1980,7,"Duluth, Minnesota",41.01%,34.36%,24.63%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,7,"Duluth, Minnesota",57.94%,31.85%,10.21%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,7,"Duluth, Minnesota",68.61%,23.29%,8.10%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,7,"Duluth, Minnesota",24.42%,23.09%,52.50%,0.00%,96.88%,3.12%
+Warehouse,1900,1980,7,"Duluth, Minnesota",51.66%,37.34%,11.00%,0.00%,100.00%,0.00%
+Full Service Restaurant,1900,1980,8,"Fairbanks, Alaska",28.48%,21.05%,50.47%,0.00%,79.26%,20.74%
+Hospital,1900,1980,8,"Fairbanks, Alaska",25.88%,46.71%,27.41%,0.00%,94.68%,5.32%
+Large Hotel,1900,1980,8,"Fairbanks, Alaska",26.98%,43.32%,29.70%,0.00%,91.25%,8.75%
+Large Office Building,1900,1980,8,"Fairbanks, Alaska",42.78%,10.50%,46.71%,0.00%,100.00%,0.00%
+Medium Office Building,1900,1980,8,"Fairbanks, Alaska",39.52%,26.19%,34.29%,0.00%,100.00%,0.00%
+Midrise Apartment,1900,1980,8,"Fairbanks, Alaska",32.59%,23.08%,44.34%,0.00%,100.00%,0.00%
+Outpatient,1900,1980,8,"Fairbanks, Alaska",17.82%,51.94%,30.24%,0.00%,96.33%,3.67%
+Primary School,1900,1980,8,"Fairbanks, Alaska",56.71%,6.92%,36.37%,0.00%,97.15%,2.85%
+Quick Service Restaurant,1900,1980,8,"Fairbanks, Alaska",28.05%,12.42%,59.53%,0.00%,74.30%,25.70%
+Secondary School,1900,1980,8,"Fairbanks, Alaska",49.80%,23.22%,26.98%,0.00%,98.82%,1.18%
+Small Hotel,1900,1980,8,"Fairbanks, Alaska",35.83%,40.72%,23.45%,0.00%,74.32%,25.68%
+Small Office,1900,1980,8,"Fairbanks, Alaska",38.02%,39.10%,22.88%,0.00%,100.00%,0.00%
+Standalone Retail,1900,1980,8,"Fairbanks, Alaska",52.60%,38.12%,9.28%,0.00%,100.00%,0.00%
+Strip Mall,1900,1980,8,"Fairbanks, Alaska",60.76%,32.06%,7.18%,0.00%,100.00%,0.00%
+Supermarket,1900,1980,8,"Fairbanks, Alaska",23.50%,28.26%,48.23%,0.00%,97.96%,2.04%
+Warehouse,1900,1980,8,"Fairbanks, Alaska",46.07%,44.10%,9.83%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,1A,"Miami, Florida",22.72%,36.34%,40.94%,0.00%,18.27%,81.73%
+Hospital,1981,2003,1A,"Miami, Florida",18.29%,62.29%,19.43%,0.00%,87.23%,12.77%
+Large Hotel,1981,2003,1A,"Miami, Florida",10.03%,78.90%,11.07%,0.00%,76.62%,23.38%
+Large Office Building,1981,2003,1A,"Miami, Florida",27.71%,42.07%,30.22%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,1A,"Miami, Florida",33.24%,37.98%,28.78%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,1A,"Miami, Florida",21.31%,49.77%,28.92%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,1A,"Miami, Florida",15.17%,59.14%,25.69%,0.00%,93.71%,6.29%
+Primary School,1981,2003,1A,"Miami, Florida",38.92%,35.82%,25.26%,0.00%,41.50%,58.50%
+Quick Service Restaurant,1981,2003,1A,"Miami, Florida",16.39%,24.81%,58.79%,0.00%,9.90%,90.10%
+Secondary School,1981,2003,1A,"Miami, Florida",17.99%,72.14%,9.87%,0.00%,57.51%,42.49%
+Small Hotel,1981,2003,1A,"Miami, Florida",35.17%,41.86%,22.97%,0.00%,58.12%,41.88%
+Small Office,1981,2003,1A,"Miami, Florida",37.03%,40.74%,22.23%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,1A,"Miami, Florida",49.08%,42.28%,8.65%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,1A,"Miami, Florida",51.58%,42.34%,6.09%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,1A,"Miami, Florida",21.70%,13.31%,64.99%,0.00%,38.27%,61.73%
+Warehouse,1981,2003,1A,"Miami, Florida",66.70%,19.12%,14.18%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,2A,"Houston, Texas",26.59%,25.63%,47.78%,0.00%,33.75%,66.25%
+Hospital,1981,2003,2A,"Houston, Texas",18.20%,62.47%,19.33%,0.00%,89.24%,10.76%
+Large Hotel,1981,2003,2A,"Houston, Texas",12.08%,74.61%,13.31%,0.00%,82.44%,17.56%
+Large Office Building,1981,2003,2A,"Houston, Texas",29.85%,37.59%,32.56%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,2A,"Houston, Texas",35.12%,34.48%,30.41%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,2A,"Houston, Texas",27.22%,35.86%,36.93%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,2A,"Houston, Texas",16.68%,55.06%,28.25%,0.00%,94.23%,5.77%
+Primary School,1981,2003,2A,"Houston, Texas",44.28%,27.05%,28.66%,0.00%,72.99%,27.01%
+Quick Service Restaurant,1981,2003,2A,"Houston, Texas",17.58%,19.74%,62.68%,0.00%,21.62%,78.38%
+Secondary School,1981,2003,2A,"Houston, Texas",23.20%,64.11%,12.69%,0.00%,87.37%,12.63%
+Small Hotel,1981,2003,2A,"Houston, Texas",39.69%,34.38%,25.93%,0.00%,68.83%,31.17%
+Small Office,1981,2003,2A,"Houston, Texas",40.94%,34.48%,24.58%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,2A,"Houston, Texas",52.95%,37.73%,9.33%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,2A,"Houston, Texas",60.59%,32.26%,7.15%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,2A,"Houston, Texas",22.07%,16.43%,61.50%,0.00%,84.03%,15.97%
+Warehouse,1981,2003,2A,"Houston, Texas",61.39%,25.57%,13.05%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,2B,"Phoenix, Arizona",26.21%,26.71%,47.08%,0.00%,29.48%,70.52%
+Hospital,1981,2003,2B,"Phoenix, Arizona",18.52%,61.81%,19.66%,0.00%,89.23%,10.77%
+Large Hotel,1981,2003,2B,"Phoenix, Arizona",12.54%,73.64%,13.82%,0.00%,79.79%,20.21%
+Large Office Building,1981,2003,2B,"Phoenix, Arizona",30.52%,36.18%,33.30%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,2B,"Phoenix, Arizona",33.98%,36.59%,29.43%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,2B,"Phoenix, Arizona",24.14%,43.11%,32.75%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,2B,"Phoenix, Arizona",15.87%,57.26%,26.87%,0.00%,94.64%,5.36%
+Primary School,1981,2003,2B,"Phoenix, Arizona",43.30%,28.66%,28.03%,0.00%,65.45%,34.55%
+Quick Service Restaurant,1981,2003,2B,"Phoenix, Arizona",17.11%,21.91%,60.97%,0.00%,17.68%,82.32%
+Secondary School,1981,2003,2B,"Phoenix, Arizona",21.98%,66.00%,12.02%,0.00%,83.36%,16.64%
+Small Hotel,1981,2003,2B,"Phoenix, Arizona",38.90%,35.69%,25.42%,0.00%,65.71%,34.29%
+Small Office,1981,2003,2B,"Phoenix, Arizona",38.62%,38.20%,23.18%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,2B,"Phoenix, Arizona",52.60%,38.13%,9.27%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,2B,"Phoenix, Arizona",59.41%,33.58%,7.01%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,2B,"Phoenix, Arizona",23.90%,15.87%,60.23%,0.00%,83.89%,16.12%
+Warehouse,1981,2003,2B,"Phoenix, Arizona",56.22%,31.82%,11.95%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,3A,"Atlanta, Georgia",28.88%,19.45%,51.66%,0.00%,43.94%,56.06%
+Hospital,1981,2003,3A,"Atlanta, Georgia",18.71%,61.44%,19.85%,0.00%,90.07%,9.93%
+Large Hotel,1981,2003,3A,"Atlanta, Georgia",14.48%,69.58%,15.94%,0.00%,85.96%,14.04%
+Large Office Building,1981,2003,3A,"Atlanta, Georgia",32.01%,33.07%,34.92%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,3A,"Atlanta, Georgia",36.90%,31.15%,31.95%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,3A,"Atlanta, Georgia",32.01%,24.56%,43.44%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,3A,"Atlanta, Georgia",17.57%,52.67%,29.76%,0.00%,94.81%,5.19%
+Primary School,1981,2003,3A,"Atlanta, Georgia",49.43%,18.65%,31.92%,0.00%,82.89%,17.11%
+Quick Service Restaurant,1981,2003,3A,"Atlanta, Georgia",18.73%,14.94%,66.33%,0.00%,30.93%,69.07%
+Secondary School,1981,2003,3A,"Atlanta, Georgia",29.63%,54.21%,16.16%,0.00%,92.79%,7.21%
+Small Hotel,1981,2003,3A,"Atlanta, Georgia",43.12%,28.71%,28.17%,0.00%,74.90%,25.11%
+Small Office,1981,2003,3A,"Atlanta, Georgia",44.72%,28.44%,26.85%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,3A,"Atlanta, Georgia",57.46%,32.42%,10.13%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,3A,"Atlanta, Georgia",66.06%,26.14%,7.80%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,3A,"Atlanta, Georgia",23.48%,16.70%,59.82%,0.00%,90.87%,9.13%
+Warehouse,1981,2003,3A,"Atlanta, Georgia",61.14%,25.85%,13.00%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,3C,"Los Angeles, California",29.02%,19.04%,51.94%,0.00%,28.86%,71.14%
+Hospital,1981,2003,3C,"Los Angeles, California",19.96%,58.88%,21.17%,0.00%,89.96%,10.03%
+Large Hotel,1981,2003,3C,"Los Angeles, California",16.01%,66.36%,17.63%,0.00%,83.11%,16.89%
+Large Office Building,1981,2003,3C,"Los Angeles, California",33.58%,29.79%,36.63%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,3C,"Los Angeles, California",40.24%,24.91%,34.85%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,3C,"Los Angeles, California",36.58%,13.77%,49.65%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,3C,"Los Angeles, California",18.71%,49.59%,31.70%,0.00%,95.16%,4.84%
+Primary School,1981,2003,3C,"Los Angeles, California",50.74%,16.49%,32.77%,0.00%,67.76%,32.25%
+Quick Service Restaurant,1981,2003,3C,"Los Angeles, California",19.58%,11.08%,69.34%,0.00%,17.05%,82.95%
+Secondary School,1981,2003,3C,"Los Angeles, California",32.62%,49.59%,17.79%,0.00%,82.21%,17.79%
+Small Hotel,1981,2003,3C,"Los Angeles, California",45.58%,24.64%,29.78%,0.00%,68.90%,31.11%
+Small Office,1981,2003,3C,"Los Angeles, California",46.41%,25.72%,27.87%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,3C,"Los Angeles, California",63.99%,24.73%,11.28%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,3C,"Los Angeles, California",70.98%,20.65%,8.38%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,3C,"Los Angeles, California",25.38%,9.40%,65.22%,0.00%,84.58%,15.42%
+Warehouse,1981,2003,3C,"Los Angeles, California",74.85%,9.23%,15.92%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,3B,"Las Vegas, Nevada",27.62%,22.91%,49.46%,0.00%,36.60%,63.40%
+Hospital,1981,2003,3B,"Las Vegas, Nevada",19.57%,59.65%,20.77%,0.00%,89.00%,11.00%
+Large Hotel,1981,2003,3B,"Las Vegas, Nevada",15.81%,66.78%,17.42%,0.00%,82.83%,17.17%
+Large Office Building,1981,2003,3B,"Las Vegas, Nevada",34.14%,28.62%,37.24%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,3B,"Las Vegas, Nevada",35.60%,33.56%,30.84%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,3B,"Las Vegas, Nevada",27.97%,34.07%,37.96%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,3B,"Las Vegas, Nevada",16.16%,56.45%,27.39%,0.00%,94.45%,5.55%
+Primary School,1981,2003,3B,"Las Vegas, Nevada",46.79%,22.97%,30.24%,0.00%,73.59%,26.41%
+Quick Service Restaurant,1981,2003,3B,"Las Vegas, Nevada",17.87%,18.77%,63.36%,0.00%,23.52%,76.48%
+Secondary School,1981,2003,3B,"Las Vegas, Nevada",28.09%,56.58%,15.33%,0.00%,88.30%,11.70%
+Small Hotel,1981,2003,3B,"Las Vegas, Nevada",42.19%,30.24%,27.57%,0.00%,70.76%,29.24%
+Small Office,1981,2003,3B,"Las Vegas, Nevada",42.27%,32.34%,25.39%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,3B,"Las Vegas, Nevada",57.58%,32.27%,10.15%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,3B,"Las Vegas, Nevada",64.65%,27.72%,7.63%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,3B,"Las Vegas, Nevada",24.71%,17.96%,57.33%,0.00%,88.82%,11.19%
+Warehouse,1981,2003,3B,"Las Vegas, Nevada",57.88%,29.82%,12.31%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,3C,"San Francisco, California",32.26%,10.20%,57.54%,0.00%,43.97%,56.03%
+Hospital,1981,2003,3C,"San Francisco, California",21.43%,55.84%,22.73%,0.00%,90.69%,9.31%
+Large Hotel,1981,2003,3C,"San Francisco, California",20.56%,56.80%,22.64%,0.00%,85.95%,14.05%
+Large Office Building,1981,2003,3C,"San Francisco, California",39.14%,18.16%,42.70%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,3C,"San Francisco, California",43.24%,19.31%,37.45%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,3C,"San Francisco, California",39.85%,6.06%,54.09%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,3C,"San Francisco, California",21.07%,43.25%,35.69%,0.00%,94.96%,5.04%
+Primary School,1981,2003,3C,"San Francisco, California",55.28%,9.11%,35.61%,0.00%,81.29%,18.71%
+Quick Service Restaurant,1981,2003,3C,"San Francisco, California",20.10%,9.10%,70.80%,0.00%,27.52%,72.48%
+Secondary School,1981,2003,3C,"San Francisco, California",42.46%,34.45%,23.09%,0.00%,91.88%,8.13%
+Small Hotel,1981,2003,3C,"San Francisco, California",49.16%,18.72%,32.13%,0.00%,75.51%,24.49%
+Small Office,1981,2003,3C,"San Francisco, California",51.55%,17.49%,30.95%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,3C,"San Francisco, California",69.44%,18.32%,12.24%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,3C,"San Francisco, California",76.75%,14.20%,9.06%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,3C,"San Francisco, California",26.69%,9.65%,63.66%,0.00%,92.34%,7.66%
+Warehouse,1981,2003,3C,"San Francisco, California",73.40%,10.99%,15.61%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,4A,"Baltimore, Maryland",29.92%,16.68%,53.40%,0.00%,54.11%,45.89%
+Hospital,1981,2003,4A,"Baltimore, Maryland",19.02%,60.82%,20.16%,0.00%,90.66%,9.34%
+Large Hotel,1981,2003,4A,"Baltimore, Maryland",15.39%,67.66%,16.95%,0.00%,88.30%,11.70%
+Large Office Building,1981,2003,4A,"Baltimore, Maryland",33.42%,30.13%,36.46%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,4A,"Baltimore, Maryland",36.34%,32.19%,31.47%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,4A,"Baltimore, Maryland",33.50%,21.04%,45.47%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,4A,"Baltimore, Maryland",18.13%,51.14%,30.73%,0.00%,94.93%,5.07%
+Primary School,1981,2003,4A,"Baltimore, Maryland",51.97%,14.53%,33.50%,0.00%,87.39%,12.62%
+Quick Service Restaurant,1981,2003,4A,"Baltimore, Maryland",19.18%,13.16%,67.66%,0.00%,41.71%,58.29%
+Secondary School,1981,2003,4A,"Baltimore, Maryland",33.45%,48.34%,18.21%,0.00%,95.41%,4.59%
+Small Hotel,1981,2003,4A,"Baltimore, Maryland",44.74%,26.02%,29.24%,0.00%,79.94%,20.06%
+Small Office,1981,2003,4A,"Baltimore, Maryland",46.98%,24.81%,28.21%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,4A,"Baltimore, Maryland",61.36%,27.83%,10.81%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,4A,"Baltimore, Maryland",69.53%,22.26%,8.21%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,4A,"Baltimore, Maryland",24.35%,17.00%,58.66%,0.00%,93.96%,6.04%
+Warehouse,1981,2003,4A,"Baltimore, Maryland",59.39%,27.99%,12.63%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,4B,"Albuquerque, New Mexico",27.78%,22.64%,49.57%,0.00%,45.43%,54.57%
+Hospital,1981,2003,4B,"Albuquerque, New Mexico",21.49%,55.73%,22.78%,0.00%,87.96%,12.04%
+Large Hotel,1981,2003,4B,"Albuquerque, New Mexico",19.97%,58.04%,21.99%,0.00%,87.00%,13.00%
+Large Office Building,1981,2003,4B,"Albuquerque, New Mexico",38.01%,20.53%,41.46%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,4B,"Albuquerque, New Mexico",38.82%,27.56%,33.62%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,4B,"Albuquerque, New Mexico",33.91%,20.07%,46.02%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,4B,"Albuquerque, New Mexico",17.55%,52.71%,29.74%,0.00%,94.42%,5.58%
+Primary School,1981,2003,4B,"Albuquerque, New Mexico",52.19%,14.17%,33.64%,0.00%,83.72%,16.28%
+Quick Service Restaurant,1981,2003,4B,"Albuquerque, New Mexico",19.15%,13.38%,67.48%,0.00%,34.02%,65.98%
+Secondary School,1981,2003,4B,"Albuquerque, New Mexico",38.97%,39.82%,21.21%,0.00%,93.40%,6.60%
+Small Hotel,1981,2003,4B,"Albuquerque, New Mexico",45.43%,24.88%,29.69%,0.00%,76.82%,23.18%
+Small Office,1981,2003,4B,"Albuquerque, New Mexico",46.53%,25.53%,27.94%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,4B,"Albuquerque, New Mexico",61.86%,27.24%,10.90%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,4B,"Albuquerque, New Mexico",70.57%,21.11%,8.33%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,4B,"Albuquerque, New Mexico",25.23%,18.20%,56.57%,0.00%,92.43%,7.57%
+Warehouse,1981,2003,4B,"Albuquerque, New Mexico",59.58%,27.75%,12.67%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,4C,"Seattle, Washington",32.08%,10.78%,57.14%,0.00%,53.61%,46.39%
+Hospital,1981,2003,4C,"Seattle, Washington",21.29%,56.15%,22.56%,0.00%,90.92%,9.08%
+Large Hotel,1981,2003,4C,"Seattle, Washington",20.94%,56.01%,23.05%,0.00%,88.38%,11.62%
+Large Office Building,1981,2003,4C,"Seattle, Washington",40.32%,15.68%,44.00%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,4C,"Seattle, Washington",39.07%,27.07%,33.86%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,4C,"Seattle, Washington",38.59%,9.02%,52.40%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,4C,"Seattle, Washington",20.50%,44.76%,34.74%,0.00%,95.20%,4.80%
+Primary School,1981,2003,4C,"Seattle, Washington",56.90%,6.49%,36.62%,0.00%,86.57%,13.43%
+Quick Service Restaurant,1981,2003,4C,"Seattle, Washington",20.08%,9.34%,70.58%,0.00%,38.61%,61.39%
+Secondary School,1981,2003,4C,"Seattle, Washington",46.96%,27.52%,25.52%,0.00%,95.29%,4.71%
+Small Hotel,1981,2003,4C,"Seattle, Washington",49.48%,18.18%,32.34%,0.00%,79.57%,20.43%
+Small Office,1981,2003,4C,"Seattle, Washington",50.82%,18.64%,30.53%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,4C,"Seattle, Washington",68.60%,19.31%,12.09%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,4C,"Seattle, Washington",76.20%,14.81%,9.00%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,4C,"Seattle, Washington",26.30%,13.55%,60.15%,0.00%,94.09%,5.91%
+Warehouse,1981,2003,4C,"Seattle, Washington",64.89%,21.30%,13.81%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,5A,"Chicago, Illinois",30.68%,14.65%,54.67%,0.00%,60.16%,39.84%
+Hospital,1981,2003,5A,"Chicago, Illinois",20.39%,57.99%,21.62%,0.00%,91.24%,8.76%
+Large Hotel,1981,2003,5A,"Chicago, Illinois",16.84%,64.63%,18.53%,0.00%,89.97%,10.04%
+Large Office Building,1981,2003,5A,"Chicago, Illinois",37.47%,21.65%,40.88%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,5A,"Chicago, Illinois",35.54%,33.67%,30.79%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,5A,"Chicago, Illinois",34.49%,18.69%,46.82%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,5A,"Chicago, Illinois",18.61%,49.86%,31.53%,0.00%,95.21%,4.79%
+Primary School,1981,2003,5A,"Chicago, Illinois",53.55%,11.97%,34.48%,0.00%,90.73%,9.27%
+Quick Service Restaurant,1981,2003,5A,"Chicago, Illinois",19.51%,11.86%,68.64%,0.00%,49.56%,50.44%
+Secondary School,1981,2003,5A,"Chicago, Illinois",37.05%,42.81%,20.14%,0.00%,96.55%,3.45%
+Small Hotel,1981,2003,5A,"Chicago, Illinois",45.22%,25.23%,29.56%,0.00%,83.05%,16.95%
+Small Office,1981,2003,5A,"Chicago, Illinois",47.10%,24.62%,28.28%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,5A,"Chicago, Illinois",61.09%,28.14%,10.77%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,5A,"Chicago, Illinois",69.36%,22.45%,8.19%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,5A,"Chicago, Illinois",24.26%,19.32%,56.41%,0.00%,95.14%,4.86%
+Warehouse,1981,2003,5A,"Chicago, Illinois",55.59%,32.59%,11.82%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,5B,"Boulder, Colorado",30.64%,14.79%,54.57%,0.00%,54.25%,45.75%
+Hospital,1981,2003,5B,"Boulder, Colorado",22.03%,54.63%,23.34%,0.00%,88.76%,11.24%
+Large Hotel,1981,2003,5B,"Boulder, Colorado",20.73%,56.46%,22.81%,0.00%,88.93%,11.07%
+Large Office Building,1981,2003,5B,"Boulder, Colorado",39.74%,16.89%,43.36%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,5B,"Boulder, Colorado",39.00%,27.21%,33.78%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,5B,"Boulder, Colorado",35.87%,15.44%,48.69%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,5B,"Boulder, Colorado",18.21%,50.94%,30.85%,0.00%,94.61%,5.39%
+Primary School,1981,2003,5B,"Boulder, Colorado",54.99%,9.61%,35.39%,0.00%,87.28%,12.72%
+Quick Service Restaurant,1981,2003,5B,"Boulder, Colorado",19.57%,11.67%,68.76%,0.00%,42.17%,57.83%
+Secondary School,1981,2003,5B,"Boulder, Colorado",43.42%,32.97%,23.60%,0.00%,95.23%,4.77%
+Small Hotel,1981,2003,5B,"Boulder, Colorado",46.65%,22.86%,30.49%,0.00%,80.53%,19.47%
+Small Office,1981,2003,5B,"Boulder, Colorado",47.75%,23.58%,28.68%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,5B,"Boulder, Colorado",62.21%,26.82%,10.97%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,5B,"Boulder, Colorado",71.05%,20.56%,8.39%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,5B,"Boulder, Colorado",25.13%,20.34%,54.53%,0.00%,94.01%,5.99%
+Warehouse,1981,2003,5B,"Boulder, Colorado",56.07%,32.00%,11.93%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,6A,"Minneapolis, Minnesota",30.98%,13.86%,55.16%,0.00%,64.78%,35.22%
+Hospital,1981,2003,6A,"Minneapolis, Minnesota",21.32%,56.10%,22.59%,0.00%,91.70%,8.30%
+Large Hotel,1981,2003,6A,"Minneapolis, Minnesota",17.34%,63.59%,19.08%,0.00%,91.14%,8.86%
+Large Office Building,1981,2003,6A,"Minneapolis, Minnesota",38.10%,20.34%,41.56%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,6A,"Minneapolis, Minnesota",34.49%,35.63%,29.88%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,6A,"Minneapolis, Minnesota",34.25%,19.24%,46.51%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,6A,"Minneapolis, Minnesota",18.63%,49.81%,31.57%,0.00%,95.42%,4.58%
+Primary School,1981,2003,6A,"Minneapolis, Minnesota",54.81%,9.93%,35.27%,0.00%,92.58%,7.43%
+Quick Service Restaurant,1981,2003,6A,"Minneapolis, Minnesota",19.64%,11.36%,69.00%,0.00%,55.87%,44.13%
+Secondary School,1981,2003,6A,"Minneapolis, Minnesota",39.33%,39.30%,21.37%,0.00%,97.37%,2.63%
+Small Hotel,1981,2003,6A,"Minneapolis, Minnesota",44.38%,26.61%,29.00%,0.00%,85.34%,14.66%
+Small Office,1981,2003,6A,"Minneapolis, Minnesota",47.22%,24.41%,28.36%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,6A,"Minneapolis, Minnesota",58.12%,31.64%,10.24%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,6A,"Minneapolis, Minnesota",68.69%,23.20%,8.11%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,6A,"Minneapolis, Minnesota",24.16%,20.67%,55.17%,0.00%,95.99%,4.01%
+Warehouse,1981,2003,6A,"Minneapolis, Minnesota",54.83%,33.51%,11.66%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,6B,"Helena, Montana",31.46%,12.61%,55.93%,0.00%,61.52%,38.48%
+Hospital,1981,2003,6B,"Helena, Montana",22.82%,53.00%,24.18%,0.00%,90.14%,9.86%
+Large Hotel,1981,2003,6B,"Helena, Montana",21.64%,54.55%,23.81%,0.00%,90.61%,9.39%
+Large Office Building,1981,2003,6B,"Helena, Montana",41.15%,13.96%,44.89%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,6B,"Helena, Montana",37.21%,30.56%,32.23%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,6B,"Helena, Montana",36.27%,14.48%,49.25%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,6B,"Helena, Montana",18.86%,49.17%,31.97%,0.00%,95.04%,4.96%
+Primary School,1981,2003,6B,"Helena, Montana",56.37%,7.39%,36.24%,0.00%,91.07%,8.93%
+Quick Service Restaurant,1981,2003,6B,"Helena, Montana",19.90%,10.37%,69.73%,0.00%,51.12%,48.88%
+Secondary School,1981,2003,6B,"Helena, Montana",46.94%,27.58%,25.48%,0.00%,96.75%,3.25%
+Small Hotel,1981,2003,6B,"Helena, Montana",47.09%,22.12%,30.78%,0.00%,83.87%,16.13%
+Small Office,1981,2003,6B,"Helena, Montana",48.11%,23.00%,28.90%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,6B,"Helena, Montana",58.60%,31.07%,10.33%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,6B,"Helena, Montana",69.82%,21.93%,8.24%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,6B,"Helena, Montana",24.96%,22.29%,52.75%,0.00%,95.44%,4.56%
+Warehouse,1981,2003,6B,"Helena, Montana",54.14%,34.34%,11.52%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,7,"Duluth, Minnesota",32.14%,10.77%,57.09%,0.00%,69.18%,30.82%
+Hospital,1981,2003,7,"Duluth, Minnesota",22.49%,53.68%,23.82%,0.00%,92.24%,7.76%
+Large Hotel,1981,2003,7,"Duluth, Minnesota",20.00%,58.00%,22.00%,0.00%,92.26%,7.74%
+Large Office Building,1981,2003,7,"Duluth, Minnesota",40.95%,14.36%,44.68%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,7,"Duluth, Minnesota",33.68%,37.14%,29.18%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,7,"Duluth, Minnesota",35.76%,15.68%,48.56%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,7,"Duluth, Minnesota",19.25%,48.12%,32.63%,0.00%,95.54%,4.46%
+Primary School,1981,2003,7,"Duluth, Minnesota",57.14%,6.16%,36.70%,0.00%,93.77%,6.23%
+Quick Service Restaurant,1981,2003,7,"Duluth, Minnesota",20.13%,9.44%,70.43%,0.00%,61.01%,38.99%
+Secondary School,1981,2003,7,"Duluth, Minnesota",46.82%,27.78%,25.40%,0.00%,97.80%,2.20%
+Small Hotel,1981,2003,7,"Duluth, Minnesota",45.71%,24.41%,29.88%,0.00%,87.39%,12.61%
+Small Office,1981,2003,7,"Duluth, Minnesota",48.47%,22.42%,29.12%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,7,"Duluth, Minnesota",58.89%,30.72%,10.38%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,7,"Duluth, Minnesota",70.19%,21.53%,8.29%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,7,"Duluth, Minnesota",24.81%,21.85%,53.34%,0.00%,96.73%,3.27%
+Warehouse,1981,2003,7,"Duluth, Minnesota",53.27%,35.39%,11.34%,0.00%,100.00%,0.00%
+Full Service Restaurant,1981,2003,8,"Fairbanks, Alaska",32.56%,9.65%,57.79%,0.00%,77.04%,22.96%
+Hospital,1981,2003,8,"Fairbanks, Alaska",24.94%,48.66%,26.41%,0.00%,94.46%,5.54%
+Large Hotel,1981,2003,8,"Fairbanks, Alaska",24.31%,48.95%,26.75%,0.00%,94.08%,5.92%
+Large Office Building,1981,2003,8,"Fairbanks, Alaska",41.95%,12.24%,45.80%,0.00%,100.00%,0.00%
+Medium Office Building,1981,2003,8,"Fairbanks, Alaska",27.56%,48.53%,23.91%,0.00%,100.00%,0.00%
+Midrise Apartment,1981,2003,8,"Fairbanks, Alaska",33.66%,20.54%,45.80%,0.00%,100.00%,0.00%
+Outpatient,1981,2003,8,"Fairbanks, Alaska",18.38%,50.41%,31.21%,0.00%,96.41%,3.59%
+Primary School,1981,2003,8,"Fairbanks, Alaska",57.07%,6.31%,36.62%,0.00%,96.68%,3.32%
+Quick Service Restaurant,1981,2003,8,"Fairbanks, Alaska",20.23%,9.05%,70.72%,0.00%,71.70%,28.30%
+Secondary School,1981,2003,8,"Fairbanks, Alaska",49.04%,24.39%,26.58%,0.00%,98.72%,1.28%
+Small Hotel,1981,2003,8,"Fairbanks, Alaska",41.31%,31.66%,27.04%,0.00%,90.89%,9.11%
+Small Office,1981,2003,8,"Fairbanks, Alaska",46.80%,25.04%,28.16%,0.00%,100.00%,0.00%
+Standalone Retail,1981,2003,8,"Fairbanks, Alaska",54.67%,35.69%,9.64%,0.00%,100.00%,0.00%
+Strip Mall,1981,2003,8,"Fairbanks, Alaska",64.43%,27.96%,7.61%,0.00%,100.00%,0.00%
+Supermarket,1981,2003,8,"Fairbanks, Alaska",24.15%,26.30%,49.56%,0.00%,97.83%,2.17%
+Warehouse,1981,2003,8,"Fairbanks, Alaska",47.87%,41.92%,10.21%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,8,"Fairbanks, Alaska",28.62%,9.52%,61.87%,0.00%,76.01%,23.99%
+Hospital,2004,2020,8,"Fairbanks, Alaska",16.48%,49.05%,34.47%,0.00%,94.58%,5.42%
+Large Hotel,2004,2020,8,"Fairbanks, Alaska",22.70%,38.00%,39.29%,0.00%,93.45%,6.55%
+Large Office Building,2004,2020,8,"Fairbanks, Alaska",34.86%,9.45%,55.68%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,8,"Fairbanks, Alaska",26.69%,39.30%,34.01%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,8,"Fairbanks, Alaska",32.63%,10.47%,56.90%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,8,"Fairbanks, Alaska",16.16%,46.67%,37.17%,0.00%,95.45%,4.55%
+Primary School,2004,2020,8,"Fairbanks, Alaska",48.62%,5.37%,46.01%,0.00%,95.43%,4.57%
+Quick Service Restaurant,2004,2020,8,"Fairbanks, Alaska",20.67%,8.31%,71.02%,0.00%,68.59%,31.41%
+Secondary School,2004,2020,8,"Fairbanks, Alaska",46.94%,22.21%,30.84%,0.00%,98.43%,1.57%
+Small Hotel,2004,2020,8,"Fairbanks, Alaska",33.31%,30.41%,36.28%,0.00%,90.65%,9.35%
+Small Office,2004,2020,8,"Fairbanks, Alaska",41.96%,18.29%,39.75%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,8,"Fairbanks, Alaska",57.36%,24.52%,18.13%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,8,"Fairbanks, Alaska",66.35%,18.57%,15.08%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,8,"Fairbanks, Alaska",19.94%,17.21%,62.85%,0.00%,97.21%,2.79%
+Warehouse,2004,2020,8,"Fairbanks, Alaska",65.65%,24.33%,10.02%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,1A,"Miami, Florida",22.02%,29.65%,48.33%,0.00%,18.05%,81.95%
+Hospital,2004,2020,1A,"Miami, Florida",11.93%,63.04%,25.03%,0.00%,88.83%,11.17%
+Large Hotel,2004,2020,1A,"Miami, Florida",11.59%,68.30%,20.11%,0.00%,76.11%,23.89%
+Large Office Building,2004,2020,1A,"Miami, Florida",22.16%,42.49%,35.35%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,1A,"Miami, Florida",29.45%,33.13%,37.42%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,1A,"Miami, Florida",22.49%,38.41%,39.10%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,1A,"Miami, Florida",14.03%,53.78%,32.19%,0.00%,91.96%,8.04%
+Primary School,2004,2020,1A,"Miami, Florida",33.19%,35.05%,31.76%,0.00%,36.05%,63.97%
+Quick Service Restaurant,2004,2020,1A,"Miami, Florida",17.13%,22.48%,60.39%,0.00%,9.34%,90.66%
+Secondary School,2004,2020,1A,"Miami, Florida",18.90%,68.54%,12.56%,0.00%,53.59%,46.41%
+Small Hotel,2004,2020,1A,"Miami, Florida",28.53%,40.45%,31.02%,0.00%,57.36%,42.64%
+Small Office,2004,2020,1A,"Miami, Florida",31.67%,38.43%,29.90%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,1A,"Miami, Florida",40.35%,46.92%,12.73%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,1A,"Miami, Florida",49.33%,39.49%,11.18%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,1A,"Miami, Florida",15.97%,10.66%,73.37%,0.00%,37.24%,62.77%
+Warehouse,2004,2020,1A,"Miami, Florida",44.32%,48.94%,6.75%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,2A,"Houston, Texas",23.52%,25.05%,51.43%,0.00%,33.10%,66.90%
+Hospital,2004,2020,2A,"Houston, Texas",11.85%,63.31%,24.84%,0.00%,90.25%,9.75%
+Large Hotel,2004,2020,2A,"Houston, Texas",13.40%,63.38%,23.22%,0.00%,81.75%,18.25%
+Large Office Building,2004,2020,2A,"Houston, Texas",23.89%,37.99%,38.12%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,2A,"Houston, Texas",29.75%,32.43%,37.82%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,2A,"Houston, Texas",25.28%,30.77%,43.95%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,2A,"Houston, Texas",14.61%,51.86%,33.53%,0.00%,93.00%,7.00%
+Primary School,2004,2020,2A,"Houston, Texas",36.53%,28.61%,34.86%,0.00%,67.87%,32.13%
+Quick Service Restaurant,2004,2020,2A,"Houston, Texas",17.94%,19.20%,62.86%,0.00%,19.70%,80.30%
+Secondary School,2004,2020,2A,"Houston, Texas",22.34%,62.86%,14.80%,0.00%,85.67%,14.34%
+Small Hotel,2004,2020,2A,"Houston, Texas",30.88%,35.54%,33.58%,0.00%,68.20%,31.80%
+Small Office,2004,2020,2A,"Houston, Texas",34.46%,33.01%,32.53%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,2A,"Houston, Texas",44.37%,41.63%,14.00%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,2A,"Houston, Texas",53.23%,34.69%,12.07%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,2A,"Houston, Texas",16.68%,12.06%,71.26%,0.00%,82.32%,17.68%
+Warehouse,2004,2020,2A,"Houston, Texas",69.99%,19.35%,10.66%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,2B,"Phoenix, Arizona",23.28%,25.82%,50.90%,0.00%,28.95%,71.05%
+Hospital,2004,2020,2B,"Phoenix, Arizona",12.14%,62.41%,25.45%,0.00%,89.27%,10.73%
+Large Hotel,2004,2020,2B,"Phoenix, Arizona",14.28%,60.95%,24.76%,0.00%,79.13%,20.87%
+Large Office Building,2004,2020,2B,"Phoenix, Arizona",24.36%,36.78%,38.86%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,2B,"Phoenix, Arizona",29.25%,33.57%,37.18%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,2B,"Phoenix, Arizona",23.93%,34.46%,41.61%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,2B,"Phoenix, Arizona",14.22%,53.14%,32.63%,0.00%,93.17%,6.83%
+Primary School,2004,2020,2B,"Phoenix, Arizona",35.67%,30.28%,34.05%,0.00%,61.86%,38.15%
+Quick Service Restaurant,2004,2020,2B,"Phoenix, Arizona",17.61%,20.73%,61.67%,0.00%,15.87%,84.13%
+Secondary School,2004,2020,2B,"Phoenix, Arizona",21.22%,64.71%,14.07%,0.00%,81.66%,18.35%
+Small Hotel,2004,2020,2B,"Phoenix, Arizona",30.56%,36.19%,33.24%,0.00%,64.95%,35.05%
+Small Office,2004,2020,2B,"Phoenix, Arizona",32.32%,37.16%,30.52%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,2B,"Phoenix, Arizona",43.86%,42.30%,13.84%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,2B,"Phoenix, Arizona",52.78%,35.25%,11.97%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,2B,"Phoenix, Arizona",17.71%,14.10%,68.20%,0.00%,82.71%,17.29%
+Warehouse,2004,2020,2B,"Phoenix, Arizona",63.96%,26.30%,9.75%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,3A,"Atlanta, Georgia",25.58%,18.70%,55.72%,0.00%,43.14%,56.86%
+Hospital,2004,2020,3A,"Atlanta, Georgia",12.31%,61.92%,25.78%,0.00%,90.54%,9.46%
+Large Hotel,2004,2020,3A,"Atlanta, Georgia",15.03%,58.95%,26.03%,0.00%,85.07%,14.93%
+Large Office Building,2004,2020,3A,"Atlanta, Georgia",26.38%,31.53%,42.09%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,3A,"Atlanta, Georgia",32.19%,26.90%,40.92%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,3A,"Atlanta, Georgia",28.36%,22.33%,49.32%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,3A,"Atlanta, Georgia",15.38%,49.32%,35.30%,0.00%,93.66%,6.34%
+Primary School,2004,2020,3A,"Atlanta, Georgia",41.48%,19.04%,39.48%,0.00%,77.39%,22.61%
+Quick Service Restaurant,2004,2020,3A,"Atlanta, Georgia",19.12%,14.35%,66.53%,0.00%,28.10%,71.90%
+Secondary School,2004,2020,3A,"Atlanta, Georgia",28.52%,52.63%,18.85%,0.00%,91.45%,8.55%
+Small Hotel,2004,2020,3A,"Atlanta, Georgia",33.52%,30.04%,36.45%,0.00%,74.03%,25.98%
+Small Office,2004,2020,3A,"Atlanta, Georgia",38.50%,25.15%,36.35%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,3A,"Atlanta, Georgia",51.07%,32.83%,16.11%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,3A,"Atlanta, Georgia",59.03%,27.58%,13.39%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,3A,"Atlanta, Georgia",18.17%,11.03%,70.80%,0.00%,89.40%,10.60%
+Warehouse,2004,2020,3A,"Atlanta, Georgia",73.46%,15.35%,11.19%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,3C,"Los Angeles, California",27.57%,12.35%,60.08%,0.00%,29.93%,70.07%
+Hospital,2004,2020,3C,"Los Angeles, California",13.26%,58.96%,27.78%,0.00%,90.37%,9.63%
+Large Hotel,2004,2020,3C,"Los Angeles, California",16.63%,54.55%,28.81%,0.00%,82.79%,17.21%
+Large Office Building,2004,2020,3C,"Los Angeles, California",28.19%,26.82%,44.99%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,3C,"Los Angeles, California",36.68%,16.68%,46.64%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,3C,"Los Angeles, California",30.92%,15.28%,53.79%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,3C,"Los Angeles, California",16.95%,44.15%,38.90%,0.00%,93.62%,6.38%
+Primary School,2004,2020,3C,"Los Angeles, California",44.55%,13.05%,42.41%,0.00%,56.51%,43.50%
+Quick Service Restaurant,2004,2020,3C,"Los Angeles, California",20.12%,9.81%,70.07%,0.00%,14.99%,85.01%
+Secondary School,2004,2020,3C,"Los Angeles, California",34.34%,42.96%,22.70%,0.00%,78.28%,21.73%
+Small Hotel,2004,2020,3C,"Los Angeles, California",35.44%,26.02%,38.54%,0.00%,68.25%,31.75%
+Small Office,2004,2020,3C,"Los Angeles, California",41.04%,20.20%,38.76%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,3C,"Los Angeles, California",58.00%,23.70%,18.30%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,3C,"Los Angeles, California",65.88%,19.18%,14.94%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,3C,"Los Angeles, California",18.86%,7.44%,73.70%,0.00%,84.84%,15.16%
+Warehouse,2004,2020,3C,"Los Angeles, California",82.12%,5.37%,12.52%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,3B,"Las Vegas, Nevada",24.44%,22.28%,53.28%,0.00%,35.95%,64.05%
+Hospital,2004,2020,3B,"Las Vegas, Nevada",12.93%,59.99%,27.08%,0.00%,89.18%,10.82%
+Large Hotel,2004,2020,3B,"Las Vegas, Nevada",16.41%,55.15%,28.44%,0.00%,82.08%,17.92%
+Large Office Building,2004,2020,3B,"Las Vegas, Nevada",28.08%,27.11%,44.81%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,3B,"Las Vegas, Nevada",31.70%,28.00%,40.30%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,3B,"Las Vegas, Nevada",26.41%,27.65%,45.94%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,3B,"Las Vegas, Nevada",14.53%,52.13%,33.34%,0.00%,92.89%,7.11%
+Primary School,2004,2020,3B,"Las Vegas, Nevada",39.07%,23.71%,37.23%,0.00%,68.19%,31.81%
+Quick Service Restaurant,2004,2020,3B,"Las Vegas, Nevada",18.37%,17.60%,64.03%,0.00%,21.16%,78.84%
+Secondary School,2004,2020,3B,"Las Vegas, Nevada",27.01%,55.11%,17.87%,0.00%,86.40%,13.60%
+Small Hotel,2004,2020,3B,"Las Vegas, Nevada",32.97%,31.17%,35.86%,0.00%,69.79%,30.21%
+Small Office,2004,2020,3B,"Las Vegas, Nevada",37.55%,26.97%,35.47%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,3B,"Las Vegas, Nevada",51.22%,32.62%,16.16%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,3B,"Las Vegas, Nevada",57.39%,29.59%,13.02%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,3B,"Las Vegas, Nevada",19.14%,12.80%,68.06%,0.00%,88.14%,11.86%
+Warehouse,2004,2020,3B,"Las Vegas, Nevada",73.70%,15.08%,11.23%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,3C,"San Francisco, California",28.36%,10.05%,61.59%,0.00%,43.25%,56.75%
+Hospital,2004,2020,3C,"San Francisco, California",13.73%,57.53%,28.74%,0.00%,91.75%,8.25%
+Large Hotel,2004,2020,3C,"San Francisco, California",19.32%,47.22%,33.45%,0.00%,85.38%,14.62%
+Large Office Building,2004,2020,3C,"San Francisco, California",31.17%,19.10%,49.73%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,3C,"San Francisco, California",34.92%,20.68%,44.40%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,3C,"San Francisco, California",32.59%,10.73%,56.69%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,3C,"San Francisco, California",17.82%,41.27%,40.90%,0.00%,94.18%,5.82%
+Primary School,2004,2020,3C,"San Francisco, California",46.28%,9.77%,43.95%,0.00%,78.37%,21.63%
+Quick Service Restaurant,2004,2020,3C,"San Francisco, California",20.36%,9.13%,70.51%,0.00%,24.30%,75.70%
+Secondary School,2004,2020,3C,"San Francisco, California",39.52%,34.42%,26.06%,0.00%,90.85%,9.15%
+Small Hotel,2004,2020,3C,"San Francisco, California",37.49%,21.73%,40.78%,0.00%,74.94%,25.07%
+Small Office,2004,2020,3C,"San Francisco, California",42.68%,17.01%,40.31%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,3C,"San Francisco, California",66.03%,13.15%,20.83%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,3C,"San Francisco, California",69.50%,14.74%,15.76%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,3C,"San Francisco, California",19.95%,7.89%,72.16%,0.00%,91.31%,8.69%
+Warehouse,2004,2020,3C,"San Francisco, California",81.61%,5.95%,12.44%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,4A,"Baltimore, Maryland",26.29%,16.59%,57.12%,0.00%,53.43%,46.57%
+Hospital,2004,2020,4A,"Baltimore, Maryland",12.38%,61.71%,25.91%,0.00%,91.60%,8.40%
+Large Hotel,2004,2020,4A,"Baltimore, Maryland",16.14%,55.92%,27.94%,0.00%,87.56%,12.45%
+Large Office Building,2004,2020,4A,"Baltimore, Maryland",27.19%,29.42%,43.39%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,4A,"Baltimore, Maryland",30.81%,30.01%,39.18%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,4A,"Baltimore, Maryland",29.90%,18.09%,52.01%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,4A,"Baltimore, Maryland",15.45%,49.10%,35.46%,0.00%,94.04%,5.96%
+Primary School,2004,2020,4A,"Baltimore, Maryland",42.84%,16.44%,40.71%,0.00%,85.68%,14.32%
+Quick Service Restaurant,2004,2020,4A,"Baltimore, Maryland",19.45%,13.11%,67.44%,0.00%,38.84%,61.16%
+Secondary School,2004,2020,4A,"Baltimore, Maryland",30.92%,48.67%,20.41%,0.00%,94.87%,5.13%
+Small Hotel,2004,2020,4A,"Baltimore, Maryland",34.88%,27.18%,37.94%,0.00%,79.27%,20.74%
+Small Office,2004,2020,4A,"Baltimore, Maryland",39.08%,24.01%,36.91%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,4A,"Baltimore, Maryland",53.29%,29.90%,16.81%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,4A,"Baltimore, Maryland",61.27%,24.84%,13.90%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,4A,"Baltimore, Maryland",18.90%,11.41%,69.70%,0.00%,92.79%,7.21%
+Warehouse,2004,2020,4A,"Baltimore, Maryland",72.89%,16.00%,11.11%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,4B,"Albuquerque, New Mexico",26.17%,16.97%,56.86%,0.00%,46.44%,53.56%
+Hospital,2004,2020,4B,"Albuquerque, New Mexico",14.21%,56.05%,29.75%,0.00%,88.40%,11.60%
+Large Hotel,2004,2020,4B,"Albuquerque, New Mexico",19.14%,47.72%,33.14%,0.00%,86.51%,13.49%
+Large Office Building,2004,2020,4B,"Albuquerque, New Mexico",30.63%,20.49%,48.88%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,4B,"Albuquerque, New Mexico",33.26%,24.45%,42.29%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,4B,"Albuquerque, New Mexico",30.06%,17.65%,52.29%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,4B,"Albuquerque, New Mexico",14.98%,50.64%,34.38%,0.00%,93.40%,6.60%
+Primary School,2004,2020,4B,"Albuquerque, New Mexico",43.33%,15.50%,41.18%,0.00%,80.49%,19.51%
+Quick Service Restaurant,2004,2020,4B,"Albuquerque, New Mexico",19.47%,13.06%,67.47%,0.00%,31.41%,68.59%
+Secondary School,2004,2020,4B,"Albuquerque, New Mexico",35.49%,41.09%,23.42%,0.00%,92.58%,7.42%
+Small Hotel,2004,2020,4B,"Albuquerque, New Mexico",35.25%,26.41%,38.34%,0.00%,76.10%,23.90%
+Small Office,2004,2020,4B,"Albuquerque, New Mexico",39.56%,23.07%,37.37%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,4B,"Albuquerque, New Mexico",55.01%,27.64%,17.35%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,4B,"Albuquerque, New Mexico",62.50%,23.32%,14.18%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,4B,"Albuquerque, New Mexico",19.82%,12.13%,68.04%,0.00%,91.54%,8.46%
+Warehouse,2004,2020,4B,"Albuquerque, New Mexico",72.44%,16.52%,11.04%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,4C,"Seattle, Washington",28.25%,10.47%,61.28%,0.00%,52.92%,47.08%
+Hospital,2004,2020,4C,"Seattle, Washington",13.88%,57.08%,29.04%,0.00%,91.57%,8.43%
+Large Hotel,2004,2020,4C,"Seattle, Washington",20.05%,45.26%,34.70%,0.00%,87.70%,12.30%
+Large Office Building,2004,2020,4C,"Seattle, Washington",32.55%,15.50%,51.95%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,4C,"Seattle, Washington",33.68%,23.49%,42.84%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,4C,"Seattle, Washington",33.52%,8.14%,58.34%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,4C,"Seattle, Washington",17.53%,42.20%,40.26%,0.00%,94.24%,5.76%
+Primary School,2004,2020,4C,"Seattle, Washington",47.88%,6.69%,45.43%,0.00%,83.51%,16.49%
+Quick Service Restaurant,2004,2020,4C,"Seattle, Washington",20.42%,9.03%,70.55%,0.00%,35.61%,64.39%
+Secondary School,2004,2020,4C,"Seattle, Washington",43.63%,27.62%,28.75%,0.00%,94.60%,5.40%
+Small Hotel,2004,2020,4C,"Seattle, Washington",38.49%,19.64%,41.87%,0.00%,78.99%,21.01%
+Small Office,2004,2020,4C,"Seattle, Washington",42.66%,17.01%,40.33%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,4C,"Seattle, Washington",61.15%,19.55%,19.30%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,4C,"Seattle, Washington",68.69%,15.73%,15.59%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,4C,"Seattle, Washington",20.25%,9.32%,70.43%,0.00%,93.47%,6.53%
+Warehouse,2004,2020,4C,"Seattle, Washington",80.07%,7.73%,12.21%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,5A,"Chicago, Illinois",26.97%,14.51%,58.52%,0.00%,59.39%,40.61%
+Hospital,2004,2020,5A,"Chicago, Illinois",13.27%,58.95%,27.78%,0.00%,91.98%,8.02%
+Large Hotel,2004,2020,5A,"Chicago, Illinois",17.28%,52.82%,29.90%,0.00%,89.26%,10.74%
+Large Office Building,2004,2020,5A,"Chicago, Illinois",30.10%,21.87%,48.03%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,5A,"Chicago, Illinois",31.10%,29.36%,39.54%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,5A,"Chicago, Illinois",30.92%,15.29%,53.79%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,5A,"Chicago, Illinois",16.06%,47.07%,36.87%,0.00%,94.25%,5.75%
+Primary School,2004,2020,5A,"Chicago, Illinois",44.43%,13.39%,42.18%,0.00%,88.76%,11.24%
+Quick Service Restaurant,2004,2020,5A,"Chicago, Illinois",19.77%,11.84%,68.39%,0.00%,46.54%,53.46%
+Secondary School,2004,2020,5A,"Chicago, Illinois",34.13%,43.37%,22.50%,0.00%,96.07%,3.93%
+Small Hotel,2004,2020,5A,"Chicago, Illinois",35.48%,25.93%,38.59%,0.00%,82.46%,17.54%
+Small Office,2004,2020,5A,"Chicago, Illinois",39.82%,22.57%,37.61%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,5A,"Chicago, Illinois",55.01%,27.63%,17.36%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,5A,"Chicago, Illinois",63.76%,21.78%,14.46%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,5A,"Chicago, Illinois",19.34%,11.86%,68.80%,0.00%,94.20%,5.80%
+Warehouse,2004,2020,5A,"Chicago, Illinois",70.93%,18.26%,10.81%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,5B,"Boulder, Colorado",26.87%,14.85%,58.28%,0.00%,53.50%,46.50%
+Hospital,2004,2020,5B,"Boulder, Colorado",14.50%,55.15%,30.35%,0.00%,89.45%,10.55%
+Large Hotel,2004,2020,5B,"Boulder, Colorado",19.81%,45.92%,34.28%,0.00%,88.46%,11.54%
+Large Office Building,2004,2020,5B,"Boulder, Colorado",31.96%,17.04%,51.00%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,5B,"Boulder, Colorado",33.51%,23.87%,42.62%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,5B,"Boulder, Colorado",31.66%,13.25%,55.09%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,5B,"Boulder, Colorado",15.49%,48.95%,35.56%,0.00%,93.59%,6.41%
+Primary School,2004,2020,5B,"Boulder, Colorado",45.65%,11.02%,43.33%,0.00%,85.41%,14.60%
+Quick Service Restaurant,2004,2020,5B,"Boulder, Colorado",19.81%,11.75%,68.44%,0.00%,39.27%,60.73%
+Secondary School,2004,2020,5B,"Boulder, Colorado",39.37%,34.69%,25.94%,0.00%,94.71%,5.29%
+Small Hotel,2004,2020,5B,"Boulder, Colorado",36.31%,24.19%,39.50%,0.00%,79.99%,20.01%
+Small Office,2004,2020,5B,"Boulder, Colorado",40.90%,20.46%,38.64%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,5B,"Boulder, Colorado",56.98%,25.04%,17.98%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,5B,"Boulder, Colorado",65.54%,19.60%,14.87%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,5B,"Boulder, Colorado",20.11%,13.01%,66.88%,0.00%,93.28%,6.72%
+Warehouse,2004,2020,5B,"Boulder, Colorado",70.48%,18.78%,10.74%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,6A,"Minneapolis, Minnesota",27.15%,13.99%,58.86%,0.00%,63.95%,36.05%
+Hospital,2004,2020,6A,"Minneapolis, Minnesota",13.83%,57.22%,28.94%,0.00%,92.52%,7.48%
+Large Hotel,2004,2020,6A,"Minneapolis, Minnesota",17.88%,51.18%,30.94%,0.00%,90.51%,9.49%
+Large Office Building,2004,2020,6A,"Minneapolis, Minnesota",30.56%,20.68%,48.76%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,6A,"Minneapolis, Minnesota",29.75%,32.41%,37.84%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,6A,"Minneapolis, Minnesota",30.89%,15.35%,53.75%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,6A,"Minneapolis, Minnesota",15.86%,47.74%,36.40%,0.00%,94.58%,5.42%
+Primary School,2004,2020,6A,"Minneapolis, Minnesota",45.22%,11.89%,42.90%,0.00%,91.74%,8.26%
+Quick Service Restaurant,2004,2020,6A,"Minneapolis, Minnesota",19.87%,11.49%,68.63%,0.00%,52.75%,47.25%
+Secondary School,2004,2020,6A,"Minneapolis, Minnesota",35.96%,40.35%,23.69%,0.00%,97.07%,2.93%
+Small Hotel,2004,2020,6A,"Minneapolis, Minnesota",34.76%,27.44%,37.80%,0.00%,84.93%,15.07%
+Small Office,2004,2020,6A,"Minneapolis, Minnesota",40.12%,21.97%,37.91%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,6A,"Minneapolis, Minnesota",55.41%,27.10%,17.49%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,6A,"Minneapolis, Minnesota",64.46%,20.91%,14.63%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,6A,"Minneapolis, Minnesota",19.42%,12.66%,67.92%,0.00%,95.13%,4.87%
+Warehouse,2004,2020,6A,"Minneapolis, Minnesota",69.54%,19.86%,10.60%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,6B,"Helena, Montana",27.57%,12.74%,59.69%,0.00%,60.69%,39.31%
+Hospital,2004,2020,6B,"Helena, Montana",14.91%,53.90%,31.19%,0.00%,91.02%,8.98%
+Large Hotel,2004,2020,6B,"Helena, Montana",20.78%,43.26%,35.96%,0.00%,90.15%,9.85%
+Large Office Building,2004,2020,6B,"Helena, Montana",33.11%,14.04%,52.85%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,6B,"Helena, Montana",31.81%,27.74%,40.45%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,6B,"Helena, Montana",32.41%,11.20%,56.40%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,6B,"Helena, Montana",15.92%,47.53%,36.55%,0.00%,94.15%,5.85%
+Primary School,2004,2020,6B,"Helena, Montana",47.19%,8.09%,44.73%,0.00%,89.84%,10.17%
+Quick Service Restaurant,2004,2020,6B,"Helena, Montana",20.14%,10.48%,69.38%,0.00%,48.00%,52.00%
+Secondary School,2004,2020,6B,"Helena, Montana",42.99%,28.71%,28.29%,0.00%,96.41%,3.59%
+Small Hotel,2004,2020,6B,"Helena, Montana",36.82%,23.11%,40.06%,0.00%,83.48%,16.52%
+Small Office,2004,2020,6B,"Helena, Montana",41.46%,19.36%,39.18%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,6B,"Helena, Montana",58.09%,23.58%,18.33%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,6B,"Helena, Montana",66.81%,18.03%,15.16%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,6B,"Helena, Montana",19.87%,15.74%,64.39%,0.00%,94.68%,5.32%
+Warehouse,2004,2020,6B,"Helena, Montana",68.88%,20.62%,10.50%,0.00%,100.00%,0.00%
+Full Service Restaurant,2004,2020,7,"Duluth, Minnesota",28.18%,10.86%,60.96%,0.00%,68.33%,31.67%
+Hospital,2004,2020,7,"Duluth, Minnesota",14.58%,54.93%,30.49%,0.00%,92.97%,7.03%
+Large Hotel,2004,2020,7,"Duluth, Minnesota",19.73%,46.15%,34.12%,0.00%,91.76%,8.24%
+Large Office Building,2004,2020,7,"Duluth, Minnesota",32.89%,14.62%,52.49%,0.00%,100.00%,0.00%
+Medium Office Building,2004,2020,7,"Duluth, Minnesota",29.50%,32.99%,37.52%,0.00%,100.00%,0.00%
+Midrise Apartment,2004,2020,7,"Duluth, Minnesota",32.52%,10.88%,56.60%,0.00%,100.00%,0.00%
+Outpatient,2004,2020,7,"Duluth, Minnesota",16.23%,46.50%,37.27%,0.00%,94.73%,5.27%
+Primary School,2004,2020,7,"Duluth, Minnesota",47.56%,7.40%,45.04%,0.00%,92.98%,7.02%
+Quick Service Restaurant,2004,2020,7,"Duluth, Minnesota",20.36%,9.62%,70.02%,0.00%,57.88%,42.12%
+Secondary School,2004,2020,7,"Duluth, Minnesota",42.54%,29.48%,27.98%,0.00%,97.56%,2.44%
+Small Hotel,2004,2020,7,"Duluth, Minnesota",35.64%,25.59%,38.77%,0.00%,87.06%,12.94%
+Small Office,2004,2020,7,"Duluth, Minnesota",41.48%,19.33%,39.20%,0.00%,100.00%,0.00%
+Standalone Retail,2004,2020,7,"Duluth, Minnesota",62.88%,17.28%,19.84%,0.00%,100.00%,0.00%
+Strip Mall,2004,2020,7,"Duluth, Minnesota",68.08%,16.47%,15.45%,0.00%,100.00%,0.00%
+Supermarket,2004,2020,7,"Duluth, Minnesota",19.99%,14.18%,65.84%,0.00%,95.99%,4.01%
+Warehouse,2004,2020,7,"Duluth, Minnesota",68.54%,21.01%,10.45%,0.00%,100.00%,0.00%
+Average Building,,,,,33.15%,17.06%,49.64%,,,

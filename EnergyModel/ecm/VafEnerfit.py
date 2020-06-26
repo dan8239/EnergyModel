@@ -10,7 +10,7 @@ class VafEnerfit(Ecm.Ecm):
                  vent_fan_max_speed = 1.0, 
                  vent_fan_min_speed = 0.25,
                  clg_fan_cntrl_seq = FanSeq.FanSeq.VARIABLE_AIRFLOW,
-                 htg_fan_cntrl_seq = FanSeq.FanSeq.VARIABLE_AIRFLOW,
+                 htg_fan_cntrl_seq = FanSeq.FanSeq.CONSTANT_SPEED,
                  vent_fan_cntrl_seq = FanSeq.FanSeq.VARIABLE_AIRFLOW):
         self.vent_fan_min_speed = vent_fan_min_speed
         self.vent_fan_max_speed = vent_fan_max_speed

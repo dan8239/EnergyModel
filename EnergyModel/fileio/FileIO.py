@@ -46,20 +46,23 @@ def import_assets(filename, portfolio):
     for row in asset_list.itertuples():
         #find correct site
         site = portfolio.find_site(row.site_id)
-        print("Importing Asset for Site " + str(site.id))
+        if (site != None):
+            print("Importing Asset for Site " + str(site.id))
 
-        #create proposal and assets. Set Proposal values
-        proposal = AssetFactory.AssetFactory.create_proposal(site,row.asset_type)
-        proposal.prop_id = row.asset_id
-        proposal.strategy = row.strategy
+            #create proposal and assets. Set Proposal values
+            proposal = AssetFactory.AssetFactory.create_proposal(site,row.asset_type)
+            proposal.prop_id = row.asset_id
+            proposal.strategy = row.strategy
 
-        #easier access to assets
-        x_asset = proposal.existing_asset
-        n_asset = proposal.new_asset
+            #easier access to assets
+            x_asset = proposal.existing_asset
+            n_asset = proposal.new_asset
 
-        #copy existing asset
-        x_asset.copy_asset_from_row(row)
-        n_asset.copy_asset_from_row(row)
+            #copy existing asset
+            x_asset.copy_asset_from_row(row)
+            n_asset.copy_asset_from_row(row)
+        else:
+            print("Site not created for asset " + str(row.asset_id))
 
 #--------------------------------PRIVATE METHODS----------------------------------#
 
