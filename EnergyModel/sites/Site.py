@@ -14,10 +14,8 @@ class Site:
         self.id = id
         self.portfolio = None
         self.address = None
-        self.occ_climate_data = ClimateData.ClimateData(Assumptions.ClimateDefaults.occ_clg_balance_point_temp,
-                                                          Assumptions.ClimateDefaults.occ_htg_balance_point_temp)
-        self.unocc_climate_data = ClimateData.ClimateData(Assumptions.ClimateDefaults.unocc_clg_balance_point_temp,
-                                                          Assumptions.ClimateDefaults.unocc_htg_balance_point_temp)
+        self.occ_climate_data = ClimateData.ClimateData(type = "Occupied")
+        self.unocc_climate_data = ClimateData.ClimateData(type = "Unoccupied")
         self.latitude = None
         self.longitude = None
         self.altitude = None

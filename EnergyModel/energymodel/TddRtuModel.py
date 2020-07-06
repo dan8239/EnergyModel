@@ -4,7 +4,6 @@ from enumsets import FanSeq
 class TddRtuModel():
     """description of class"""
     def __init__(self):
-        super().__init__()
         self.load_factor = 0.8
         self.kw_per_bhp = 0.7457
         self.max_cycling_degradation = 0.07

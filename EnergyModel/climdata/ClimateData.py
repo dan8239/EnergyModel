@@ -4,15 +4,18 @@ import numpy as np
 from pandas import ExcelWriter
 from pandas import ExcelFile
 from utility import Assumptions
-from climdata import HourlyDataManager
+from climdata import HourlyDataManager, HourlyDataProcessor
 
 class ClimateData():
     """Hold all necessary climate information for energy calculations"""
     def __init__(self, 
-                 clg_balance_point_temp = Assumptions.ClimateDefaults.occ_clg_balance_point_temp, 
-                 htg_balance_point_temp = Assumptions.ClimateDefaults.occ_htg_balance_point_temp):
-        self.clg_balance_point_temp = clg_balance_point_temp
-        self.htg_balance_point_temp = htg_balance_point_temp
+                 type = "Occupied"):
+        if (type == "Occupied"):
+            self.clg_balance_point_temp = Assumptions.ClimateDefaults.occ_clg_balance_point_temp
+            self.htg_balance_point_temp = Assumptions.ClimateDefaults.occ_htg_balance_point_temp
+        else:
+            self.clg_balance_point_temp = Assumptions.ClimateDefaults.unocc_clg_balance_point_temp
+            self.htg_balance_point_temp = Assumptions.ClimateDefaults.unocc_htg_balance_point_temp
         self.clg_design_temp = 0
         self.htg_design_temp = 0
         self.cdd = 0
@@ -32,6 +35,7 @@ class ClimateData():
         self.avg_htg_fan_speed_pct_from_power = 0
         self.closest_climate_city = None
         self.climate_zone = None
+        self.type = "Occupied"
 
     def get_closest_climate_city(self, lat, lon):
         #check that lat/lon are good
@@ -124,36 +128,6 @@ class ClimateData():
         self.avg_htg_oa_t = self.htg_balance_point_temp - self.avg_htg_load_pct*(self.htg_balance_point_temp - self.htg_design_temp)
         
 
-    def dump(self):
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print()
-        print("Climate Zone: " + str(self.closest_climate_city))
-        print("Cooling Design Temp: " + str(self.clg_design_temp))
-        print("Heating Design Temp: " + str(self.htg_design_temp))
-        print("Cooling Swing Temp: " + str(self.clg_balance_point_temp))
-        print("Heating Swing Temp: " + str(self.htg_balance_point_temp))
-        print("Cooling Degree Days: " + str(self.cdd))
-        print("Heating Degree Days: " + str(self.hdd))
-        print("EFLH Cooling: " + str(self.eflh_c))
-        print("EFLH Heating: " + str(self.eflh_h))
-        print("EFLH Total: " + str(self.eflh_t))
-        print("Cooling Hours: " + str(self.clg_hrs))
-        print("Heating Hours: " + str(self.htg_hrs))
-        print("Average Cooling Load Percentage: " + str(self.avg_clg_load_pct))
-        print("Average Heating Load Percentage: " + str(self.avg_htg_load_pct))
-        print("Average Cooling OA Temp: " + str(self.avg_clg_oa_t))
-        print("Average Heating OA Temp: " + str(self.avg_htg_oa_t))
-        print()
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX END OF CLIMATE DATA OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-
 #-----------------------------PRIVATE METHODS-------------------------------#
 
     def __get_hourly_data(self):
@@ -162,8 +136,19 @@ class ClimateData():
                                                                                  self.htg_balance_point_temp)
         #if no hit, open file and append, add to hourly data manager
         if (hourly_data is None):
+            #open file
             hourly_data = self.__open_hourly_data()
-            hourly_data = self.__append_hourly_calcs(hourly_data)
+            #add DOW if not existing
+            hourly_data, data_updated = HourlyDataProcessor.add_dow(hourly_data)
+            #save if changes were made
+            if (data_updated):
+                self.__save_hourly_data(hourly_data)
+            #add needed columns to dataframe then add to hourly data manager
+            hourly_data = HourlyDataProcessor.append_hourly_calcs(hourly_data, 
+                                                                  self.clg_balance_point_temp, 
+                                                                  self.htg_balance_point_temp, 
+                                                                  self.clg_design_temp, 
+                                                                  self.htg_design_temp)
             HourlyDataManager.HourlyDataManager.add_hourly_data(HourlyDataManager.HourlyData(hourly_data,
                                                                                              self.closest_climate_city,
                                                                                              self.clg_balance_point_temp,
@@ -177,54 +162,9 @@ class ClimateData():
         dataframe = pd.read_csv('reference/' + str(self.closest_climate_city) + '.csv')
         return dataframe
     
-    def __append_hourly_calcs(self, dataframe):
-        dataframe['CDD'] = self.__calc_hourly_cdd(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
-        dataframe['HDD'] = self.__calc_hourly_hdd(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
-        dataframe['EFLH-C'] = self.__calc_hourly_eflh_c(dataframe['CDD'].values, self.clg_design_temp, self.clg_balance_point_temp)
-        dataframe['EFLH-H'] = self.__calc_hourly_eflh_h(dataframe['HDD'].values, self.htg_design_temp, self.htg_balance_point_temp)
-        dataframe['EFLH-T'] = self.__calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
-        dataframe['CLG-HRS'] = self.__calc_clg_hr(dataframe['DRY BULB'].values, self.clg_balance_point_temp)
-        dataframe['HTG-HRS'] = self.__calc_htg_hr(dataframe['DRY BULB'].values, self.htg_balance_point_temp)
-        dataframe['CLG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-C'].values)
-        dataframe['HTG-FAN-PWR-%'] = self.__cubed(dataframe['EFLH-H'].values)
-        return dataframe
-
-    def __calc_hourly_cdd(self, temp, balance_point_temp):
-        calc = temp - balance_point_temp
-        sign = (calc > 0)*1
-        val = calc * sign / 24
-        return val
-
-    def __calc_hourly_hdd(self, temp, balance_point_temp):
-        calc = balance_point_temp - temp
-        sign = (calc > 0)*1
-        val = calc * sign / 24
-        return val
-
-    def __calc_hourly_eflh_c(self, cdd, design_temp, balance_point_temp):
-        return cdd*24/(design_temp - balance_point_temp)
-
-    def __calc_hourly_eflh_h(self, hdd, design_temp, balance_point_temp):
-        return hdd*24/(balance_point_temp - design_temp)
-
-    def __calc_hourly_eflh_t(self, eflh_c, eflh_h):
-        return eflh_c + eflh_h
-
-    def __calc_clg_hr(self, temp, balance_point_temp):
-        calc = ((temp - balance_point_temp) > 0)
-        #convert to int
-        return calc*1
-
-    def __calc_htg_hr(self, temp, balance_point_temp):
-        calc = ((balance_point_temp - temp) > 0)
-        #convert to int
-        return calc*1
-
-    def __cubed(self, prcnt):
-        return prcnt**3
-
-    def __span(self, input, min, max, filter):
-        return (input*(max - min) + min) * filter
+    def __save_hourly_data(self, dataframe):
+        print("Updating Hourly Temperature File")
+        dataframe.to_csv('reference/' + str(self.closest_climate_city) + '.csv')
 
     
 
