@@ -11,7 +11,7 @@ def main():
     
 
     #import sites from file, add to portfolio
-    input_filename = "projects/Cintas/inputs.xlsx"
+    input_filename = "projects/Cintas/inputs-wip.xlsx"
     FileIO.import_sites(input_filename, portfolio)
     #read asset list
     FileIO.import_assets(input_filename, portfolio)

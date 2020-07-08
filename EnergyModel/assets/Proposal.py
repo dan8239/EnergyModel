@@ -1,6 +1,7 @@
 from assets import Asset
 from pyllist import dllist, dllistnode
 import pandas as pd
+from climdata import HourlyDataManager
 
 class Proposal:
     def __init__(self, site = None, prop_id = None, existing_asset = None, strategy = "No Action", new_asset = None):
@@ -20,21 +21,23 @@ class Proposal:
         self.sav_therms_hvac_yearly = 0
         self.kwh_hvac_reduction_pct = 0
        
+    #add asset to proposal, set all connections and get hourly data
     def add_existing_asset(self, asset):
         if (not isinstance(asset, Asset.Asset)):
             raise TypeError("Cannot add a non Asset type to proposal existing asset: " + str(type(asset)))
         self.existing_asset = asset
         self.existing_asset.status = "existing"
         self.existing_asset.proposal = self
-        asset.occ_climate_data = self.site.occ_climate_data
+        self.existing_asset.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self.existing_asset)
 
+    #add asset to proposal, set all connections and get hourly data
     def add_new_asset(self, asset):
         if (not isinstance(asset, Asset.Asset)):
             raise TypeError("Cannot add a non Asset type to proposal new asset: " + str(type(asset)))
         self.new_asset = asset
         self.new_asset.status = "new"
         self.new_asset.proposal = self
-        asset.occ_climate_data = self.site.occ_climate_data
+        self.new_asset.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self.new_asset)
 
     #filter old asset, if replacing filter new asset. If retro/no action copy old asset
     def filter_assets(self):

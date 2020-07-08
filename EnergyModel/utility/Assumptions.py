@@ -28,6 +28,8 @@ class RtuDefaults():
     occ_clg_sp = 72
     unocc_clg_sp = 80
     min_oa_pct = .12
+    htg_design_temp = 5
+    clg_design_temp = 95
     vent_fan_min_speed = 0.333
     vent_fan_max_speed = 1.0
     clg_fan_min_speed = 0.333

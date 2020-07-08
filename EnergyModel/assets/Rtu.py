@@ -21,10 +21,6 @@ class Rtu(Asset.Asset):
         self.htg_fan_cntrl_seq = Assumptions.RtuDefaults.htg_fan_cntrl_seq
         self.vent_fan_cntrl_seq = Assumptions.RtuDefaults.vent_fan_cntrl_seq
         self.fan_efficiency = Assumptions.RtuDefaults.fan_efficiency
-        self.occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp
-        self.unocc_htg_sp = Assumptions.RtuDefaults.unocc_htg_sp
-        self.occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp
-        self.unocc_clg_sp = Assumptions.RtuDefaults.unocc_clg_sp
         self.min_oa_pct = Assumptions.RtuDefaults.min_oa_pct
         self.vent_fan_min_speed = Assumptions.RtuDefaults.vent_fan_min_speed
         self.vent_fan_max_speed = Assumptions.RtuDefaults.vent_fan_max_speed

@@ -1,6 +1,7 @@
 import copy
 import datetime
-from climdata import ClimateData
+from climdata import LoadProfile
+from utility import Assumptions
 
 class Asset:
     def __init__(self, proposal = None, make = None, model = None, serial = None, manufactured_year = None):
@@ -13,9 +14,16 @@ class Asset:
         self.status = None
         self.kwh_hvac_yearly = 0
         self.therms_hvac_yearly = 0
-        self.occ_climate_data = None
-        self.unocc_climate_data = None
+        self.occ_htg_sp = Assumptions.RtuDefaults.occ_htg_sp
+        self.unocc_htg_sp = Assumptions.RtuDefaults.unocc_htg_sp
+        self.occ_clg_sp = Assumptions.RtuDefaults.occ_clg_sp
+        self.unocc_clg_sp = Assumptions.RtuDefaults.unocc_clg_sp
+        self.occ_clg_balance_point_temp = Assumptions.ClimateDefaults.occ_clg_balance_point_temp
+        self.occ_htg_balance_point_temp = Assumptions.ClimateDefaults.occ_htg_balance_point_temp
+        self.unocc_clg_balance_point_temp = Assumptions.ClimateDefaults.unocc_clg_balance_point_temp
+        self.unocc_htg_balance_point_temp = Assumptions.ClimateDefaults.unocc_htg_balance_point_temp
         self.calc_age()
+        self.hourly_data = None
 
     def set_proposal(self, proposal):
         self.proposal = proposal
@@ -56,11 +64,29 @@ class Asset:
     def __copy_existing_asset_from_row(self, row):
         self.manufactured_year = row.year
         self.calc_age()
+        self.occ_clg_balance_point_temp = row.occ_clg_balance_point_temp
+        self.occ_htg_balance_point_temp = row.occ_htg_balance_point_temp
+        self.unocc_clg_balance_point_temp = Assumptions.ClimateDefaults.calc_unocc_clg_balance_point_temp(self.occ_clg_balance_point_temp,
+                                                                                                          self.occ_clg_sp,
+                                                                                                          self.unocc_clg_sp,
+                                                                                                          Assumptions.ClimateDefaults.unocc_load_reduction)
+        self.unocc_htg_balance_point_temp = Assumptions.ClimateDefaults.calc_unocc_htg_balance_point_temp(self.occ_htg_balance_point_temp,
+                                                                                                          self.occ_htg_sp,
+                                                                                                          self.unocc_htg_sp,
+                                                                                                          Assumptions.ClimateDefaults.unocc_load_reduction)
         self._derived_copy_existing_asset_from_row(row)
         
     def __copy_new_asset_from_row(self, row):
         self.manufactured_year = datetime.datetime.now().year
         self.calc_age()
+        self.unocc_clg_balance_point_temp = Assumptions.ClimateDefaults.calc_unocc_clg_balance_point_temp(self.occ_clg_balance_point_temp,
+                                                                                                          self.occ_clg_sp,
+                                                                                                          self.unocc_clg_sp,
+                                                                                                          Assumptions.ClimateDefaults.unocc_load_reduction)
+        self.unocc_htg_balance_point_temp = Assumptions.ClimateDefaults.calc_unocc_htg_balance_point_temp(self.occ_htg_balance_point_temp,
+                                                                                                          self.occ_htg_sp,
+                                                                                                          self.unocc_htg_sp,
+                                                                                                          Assumptions.ClimateDefaults.unocc_load_reduction)
         self._derived_copy_new_asset_from_row(row)
 
 
@@ -79,20 +105,14 @@ class Asset:
     def run_energy_calculations(self, energy_model):
         energy_model.calculate(self)
 
-    def update_climate_data(self, htg_balance_point_temp, clg_balance_point_temp):
-        new_clim_data = ClimateData.ClimateData()
-        new_clim_data.copy_climate_data(self.occ_climate_data)
-        new_clim_data.update_climate_data(htg_balance_point_temp, clg_balance_point_temp)
-        self.occ_climate_data = new_clim_data
+    '''
+    def update_load_profile(self, htg_balance_point_temp, clg_balance_point_temp):
+        new_clim_data = LoadProfile.LoadProfile()
+        new_clim_data.copy_load_profile(self.occ_load_profile)
+        new_clim_data.update_load_profile(htg_balance_point_temp, clg_balance_point_temp)
+        self.occ_load_profile = new_clim_data
+    '''
 
-    def dump(self):
-        print("Asset Type: " + type(self).__name__)
-        #print("Make: " + str(self.make))
-        #print("Model: " + str(self.model))
-        #print("Serial: " + str(self.serial))
-        #print("Year: " + str(self.manufactured_year))
-        print("Age: " + str(self.age))
-        self._derived_dump()
 
     def _derived_dump(self):
         pass

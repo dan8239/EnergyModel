@@ -1,12 +1,13 @@
 from assets import Asset, Proposal, Cdu, Pkg
 from pyllist import dllist, dllistnode
 from weatherutility import geocode
-from climdata import ClimateData
+from climdata import LoadProfile
 from energymodel import TddRtuModel
 from utilitybills import EnergyBill
 import pandas as pd
 import numpy as np
 from utility import Assumptions
+from haversine import haversine, Unit
 
 class Site:
     #constructor + instance variables
@@ -14,12 +15,15 @@ class Site:
         self.id = id
         self.portfolio = None
         self.address = None
-        self.occ_climate_data = ClimateData.ClimateData(type = "Occupied")
-        self.unocc_climate_data = ClimateData.ClimateData(type = "Unoccupied")
+        #self.occ_load_profile = LoadProfile.LoadProfile(type = "Occupied")
+        #self.unocc_load_profile = LoadProfile.LoadProfile(type = "Unoccupied")
         self.latitude = None
         self.longitude = None
         self.altitude = None
         self.building_type = None
+        self.closest_climate_city = None
+        self.clg_design_temp = Assumptions.RtuDefaults.clg_design_temp
+        self.htg_design_temp = Assumptions.RtuDefaults.htg_design_temp
         self.area = 0
         self.asset_count = 0
         self.run_hours_yearly = 8760
@@ -51,9 +55,14 @@ class Site:
         self.hvac_pcnt_of_electric_bill = 0
         self.total_kwh_reduction_pcnt = 0
     
-    def fill_climate_data(self):
-        self.occ_climate_data.get_closest_climate_city(self.latitude, self.longitude)
-        self.occ_climate_data.calculate_climate_data()
+    '''
+    def fill_load_profile(self):
+        self.occ_load_profile.get_closest_climate_city(self.latitude, self.longitude)
+        self.occ_load_profile.calculate_load_profile()
+    '''
+
+    def fill_climate_info(self):
+        (self.closest_climate_city, self.clg_design_temp, self.htg_design_temp) = self.__get_closest_climate_city()
 
     def run_energy_calculations(self, energy_model):
         for x in self.proposal_list.iternodes():
@@ -164,8 +173,6 @@ class Site:
         colnames = vars(self).keys()    #vars gets dict from object. Keys gets keys from dict key-value pairs
         df = pd.DataFrame([[getattr(self, j) for j in colnames]], columns = colnames) #get attributes in a row
         df['portfolio'] = self.portfolio.id    #take ID not whole object
-        df['climate_data'] = self.occ_climate_data.closest_climate_city   #take city not whole object
-        df['climate_zone'] = self.occ_climate_data.climate_zone
         df = df.drop(['proposal_list',
                       'energy_model',
                       'altitude',
@@ -177,9 +184,7 @@ class Site:
                       'post_therms_hvac_yearly',
                       'sav_therms_hvac_yearly',
                       'electric_bill',
-                      'natural_gas_bill',
-                      'occ_climate_data',
-                      'unocc_climate_data'], axis = 1)   #drop object references
+                      'natural_gas_bill'], axis = 1)   #drop object references
         #merge utility bill information into dataframe
         elec_bill_df = self.electric_bill.to_dataframe()
         df = pd.merge(df, elec_bill_df, left_on='id', right_on='site', how='left').drop('site', axis = 1)
@@ -195,35 +200,6 @@ class Site:
                 summary_df = summary_df.append(site_df, ignore_index = True)
         return summary_df
                 
-    def dump(self):
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX SITE OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX SITE OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX SITE OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX SITE OBJECT XXXXXXXXXXXX")
-        print("XXXXXXX SITE OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print()
-        print("ID: " + str(self.id))
-        print("address: " + str(self.address))
-        print("latitude: " + str(self.latitude))
-        print("longitude: " + str(self.longitude))
-        print("altitude: " + str(self.altitude))
-        print("Pre KWH: " + str(self.pre_kwh_hvac_yearly))
-        print("Post KWH: " + str(self.post_kwh_hvac_yearly))
-        print("Saved KWH: " + str(self.sav_kwh_hvac_yearly))
-        if (self.occ_climate_data != None):
-            self.occ_climate_data.dump()
-        print("Total Assets:" + str(self.proposal_list.size))
-        
-        for x in self.proposal_list.iternodes():
-            if (x != None):
-                x.value.dump()
-        
-        print()
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX END OF SITE OBJECT XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
         
     def add_proposal(self, proposal):
         if (not isinstance(proposal, Proposal.Proposal)):
@@ -242,7 +218,36 @@ class Site:
 
 # -------------------------- PRIVATE METHODS ------------------------#
 
-    
+    def __get_closest_climate_city(self):
+        #check that lat/lon are good
+        if (self.latitude == 0 or self.longitude == 0 or self.latitude == np.nan or self.longitude == np.nan):
+            raise TypeError("Lat or Lon of 0 input to find closest weather data")
+
+        #temp variables to check closest city
+        input_city = (self.latitude, self.longitude)
+        min_distance = float(99999999)
+        temp_distance = float(99999999)
+        closest_city = "No result"
+
+        #create data frame from csv
+        data = pd.read_csv('reference/CLIMATE-ZONE-LIST.csv')
+        for i in data.index:
+            
+            temp_city = (pd.to_numeric(data['LAT'][i]), pd.to_numeric(data['LON'][i]))
+            temp_distance = haversine(input_city, temp_city, unit=Unit.MILES)
+            if (temp_distance < min_distance):
+                min_distance = temp_distance
+                closest_city = data['CLIMATE ZONE'][i]
+                clg_design_tmp = data['DB DSGN TEMP C'][i]
+                htg_design_tmp = data['DB DSGN TEMP H'][i]
+                climate_zone = data['CLIMATE ZONE CODE'][i]
+        self.climate_zone = climate_zone
+        self.closest_climate_city = closest_city
+        self.clg_design_temp = clg_design_tmp
+        self.htg_design_temp = htg_design_tmp
+        return closest_city, clg_design_tmp, htg_design_tmp
+
+
 
 # ------------------------STATIC METHODS----------------------------#
 
@@ -260,15 +265,17 @@ def import_from_file(dataframe, portfolio):
             site.area = row.area
             site.building_type = row.bldg_type
             portfolio.add_site(site)
+            '''
             # grab balance temps if available
             if (np.isnan(row.occ_clg_balance_point_temp) or
                 np.isnan(row.occ_htg_balance_point_temp)):
-                dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.occ_climate_data.clg_balance_point_temp
-                dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.occ_climate_data.htg_balance_point_temp
+                dataframe.at[row.Index, 'occ_clg_balance_point_temp'] = site.occ_load_profile.clg_balance_point_temp
+                dataframe.at[row.Index, 'occ_htg_balance_point_temp'] = site.occ_load_profile.htg_balance_point_temp
                 portfolio.update_input_file_flag = True
             else:
-                site.occ_climate_data.clg_balance_point_temp = row.occ_clg_balance_point_temp
-                site.occ_climate_data.htg_balance_point_temp = row.occ_htg_balance_point_temp
+                site.occ_load_profile.clg_balance_point_temp = row.occ_clg_balance_point_temp
+                site.occ_load_profile.htg_balance_point_temp = row.occ_htg_balance_point_temp
+            '''
             #geocode if lat/long is missing and write back into file
             if (np.isnan(row.latitude) or 
                 np.isnan(row.longitude) or
@@ -278,14 +285,14 @@ def import_from_file(dataframe, portfolio):
                 dataframe.at[row.Index, 'latitude'] = site.latitude
                 dataframe.at[row.Index, 'longitude'] = site.longitude
                 portfolio.update_input_file_flag = True
-                #row.longitude = site.longitude
             else:
                 site.latitude = row.latitude
                 site.longitude = row.longitude
             #fill climate data for site
-            print("Filling Climate Data for Site " + str(site.id))
-            site.fill_climate_data()
+            #print("Filling Climate Data for Site " + str(site.id))
+            #site.fill_load_profile()
+            site.fill_climate_info()
         else:
-            print("Site " + str(row.site_id) + "has no address listed. Will not be added to portfolio")
+            print("Site " + str(row.site_id) + " has no address listed. Will not be added to portfolio")
     #return dataframe for updating imput file    
     return dataframe

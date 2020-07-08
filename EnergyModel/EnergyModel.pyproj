@@ -33,7 +33,7 @@
     <Compile Include="assets\__init__.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="climdata\ClimateData.py">
+    <Compile Include="climdata\LoadProfile.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="climdata\HourlyDataManager.py">

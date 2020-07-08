@@ -174,23 +174,6 @@ class Portfolio():
         writer.save()
         writer.close()
 
-    def dump(self):
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("XXXXXXX PORTFOLIO XXXXXXXXXXXX")
-        print("XXXXXXX PORTFOLIO XXXXXXXXXXXX")
-        print("XXXXXXX PORTFOLIO XXXXXXXXXXXX")
-        print("XXXXXXX PORTFOLIO XXXXXXXXXXXX")
-        print("XXXXXXX PORTFOLIO XXXXXXXXXXXX")
-        print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
-        print("ID: " + str(self.id))
-        print("Total Sites:" + str(self.site_list.size))
-        print("Pre KWH: " + str(self.pre_kwh_hvac_yearly))
-        print("Post KWH: " + str(self.post_kwh_hvac_yearly))
-        print("Saved KWH: " + str(self.sav_kwh_hvac_yearly))
-        for x in self.site_list.iternodes():
-            if (x != None):
-                x.value.dump()
-        print()
 
     #------------------------PRIVATE METHODS------------------------------------------#
 
