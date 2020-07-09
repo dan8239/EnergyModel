@@ -1,6 +1,6 @@
 import copy
 import datetime
-from climdata import LoadProfile
+from climdata import LoadProfile, HourlyDataManager
 from utility import Assumptions
 
 class Asset:
@@ -22,6 +22,10 @@ class Asset:
         self.occ_htg_balance_point_temp = Assumptions.ClimateDefaults.occ_htg_balance_point_temp
         self.unocc_clg_balance_point_temp = Assumptions.ClimateDefaults.unocc_clg_balance_point_temp
         self.unocc_htg_balance_point_temp = Assumptions.ClimateDefaults.unocc_htg_balance_point_temp
+        self.weekday_start_hour = 0
+        self.weekday_stop_hour = 0
+        self.weekend_start_hour = 0
+        self.weekend_stop_hour = 0
         self.calc_age()
         self.hourly_data = None
 
@@ -66,6 +70,10 @@ class Asset:
         self.calc_age()
         self.occ_clg_balance_point_temp = row.occ_clg_balance_point_temp
         self.occ_htg_balance_point_temp = row.occ_htg_balance_point_temp
+        self.weekday_start_hour = row.weekday_start_hour
+        self.weekday_stop_hour = row.weekday_stop_hour
+        self.weekend_start_hour = row.weekend_start_hour
+        self.weekend_stop_hour = row.weekend_stop_hour
         self.unocc_clg_balance_point_temp = Assumptions.ClimateDefaults.calc_unocc_clg_balance_point_temp(self.occ_clg_balance_point_temp,
                                                                                                           self.occ_clg_sp,
                                                                                                           self.unocc_clg_sp,
@@ -75,10 +83,17 @@ class Asset:
                                                                                                           self.unocc_htg_sp,
                                                                                                           Assumptions.ClimateDefaults.unocc_load_reduction)
         self._derived_copy_existing_asset_from_row(row)
+        self.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self)
         
     def __copy_new_asset_from_row(self, row):
         self.manufactured_year = datetime.datetime.now().year
         self.calc_age()
+        self.occ_clg_balance_point_temp = row.occ_clg_balance_point_temp
+        self.occ_htg_balance_point_temp = row.occ_htg_balance_point_temp
+        self.weekday_start_hour = row.weekday_start_hour
+        self.weekday_stop_hour = row.weekday_stop_hour
+        self.weekend_start_hour = row.weekend_start_hour
+        self.weekend_stop_hour = row.weekend_stop_hour
         self.unocc_clg_balance_point_temp = Assumptions.ClimateDefaults.calc_unocc_clg_balance_point_temp(self.occ_clg_balance_point_temp,
                                                                                                           self.occ_clg_sp,
                                                                                                           self.unocc_clg_sp,
@@ -88,6 +103,7 @@ class Asset:
                                                                                                           self.unocc_htg_sp,
                                                                                                           Assumptions.ClimateDefaults.unocc_load_reduction)
         self._derived_copy_new_asset_from_row(row)
+        self.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self)
 
 
     def calc_age(self):

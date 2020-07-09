@@ -24,9 +24,9 @@ class FilterAssets():
 class RtuDefaults():
     fan_efficiency = 0.85
     occ_htg_sp = 68
-    unocc_htg_sp = 60
+    unocc_htg_sp = 50
     occ_clg_sp = 72
-    unocc_clg_sp = 80
+    unocc_clg_sp = 90
     min_oa_pct = .12
     htg_design_temp = 5
     clg_design_temp = 95

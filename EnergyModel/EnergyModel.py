@@ -7,11 +7,11 @@ from utility import Assumptions
 
 def main():
     #create portfolio, add model type
-    portfolio = Portfolio.Portfolio("Cintas")
+    portfolio = Portfolio.Portfolio("test")
     
 
     #import sites from file, add to portfolio
-    input_filename = "projects/Cintas/inputs-wip.xlsx"
+    input_filename = "projects/sensitivity_testing/inputs.xlsx"
     FileIO.import_sites(input_filename, portfolio)
     #read asset list
     FileIO.import_assets(input_filename, portfolio)
@@ -23,6 +23,9 @@ def main():
     #filter existing asset to fill data gaps
     portfolio.filter_assets()
 
+
+
+    '''
     #Cintas Setup
     portfolio.add_ecm_list("REPLACE")
     portfolio.add_ecm_list("RETROFIT")
@@ -31,7 +34,7 @@ def main():
     portfolio.add_ecm("REPLACE",FanStageVent.FanStageVent())
     portfolio.add_ecm("RETROFIT",RetroCommission.RetroCommission(.30))
     portfolio.add_ecm("RETROFIT",VafEnerfit.VafEnerfit())
-
+    '''
 
     '''
     #IRM Setup

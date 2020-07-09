@@ -24,6 +24,7 @@ def append_occ(dataframe, weekday_start_time, weekday_stop_time, weekend_start_t
     dataframe = dataframe.assign(OCC=mask)
     return dataframe
     
+
 def append_hourly_calcs(dataframe, clg_balance_point_temp, htg_balance_point_temp, clg_design_temp, htg_design_temp):
     dataframe['CDD'] = __calc_hourly_cdd(dataframe['DRY BULB'].values, clg_balance_point_temp)
     dataframe['HDD'] = __calc_hourly_hdd(dataframe['DRY BULB'].values, htg_balance_point_temp)
@@ -32,9 +33,11 @@ def append_hourly_calcs(dataframe, clg_balance_point_temp, htg_balance_point_tem
     dataframe['EFLH-T'] = __calc_hourly_eflh_t(dataframe['EFLH-C'].values, dataframe['EFLH-H'].values)
     dataframe['CLG-HRS'] = __calc_clg_hr(dataframe['DRY BULB'].values, clg_balance_point_temp)
     dataframe['HTG-HRS'] = __calc_htg_hr(dataframe['DRY BULB'].values, htg_balance_point_temp)
+    dataframe['VENT-HRS'] = __calc_vent_hr(dataframe['CLG-HRS'].values, dataframe['HTG-HRS'].values)
     dataframe['CLG-FAN-PWR-%'] = __cubed(dataframe['EFLH-C'].values)
     dataframe['HTG-FAN-PWR-%'] = __cubed(dataframe['EFLH-H'].values)
     return dataframe
+
 
 def __calc_hourly_cdd(temp, balance_point_temp):
     calc = temp - balance_point_temp
@@ -66,6 +69,10 @@ def __calc_htg_hr(temp, balance_point_temp):
     calc = ((balance_point_temp - temp) > 0)
     #convert to int
     return calc*1
+
+def __calc_vent_hr(htg_flag, clg_flag):
+    calc = (htg_flag + clg_flag == 0)
+    return calc
 
 def __cubed(prcnt):
     return prcnt**3

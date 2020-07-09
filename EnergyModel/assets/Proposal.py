@@ -28,7 +28,7 @@ class Proposal:
         self.existing_asset = asset
         self.existing_asset.status = "existing"
         self.existing_asset.proposal = self
-        self.existing_asset.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self.existing_asset)
+        
 
     #add asset to proposal, set all connections and get hourly data
     def add_new_asset(self, asset):
@@ -37,7 +37,7 @@ class Proposal:
         self.new_asset = asset
         self.new_asset.status = "new"
         self.new_asset.proposal = self
-        self.new_asset.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self.new_asset)
+        #self.new_asset.hourly_data = HourlyDataManager.HourlyDataManager.get_hourly_data(self.new_asset)
 
     #filter old asset, if replacing filter new asset. If retro/no action copy old asset
     def filter_assets(self):
